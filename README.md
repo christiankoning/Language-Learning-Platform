@@ -56,5 +56,3 @@ The platform supports multiple languages and learning paths, beginning with Japa
 
 ### 6. Start the App
 `php artisan serve`
-
-composer create-project --prefer-dist laravel/laravel .
