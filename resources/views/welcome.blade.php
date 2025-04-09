@@ -1,40 +1,6 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Language Learning Platform</title>
+@extends('layouts.app')
 
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-<body class="text-[#111827] bg-gradient-to-br from-blue-500 to-indigo-600 min-h-screen flex flex-col">
-
-<!-- Header -->
-<header class="w-full max-w-7xl mx-auto px-6 py-4 flex justify-between items-center gap-12">
-    <h1 class="text-2xl text-white/95 drop-shadow-md font-bold tracking-tight">Language Learning Platform</h1>
-    <nav class="flex gap-3 text-sm">
-        @auth
-            <a href="{{ url('/dashboard') }}"
-               class="px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-md font-medium shadow hover:brightness-110 transition">
-                Dashboard
-            </a>
-        @else
-            <a href="{{ route('login') }}"
-               class="px-4 py-2 bg-gradient-to-r from-blue-400 to-indigo-500 text-white rounded-md font-medium shadow hover:brightness-110 transition">
-                Log in
-            </a>
-            @if (Route::has('register'))
-                <a href="{{ route('register') }}"
-                   class="px-4 py-2 bg-gradient-to-r from-blue-400 to-indigo-500 text-white rounded-md font-medium shadow hover:brightness-110 transition">
-                    Register
-                </a>
-            @endif
-        @endauth
-    </nav>
-</header>
-
+@section('content')
 <!-- Hero Section -->
 <section class="flex-1 flex items-center justify-center text-center px-6 py-16">
     <div class="max-w-3xl">
@@ -80,11 +46,5 @@
         </a>
     </div>
 </section>
+@endsection
 
-<!-- Footer -->
-<footer class="w-full py-6 text-center text-xs text-white/80 border-t border-white/20">
-    © {{ date('Y') }} Language Learning Platform. Built for personal use.
-</footer>
-
-</body>
-</html>
