@@ -1,12 +1,27 @@
 <!-- Header -->
 <header class="w-full max-w-7xl mx-auto px-6 py-4 flex justify-between items-center gap-12">
-    <h1 class="text-2xl text-white/95 drop-shadow-md font-bold tracking-tight">Language Learning Platform</h1>
+    @auth
+        <a href="{{ url('/dashboard') }}" class="text-2xl text-white/95 drop-shadow-md font-bold tracking-tight">
+            Language Learning Platform
+        </a>
+    @else
+        <a href="{{ url('/') }}" class="text-2xl text-white/95 drop-shadow-md font-bold tracking-tight">
+            Language Learning Platform
+        </a>
+    @endauth
     <nav class="flex gap-3 text-sm">
         @auth
             <a href="{{ url('/dashboard') }}"
                class="px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-md font-medium shadow hover:brightness-110 transition">
                 Dashboard
             </a>
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit"
+                        class="px-4 py-2 bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-md font-medium shadow hover:brightness-110 transition">
+                    Log out
+                </button>
+            </form>
         @else
             <a href="{{ route('login') }}"
                class="px-4 py-2 bg-gradient-to-r from-blue-400 to-indigo-500 text-white rounded-md font-medium shadow hover:brightness-110 transition">
