@@ -1,38 +1,62 @@
 <!-- Header -->
-<header class="w-full max-w-7xl mx-auto px-6 py-4 flex justify-between items-center gap-12">
+<header class="w-full px-6 py-4">
     @auth
-        <a href="{{ url('/dashboard') }}" class="text-2xl text-white/95 drop-shadow-md font-bold tracking-tight">
-            Language Learning Platform
-        </a>
-    @else
-        <a href="{{ url('/') }}" class="text-2xl text-white/95 drop-shadow-md font-bold tracking-tight">
-            Language Learning Platform
-        </a>
-    @endauth
-    <nav class="flex gap-3 text-sm">
-        @auth
-            <a href="{{ url('/dashboard') }}"
-               class="px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-md font-medium shadow hover:brightness-110 transition">
-                Dashboard
-            </a>
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <button type="submit"
-                        class="px-4 py-2 bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-md font-medium shadow hover:brightness-110 transition">
-                    Log out
-                </button>
-            </form>
-        @else
-            <a href="{{ route('login') }}"
-               class="px-4 py-2 bg-gradient-to-r from-blue-400 to-indigo-500 text-white rounded-md font-medium shadow hover:brightness-110 transition">
-                Log in
-            </a>
-            @if (Route::has('register'))
-                <a href="{{ route('register') }}"
-                   class="px-4 py-2 bg-gradient-to-r from-blue-400 to-indigo-500 text-white rounded-md font-medium shadow hover:brightness-110 transition">
-                    Register
+        <div class="flex items-center w-full max-w-7xl mx-auto justify-between">
+            <!-- Title: Aligned to the left (not corner) -->
+            <div class="flex-shrink-0 mr-12">
+                <a href="{{ route('dashboard') }}" class="text-3xl text-white font-extrabold tracking-tight whitespace-nowrap">
+                    Language Learning Platform
                 </a>
-            @endif
-        @endauth
-    </nav>
+            </div>
+
+            <!-- All buttons grouped and centered-ish -->
+            <nav class="flex flex-wrap gap-4 justify-center items-center">
+                <a href="{{ route('dashboard') }}"
+                   class="px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-md font-medium transition text-base">
+                    Dashboard
+                </a>
+                <a href="{{ route('language.select') }}"
+                   class="px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-md font-medium transition text-base">
+                    Languages
+                </a>
+                <a href="{{ route('dashboard') }}"
+                   class="px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-md font-medium transition text-base">
+                    Leaderboards
+                </a>
+                <a href="{{ route('dashboard') }}"
+                   class="px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-md font-medium transition text-base">
+                    Profile
+                </a>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit"
+                            class="px-6 py-2.5 bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-md font-medium shadow hover:brightness-110 transition text-base">
+                        Log out
+                    </button>
+                </form>
+            </nav>
+        </div>
+
+    @else
+        <div class="flex items-center justify-between w-full max-w-7xl mx-auto">
+            <!-- Title -->
+            <a href="{{ url('/') }}" class="text-3xl text-white font-extrabold tracking-tight whitespace-nowrap">
+                Language Learning Platform
+            </a>
+
+            <!-- Login/Register -->
+            <nav class="flex gap-4 text-sm">
+                <a href="{{ route('login') }}"
+                   class="px-6 py-2.5 bg-gradient-to-r from-blue-400 to-indigo-500 text-white rounded-md font-medium shadow hover:brightness-110 transition text-base">
+                    Log in
+                </a>
+                @if (Route::has('register'))
+                    <a href="{{ route('register') }}"
+                       class="px-6 py-2.5 bg-gradient-to-r from-blue-400 to-indigo-500 text-white rounded-md font-medium shadow hover:brightness-110 transition text-base">
+                        Register
+                    </a>
+                @endif
+            </nav>
+        </div>
+    @endauth
 </header>
