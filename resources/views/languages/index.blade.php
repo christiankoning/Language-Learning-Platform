@@ -4,7 +4,35 @@
     <section class="w-full max-w-7xl mx-auto px-6 py-12 text-white">
         <h2 class="text-3xl font-bold mb-8 drop-shadow-md">Select a Language</h2>
 
-        <p class="text-white/80 mb-4">This is where you’ll pick a language to start learning.</p>
-        <p class="text-white/70">We’ll expand this page soon to show a grid of available languages.</p>
+        @if ($languages->isEmpty())
+            <p class="text-white/80">No languages available at the moment.</p>
+        @else
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                @foreach ($languages as $language)
+                    <div class="bg-white text-[#111827] p-6 rounded-lg shadow hover:shadow-lg transition flex flex-col justify-between h-full">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                @if ($language->icon)
+                                    <div class="bg-gray-100 p-2 rounded w-30 h-30 flex items-center justify-center">
+                                        <img src="{{ $language->icon }}" alt="{{ $language->name }} icon" class="w-10 h-10 object-contain">
+                                    </div>
+                                @endif
+                                <h3 class="text-xl font-semibold">{{ $language->name }}</h3>
+                            </div>
+
+                            <p class="text-sm text-gray-600 mb-4">
+                                {{ $language->description ?? 'Start learning today!' }}
+                            </p>
+                        </div>
+
+                        <a href="{{ route('languages.categories', $language->slug) }}"
+                           class="inline-block px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-md text-sm font-medium shadow hover:brightness-110 transition">
+                            Start Learning
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        @endif
     </section>
 @endsection
+
