@@ -16,7 +16,7 @@
                 <div class="rounded-lg shadow p-6 text-center">
                     <h3 class="text-xl font-semibold mb-2">No Languages Started Yet</h3>
                     <p class="text-gray-600 mb-4">Choose a language to begin your learning journey!</p>
-                    <a href="{{ route('language.select') }}"
+                    <a href="{{ route('languages.index') }}"
                        class="inline-block px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-medium rounded-md shadow hover:brightness-110 transition">
                         Select a Language
                     </a>
@@ -49,7 +49,7 @@
                                 </ul>
                             </div>
 
-                            <a href="{{ route('language.overview', $language->slug) }}"
+                            <a href="{{ route('languages.categories', $language->slug) }}"
                                class="inline-block mt-4 px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-md text-sm font-medium shadow hover:brightness-110 transition">
                                 Go to {{ $language->name }}
                             </a>
