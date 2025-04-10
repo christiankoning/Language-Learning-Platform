@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,8 +20,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/languages', function () {
-    return view('languages.index');
-})->middleware(['auth', 'verified'])->name('language.select');
+Route::get('/languages', [LanguageController::class, 'index'])
+    ->middleware(['auth', 'verified'])
+    ->name('languages.index');
+
+Route::get('/languages/{language:slug}/categories', [LanguageController::class, 'categories'])->name('languages.categories');
+
+Route::get('/languages/{language:slug}/categories/{category:slug}/start', [CategoryController::class, 'start'])
+    ->middleware(['auth', 'verified'])
+    ->name('category.start');
+
 
 require __DIR__.'/auth.php';

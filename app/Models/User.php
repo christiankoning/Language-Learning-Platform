@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
@@ -45,4 +46,15 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function startedLanguages()
+    {
+        return $this->belongsToMany(Language::class, 'user_languages')->withTimestamps()->withPivot('started_at');
+    }
+
+    public function startedCategories()
+    {
+        return $this->belongsToMany(Category::class, 'user_categories')->withTimestamps()->withPivot('started_at');
+    }
+
 }
