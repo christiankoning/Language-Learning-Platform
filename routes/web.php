@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\ProfileController;
@@ -24,6 +25,10 @@ Route::get('/languages', [LanguageController::class, 'index'])
     ->name('languages.index');
 
 Route::get('/languages/{language:slug}/categories', [LanguageController::class, 'categories'])->name('languages.categories');
+
+Route::get('/languages/{language:slug}/categories/{category:slug}/start', [CategoryController::class, 'start'])
+    ->middleware(['auth', 'verified'])
+    ->name('category.start');
 
 
 require __DIR__.'/auth.php';

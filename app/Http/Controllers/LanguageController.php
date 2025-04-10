@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Language;
-use Illuminate\Http\Request;use function Symfony\Component\String\u;
 
 class LanguageController extends Controller
 {
@@ -15,9 +14,10 @@ class LanguageController extends Controller
 
     public function categories(Language $language)
     {
-        $language->load('categories');
+        $categories = $language->categories()->whereNull('parent_id')->get();
 
-        return view('languages.categories', compact('language'));
+        return view('languages.categories', compact('language', 'categories'));
     }
+
 
 }
