@@ -20,4 +20,14 @@ class Category extends Model
     {
         return $this->belongsToMany(User::class, 'user_categories')->withTimestamps()->withPivot('started_at');
     }
+
+    public function parent()
+    {
+        return $this->belongsTo(Category::class, 'parent_id');
+    }
+
+    public function children()
+    {
+        return $this->hasMany(Category::class, 'parent_id');
+    }
 }
