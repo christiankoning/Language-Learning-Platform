@@ -37,6 +37,7 @@ class ItemsTableSeeder extends Seeder
                 'answer' => $particle['meanings'][0],
                 'romaji' => $particle['romaji'],
                 'direction' => 'recognition',
+                'type' => 'Core Particles',
                 'extra_data' => count($particle['meanings']) > 1
                     ? json_encode(['alt_answers' => array_slice($particle['meanings'], 1)])
                     : null,
@@ -49,6 +50,7 @@ class ItemsTableSeeder extends Seeder
                 'answer' => $particle['kana'],
                 'romaji' => $particle['romaji'],
                 'direction' => 'recall',
+                'type' => 'Core Particles',
                 'extra_data' => count($particle['meanings']) > 1
                     ? json_encode(['alt_prompts' => array_slice($particle['meanings'], 1)])
                     : null,
