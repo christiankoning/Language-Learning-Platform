@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             LanguagesTableSeeder::class,
             CategoriesTableSeeder::class,
+            ItemsTableSeeder::class,
         ]);
     }
 }

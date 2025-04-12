@@ -26,9 +26,14 @@ Route::get('/languages', [LanguageController::class, 'index'])
 
 Route::get('/languages/{language:slug}/categories', [LanguageController::class, 'categories'])->name('languages.categories');
 
-Route::get('/languages/{language:slug}/categories/{category:slug}/start', [CategoryController::class, 'start'])
+Route::get('/languages/{language:slug}/{category:slug}', [CategoryController::class, 'show'])
+    ->middleware(['auth', 'verified'])
+    ->name('category.show');
+
+Route::get('/languages/{language:slug}/{category:slug}/{direction}', [CategoryController::class, 'start'])
     ->middleware(['auth', 'verified'])
     ->name('category.start');
+
 
 
 require __DIR__.'/auth.php';
