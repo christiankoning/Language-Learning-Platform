@@ -3,14 +3,20 @@
 @section('content')
     <section class="w-full max-w-4xl mx-auto px-6 py-12 text-white">
         <h2 class="text-3xl font-bold mb-6 drop-shadow-md">
-            {{ $language->name }} — {{ $category->name }}
+            {{ $language->name }} — {{ $category->name }} ({{ ucfirst($direction) }})
         </h2>
 
-        <div class="bg-white rounded-lg shadow p-6 text-[#111827]">
-            <h3 class="text-xl font-semibold mb-2">Coming Soon</h3>
-            <p class="text-gray-600">
-                You selected <strong>{{ $category->name }}</strong> in <strong>{{ $language->name }}</strong> with mode <strong>{{ ucfirst($direction) }}</strong>.
-            </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <a href="{{ route('practice.start', [$language->slug, $category->slug, $direction]) }}"
+               class="block bg-white rounded-lg shadow p-6 text-[#111827] hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold mb-2">Practice Mode</h3>
+                <p class="text-sm text-gray-600">Answer at your own pace. Great for learning and repetition.</p>
+            </a>
+
+            <a href="#" class="block bg-gray-100 rounded-lg shadow p-6 text-[#111827] opacity-50 cursor-not-allowed">
+                <h3 class="text-xl font-semibold mb-2">Timed Mode</h3>
+                <p class="text-sm text-gray-600">Coming soon — race the clock with high accuracy!</p>
+            </a>
         </div>
     </section>
 @endsection
