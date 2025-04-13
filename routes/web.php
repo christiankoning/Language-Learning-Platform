@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\PracticeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +34,22 @@ Route::get('/languages/{language:slug}/{category:slug}', [CategoryController::cl
 Route::get('/languages/{language:slug}/{category:slug}/{direction}', [CategoryController::class, 'start'])
     ->middleware(['auth', 'verified'])
     ->name('category.start');
+
+Route::get('/languages/{language:slug}/{category:slug}/{direction}/practice', [PracticeController::class, 'start'])
+    ->middleware(['auth', 'verified'])
+    ->name('practice.start');
+
+Route::get('/practice', [PracticeController::class, 'show'])
+    ->middleware(['auth', 'verified'])
+    ->name('practice.show');
+
+Route::post('/practice/answer', [PracticeController::class, 'submit'])
+    ->middleware(['auth', 'verified'])
+    ->name('practice.submit');
+
+Route::post('/practice/skip', [PracticeController::class, 'skip'])
+    ->middleware(['auth', 'verified'])
+    ->name('practice.skip');
 
 
 
