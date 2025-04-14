@@ -18,7 +18,7 @@ class PracticeController extends Controller
         $items = Item::where('category_id', $category->id)
             ->where('direction', $direction)
             ->inRandomOrder()
-            ->get(['id', 'prompt', 'answer', 'romaji']);
+            ->get();
 
         if ($items->isEmpty()) {
             return back()->with('error', 'No items available for this category and direction.');
@@ -38,12 +38,23 @@ class PracticeController extends Controller
     {
         $items = session('practice.items');
         $current = session('practice.current', 0);
+        $direction = session('practice.direction', 'recognition');
 
         if (!$items || !isset($items[$current])) {
             return view('practice.complete');
         }
 
         $item = (object) $items[$current];
+
+        // Show multiple meanings in recall
+        if ($direction === 'recall' && !empty($item->extra_data)) {
+            $extra = json_decode($item->extra_data, true);
+            if (!empty($extra['alt_prompts'])) {
+                $allPrompts = array_merge([$item->prompt], $extra['alt_prompts']);
+                $item->prompt = implode(' / ', $allPrompts);
+            }
+        }
+
         return view('practice.question', compact('item'));
     }
 
@@ -55,16 +66,25 @@ class PracticeController extends Controller
         $direction = session('practice.direction', 'recognition');
         $item = (object) $items[$current];
 
-        $expected = strtolower($item->answer);
         $submitted = strtolower($answer);
+        $validAnswers = [strtolower($item->answer)];
 
-        $isCorrect = $submitted === $expected;
-
+        // Add romaji (if recall)
         if ($direction === 'recall' && !empty($item->romaji)) {
-            $isCorrect = $isCorrect || $submitted === strtolower($item->romaji);
+            $validAnswers[] = strtolower($item->romaji);
         }
 
-        if ($isCorrect) {
+        // Add alt answers (if recognition)
+        if ($direction === 'recognition' && !empty($item->extra_data)) {
+            $extra = json_decode($item->extra_data, true);
+            if (!empty($extra['alt_answers'])) {
+                foreach ($extra['alt_answers'] as $alt) {
+                    $validAnswers[] = strtolower($alt);
+                }
+            }
+        }
+
+        if (in_array($submitted, $validAnswers)) {
             session(['practice.current' => $current + 1]);
             session()->flash('feedback', 'correct');
         } else {
