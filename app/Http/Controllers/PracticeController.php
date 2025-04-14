@@ -26,8 +26,10 @@ class PracticeController extends Controller
 
         session([
             'practice.items' => $items->toArray(),
+            'practice.original_items' => $items->toArray(),
             'practice.current' => 0,
             'practice.incorrect' => [],
+            'practice.skipped' => [], // NEW
             'practice.direction' => $direction,
         ]);
 
@@ -46,7 +48,6 @@ class PracticeController extends Controller
 
         $item = (object) $items[$current];
 
-        // Show multiple meanings in recall
         if ($direction === 'recall' && !empty($item->extra_data)) {
             $extra = json_decode($item->extra_data, true);
             if (!empty($extra['alt_prompts'])) {
@@ -69,12 +70,10 @@ class PracticeController extends Controller
         $submitted = strtolower($answer);
         $validAnswers = [strtolower($item->answer)];
 
-        // Add romaji (if recall)
         if ($direction === 'recall' && !empty($item->romaji)) {
             $validAnswers[] = strtolower($item->romaji);
         }
 
-        // Add alt answers (if recognition)
         if ($direction === 'recognition' && !empty($item->extra_data)) {
             $extra = json_decode($item->extra_data, true);
             if (!empty($extra['alt_answers'])) {
@@ -105,14 +104,14 @@ class PracticeController extends Controller
         $skippedItem = $items[$current];
         unset($items[$current]);
 
-        $items = array_values($items); // reindex
+        $items = array_values($items);
 
-        $incorrect = session('practice.incorrect', []);
-        $incorrect[] = $skippedItem;
+        $skipped = session('practice.skipped', []);
+        $skipped[] = $skippedItem;
 
         session([
             'practice.items' => [...$items, $skippedItem],
-            'practice.incorrect' => $incorrect,
+            'practice.skipped' => $skipped,
             'practice.current' => 0,
         ]);
 
@@ -121,9 +120,66 @@ class PracticeController extends Controller
 
     public function results()
     {
-        // Clear the session to reset practice mode
-        session()->forget(['practice.items', 'practice.current', 'practice.incorrect', 'practice.direction']);
+        $allItems = session('practice.original_items', []);
+        $incorrect = session('practice.incorrect', []);
+        $skipped = session('practice.skipped', []);
+        $currentIndex = session('practice.current', 0);
 
-        return view('practice.complete');
+        $totalItems = count($allItems);
+        $incorrectCount = count($incorrect);
+        $skippedCount = count($skipped);
+
+        // If no questions were ever answered or skipped
+        if ($currentIndex === 0 && $incorrectCount === 0 && $skippedCount === 0) {
+            $correct = 0;
+            $missed = $totalItems;
+        } else {
+            $answeredCorrectly = $currentIndex;
+            $correct = $answeredCorrectly;
+            $missed = $totalItems - $correct;
+        }
+
+        $accuracy = $totalItems > 0 ? round(($correct / $totalItems) * 100) : 0;
+
+        // Group incorrect items
+        $incorrectCounts = [];
+        foreach ($incorrect as $item) {
+            $item = (object) $item;
+            $id = $item->id;
+            if (!isset($incorrectCounts[$id])) {
+                $incorrectCounts[$id] = [
+                    'item' => $item,
+                    'count' => 1,
+                ];
+            } else {
+                $incorrectCounts[$id]['count']++;
+            }
+        }
+
+        // Group skipped items (deduplicated by ID)
+        $skippedItems = [];
+        foreach ($skipped as $item) {
+            $item = (object) $item;
+            $skippedItems[$item->id] = $item;
+        }
+
+        // Clear session
+        session()->forget([
+            'practice.items',
+            'practice.original_items',
+            'practice.current',
+            'practice.incorrect',
+            'practice.skipped',
+            'practice.direction',
+        ]);
+
+        return view('practice.complete', compact(
+            'correct',
+            'missed',
+            'accuracy',
+            'incorrectCounts',
+            'skippedItems'
+        ));
     }
+
 }
