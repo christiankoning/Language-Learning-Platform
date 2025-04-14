@@ -51,6 +51,8 @@ Route::post('/practice/skip', [PracticeController::class, 'skip'])
     ->middleware(['auth', 'verified'])
     ->name('practice.skip');
 
-
+Route::get('/practice/results', [PracticeController::class, 'results'])
+    ->middleware(['auth', 'verified'])
+    ->name('practice.results');
 
 require __DIR__.'/auth.php';

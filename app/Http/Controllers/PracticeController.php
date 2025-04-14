@@ -41,7 +41,7 @@ class PracticeController extends Controller
         $direction = session('practice.direction', 'recognition');
 
         if (!$items || !isset($items[$current])) {
-            return view('practice.complete');
+            return redirect()->route('practice.results');
         }
 
         $item = (object) $items[$current];
@@ -117,5 +117,13 @@ class PracticeController extends Controller
         ]);
 
         return redirect()->route('practice.show');
+    }
+
+    public function results()
+    {
+        // Clear the session to reset practice mode
+        session()->forget(['practice.items', 'practice.current', 'practice.incorrect', 'practice.direction']);
+
+        return view('practice.complete');
     }
 }

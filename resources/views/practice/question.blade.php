@@ -32,6 +32,10 @@
                             class="px-6 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition">
                         Skip
                     </button>
+                    <a href="{{ route('practice.results') }}"
+                       class="px-6 py-2 bg-red-100 text-red-700 rounded hover:bg-red-200 transition">
+                        Finish
+                    </a>
                 </div>
             </form>
 
