@@ -104,12 +104,16 @@ class PracticeController extends Controller
 
         $skippedItem = $items[$current];
         unset($items[$current]);
-        $items[] = $skippedItem;
-        $items = array_values($items);
+
+        $items = array_values($items); // reindex
+
+        $incorrect = session('practice.incorrect', []);
+        $incorrect[] = $skippedItem;
 
         session([
-            'practice.items' => $items,
-            'practice.current' => $current + 1,
+            'practice.items' => [...$items, $skippedItem],
+            'practice.incorrect' => $incorrect,
+            'practice.current' => 0,
         ]);
 
         return redirect()->route('practice.show');
