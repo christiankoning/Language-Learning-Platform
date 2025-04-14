@@ -124,32 +124,49 @@ class PracticeController extends Controller
         $incorrect = session('practice.incorrect', []);
         $skipped = session('practice.skipped', []);
         $currentIndex = session('practice.current', 0);
+        $direction = session('practice.direction', 'recognition');
 
         $totalItems = count($allItems);
         $incorrectCount = count($incorrect);
         $skippedCount = count($skipped);
 
-        // If no questions were ever answered or skipped
+        // If no questions were answered at all
         if ($currentIndex === 0 && $incorrectCount === 0 && $skippedCount === 0) {
             $correct = 0;
             $missed = $totalItems;
         } else {
-            $answeredCorrectly = $currentIndex;
-            $correct = $answeredCorrectly;
+            $correct = $currentIndex;
             $missed = $totalItems - $correct;
         }
 
         $accuracy = $totalItems > 0 ? round(($correct / $totalItems) * 100) : 0;
 
-        // Group incorrect items
+        // Group incorrect items and prepare display
         $incorrectCounts = [];
         foreach ($incorrect as $item) {
             $item = (object) $item;
             $id = $item->id;
+
+            $extra = !empty($item->extra_data) ? json_decode($item->extra_data, true) : [];
+
+            if ($direction === 'recall') {
+                $correctDisplay = $item->answer;
+                if (!empty($item->romaji)) {
+                    $correctDisplay .= ' (' . $item->romaji . ')';
+                }
+            } else {
+                $answers = [$item->answer];
+                if (!empty($extra['alt_answers'])) {
+                    $answers = array_merge($answers, $extra['alt_answers']);
+                }
+                $correctDisplay = implode(' / ', $answers);
+            }
+
             if (!isset($incorrectCounts[$id])) {
                 $incorrectCounts[$id] = [
                     'item' => $item,
                     'count' => 1,
+                    'correct_display' => $correctDisplay,
                 ];
             } else {
                 $incorrectCounts[$id]['count']++;
@@ -160,7 +177,25 @@ class PracticeController extends Controller
         $skippedItems = [];
         foreach ($skipped as $item) {
             $item = (object) $item;
-            $skippedItems[$item->id] = $item;
+            $id = $item->id;
+
+            $extra = !empty($item->extra_data) ? json_decode($item->extra_data, true) : [];
+
+            if ($direction === 'recall') {
+                $correctDisplay = $item->answer;
+                if (!empty($item->romaji)) {
+                    $correctDisplay .= ' (' . $item->romaji . ')';
+                }
+            } else {
+                $answers = [$item->answer];
+                if (!empty($extra['alt_answers'])) {
+                    $answers = array_merge($answers, $extra['alt_answers']);
+                }
+                $correctDisplay = implode(' / ', $answers);
+            }
+
+            $item->correct_display = $correctDisplay;
+            $skippedItems[$id] = $item;
         }
 
         // Clear session
@@ -181,5 +216,6 @@ class PracticeController extends Controller
             'skippedItems'
         ));
     }
+
 
 }

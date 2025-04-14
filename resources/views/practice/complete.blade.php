@@ -14,10 +14,16 @@
         @if (!empty($incorrectCounts))
             <div class="mt-6 bg-white rounded-lg shadow p-6 text-[#111827] text-left">
                 <h3 class="text-xl font-semibold mb-4">Incorrect Items</h3>
-                <ul class="list-disc list-inside space-y-2">
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     @foreach ($incorrectCounts as $entry)
-                        <li>
-                            <strong>{{ $entry['item']->prompt }}</strong> — Incorrect <strong>{{ $entry['count'] }}</strong> time{{ $entry['count'] > 1 ? 's' : '' }}
+                        <li class="bg-red-50 p-4 rounded border border-red-200">
+                            <div><strong>{{ $entry['item']->prompt }}</strong></div>
+                            <div class="text-sm text-red-700">
+                                Incorrect <strong>{{ $entry['count'] }}</strong> time{{ $entry['count'] > 1 ? 's' : '' }}
+                            </div>
+                            <div class="text-sm mt-1 text-gray-600">
+                                → Correct answer: <strong>{{ $entry['correct_display'] }}</strong>
+                            </div>
                         </li>
                     @endforeach
                 </ul>
@@ -27,10 +33,13 @@
         @if(count($skippedItems))
             <div class="mt-6 bg-white rounded-lg shadow p-6 text-[#111827] text-left">
                 <h3 class="text-xl font-semibold mb-4">Skipped Items</h3>
-                <ul class="list-disc list-inside space-y-2">
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     @foreach($skippedItems as $item)
-                        <li>
-                            <strong>{{ $item->prompt }}</strong>
+                        <li class="bg-yellow-50 p-4 rounded border border-yellow-200">
+                            <div><strong>{{ $item->prompt }}</strong></div>
+                            <div class="text-sm mt-1 text-gray-600">
+                                → Correct answer: <strong>{{ $item->correct_display }}</strong>
+                            </div>
                         </li>
                     @endforeach
                 </ul>
