@@ -25,6 +25,18 @@ class CategoriesTableSeeder extends Seeder
             ['name' => 'Topics', 'slug' => 'topics'],
         ]);
 
+        $verbs = $jp->categories()->create([
+            'name' => 'Verbs',
+            'slug' => 'verbs',
+        ]);
+
+        $verbs->children()->createMany([
+            ['language_id' => $jp->id, 'name' => 'N5 Part 1', 'slug' => 'n5-part-1'],
+            ['language_id' => $jp->id, 'name' => 'N5 Part 2', 'slug' => 'n5-part-2'],
+            ['language_id' => $jp->id, 'name' => 'N4 Part 1', 'slug' => 'n4-part-1'],
+            ['language_id' => $jp->id, 'name' => 'N4 Part 2', 'slug' => 'n4-part-2'],
+        ]);
+
         $objects = $jp->categories()->create([
             'name' => 'Objects',
             'slug' => 'objects',
