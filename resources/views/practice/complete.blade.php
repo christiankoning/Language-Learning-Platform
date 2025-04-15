@@ -11,7 +11,25 @@
             <p class="text-lg">📊 Accuracy: <strong>{{ $accuracy }}%</strong></p>
         </div>
 
-        @if (!empty($incorrectCounts))
+        <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="{{ route('practice.start', [$languageSlug, $categorySlug, $direction]) }}"
+               class="px-6 py-3 bg-green-600 text-white font-medium rounded-md shadow hover:brightness-110 transition">
+                🔁 Retry This Category
+            </a>
+
+            <a href="{{ route('languages.categories', $languageSlug) }}"
+               class="px-6 py-3 bg-gray-100 text-gray-800 font-medium rounded-md shadow hover:bg-gray-200 transition">
+                🔙 Back to Categories
+            </a>
+
+            <a href="{{ route('dashboard') }}"
+               class="px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-medium rounded-md shadow hover:brightness-110 transition">
+                🏠 Return to Dashboard
+            </a>
+        </div>
+
+
+    @if (!empty($incorrectCounts))
             <div class="mt-6 bg-white rounded-lg shadow p-6 text-[#111827] text-left">
                 <h3 class="text-xl font-semibold mb-4">Incorrect Items</h3>
                 <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -46,11 +64,23 @@
             </div>
         @endif
 
-        <div class="mt-8">
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="{{ route('practice.start', [$languageSlug, $categorySlug, $direction]) }}"
+               class="px-6 py-3 bg-green-600 text-white font-medium rounded-md shadow hover:brightness-110 transition">
+                🔁 Retry This Category
+            </a>
+
+            <a href="{{ route('languages.categories', $languageSlug) }}"
+               class="px-6 py-3 bg-gray-100 text-gray-800 font-medium rounded-md shadow hover:bg-gray-200 transition">
+                🔙 Back to Categories
+            </a>
+
             <a href="{{ route('dashboard') }}"
-               class="inline-block px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-medium rounded-md shadow hover:brightness-110 transition">
-                Return to Dashboard
+               class="px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-medium rounded-md shadow hover:brightness-110 transition">
+                🏠 Return to Dashboard
             </a>
         </div>
+
+
     </section>
 @endsection
