@@ -29,8 +29,10 @@ class PracticeController extends Controller
             'practice.original_items' => $items->toArray(),
             'practice.current' => 0,
             'practice.incorrect' => [],
-            'practice.skipped' => [], // NEW
+            'practice.skipped' => [],
             'practice.direction' => $direction,
+            'practice.language_slug' => $language->slug,
+            'practice.category_slug' => $category->slug,
         ]);
 
         return redirect()->route('practice.show');
@@ -198,13 +200,19 @@ class PracticeController extends Controller
             $skippedItems[$id] = $item;
         }
 
-        // Clear session
+        $languageSlug = session('practice.language_slug');
+        $categorySlug = session('practice.category_slug');
+        $direction = session('practice.direction');
+
+        // clear the session
         session()->forget([
             'practice.items',
             'practice.original_items',
             'practice.current',
             'practice.incorrect',
             'practice.skipped',
+            'practice.language_slug',
+            'practice.category_slug',
             'practice.direction',
         ]);
 
@@ -213,9 +221,10 @@ class PracticeController extends Controller
             'missed',
             'accuracy',
             'incorrectCounts',
-            'skippedItems'
+            'skippedItems',
+            'languageSlug',
+            'categorySlug',
+            'direction'
         ));
     }
-
-
 }
