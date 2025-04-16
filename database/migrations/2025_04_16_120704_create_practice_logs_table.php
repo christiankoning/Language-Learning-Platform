@@ -11,17 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('category_user_progress', function (Blueprint $table) {
+        Schema::create('practice_logs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('language_id')->constrained()->onDelete('cascade');
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->enum('direction', ['recognition', 'recall']);
-            $table->integer('best_accuracy')->nullable();
-            $table->integer('best_time_ms')->nullable();
-            $table->timestamp('last_practiced_at')->nullable();
+            $table->unsignedInteger('correct')->default(0);
+            $table->unsignedInteger('missed')->default(0);
+            $table->unsignedTinyInteger('accuracy')->default(0); // %
             $table->timestamps();
-
-            $table->unique(['user_id', 'category_id', 'direction']);
         });
     }
 
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('category_user_progress');
+        Schema::dropIfExists('practice_logs');
     }
 };
