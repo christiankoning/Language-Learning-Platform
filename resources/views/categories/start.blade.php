@@ -13,9 +13,10 @@
                 <p class="text-sm text-gray-600">Answer at your own pace. Great for learning and repetition.</p>
             </a>
 
-            <a href="#" class="block bg-gray-100 rounded-lg shadow p-6 text-[#111827] opacity-50 cursor-not-allowed">
+            <a href="{{ route('timed.start', [$language->slug, $category->slug, $direction]) }}"
+               class="block bg-white rounded-lg shadow p-6 text-[#111827] hover:shadow-lg transition">
                 <h3 class="text-xl font-semibold mb-2">Timed Mode</h3>
-                <p class="text-sm text-gray-600">Coming soon — race the clock with high accuracy!</p>
+                <p class="text-sm text-gray-600">Answer quickly and accurately. Great for testing your knowledge under pressure.</p>
             </a>
         </div>
     </section>
