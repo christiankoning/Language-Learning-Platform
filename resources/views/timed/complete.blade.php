@@ -9,7 +9,7 @@
             <p class="text-lg mb-2">✅ Correct: <strong>{{ $correct }}</strong></p>
             <p class="text-lg mb-2">❌ Missed: <strong>{{ $missed }}</strong></p>
             <p class="text-lg mb-2">📊 Accuracy: <strong>{{ $accuracy }}%</strong></p>
-            <p class="text-lg">⏱️ Time: <strong>{{ number_format($timeMs / 1000, 2) }} sec</strong></p>
+            <p class="text-lg">⏱️ Time: <strong>{{ $formattedTime }}</strong></p>
         </div>
 
         <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
