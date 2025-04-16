@@ -15,12 +15,13 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
+            $table->enum('direction', ['recognition', 'recall']);
             $table->integer('best_accuracy')->nullable();
             $table->integer('best_time_ms')->nullable();
             $table->timestamp('last_practiced_at')->nullable();
             $table->timestamps();
 
-            $table->unique(['user_id', 'category_id']);
+            $table->unique(['user_id', 'category_id', 'direction']);
         });
     }
 
