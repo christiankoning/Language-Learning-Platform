@@ -132,6 +132,13 @@ class TimedController extends Controller
         $language = Language::find($languageId);
         $category = Category::find($categoryId);
 
+        // Flags and previous stats
+        $newBestAccuracy = false;
+        $newBestTime = false;
+        $previousAccuracy = null;
+        $previousTimeMs = null;
+        $previousFormattedTime = null;
+
         // Save individual timed attempt
         TimedAttempt::create([
             'user_id' => $user->id,
@@ -158,16 +165,26 @@ class TimedController extends Controller
                 'category_id' => $categoryId,
                 'direction' => $direction,
             ]);
+            $newBestAccuracy = true;
+            $newBestTime = true;
             $shouldUpdate = true;
-        } elseif ($accuracy > $existing->best_accuracy) {
-            $shouldUpdate = true;
-        } elseif ($accuracy === $existing->best_accuracy && $timeMs < $existing->best_time_ms) {
-            $shouldUpdate = true;
+        } else {
+            $previousAccuracy = $existing->best_accuracy;
+            $previousTimeMs = $existing->best_time_ms;
+
+            if ($accuracy > $existing->best_accuracy) {
+                $newBestAccuracy = true;
+                $newBestTime = true;
+                $shouldUpdate = true;
+            } elseif ($accuracy === $existing->best_accuracy && $timeMs < $existing->best_time_ms) {
+                $newBestTime = true;
+                $shouldUpdate = true;
+            }
         }
 
         if ($shouldUpdate) {
-            $existing->best_accuracy = $accuracy;
-            $existing->best_time_ms = $timeMs;
+            $existing->best_accuracy = max($accuracy, $existing->best_accuracy);
+            $existing->best_time_ms = min($timeMs, $existing->best_time_ms ?? PHP_INT_MAX);
         }
 
         $existing->last_practiced_at = now();
@@ -175,11 +192,21 @@ class TimedController extends Controller
 
         $formattedTime = sprintf(
             '%02d:%02d:%02d.%02d',
-            floor($timeMs / 3600000),                         // Hours
-            floor(($timeMs % 3600000) / 60000),               // Minutes
-            floor(($timeMs % 60000) / 1000),                  // Seconds
-            floor(($timeMs % 1000) / 10)                      // Milliseconds (2 digits)
+            floor($timeMs / 3600000),
+            floor(($timeMs % 3600000) / 60000),
+            floor(($timeMs % 60000) / 1000),
+            floor(($timeMs % 1000) / 10)
         );
+
+        if (!is_null($previousTimeMs)) {
+            $previousFormattedTime = sprintf(
+                '%02d:%02d:%02d.%02d',
+                floor($previousTimeMs / 3600000),
+                floor(($previousTimeMs % 3600000) / 60000),
+                floor(($previousTimeMs % 60000) / 1000),
+                floor(($previousTimeMs % 1000) / 10)
+            );
+        }
 
         // Clear session
         session()->forget([
@@ -202,7 +229,12 @@ class TimedController extends Controller
             'formattedTime',
             'language',
             'category',
-            'direction'
+            'direction',
+            'newBestAccuracy',
+            'newBestTime',
+            'previousAccuracy',
+            'previousTimeMs',
+            'previousFormattedTime'
         ));
     }
 }

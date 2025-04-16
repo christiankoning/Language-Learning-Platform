@@ -8,8 +8,36 @@
         <div class="bg-white rounded-lg shadow p-6 text-[#111827] text-left">
             <p class="text-lg mb-2">✅ Correct: <strong>{{ $correct }}</strong></p>
             <p class="text-lg mb-2">❌ Missed: <strong>{{ $missed }}</strong></p>
-            <p class="text-lg mb-2">📊 Accuracy: <strong>{{ $accuracy }}%</strong></p>
-            <p class="text-lg">⏱️ Time: <strong>{{ $formattedTime }}</strong></p>
+
+            <p class="text-lg mb-2">
+                📊 Accuracy:
+                <strong>{{ $accuracy }}%</strong>
+                @if (!is_null($previousAccuracy))
+                    <span class="text-sm text-gray-500 ml-2">(Previous: {{ $previousAccuracy }}%)</span>
+                @endif
+            </p>
+
+            <p class="text-lg">
+                ⏱️ Time:
+                <strong>{{ $formattedTime }}</strong>
+                @if (!is_null($previousFormattedTime))
+                    <span class="text-sm text-gray-500 ml-2">(Previous: {{ $previousFormattedTime }})</span>
+                @endif
+            </p>
+
+            @if ($newBestAccuracy && $newBestTime)
+                <div class="mt-6 p-4 bg-green-100 border border-green-300 text-green-800 rounded font-semibold text-center">
+                    🎉 New Best Accuracy & Fastest Time!
+                </div>
+            @elseif ($newBestAccuracy)
+                <div class="mt-6 p-4 bg-blue-100 border border-blue-300 text-blue-800 rounded font-semibold text-center">
+                    ✅ New Best Accuracy!
+                </div>
+            @elseif ($newBestTime)
+                <div class="mt-6 p-4 bg-yellow-100 border border-yellow-300 text-yellow-800 rounded font-semibold text-center">
+                    ⏱️ New Fastest Time!
+                </div>
+            @endif
         </div>
 
         <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
