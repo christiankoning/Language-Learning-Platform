@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Item;
 use App\Models\Language;
+use App\Models\PracticeLog;
 use Illuminate\Http\Request;
 
 class PracticeController extends Controller
@@ -143,26 +144,16 @@ class PracticeController extends Controller
 
         $accuracy = $totalItems > 0 ? round(($correct / $totalItems) * 100) : 0;
 
-        // Group incorrect items and prepare display
+        // Group incorrect items
         $incorrectCounts = [];
         foreach ($incorrect as $item) {
             $item = (object) $item;
             $id = $item->id;
-
             $extra = !empty($item->extra_data) ? json_decode($item->extra_data, true) : [];
 
-            if ($direction === 'recall') {
-                $correctDisplay = $item->answer;
-                if (!empty($item->romaji)) {
-                    $correctDisplay .= ' (' . $item->romaji . ')';
-                }
-            } else {
-                $answers = [$item->answer];
-                if (!empty($extra['alt_answers'])) {
-                    $answers = array_merge($answers, $extra['alt_answers']);
-                }
-                $correctDisplay = implode(' / ', $answers);
-            }
+            $correctDisplay = $direction === 'recall'
+                ? $item->answer . (!empty($item->romaji) ? " ({$item->romaji})" : '')
+                : implode(' / ', array_merge([$item->answer], $extra['alt_answers'] ?? []));
 
             if (!isset($incorrectCounts[$id])) {
                 $incorrectCounts[$id] = [
@@ -175,36 +166,41 @@ class PracticeController extends Controller
             }
         }
 
-        // Group skipped items (deduplicated by ID)
+        // Group skipped items
         $skippedItems = [];
         foreach ($skipped as $item) {
             $item = (object) $item;
-            $id = $item->id;
-
             $extra = !empty($item->extra_data) ? json_decode($item->extra_data, true) : [];
 
-            if ($direction === 'recall') {
-                $correctDisplay = $item->answer;
-                if (!empty($item->romaji)) {
-                    $correctDisplay .= ' (' . $item->romaji . ')';
-                }
-            } else {
-                $answers = [$item->answer];
-                if (!empty($extra['alt_answers'])) {
-                    $answers = array_merge($answers, $extra['alt_answers']);
-                }
-                $correctDisplay = implode(' / ', $answers);
-            }
+            $item->correct_display = $direction === 'recall'
+                ? $item->answer . (!empty($item->romaji) ? " ({$item->romaji})" : '')
+                : implode(' / ', array_merge([$item->answer], $extra['alt_answers'] ?? []));
 
-            $item->correct_display = $correctDisplay;
-            $skippedItems[$id] = $item;
+            $skippedItems[$item->id] = $item;
         }
 
+        // Save to database
+        $user = auth()->user();
         $languageSlug = session('practice.language_slug');
         $categorySlug = session('practice.category_slug');
         $direction = session('practice.direction');
 
-        // clear the session
+        $language = Language::where('slug', $languageSlug)->first();
+        $category = Category::where('slug', $categorySlug)->first();
+
+        if ($user && $language && $category) {
+            PracticeLog::create([
+                'user_id' => $user->id,
+                'language_id' => $language->id,
+                'category_id' => $category->id,
+                'direction' => $direction,
+                'correct' => $correct,
+                'missed' => $missed,
+                'accuracy' => $accuracy,
+            ]);
+        }
+
+        // Clear the session
         session()->forget([
             'practice.items',
             'practice.original_items',
