@@ -51,7 +51,10 @@
                                                         <div class="text-xs uppercase font-semibold text-gray-700">{{ ucfirst($direction) }}</div>
                                                         <div class="text-sm">Best Accuracy: {{ $progress->best_accuracy }}%</div>
                                                         <div class="text-sm">Best Time: {{ number_format($progress->best_time_ms / 1000, 2) }} sec</div>
-                                                        <div class="text-sm">Last Practiced: {{ optional($progress->last_practiced_at)->diffForHumans() ?? 'N/A' }}</div>
+                                                        <div class="text-sm">
+                                                            Last Practiced:
+                                                            {{ $progress->last_practiced_at ? \Carbon\Carbon::parse($progress->last_practiced_at)->diffForHumans() : 'N/A' }}
+                                                        </div>
                                                     </div>
                                                 @endforeach
                                             @endif
