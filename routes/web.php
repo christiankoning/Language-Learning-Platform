@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PracticeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TimedController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -54,5 +55,25 @@ Route::post('/practice/skip', [PracticeController::class, 'skip'])
 Route::get('/practice/results', [PracticeController::class, 'results'])
     ->middleware(['auth', 'verified'])
     ->name('practice.results');
+
+Route::get('/languages/{language:slug}/{category:slug}/{direction}/timed', [TimedController::class, 'start'])
+    ->middleware(['auth', 'verified'])
+    ->name('timed.start');
+
+Route::get('/timed', [TimedController::class, 'show'])
+    ->middleware(['auth', 'verified'])
+    ->name('timed.show');
+
+Route::post('/timed/answer', [TimedController::class, 'submit'])
+    ->middleware(['auth', 'verified'])
+    ->name('timed.submit');
+
+Route::post('/timed/skip', [TimedController::class, 'skip'])
+    ->middleware(['auth', 'verified'])
+    ->name('timed.skip');
+
+Route::get('/timed/results', [TimedController::class, 'results'])
+    ->middleware(['auth', 'verified'])
+    ->name('timed.results');
 
 require __DIR__.'/auth.php';

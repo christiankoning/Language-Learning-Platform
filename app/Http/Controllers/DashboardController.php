@@ -36,7 +36,22 @@ class DashboardController extends Controller
                 $progress = CategoryUserProgress::where('user_id', $userId)
                     ->where('category_id', $category->id)
                     ->get()
-                    ->keyBy('direction'); // So we can access progress by direction
+                    ->keyBy('direction');
+
+                // Add formatted time string for each progress record
+                $progress->transform(function ($record) {
+                    $ms = $record->best_time_ms ?? 0;
+
+                    $record->formatted_best_time = sprintf(
+                        '%02d:%02d:%02d.%02d',
+                        floor($ms / 3600000),
+                        floor(($ms % 3600000) / 60000),
+                        floor(($ms % 60000) / 1000),
+                        floor(($ms % 1000) / 10)
+                    );
+
+                    return $record;
+                });
 
                 $category->progress = $progress;
 
