@@ -50,13 +50,12 @@
             </div>
         </div>
     </section>
-
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const input = document.getElementById('answer');
             const form = document.getElementById('answer-form');
             const timer = document.getElementById('timer');
-            const startTime = Date.now();
+            const serverStartTime = Date.parse("{{ $startTime }}");
 
             input.focus();
 
@@ -68,11 +67,10 @@
             });
 
             function formatTime(ms) {
-                let totalSeconds = Math.floor(ms / 1000);
-                let hours = Math.floor(totalSeconds / 3600);
-                let minutes = Math.floor((totalSeconds % 3600) / 60);
-                let seconds = totalSeconds % 60;
-                let milliseconds = Math.floor((ms % 1000) / 10);
+                const hours = Math.floor(ms / 3600000);
+                const minutes = Math.floor((ms % 3600000) / 60000);
+                const seconds = Math.floor((ms % 60000) / 1000);
+                const milliseconds = Math.floor((ms % 1000) / 10);
 
                 return (
                     String(hours).padStart(2, '0') + ':' +
@@ -82,10 +80,14 @@
                 );
             }
 
-            setInterval(() => {
-                const elapsedMs = Date.now() - startTime;
+            // Start ticking immediately
+            const updateTimer = () => {
+                const elapsedMs = Date.now() - serverStartTime;
                 timer.innerText = formatTime(elapsedMs);
-            }, 100);
+            };
+
+            updateTimer();
+            setInterval(updateTimer, 100);
         });
     </script>
 @endsection

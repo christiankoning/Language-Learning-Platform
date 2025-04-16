@@ -33,7 +33,7 @@ class TimedController extends Controller
             'timed.original_count' => $items->count(),
             'timed.current' => 0,
             'timed.correct' => 0,
-            'timed.start_time' => now(),
+            'timed.start_time' => now()->toISOString(),
             'timed.skipped' => [],
             'timed.language_id' => $language->id,
             'timed.category_id' => $category->id,
@@ -53,9 +53,11 @@ class TimedController extends Controller
         }
 
         $item = (object) $items[$current];
+        $startTime = session('timed.start_time');
 
-        return view('timed.question', compact('item'));
+        return view('timed.question', compact('item', 'startTime'));
     }
+
 
     public function submit(Request $request)
     {
@@ -203,5 +205,4 @@ class TimedController extends Controller
             'direction'
         ));
     }
-
 }
