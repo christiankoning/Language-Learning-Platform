@@ -89,6 +89,24 @@ class TimedController extends Controller
         return redirect()->route('timed.show');
     }
 
+    public function skip()
+    {
+        $current = session('timed.current', 0);
+        $skipped = session('timed.skipped', []);
+        $items = session('timed.items');
+
+        if (isset($items[$current])) {
+            $skipped[] = (object) $items[$current];
+        }
+
+        session([
+            'timed.skipped' => $skipped,
+            'timed.current' => $current + 1,
+        ]);
+
+        return redirect()->route('timed.show');
+    }
+
     public function results()
     {
         $user = Auth::user();
@@ -99,7 +117,11 @@ class TimedController extends Controller
         $accuracy = $total > 0 ? round(($correct / $total) * 100) : 0;
 
         $startTime = Carbon::parse(session('timed.start_time'));
-        $timeMs = now()->diffInMilliseconds($startTime);
+        $endTime = now();
+
+        $timeMs = $startTime->lessThanOrEqualTo($endTime)
+            ? $startTime->diffInMilliseconds($endTime)
+            : 0;
 
         $languageId = session('timed.language_id');
         $categoryId = session('timed.category_id');
@@ -116,7 +138,7 @@ class TimedController extends Controller
             'correct' => $correct,
             'missed' => $missed,
             'time_ms' => $timeMs,
-            'finished_at' => now(),
+            'finished_at' => $endTime,
         ]);
 
         // Update best progress (only if better)
@@ -149,6 +171,14 @@ class TimedController extends Controller
         $existing->last_practiced_at = now();
         $existing->save();
 
+        $formattedTime = sprintf(
+            '%02d:%02d:%02d.%02d',
+            floor($timeMs / 3600000),                         // Hours
+            floor(($timeMs % 3600000) / 60000),               // Minutes
+            floor(($timeMs % 60000) / 1000),                  // Seconds
+            floor(($timeMs % 1000) / 10)                      // Milliseconds (2 digits)
+        );
+
         // Clear session
         session()->forget([
             'timed.items',
@@ -167,9 +197,11 @@ class TimedController extends Controller
             'missed',
             'accuracy',
             'timeMs',
+            'formattedTime',
             'language',
             'category',
             'direction'
         ));
     }
+
 }
