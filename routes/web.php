@@ -68,6 +68,10 @@ Route::post('/timed/answer', [TimedController::class, 'submit'])
     ->middleware(['auth', 'verified'])
     ->name('timed.submit');
 
+Route::post('/timed/skip', [TimedController::class, 'skip'])
+    ->middleware(['auth', 'verified'])
+    ->name('timed.skip');
+
 Route::get('/timed/results', [TimedController::class, 'results'])
     ->middleware(['auth', 'verified'])
     ->name('timed.results');
