@@ -27,6 +27,18 @@ class CategoriesTableSeeder extends Seeder
             ['language_id' => $jp->id, 'name' => 'All Kana', 'slug' => 'all-kana'],
         ]);
 
+        $katakana = $jp->categories()->create([
+            'name' => 'Katakana',
+            'slug' => 'katakana',
+        ]);
+
+        $katakana->children()->createMany([
+            ['language_id' => $jp->id, 'name' => 'Main Kana', 'slug' => 'main-kana'],
+            ['language_id' => $jp->id, 'name' => 'Dakuten Kana', 'slug' => 'dakuten-kana'],
+            ['language_id' => $jp->id, 'name' => 'Combination Kana', 'slug' => 'combination-kana'],
+            ['language_id' => $jp->id, 'name' => 'All Kana', 'slug' => 'all-kana'],
+        ]);
+
         $jp->categories()->createMany([
             ['name' => 'Core Particles', 'slug' => 'core-particles'],
             ['name' => 'Additional Particles', 'slug' => 'additional-particles'],
