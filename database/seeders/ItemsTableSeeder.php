@@ -450,7 +450,7 @@ class ItemsTableSeeder extends Seeder
         ]);
 
         // All Kana
-        $this->seedCategory('katakana-dakuten-kana', 'Dakuten Kana', [
+        $this->seedCategory('katakana-all-kana', 'All Kana', [
             ['kana' => 'ア', 'romaji' => 'a', 'meanings' => ['a']],
             ['kana' => 'イ', 'romaji' => 'i', 'meanings' => ['i']],
             ['kana' => 'ウ', 'romaji' => 'u', 'meanings' => ['u']],
