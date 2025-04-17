@@ -75,7 +75,7 @@ class ItemsTableSeeder extends Seeder
         ]);
 
         // Dakuten Kana
-        $this->seedCategory('hiragana-main-kana', 'Dakuten Kana', [
+        $this->seedCategory('hiragana-dakuten-kana', 'Dakuten Kana', [
             ['kana' => 'が', 'romaji' => 'ga', 'meanings' => ['ga']],
             ['kana' => 'ぎ', 'romaji' => 'gi', 'meanings' => ['gi']],
             ['kana' => 'ぐ', 'romaji' => 'gu', 'meanings' => ['gu']],
@@ -108,7 +108,7 @@ class ItemsTableSeeder extends Seeder
         ]);
 
         // Combination Kana
-        $this->seedCategory('hiragana-main-kana', 'Combination Kana', [
+        $this->seedCategory('hiragana-combination-kana', 'Combination Kana', [
             ['kana' => 'きゃ', 'romaji' => 'kya', 'meanings' => ['kya']],
             ['kana' => 'きゅ', 'romaji' => 'kyu', 'meanings' => ['kyu']],
             ['kana' => 'きょ', 'romaji' => 'kyo', 'meanings' => ['kyo']],
@@ -159,7 +159,7 @@ class ItemsTableSeeder extends Seeder
         ]);
 
         // All Kana
-        $this->seedCategory('hiragana-main-kana', 'All Kana', [
+        $this->seedCategory('hiragana-all-kana', 'All Kana', [
             ['kana' => 'あ', 'romaji' => 'a', 'meanings' => ['a']],
             ['kana' => 'い', 'romaji' => 'i', 'meanings' => ['i']],
             ['kana' => 'う', 'romaji' => 'u', 'meanings' => ['u']],
@@ -267,6 +267,324 @@ class ItemsTableSeeder extends Seeder
             ['kana' => 'ぴゃ', 'romaji' => 'pya', 'meanings' => ['pya']],
             ['kana' => 'ぴゅ', 'romaji' => 'pyu', 'meanings' => ['pyu']],
             ['kana' => 'ぴょ', 'romaji' => 'pyo', 'meanings' => ['pyo']],
+        ]);
+
+        // Katakana
+        //Main Katakana
+        $this->seedCategory('katakana-main-kana', 'Main Kana', [
+            ['kana' => 'ア', 'romaji' => 'a', 'meanings' => ['a']],
+            ['kana' => 'イ', 'romaji' => 'i', 'meanings' => ['i']],
+            ['kana' => 'ウ', 'romaji' => 'u', 'meanings' => ['u']],
+            ['kana' => 'エ', 'romaji' => 'e', 'meanings' => ['e']],
+            ['kana' => 'オ', 'romaji' => 'o', 'meanings' => ['o']],
+
+            ['kana' => 'カ', 'romaji' => 'ka', 'meanings' => ['ka']],
+            ['kana' => 'キ', 'romaji' => 'ki', 'meanings' => ['ki']],
+            ['kana' => 'ク', 'romaji' => 'ku', 'meanings' => ['ku']],
+            ['kana' => 'ケ', 'romaji' => 'ke', 'meanings' => ['ke']],
+            ['kana' => 'コ', 'romaji' => 'ko', 'meanings' => ['ko']],
+
+            ['kana' => 'サ', 'romaji' => 'sa', 'meanings' => ['sa']],
+            ['kana' => 'シ', 'romaji' => 'shi', 'meanings' => ['shi']],
+            ['kana' => 'ス', 'romaji' => 'su', 'meanings' => ['su']],
+            ['kana' => 'セ', 'romaji' => 'se', 'meanings' => ['se']],
+            ['kana' => 'ソ', 'romaji' => 'so', 'meanings' => ['so']],
+
+            ['kana' => 'タ', 'romaji' => 'ta', 'meanings' => ['ta']],
+            ['kana' => 'チ', 'romaji' => 'chi', 'meanings' => ['chi']],
+            ['kana' => 'ツ', 'romaji' => 'tsu', 'meanings' => ['tsu']],
+            ['kana' => 'テ', 'romaji' => 'te', 'meanings' => ['te']],
+            ['kana' => 'ト', 'romaji' => 'to', 'meanings' => ['to']],
+
+            ['kana' => 'ナ', 'romaji' => 'na', 'meanings' => ['na']],
+            ['kana' => 'ニ', 'romaji' => 'ni', 'meanings' => ['ni']],
+            ['kana' => 'ヌ', 'romaji' => 'nu', 'meanings' => ['nu']],
+            ['kana' => 'ネ', 'romaji' => 'ne', 'meanings' => ['ne']],
+            ['kana' => 'ノ', 'romaji' => 'no', 'meanings' => ['no']],
+
+            ['kana' => 'ハ', 'romaji' => 'ha', 'meanings' => ['ha']],
+            ['kana' => 'ヒ', 'romaji' => 'hi', 'meanings' => ['hi']],
+            ['kana' => 'フ', 'romaji' => 'fu', 'meanings' => ['fu']],
+            ['kana' => 'ヘ', 'romaji' => 'he', 'meanings' => ['he']],
+            ['kana' => 'ホ', 'romaji' => 'ho', 'meanings' => ['ho']],
+
+            ['kana' => 'マ', 'romaji' => 'ma', 'meanings' => ['ma']],
+            ['kana' => 'ミ', 'romaji' => 'mi', 'meanings' => ['mi']],
+            ['kana' => 'ム', 'romaji' => 'mu', 'meanings' => ['mu']],
+            ['kana' => 'メ', 'romaji' => 'me', 'meanings' => ['me']],
+            ['kana' => 'モ', 'romaji' => 'mo', 'meanings' => ['mo']],
+
+            ['kana' => 'ヤ', 'romaji' => 'ya', 'meanings' => ['ya']],
+            ['kana' => 'ユ', 'romaji' => 'yu', 'meanings' => ['yu']],
+            ['kana' => 'ヨ', 'romaji' => 'yo', 'meanings' => ['yo']],
+
+            ['kana' => 'ラ', 'romaji' => 'ra', 'meanings' => ['ra']],
+            ['kana' => 'リ', 'romaji' => 'ri', 'meanings' => ['ri']],
+            ['kana' => 'ル', 'romaji' => 'ru', 'meanings' => ['ru']],
+            ['kana' => 'レ', 'romaji' => 're', 'meanings' => ['re']],
+            ['kana' => 'ロ', 'romaji' => 'ro', 'meanings' => ['ro']],
+
+            ['kana' => 'ワ', 'romaji' => 'wa', 'meanings' => ['wa']],
+            ['kana' => 'ヲ', 'romaji' => 'wo', 'meanings' => ['wo']],
+            ['kana' => 'ン', 'romaji' => 'n', 'meanings' => ['n']],
+        ]);
+
+        // Dakuten Kana
+        $this->seedCategory('katakana-dakuten-kana', 'Dakuten Kana', [
+            ['kana' => 'ガ', 'romaji' => 'ga', 'meanings' => ['ga']],
+            ['kana' => 'ギ', 'romaji' => 'gi', 'meanings' => ['gi']],
+            ['kana' => 'グ', 'romaji' => 'gu', 'meanings' => ['gu']],
+            ['kana' => 'ゲ', 'romaji' => 'ge', 'meanings' => ['ge']],
+            ['kana' => 'ゴ', 'romaji' => 'go', 'meanings' => ['go']],
+
+            ['kana' => 'ザ', 'romaji' => 'za', 'meanings' => ['za']],
+            ['kana' => 'ジ', 'romaji' => 'ji', 'meanings' => ['ji']],
+            ['kana' => 'ズ', 'romaji' => 'zu', 'meanings' => ['zu']],
+            ['kana' => 'ゼ', 'romaji' => 'ze', 'meanings' => ['ze']],
+            ['kana' => 'ゾ', 'romaji' => 'zo', 'meanings' => ['zo']],
+
+            ['kana' => 'ダ', 'romaji' => 'da', 'meanings' => ['da']],
+            ['kana' => 'ヂ', 'romaji' => 'ji', 'meanings' => ['ji']],
+            ['kana' => 'ヅ', 'romaji' => 'zu', 'meanings' => ['zu']],
+            ['kana' => 'デ', 'romaji' => 'de', 'meanings' => ['de']],
+            ['kana' => 'ド', 'romaji' => 'do', 'meanings' => ['do']],
+
+            ['kana' => 'バ', 'romaji' => 'ba', 'meanings' => ['ba']],
+            ['kana' => 'ビ', 'romaji' => 'bi', 'meanings' => ['bi']],
+            ['kana' => 'ブ', 'romaji' => 'bu', 'meanings' => ['bu']],
+            ['kana' => 'ベ', 'romaji' => 'be', 'meanings' => ['be']],
+            ['kana' => 'ボ', 'romaji' => 'bo', 'meanings' => ['bo']],
+
+            ['kana' => 'パ', 'romaji' => 'pa', 'meanings' => ['pa']],
+            ['kana' => 'ピ', 'romaji' => 'pi', 'meanings' => ['pi']],
+            ['kana' => 'プ', 'romaji' => 'pu', 'meanings' => ['pu']],
+            ['kana' => 'ペ', 'romaji' => 'pe', 'meanings' => ['pe']],
+            ['kana' => 'ポ', 'romaji' => 'po', 'meanings' => ['po']],
+
+            ['kana' => 'ヴ', 'romaji' => 'vu', 'meanings' => ['vu']],
+        ]);
+
+        // Combination Kana
+        $this->seedCategory('katakana-combination-kana', 'Combination Kana', [
+            ['kana' => 'キャ', 'romaji' => 'kya', 'meanings' => ['kya']],
+            ['kana' => 'キュ', 'romaji' => 'kyu', 'meanings' => ['kyu']],
+            ['kana' => 'キョ', 'romaji' => 'kyo', 'meanings' => ['kyo']],
+
+            ['kana' => 'シャ', 'romaji' => 'sha', 'meanings' => ['sha']],
+            ['kana' => 'シュ', 'romaji' => 'shu', 'meanings' => ['shu']],
+            ['kana' => 'ショ', 'romaji' => 'sho', 'meanings' => ['sho']],
+
+            ['kana' => 'チャ', 'romaji' => 'cha', 'meanings' => ['cha']],
+            ['kana' => 'チュ', 'romaji' => 'chu', 'meanings' => ['chu']],
+            ['kana' => 'チョ', 'romaji' => 'cho', 'meanings' => ['cho']],
+
+            ['kana' => 'ニャ', 'romaji' => 'nya', 'meanings' => ['nya']],
+            ['kana' => 'ニュ', 'romaji' => 'nyu', 'meanings' => ['nyu']],
+            ['kana' => 'ニョ', 'romaji' => 'nyo', 'meanings' => ['nyo']],
+
+            ['kana' => 'ヒャ', 'romaji' => 'hya', 'meanings' => ['hya']],
+            ['kana' => 'ヒュ', 'romaji' => 'hyu', 'meanings' => ['hyu']],
+            ['kana' => 'ヒョ', 'romaji' => 'hyo', 'meanings' => ['hyo']],
+
+            ['kana' => 'ミャ', 'romaji' => 'mya', 'meanings' => ['mya']],
+            ['kana' => 'ミュ', 'romaji' => 'myu', 'meanings' => ['myu']],
+            ['kana' => 'ミョ', 'romaji' => 'myo', 'meanings' => ['myo']],
+
+            ['kana' => 'リャ', 'romaji' => 'rya', 'meanings' => ['rya']],
+            ['kana' => 'リュ', 'romaji' => 'ryu', 'meanings' => ['ryu']],
+            ['kana' => 'リョ', 'romaji' => 'ryo', 'meanings' => ['ryo']],
+
+            ['kana' => 'ギャ', 'romaji' => 'gya', 'meanings' => ['gya']],
+            ['kana' => 'ギュ', 'romaji' => 'gyu', 'meanings' => ['gyu']],
+            ['kana' => 'ギョ', 'romaji' => 'gyo', 'meanings' => ['gyo']],
+
+            ['kana' => 'ジャ', 'romaji' => 'ja', 'meanings' => ['ja']],
+            ['kana' => 'ジュ', 'romaji' => 'ju', 'meanings' => ['ju']],
+            ['kana' => 'ジョ', 'romaji' => 'jo', 'meanings' => ['jo']],
+
+            ['kana' => 'ヂャ', 'romaji' => 'dya', 'meanings' => ['dya']],
+            ['kana' => 'ヂュ', 'romaji' => 'dyu', 'meanings' => ['dyu']],
+            ['kana' => 'ヂョ', 'romaji' => 'dyo', 'meanings' => ['dyo']],
+
+            ['kana' => 'ビャ', 'romaji' => 'bya', 'meanings' => ['bya']],
+            ['kana' => 'ビュ', 'romaji' => 'byu', 'meanings' => ['byu']],
+            ['kana' => 'ビョ', 'romaji' => 'byo', 'meanings' => ['byo']],
+
+            ['kana' => 'ピャ', 'romaji' => 'pya', 'meanings' => ['pya']],
+            ['kana' => 'ピュ', 'romaji' => 'pyu', 'meanings' => ['pyu']],
+            ['kana' => 'ピョ', 'romaji' => 'pyo', 'meanings' => ['pyo']],
+
+            ['kana' => 'ヴァ', 'romaji' => 'va', 'meanings' => ['va']],
+            ['kana' => 'ヴィ', 'romaji' => 'vi', 'meanings' => ['vi']],
+            ['kana' => 'ヴェ', 'romaji' => 've', 'meanings' => ['ve']],
+            ['kana' => 'ヴォ', 'romaji' => 'vo', 'meanings' => ['vo']],
+            ['kana' => 'ヴュ', 'romaji' => 'vyu', 'meanings' => ['vyu']],
+
+            ['kana' => 'ウィ', 'romaji' => 'wi', 'meanings' => ['wi']],
+            ['kana' => 'ウェ', 'romaji' => 'we', 'meanings' => ['we']],
+            ['kana' => 'ウォ', 'romaji' => 'wo', 'meanings' => ['wo']],
+
+            ['kana' => 'ファ', 'romaji' => 'fa', 'meanings' => ['fa']],
+            ['kana' => 'フィ', 'romaji' => 'fi', 'meanings' => ['fi']],
+            ['kana' => 'フェ', 'romaji' => 'fe', 'meanings' => ['fe']],
+            ['kana' => 'フォ', 'romaji' => 'fo', 'meanings' => ['fo']],
+            ['kana' => 'フュ', 'romaji' => 'fyu', 'meanings' => ['fyu']],
+
+            ['kana' => 'ツァ', 'romaji' => 'tsa', 'meanings' => ['tsa']],
+            ['kana' => 'ツィ', 'romaji' => 'tsi', 'meanings' => ['tsi']],
+            ['kana' => 'ツェ', 'romaji' => 'tse', 'meanings' => ['tse']],
+            ['kana' => 'ツォ', 'romaji' => 'tso', 'meanings' => ['tso']],
+
+            ['kana' => 'シェ', 'romaji' => 'she', 'meanings' => ['she']],
+
+            ['kana' => 'ジェ', 'romaji' => 'je', 'meanings' => ['je']],
+
+            ['kana' => 'チェ', 'romaji' => 'che', 'meanings' => ['che']],
+
+            ['kana' => 'ティ', 'romaji' => 'ti', 'meanings' => ['ti']],
+            ['kana' => 'ディ', 'romaji' => 'di', 'meanings' => ['di']],
+            ['kana' => 'デュ', 'romaji' => 'dyu', 'meanings' => ['dyu']],
+            ['kana' => 'トゥ', 'romaji' => 'tu', 'meanings' => ['tu']],
+            ['kana' => 'ドゥ', 'romaji' => 'du', 'meanings' => ['du']],
+            ['kana' => 'イェ', 'romaji' => 'ye', 'meanings' => ['ye']],
+        ]);
+
+        // All Kana
+        $this->seedCategory('katakana-all-kana', 'All Kana', [
+            ['kana' => 'ア', 'romaji' => 'a', 'meanings' => ['a']],
+            ['kana' => 'イ', 'romaji' => 'i', 'meanings' => ['i']],
+            ['kana' => 'ウ', 'romaji' => 'u', 'meanings' => ['u']],
+            ['kana' => 'エ', 'romaji' => 'e', 'meanings' => ['e']],
+            ['kana' => 'オ', 'romaji' => 'o', 'meanings' => ['o']],
+            ['kana' => 'カ', 'romaji' => 'ka', 'meanings' => ['ka']],
+            ['kana' => 'キ', 'romaji' => 'ki', 'meanings' => ['ki']],
+            ['kana' => 'ク', 'romaji' => 'ku', 'meanings' => ['ku']],
+            ['kana' => 'ケ', 'romaji' => 'ke', 'meanings' => ['ke']],
+            ['kana' => 'コ', 'romaji' => 'ko', 'meanings' => ['ko']],
+            ['kana' => 'サ', 'romaji' => 'sa', 'meanings' => ['sa']],
+            ['kana' => 'シ', 'romaji' => 'shi', 'meanings' => ['shi']],
+            ['kana' => 'ス', 'romaji' => 'su', 'meanings' => ['su']],
+            ['kana' => 'セ', 'romaji' => 'se', 'meanings' => ['se']],
+            ['kana' => 'ソ', 'romaji' => 'so', 'meanings' => ['so']],
+            ['kana' => 'タ', 'romaji' => 'ta', 'meanings' => ['ta']],
+            ['kana' => 'チ', 'romaji' => 'chi', 'meanings' => ['chi']],
+            ['kana' => 'ツ', 'romaji' => 'tsu', 'meanings' => ['tsu']],
+            ['kana' => 'テ', 'romaji' => 'te', 'meanings' => ['te']],
+            ['kana' => 'ト', 'romaji' => 'to', 'meanings' => ['to']],
+            ['kana' => 'ナ', 'romaji' => 'na', 'meanings' => ['na']],
+            ['kana' => 'ニ', 'romaji' => 'ni', 'meanings' => ['ni']],
+            ['kana' => 'ヌ', 'romaji' => 'nu', 'meanings' => ['nu']],
+            ['kana' => 'ネ', 'romaji' => 'ne', 'meanings' => ['ne']],
+            ['kana' => 'ノ', 'romaji' => 'no', 'meanings' => ['no']],
+            ['kana' => 'ハ', 'romaji' => 'ha', 'meanings' => ['ha']],
+            ['kana' => 'ヒ', 'romaji' => 'hi', 'meanings' => ['hi']],
+            ['kana' => 'フ', 'romaji' => 'fu', 'meanings' => ['fu']],
+            ['kana' => 'ヘ', 'romaji' => 'he', 'meanings' => ['he']],
+            ['kana' => 'ホ', 'romaji' => 'ho', 'meanings' => ['ho']],
+            ['kana' => 'マ', 'romaji' => 'ma', 'meanings' => ['ma']],
+            ['kana' => 'ミ', 'romaji' => 'mi', 'meanings' => ['mi']],
+            ['kana' => 'ム', 'romaji' => 'mu', 'meanings' => ['mu']],
+            ['kana' => 'メ', 'romaji' => 'me', 'meanings' => ['me']],
+            ['kana' => 'モ', 'romaji' => 'mo', 'meanings' => ['mo']],
+            ['kana' => 'ヤ', 'romaji' => 'ya', 'meanings' => ['ya']],
+            ['kana' => 'ユ', 'romaji' => 'yu', 'meanings' => ['yu']],
+            ['kana' => 'ヨ', 'romaji' => 'yo', 'meanings' => ['yo']],
+            ['kana' => 'ラ', 'romaji' => 'ra', 'meanings' => ['ra']],
+            ['kana' => 'リ', 'romaji' => 'ri', 'meanings' => ['ri']],
+            ['kana' => 'ル', 'romaji' => 'ru', 'meanings' => ['ru']],
+            ['kana' => 'レ', 'romaji' => 're', 'meanings' => ['re']],
+            ['kana' => 'ロ', 'romaji' => 'ro', 'meanings' => ['ro']],
+            ['kana' => 'ワ', 'romaji' => 'wa', 'meanings' => ['wa']],
+            ['kana' => 'ヲ', 'romaji' => 'wo', 'meanings' => ['wo']],
+            ['kana' => 'ン', 'romaji' => 'n', 'meanings' => ['n']],
+            ['kana' => 'ガ', 'romaji' => 'ga', 'meanings' => ['ga']],
+            ['kana' => 'ギ', 'romaji' => 'gi', 'meanings' => ['gi']],
+            ['kana' => 'グ', 'romaji' => 'gu', 'meanings' => ['gu']],
+            ['kana' => 'ゲ', 'romaji' => 'ge', 'meanings' => ['ge']],
+            ['kana' => 'ゴ', 'romaji' => 'go', 'meanings' => ['go']],
+            ['kana' => 'ザ', 'romaji' => 'za', 'meanings' => ['za']],
+            ['kana' => 'ジ', 'romaji' => 'ji', 'meanings' => ['ji']],
+            ['kana' => 'ズ', 'romaji' => 'zu', 'meanings' => ['zu']],
+            ['kana' => 'ゼ', 'romaji' => 'ze', 'meanings' => ['ze']],
+            ['kana' => 'ゾ', 'romaji' => 'zo', 'meanings' => ['zo']],
+            ['kana' => 'ダ', 'romaji' => 'da', 'meanings' => ['da']],
+            ['kana' => 'ヂ', 'romaji' => 'ji', 'meanings' => ['ji']],
+            ['kana' => 'ヅ', 'romaji' => 'zu', 'meanings' => ['zu']],
+            ['kana' => 'デ', 'romaji' => 'de', 'meanings' => ['de']],
+            ['kana' => 'ド', 'romaji' => 'do', 'meanings' => ['do']],
+            ['kana' => 'バ', 'romaji' => 'ba', 'meanings' => ['ba']],
+            ['kana' => 'ビ', 'romaji' => 'bi', 'meanings' => ['bi']],
+            ['kana' => 'ブ', 'romaji' => 'bu', 'meanings' => ['bu']],
+            ['kana' => 'ベ', 'romaji' => 'be', 'meanings' => ['be']],
+            ['kana' => 'ボ', 'romaji' => 'bo', 'meanings' => ['bo']],
+            ['kana' => 'パ', 'romaji' => 'pa', 'meanings' => ['pa']],
+            ['kana' => 'ピ', 'romaji' => 'pi', 'meanings' => ['pi']],
+            ['kana' => 'プ', 'romaji' => 'pu', 'meanings' => ['pu']],
+            ['kana' => 'ペ', 'romaji' => 'pe', 'meanings' => ['pe']],
+            ['kana' => 'ポ', 'romaji' => 'po', 'meanings' => ['po']],
+            ['kana' => 'ヴ', 'romaji' => 'vu', 'meanings' => ['vu']],
+            ['kana' => 'キャ', 'romaji' => 'kya', 'meanings' => ['kya']],
+            ['kana' => 'キュ', 'romaji' => 'kyu', 'meanings' => ['kyu']],
+            ['kana' => 'キョ', 'romaji' => 'kyo', 'meanings' => ['kyo']],
+            ['kana' => 'シャ', 'romaji' => 'sha', 'meanings' => ['sha']],
+            ['kana' => 'シュ', 'romaji' => 'shu', 'meanings' => ['shu']],
+            ['kana' => 'ショ', 'romaji' => 'sho', 'meanings' => ['sho']],
+            ['kana' => 'チャ', 'romaji' => 'cha', 'meanings' => ['cha']],
+            ['kana' => 'チュ', 'romaji' => 'chu', 'meanings' => ['chu']],
+            ['kana' => 'チョ', 'romaji' => 'cho', 'meanings' => ['cho']],
+            ['kana' => 'ニャ', 'romaji' => 'nya', 'meanings' => ['nya']],
+            ['kana' => 'ニュ', 'romaji' => 'nyu', 'meanings' => ['nyu']],
+            ['kana' => 'ニョ', 'romaji' => 'nyo', 'meanings' => ['nyo']],
+            ['kana' => 'ヒャ', 'romaji' => 'hya', 'meanings' => ['hya']],
+            ['kana' => 'ヒュ', 'romaji' => 'hyu', 'meanings' => ['hyu']],
+            ['kana' => 'ヒョ', 'romaji' => 'hyo', 'meanings' => ['hyo']],
+            ['kana' => 'ミャ', 'romaji' => 'mya', 'meanings' => ['mya']],
+            ['kana' => 'ミュ', 'romaji' => 'myu', 'meanings' => ['myu']],
+            ['kana' => 'ミョ', 'romaji' => 'myo', 'meanings' => ['myo']],
+            ['kana' => 'リャ', 'romaji' => 'rya', 'meanings' => ['rya']],
+            ['kana' => 'リュ', 'romaji' => 'ryu', 'meanings' => ['ryu']],
+            ['kana' => 'リョ', 'romaji' => 'ryo', 'meanings' => ['ryo']],
+            ['kana' => 'ギャ', 'romaji' => 'gya', 'meanings' => ['gya']],
+            ['kana' => 'ギュ', 'romaji' => 'gyu', 'meanings' => ['gyu']],
+            ['kana' => 'ギョ', 'romaji' => 'gyo', 'meanings' => ['gyo']],
+            ['kana' => 'ジャ', 'romaji' => 'ja', 'meanings' => ['ja']],
+            ['kana' => 'ジュ', 'romaji' => 'ju', 'meanings' => ['ju']],
+            ['kana' => 'ジョ', 'romaji' => 'jo', 'meanings' => ['jo']],
+            ['kana' => 'ヂャ', 'romaji' => 'dya', 'meanings' => ['dya']],
+            ['kana' => 'ヂュ', 'romaji' => 'dyu', 'meanings' => ['dyu']],
+            ['kana' => 'ヂョ', 'romaji' => 'dyo', 'meanings' => ['dyo']],
+            ['kana' => 'ビャ', 'romaji' => 'bya', 'meanings' => ['bya']],
+            ['kana' => 'ビュ', 'romaji' => 'byu', 'meanings' => ['byu']],
+            ['kana' => 'ビョ', 'romaji' => 'byo', 'meanings' => ['byo']],
+            ['kana' => 'ピャ', 'romaji' => 'pya', 'meanings' => ['pya']],
+            ['kana' => 'ピュ', 'romaji' => 'pyu', 'meanings' => ['pyu']],
+            ['kana' => 'ピョ', 'romaji' => 'pyo', 'meanings' => ['pyo']],
+            ['kana' => 'ヴァ', 'romaji' => 'va', 'meanings' => ['va']],
+            ['kana' => 'ヴィ', 'romaji' => 'vi', 'meanings' => ['vi']],
+            ['kana' => 'ヴェ', 'romaji' => 've', 'meanings' => ['ve']],
+            ['kana' => 'ヴォ', 'romaji' => 'vo', 'meanings' => ['vo']],
+            ['kana' => 'ヴュ', 'romaji' => 'vyu', 'meanings' => ['vyu']],
+            ['kana' => 'ウィ', 'romaji' => 'wi', 'meanings' => ['wi']],
+            ['kana' => 'ウェ', 'romaji' => 'we', 'meanings' => ['we']],
+            ['kana' => 'ウォ', 'romaji' => 'wo', 'meanings' => ['wo']],
+            ['kana' => 'ファ', 'romaji' => 'fa', 'meanings' => ['fa']],
+            ['kana' => 'フィ', 'romaji' => 'fi', 'meanings' => ['fi']],
+            ['kana' => 'フェ', 'romaji' => 'fe', 'meanings' => ['fe']],
+            ['kana' => 'フォ', 'romaji' => 'fo', 'meanings' => ['fo']],
+            ['kana' => 'フュ', 'romaji' => 'fyu', 'meanings' => ['fyu']],
+            ['kana' => 'ツァ', 'romaji' => 'tsa', 'meanings' => ['tsa']],
+            ['kana' => 'ツィ', 'romaji' => 'tsi', 'meanings' => ['tsi']],
+            ['kana' => 'ツェ', 'romaji' => 'tse', 'meanings' => ['tse']],
+            ['kana' => 'ツォ', 'romaji' => 'tso', 'meanings' => ['tso']],
+            ['kana' => 'シェ', 'romaji' => 'she', 'meanings' => ['she']],
+            ['kana' => 'ジェ', 'romaji' => 'je', 'meanings' => ['je']],
+            ['kana' => 'チェ', 'romaji' => 'che', 'meanings' => ['che']],
+            ['kana' => 'ティ', 'romaji' => 'ti', 'meanings' => ['ti']],
+            ['kana' => 'ディ', 'romaji' => 'di', 'meanings' => ['di']],
+            ['kana' => 'デュ', 'romaji' => 'dyu', 'meanings' => ['dyu']],
+            ['kana' => 'トゥ', 'romaji' => 'tu', 'meanings' => ['tu']],
+            ['kana' => 'ドゥ', 'romaji' => 'du', 'meanings' => ['du']],
+            ['kana' => 'イェ', 'romaji' => 'ye', 'meanings' => ['ye']],
         ]);
 
         // Seed Core Particles
