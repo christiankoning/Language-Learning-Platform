@@ -763,7 +763,6 @@ class ItemsTableSeeder extends Seeder
         $recallAltAnswers = in_array($type, $kanaOnlyTypes)
             ? $altKana
             : array_merge($altKana, $altRomaji);
-
         $recallExtra = [];
 
         if (!empty($altPrompts)) {
