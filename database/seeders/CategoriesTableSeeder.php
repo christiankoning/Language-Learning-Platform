@@ -15,6 +15,18 @@ class CategoriesTableSeeder extends Seeder
     {
         $jp = Language::where('slug', 'japanese')->first();
 
+        $hiragana = $jp->categories()->create([
+            'name' => 'Hiragana',
+            'slug' => 'hiragana',
+        ]);
+
+        $hiragana->children()->createMany([
+            ['language_id' => $jp->id, 'name' => 'Main Kana', 'slug' => 'hiragana-main-kana'],
+            ['language_id' => $jp->id, 'name' => 'Dakuten Kana', 'slug' => 'hiragana-dakuten-kana'],
+            ['language_id' => $jp->id, 'name' => 'Combination Kana', 'slug' => 'hiragana-combination-kana'],
+            ['language_id' => $jp->id, 'name' => 'All Kana', 'slug' => 'hiragana-all-kana'],
+        ]);
+
         $jp->categories()->createMany([
             ['name' => 'Core Particles', 'slug' => 'core-particles'],
             ['name' => 'Additional Particles', 'slug' => 'additional-particles'],

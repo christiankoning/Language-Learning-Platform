@@ -73,7 +73,9 @@ class PracticeController extends Controller
         $submitted = strtolower($answer);
         $validAnswers = [strtolower($item->answer)];
 
-        if ($direction === 'recall' && !empty($item->romaji)) {
+        $kanaOnlyTypes = ['Main Kana', 'Dakuten Kana', 'Combination Kana', 'All Kana'];
+
+        if ($direction === 'recall' && !in_array($item->type, $kanaOnlyTypes) && !empty($item->romaji)) {
             $validAnswers[] = strtolower($item->romaji);
         }
 
