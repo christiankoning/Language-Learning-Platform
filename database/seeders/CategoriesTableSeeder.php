@@ -21,10 +21,10 @@ class CategoriesTableSeeder extends Seeder
         ]);
 
         $hiragana->children()->createMany([
-            ['language_id' => $jp->id, 'name' => 'Main Kana', 'slug' => 'main-kana'],
-            ['language_id' => $jp->id, 'name' => 'Dakuten Kana', 'slug' => 'dakuten-kana'],
-            ['language_id' => $jp->id, 'name' => 'Combination Kana', 'slug' => 'combination-kana'],
-            ['language_id' => $jp->id, 'name' => 'All Kana', 'slug' => 'all-kana'],
+            ['language_id' => $jp->id, 'name' => 'Main Kana', 'slug' => 'hiragana-main-kana'],
+            ['language_id' => $jp->id, 'name' => 'Dakuten Kana', 'slug' => 'hiragana-dakuten-kana'],
+            ['language_id' => $jp->id, 'name' => 'Combination Kana', 'slug' => 'hiragana-combination-kana'],
+            ['language_id' => $jp->id, 'name' => 'All Kana', 'slug' => 'hiragana-all-kana'],
         ]);
 
         $jp->categories()->createMany([

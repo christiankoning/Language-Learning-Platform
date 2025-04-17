@@ -16,7 +16,7 @@ class ItemsTableSeeder extends Seeder
     {
         // Hiragana
         // Main Kana
-        $this->seedCategory('main-kana', 'Main Kana', [
+        $this->seedCategory('hiragana-main-kana', 'Main Kana', [
             ['kana' => 'あ', 'romaji' => 'a', 'meanings' => ['a']],
             ['kana' => 'い', 'romaji' => 'i', 'meanings' => ['i']],
             ['kana' => 'う', 'romaji' => 'u', 'meanings' => ['u']],
@@ -75,7 +75,7 @@ class ItemsTableSeeder extends Seeder
         ]);
 
         // Dakuten Kana
-        $this->seedCategory('dakuten-kana', 'Dakuten Kana', [
+        $this->seedCategory('hiragana-main-kana', 'Dakuten Kana', [
             ['kana' => 'が', 'romaji' => 'ga', 'meanings' => ['ga']],
             ['kana' => 'ぎ', 'romaji' => 'gi', 'meanings' => ['gi']],
             ['kana' => 'ぐ', 'romaji' => 'gu', 'meanings' => ['gu']],
@@ -108,7 +108,7 @@ class ItemsTableSeeder extends Seeder
         ]);
 
         // Combination Kana
-        $this->seedCategory('combination-kana', 'Combination Kana', [
+        $this->seedCategory('hiragana-main-kana', 'Combination Kana', [
             ['kana' => 'きゃ', 'romaji' => 'kya', 'meanings' => ['kya']],
             ['kana' => 'きゅ', 'romaji' => 'kyu', 'meanings' => ['kyu']],
             ['kana' => 'きょ', 'romaji' => 'kyo', 'meanings' => ['kyo']],
@@ -159,7 +159,7 @@ class ItemsTableSeeder extends Seeder
         ]);
 
         // All Kana
-        $this->seedCategory('all-kana', 'All Kana', [
+        $this->seedCategory('hiragana-main-kana', 'All Kana', [
             ['kana' => 'あ', 'romaji' => 'a', 'meanings' => ['a']],
             ['kana' => 'い', 'romaji' => 'i', 'meanings' => ['i']],
             ['kana' => 'う', 'romaji' => 'u', 'meanings' => ['u']],
