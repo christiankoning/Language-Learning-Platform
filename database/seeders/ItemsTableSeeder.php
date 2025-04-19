@@ -858,7 +858,7 @@ class ItemsTableSeeder extends Seeder
         ]);
 
         // Shopping
-        self::seedCategory('shopping', 'Shopping', [
+        $this->seedCategory('shopping', 'Shopping', [
             ['kana' => 'さいふ', 'romaji' => 'saifu', 'meanings' => ['wallet']],
             ['kana' => 'おかね', 'romaji' => 'okane', 'meanings' => ['money']],
             ['kana' => 'カード', 'romaji' => 'kaado', 'meanings' => ['card', 'credit card', 'debit card']],
@@ -891,7 +891,7 @@ class ItemsTableSeeder extends Seeder
         ]);
 
         // Konbini & Supermarket
-        self::seedCategory('konbini-and-supermarket', 'Konbini & Supermarket', [
+        $this->seedCategory('konbini-and-supermarket', 'Konbini & Supermarket', [
             ['kana' => 'カップめん', 'romaji' => 'kappu men', 'meanings' => ['cup noodles']],
             ['kana' => 'チョコ', 'romaji' => 'choko', 'meanings' => ['chocolate']],
             ['kana' => 'アイス', 'romaji' => 'aisu', 'meanings' => ['ice cream']],
@@ -923,7 +923,7 @@ class ItemsTableSeeder extends Seeder
         ]);
 
         // Household & Toiletries
-        self::seedCategory('household-and-toiletries', 'Household & Toiletries', [
+        $this->seedCategory('household-and-toiletries', 'Household & Toiletries', [
             ['kana' => 'タオル', 'romaji' => 'taoru', 'meanings' => ['towel']],
             ['kana' => 'バスタオル', 'romaji' => 'basutaoru', 'meanings' => ['bath towel']],
             ['kana' => 'せっけん', 'romaji' => 'sekken', 'meanings' => ['soap']],
@@ -957,7 +957,7 @@ class ItemsTableSeeder extends Seeder
         ]);
 
         // Tech & Tools
-        self::seedCategory('tech-and-tools', 'Tech & Tools', [
+        $this->seedCategory('tech-and-tools', 'Tech & Tools', [
             ['kana' => 'スマホ', 'romaji' => 'sumaho', 'meanings' => ['smartphone']],
             ['kana' => 'けいたい', 'romaji' => 'keitai', 'meanings' => ['cellphone']],
             ['kana' => 'パソコン', 'romaji' => 'pasokon', 'meanings' => ['computer', 'laptop']],
@@ -993,7 +993,7 @@ class ItemsTableSeeder extends Seeder
         ]);
 
         // Government/Admin/Paperwork
-        self::seedCategory('government-admin-paperwork', 'Government/Admin/Paperwork', [
+        $this->seedCategory('government-admin-paperwork', 'Government/Admin/Paperwork', [
             ['kana' => 'パスポート', 'romaji' => 'pasupooto', 'meanings' => ['passport']],
             ['kana' => 'しょうめいしょ', 'romaji' => 'shoumeisho', 'meanings' => ['certificate', 'proof of ID']],
             ['kana' => 'がいこくじんカード', 'romaji' => 'gaikokujin kaado', 'meanings' => ['residence card']],
@@ -1025,6 +1025,99 @@ class ItemsTableSeeder extends Seeder
             ['kana' => 'せいふく', 'romaji' => 'seifuku', 'meanings' => ['uniform']],
             ['kana' => 'こくみんけんこうほけん', 'romaji' => 'kokumin kenkou hoken', 'meanings' => ['national health insurance']],
         ]);
+
+        // Counting
+        // Basic Numbers
+        $this->seedCategory('counting-numbers', 'Basic Numbers', [
+            ['kana' => 'いち', 'romaji' => 'ichi', 'meanings' => ['1']],
+            ['kana' => 'に', 'romaji' => 'ni', 'meanings' => ['2']],
+            ['kana' => 'さん', 'romaji' => 'san', 'meanings' => ['3']],
+            ['kana' => 'よん', 'romaji' => 'yon', 'meanings' => ['4', 'し']],
+            ['kana' => 'ご', 'romaji' => 'go', 'meanings' => ['5']],
+            ['kana' => 'ろく', 'romaji' => 'roku', 'meanings' => ['6']],
+            ['kana' => 'なな', 'romaji' => 'nana', 'meanings' => ['7', 'しち']],
+            ['kana' => 'はち', 'romaji' => 'hachi', 'meanings' => ['8']],
+            ['kana' => 'きゅう', 'romaji' => 'kyuu', 'meanings' => ['9', 'く']],
+            ['kana' => 'じゅう', 'romaji' => 'juu', 'meanings' => ['10']],
+            ['kana' => 'じゅういち', 'romaji' => 'juuichi', 'meanings' => ['11']],
+            ['kana' => 'じゅうに', 'romaji' => 'juuni', 'meanings' => ['12']],
+            ['kana' => 'じゅうさん', 'romaji' => 'juusan', 'meanings' => ['13']],
+            ['kana' => 'じゅうよん', 'romaji' => 'juuyon', 'meanings' => ['14', 'じゅうし']],
+            ['kana' => 'じゅうご', 'romaji' => 'juugo', 'meanings' => ['15']],
+            ['kana' => 'じゅうろく', 'romaji' => 'juuroku', 'meanings' => ['16']],
+            ['kana' => 'じゅうなな', 'romaji' => 'juunana', 'meanings' => ['17', 'じゅうしち']],
+            ['kana' => 'じゅうはち', 'romaji' => 'juuhachi', 'meanings' => ['18']],
+            ['kana' => 'じゅうきゅう', 'romaji' => 'juukyuu', 'meanings' => ['19', 'じゅうく']],
+            ['kana' => 'にじゅう', 'romaji' => 'nijuu', 'meanings' => ['20']],
+            ['kana' => 'さんじゅう', 'romaji' => 'sanjuu', 'meanings' => ['30']],
+            ['kana' => 'よんじゅう', 'romaji' => 'yonjuu', 'meanings' => ['40']],
+            ['kana' => 'ごじゅう', 'romaji' => 'gojuu', 'meanings' => ['50']],
+            ['kana' => 'ろくじゅう', 'romaji' => 'rokujuu', 'meanings' => ['60']],
+            ['kana' => 'ななじゅう', 'romaji' => 'nanajuu', 'meanings' => ['70']],
+            ['kana' => 'はちじゅう', 'romaji' => 'hachijuu', 'meanings' => ['80']],
+            ['kana' => 'きゅうじゅう', 'romaji' => 'kyuujuu', 'meanings' => ['90']],
+            ['kana' => 'ひゃく', 'romaji' => 'hyaku', 'meanings' => ['100']],
+        ]);
+
+        // People
+        $this->seedCategory('counting-people', 'People', [
+            ['kana' => 'ひとり', 'romaji' => 'hitori', 'meanings' => ['1 person']],
+            ['kana' => 'ふたり', 'romaji' => 'futari', 'meanings' => ['2 people']],
+            ['kana' => 'さんにん', 'romaji' => 'sannin', 'meanings' => ['3 people']],
+            ['kana' => 'よにん', 'romaji' => 'yonin', 'meanings' => ['4 people']],
+            ['kana' => 'ごにん', 'romaji' => 'gonin', 'meanings' => ['5 people']],
+            ['kana' => 'ろくにん', 'romaji' => 'rokunin', 'meanings' => ['6 people']],
+            ['kana' => 'ななにん', 'romaji' => 'nananin', 'meanings' => ['7 people', 'しちにん']],
+            ['kana' => 'はちにん', 'romaji' => 'hachinin', 'meanings' => ['8 people']],
+            ['kana' => 'きゅうにん', 'romaji' => 'kyuunin', 'meanings' => ['9 people']],
+            ['kana' => 'じゅうにん', 'romaji' => 'juunin', 'meanings' => ['10 people']],
+        ]);
+
+        // Age
+        $this->seedCategory('counting-age', 'Age', [
+            ['kana' => 'いっさい', 'romaji' => 'issai', 'meanings' => ['1 year old']],
+            ['kana' => 'にさい', 'romaji' => 'nisai', 'meanings' => ['2 years old']],
+            ['kana' => 'さんさい', 'romaji' => 'sansai', 'meanings' => ['3 years old']],
+            ['kana' => 'よんさい', 'romaji' => 'yonsai', 'meanings' => ['4 years old']],
+            ['kana' => 'ごさい', 'romaji' => 'gosai', 'meanings' => ['5 years old']],
+            ['kana' => 'ろくさい', 'romaji' => 'rokusai', 'meanings' => ['6 years old']],
+            ['kana' => 'ななさい', 'romaji' => 'nanasai', 'meanings' => ['7 years old']],
+            ['kana' => 'はっさい', 'romaji' => 'hassai', 'meanings' => ['8 years old']],
+            ['kana' => 'きゅうさい', 'romaji' => 'kyuusai', 'meanings' => ['9 years old']],
+            ['kana' => 'じゅっさい', 'romaji' => 'jussai', 'meanings' => ['10 years old', 'じっさい']],
+            ['kana' => 'じゅういっさい', 'romaji' => 'juuissai', 'meanings' => ['11 years old']],
+            ['kana' => 'じゅうにさい', 'romaji' => 'juunisai', 'meanings' => ['12 years old']],
+            ['kana' => 'じゅうさんさい', 'romaji' => 'juusansai', 'meanings' => ['13 years old']],
+            ['kana' => 'じゅうよんさい', 'romaji' => 'juuyonsai', 'meanings' => ['14 years old']],
+            ['kana' => 'じゅうごさい', 'romaji' => 'juugosai', 'meanings' => ['15 years old']],
+            ['kana' => 'じゅうろくさい', 'romaji' => 'juurokusai', 'meanings' => ['16 years old']],
+            ['kana' => 'じゅうななさい', 'romaji' => 'juunanasai', 'meanings' => ['17 years old']],
+            ['kana' => 'じゅうはっさい', 'romaji' => 'juuhassai', 'meanings' => ['18 years old']],
+            ['kana' => 'じゅうきゅうさい', 'romaji' => 'juukyuusai', 'meanings' => ['19 years old']],
+            ['kana' => 'はたち', 'romaji' => 'hatachi', 'meanings' => ['20 years old']],
+        ]);
+
+        // Hours
+        // Minutes
+        // Seconds
+        // Days
+        // Weeks
+        // Months
+        // Years
+        // Times (Occurrences)
+        // Abstract Things
+        // Flat Objects
+        // Long Objects
+        // Small Animals
+        // Big Animals
+        // Birds & Rabbits
+        // Floors/Levels
+        // Coins & Bills
+        // Prices
+        // Drinks (Cups/Glasses)
+        // Round Objects
+        // Multiples
+        // Irregular Counters
     }
 
     private function seedCategory(string $slug, string $type, array $items): void
