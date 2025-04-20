@@ -125,6 +125,12 @@ class CategoriesTableSeeder extends Seeder
             ],
             [
                 'language_id' => $jp->id,
+                'name' => 'Weeks',
+                'slug' => 'counting-months',
+                'description' => 'Learn to count weeks using ～週間 (しゅうかん), covering durations like "1 week", "2 weeks", etc. Useful for schedules, planning, and conversations about time spans.'
+            ],
+            [
+                'language_id' => $jp->id,
                 'name' => 'Months',
                 'slug' => 'counting-months',
                 'description' => 'Covers how to count months using ～か月 (かげつ), including 1 to 12 months and durations like "for 6 months".'
