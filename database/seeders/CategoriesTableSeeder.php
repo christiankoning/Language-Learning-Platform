@@ -126,7 +126,7 @@ class CategoriesTableSeeder extends Seeder
             [
                 'language_id' => $jp->id,
                 'name' => 'Weeks',
-                'slug' => 'counting-months',
+                'slug' => 'counting-weeks',
                 'description' => 'Learn to count weeks using ～週間 (しゅうかん), covering durations like "1 week", "2 weeks", etc. Useful for schedules, planning, and conversations about time spans.'
             ],
             [
