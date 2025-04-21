@@ -1383,16 +1383,16 @@ class ItemsTableSeeder extends Seeder
         // Floors/Levels
         $this->seedCategory('counting-floors', 'Floors/Levels', [
             ['kana' => 'ちかいっかい', 'romaji' => 'chika ikkai', 'meanings' => ['B1 (Basement level)']],
-            ['kana' => 'いっかい', 'romaji' => 'ikkai', 'meanings' => ['1st floor']],
-            ['kana' => 'にかい', 'romaji' => 'nikai', 'meanings' => ['2nd floor']],
-            ['kana' => 'さんがい', 'romaji' => 'sangai', 'meanings' => ['3rd floor']],
-            ['kana' => 'よんかい', 'romaji' => 'yonkai', 'meanings' => ['4th floor']],
-            ['kana' => 'ごかい', 'romaji' => 'gokai', 'meanings' => ['5th floor']],
-            ['kana' => 'ろっかい', 'romaji' => 'rokkai', 'meanings' => ['6th floor']],
-            ['kana' => 'ななかい', 'romaji' => 'nanakai', 'meanings' => ['7th floor']],
-            ['kana' => 'はっかい', 'romaji' => 'hakkai', 'meanings' => ['8th floor']],
-            ['kana' => 'きゅうかい', 'romaji' => 'kyuukai', 'meanings' => ['9th floor']],
-            ['kana' => 'じゅっかい', 'romaji' => 'jukkai', 'meanings' => ['10th floor']],
+            ['kana' => 'いっかい', 'romaji' => 'ikkai', 'meanings' => ['1st floor', 'first floor']],
+            ['kana' => 'にかい', 'romaji' => 'nikai', 'meanings' => ['2nd floor', 'second floor']],
+            ['kana' => 'さんがい', 'romaji' => 'sangai', 'meanings' => ['3rd floor', 'third floor']],
+            ['kana' => 'よんかい', 'romaji' => 'yonkai', 'meanings' => ['4th floor', 'fourth floor']],
+            ['kana' => 'ごかい', 'romaji' => 'gokai', 'meanings' => ['5th floor', 'fifth floor']],
+            ['kana' => 'ろっかい', 'romaji' => 'rokkai', 'meanings' => ['6th floor', 'sixth floor']],
+            ['kana' => 'ななかい', 'romaji' => 'nanakai', 'meanings' => ['7th floor', 'seventh floor']],
+            ['kana' => 'はっかい', 'romaji' => 'hakkai', 'meanings' => ['8th floor', 'eighth floor']],
+            ['kana' => 'きゅうかい', 'romaji' => 'kyuukai', 'meanings' => ['9th floor', 'ninth floor']],
+            ['kana' => 'じゅっかい', 'romaji' => 'jukkai', 'meanings' => ['10th floor', 'tenth floor']],
         ]);
 
         // Coins & Bills
@@ -1516,7 +1516,7 @@ class ItemsTableSeeder extends Seeder
             ['kana' => 'ななけん', 'romaji' => 'nanaken', 'meanings' => ['7 houses', '7 buildings']],
             ['kana' => 'はっけん', 'romaji' => 'hakken', 'meanings' => ['8 houses', '8 buildings']],
             ['kana' => 'きゅうけん', 'romaji' => 'kyuuken', 'meanings' => ['9 houses', '9 buildings']],
-            ['kana' => 'じゅっけん', 'romaji' => 'jukken', 'meanings' => ['10 houses', '1o buildings']],
+            ['kana' => 'じゅっけん', 'romaji' => 'jukken', 'meanings' => ['10 houses', '10 buildings']],
 
             // 台 (だい) - Machines/Vehicles
             ['kana' => 'いちだい', 'romaji' => 'ichidai', 'meanings' => ['1 machine (台)', '1 vehicle']],
