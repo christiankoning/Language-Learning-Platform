@@ -1327,9 +1327,74 @@ class ItemsTableSeeder extends Seeder
         ]);
 
         // Small Animals
+        $this->seedCategory('counting-small-animals', 'Small Animals', [
+            ['kana' => 'いっぴき', 'romaji' => 'ippiki', 'meanings' => ['1 small animal']],
+            ['kana' => 'にひき', 'romaji' => 'nihiki', 'meanings' => ['2 small animals']],
+            ['kana' => 'さんびき', 'romaji' => 'sanbiki', 'meanings' => ['3 small animals']],
+            ['kana' => 'よんひき', 'romaji' => 'yonhiki', 'meanings' => ['4 small animals']],
+            ['kana' => 'ごひき', 'romaji' => 'gohiki', 'meanings' => ['5 small animals']],
+            ['kana' => 'ろっぴき', 'romaji' => 'roppiki', 'meanings' => ['6 small animals']],
+            ['kana' => 'ななひき', 'romaji' => 'nanahiki', 'meanings' => ['7 small animals']],
+            ['kana' => 'はっぴき', 'romaji' => 'happiki', 'meanings' => ['8 small animals']],
+            ['kana' => 'きゅうひき', 'romaji' => 'kyuuhiki', 'meanings' => ['9 small animals']],
+            ['kana' => 'じゅっぴき', 'romaji' => 'juppiki', 'meanings' => ['10 small animals']],
+            ['kana' => 'にじゅっぴき', 'romaji' => 'nijuppiki', 'meanings' => ['20 small animals']],
+            ['kana' => 'さんじゅっぴき', 'romaji' => 'sanjuppiki', 'meanings' => ['30 small animals']],
+            ['kana' => 'ごじゅっぴき', 'romaji' => 'gojuppiki', 'meanings' => ['50 small animals']],
+            ['kana' => 'ひゃっぴき', 'romaji' => 'hyappiki', 'meanings' => ['100 small animals']],
+        ]);
+
         // Big Animals
+        $this->seedCategory('counting-big-animals', 'Big Animals', [
+            ['kana' => 'いっとう', 'romaji' => 'ittou', 'meanings' => ['1 big animal']],
+            ['kana' => 'にとう', 'romaji' => 'nitou', 'meanings' => ['2 big animals']],
+            ['kana' => 'さんとう', 'romaji' => 'santou', 'meanings' => ['3 big animals']],
+            ['kana' => 'よんとう', 'romaji' => 'yontou', 'meanings' => ['4 big animals']],
+            ['kana' => 'ごとう', 'romaji' => 'gotou', 'meanings' => ['5 big animals']],
+            ['kana' => 'ろくとう', 'romaji' => 'rokutou', 'meanings' => ['6 big animals']],
+            ['kana' => 'ななとう', 'romaji' => 'nanatou', 'meanings' => ['7 big animals']],
+            ['kana' => 'はちとう', 'romaji' => 'hachitou', 'meanings' => ['8 big animals']],
+            ['kana' => 'きゅうとう', 'romaji' => 'kyuutou', 'meanings' => ['9 big animals']],
+            ['kana' => 'じゅっとう', 'romaji' => 'juttou', 'meanings' => ['10 big animals']],
+            ['kana' => 'にじゅっとう', 'romaji' => 'nijuttou', 'meanings' => ['20 big animals']],
+            ['kana' => 'さんじゅっとう', 'romaji' => 'sanjuttou', 'meanings' => ['30 big animals']],
+            ['kana' => 'ごじゅっとう', 'romaji' => 'gojuttou', 'meanings' => ['50 big animals']],
+            ['kana' => 'ひゃくとう', 'romaji' => 'hyakutou', 'meanings' => ['100 big animals']],
+        ]);
+
         // Birds & Rabbits
+        $this->seedCategory('counting-birds-rabbits', 'Birds & Rabbits', [
+            ['kana' => 'いちわ', 'romaji' => 'ichiwa', 'meanings' => ['1 bird', '1 rabbit']],
+            ['kana' => 'にわ', 'romaji' => 'niwa', 'meanings' => ['2 birds', '2 rabbits']],
+            ['kana' => 'さんわ', 'romaji' => 'sanwa', 'meanings' => ['3 birds', '3 rabbits']],
+            ['kana' => 'よんわ', 'romaji' => 'yonwa', 'meanings' => ['4 birds', '4 rabbits']],
+            ['kana' => 'ごわ', 'romaji' => 'gowa', 'meanings' => ['5 birds', '5 rabbits']],
+            ['kana' => 'ろくわ', 'romaji' => 'rokuwa', 'meanings' => ['6 birds', '6 rabbits']],
+            ['kana' => 'ななわ', 'romaji' => 'nanawa', 'meanings' => ['7 birds', '7 rabbits']],
+            ['kana' => 'はちわ', 'romaji' => 'hachiwa', 'meanings' => ['8 birds', '8 rabbits']],
+            ['kana' => 'きゅうわ', 'romaji' => 'kyuuwa', 'meanings' => ['9 birds', '9 rabbits']],
+            ['kana' => 'じゅうわ', 'romaji' => 'juuwa', 'meanings' => ['10 birds', '10 rabbits']],
+            ['kana' => 'にじゅうわ', 'romaji' => 'nijuuwa', 'meanings' => ['20 birds', '20 rabbits']],
+            ['kana' => 'さんじゅうわ', 'romaji' => 'sanjuuwa', 'meanings' => ['30 birds', '30 rabbits']],
+            ['kana' => 'ごじゅうわ', 'romaji' => 'gojuuwa', 'meanings' => ['50 birds', '50 rabbits']],
+            ['kana' => 'ひゃくわ', 'romaji' => 'hyakuwa', 'meanings' => ['100 birds', '100 rabbits']],
+        ]);
+
         // Floors/Levels
+        $this->seedCategory('counting-floors', 'Floors/Levels', [
+            ['kana' => 'ちかいっかい', 'romaji' => 'chika ikkai', 'meanings' => ['B1 (Basement level)']],
+            ['kana' => 'いっかい', 'romaji' => 'ikkai', 'meanings' => ['1st floor']],
+            ['kana' => 'にかい', 'romaji' => 'nikai', 'meanings' => ['2nd floor']],
+            ['kana' => 'さんがい', 'romaji' => 'sangai', 'meanings' => ['3rd floor']],
+            ['kana' => 'よんかい', 'romaji' => 'yonkai', 'meanings' => ['4th floor']],
+            ['kana' => 'ごかい', 'romaji' => 'gokai', 'meanings' => ['5th floor']],
+            ['kana' => 'ろっかい', 'romaji' => 'rokkai', 'meanings' => ['6th floor']],
+            ['kana' => 'ななかい', 'romaji' => 'nanakai', 'meanings' => ['7th floor']],
+            ['kana' => 'はっかい', 'romaji' => 'hakkai', 'meanings' => ['8th floor']],
+            ['kana' => 'きゅうかい', 'romaji' => 'kyuukai', 'meanings' => ['9th floor']],
+            ['kana' => 'じゅっかい', 'romaji' => 'jukkai', 'meanings' => ['10th floor']],
+        ]);
+
         // Coins & Bills
         // Prices
         // Drinks (Cups/Glasses)
