@@ -1098,12 +1098,166 @@ class ItemsTableSeeder extends Seeder
         ]);
 
         // Hours
+        $this->seedCategory('counting-hours', 'Hours', [
+            ['kana' => 'れいじ', 'romaji' => 'rei ji', 'meanings' => ['0 o\'clock']],
+            ['kana' => 'いちじ', 'romaji' => 'ichi ji', 'meanings' => ['1 o\'clock']],
+            ['kana' => 'にじ', 'romaji' => 'ni ji', 'meanings' => ['2 o\'clock']],
+            ['kana' => 'さんじ', 'romaji' => 'san ji', 'meanings' => ['3 o\'clock']],
+            ['kana' => 'よじ', 'romaji' => 'yo ji', 'meanings' => ['4 o\'clock']],
+            ['kana' => 'ごじ', 'romaji' => 'go ji', 'meanings' => ['5 o\'clock']],
+            ['kana' => 'ろくじ', 'romaji' => 'roku ji', 'meanings' => ['6 o\'clock']],
+            ['kana' => 'しちじ', 'romaji' => 'shichi ji', 'meanings' => ['7 o\'clock']],
+            ['kana' => 'はちじ', 'romaji' => 'hachi ji', 'meanings' => ['8 o\'clock']],
+            ['kana' => 'くじ', 'romaji' => 'ku ji', 'meanings' => ['9 o\'clock']],
+            ['kana' => 'じゅうじ', 'romaji' => 'juu ji', 'meanings' => ['10 o\'clock']],
+            ['kana' => 'じゅういちじ', 'romaji' => 'juuichi ji', 'meanings' => ['11 o\'clock']],
+            ['kana' => 'じゅうにじ', 'romaji' => 'juuni ji', 'meanings' => ['12 o\'clock']],
+            ['kana' => 'じゅうさんじ', 'romaji' => 'juusan ji', 'meanings' => ['13 o\'clock']],
+            ['kana' => 'じゅうよじ', 'romaji' => 'juuyo ji', 'meanings' => ['14 o\'clock']],
+            ['kana' => 'じゅうごじ', 'romaji' => 'juugo ji', 'meanings' => ['15 o\'clock']],
+            ['kana' => 'じゅうろくじ', 'romaji' => 'juuroku ji', 'meanings' => ['16 o\'clock']],
+            ['kana' => 'じゅうしちじ', 'romaji' => 'juushichi ji', 'meanings' => ['17 o\'clock']],
+            ['kana' => 'じゅうはちじ', 'romaji' => 'juuhachi ji', 'meanings' => ['18 o\'clock']],
+            ['kana' => 'じゅうくじ', 'romaji' => 'juuku ji', 'meanings' => ['19 o\'clock']],
+            ['kana' => 'にじゅうじ', 'romaji' => 'nijuu ji', 'meanings' => ['20 o\'clock']],
+            ['kana' => 'にじゅういちじ', 'romaji' => 'nijuuichi ji', 'meanings' => ['21 o\'clock']],
+            ['kana' => 'にじゅうにじ', 'romaji' => 'nijuuni ji', 'meanings' => ['22 o\'clock']],
+            ['kana' => 'にじゅうさんじ', 'romaji' => 'nijuusan ji', 'meanings' => ['23 o\'clock']],
+            ['kana' => 'にじゅうよじ', 'romaji' => 'nijuuyo ji', 'meanings' => ['24 o\'clock']],
+        ]);
+
         // Minutes
+        $this->seedCategory('counting-minutes', 'Minutes', [
+            ['kana' => 'いっぷん', 'romaji' => 'ippun', 'meanings' => ['1 minute']],
+            ['kana' => 'にふん', 'romaji' => 'ni fun', 'meanings' => ['2 minutes']],
+            ['kana' => 'さんぷん', 'romaji' => 'san pun', 'meanings' => ['3 minutes']],
+            ['kana' => 'よんぷん', 'romaji' => 'yon pun', 'meanings' => ['4 minutes']],
+            ['kana' => 'ごふん', 'romaji' => 'go fun', 'meanings' => ['5 minutes']],
+            ['kana' => 'ろっぷん', 'romaji' => 'roppun', 'meanings' => ['6 minutes']],
+            ['kana' => 'ななふん', 'romaji' => 'nana fun', 'meanings' => ['7 minutes']],
+            ['kana' => 'はっぷん', 'romaji' => 'happun', 'meanings' => ['8 minutes']],
+            ['kana' => 'きゅうふん', 'romaji' => 'kyuu fun', 'meanings' => ['9 minutes']],
+            ['kana' => 'じゅっぷん', 'romaji' => 'juppun', 'meanings' => ['10 minutes']],
+            ['kana' => 'じゅうごふん', 'romaji' => 'juugo fun', 'meanings' => ['15 minutes']],
+            ['kana' => 'にじゅっぷん', 'romaji' => 'nijuppun', 'meanings' => ['20 minutes']],
+            ['kana' => 'にじゅうごふん', 'romaji' => 'nijuugo fun', 'meanings' => ['25 minutes']],
+            ['kana' => 'さんじゅっぷん', 'romaji' => 'sanjuppun', 'meanings' => ['30 minutes']],
+            ['kana' => 'さんじゅうごふん', 'romaji' => 'sanjuugo fun', 'meanings' => ['35 minutes']],
+            ['kana' => 'よんじゅっぷん', 'romaji' => 'yonjuppun', 'meanings' => ['40 minutes']],
+            ['kana' => 'よんじゅうごふん', 'romaji' => 'yonjuugo fun', 'meanings' => ['45 minutes']],
+            ['kana' => 'ごじゅっぷん', 'romaji' => 'gojuppun', 'meanings' => ['50 minutes']],
+            ['kana' => 'ごじゅうごふん', 'romaji' => 'gojuugo fun', 'meanings' => ['55 minutes']],
+            ['kana' => 'ろくじゅっぷん', 'romaji' => 'rokujuppun', 'meanings' => ['60 minutes']],
+        ]);
+
         // Seconds
+        $this->seedCategory('counting-seconds', 'Seconds', [
+            ['kana' => 'いちびょう', 'romaji' => 'ichi byou', 'meanings' => ['1 second']],
+            ['kana' => 'にびょう', 'romaji' => 'ni byou', 'meanings' => ['2 seconds']],
+            ['kana' => 'さんびょう', 'romaji' => 'san byou', 'meanings' => ['3 seconds']],
+            ['kana' => 'よんびょう', 'romaji' => 'yon byou', 'meanings' => ['4 seconds']],
+            ['kana' => 'ごびょう', 'romaji' => 'go byou', 'meanings' => ['5 seconds']],
+            ['kana' => 'ろくびょう', 'romaji' => 'roku byou', 'meanings' => ['6 seconds']],
+            ['kana' => 'ななびょう', 'romaji' => 'nana byou', 'meanings' => ['7 seconds']],
+            ['kana' => 'はちびょう', 'romaji' => 'hachi byou', 'meanings' => ['8 seconds']],
+            ['kana' => 'きゅうびょう', 'romaji' => 'kyuu byou', 'meanings' => ['9 seconds']],
+            ['kana' => 'じゅうびょう', 'romaji' => 'juu byou', 'meanings' => ['10 seconds']],
+            ['kana' => 'じゅうごびょう', 'romaji' => 'juugo byou', 'meanings' => ['15 seconds']],
+            ['kana' => 'さんじゅっびょう', 'romaji' => 'sanjuppyou', 'meanings' => ['30 seconds']],
+            ['kana' => 'よんじゅうごびょう', 'romaji' => 'yonjuugo byou', 'meanings' => ['45 seconds']],
+            ['kana' => 'ろくじゅっびょう', 'romaji' => 'rokujuppyou', 'meanings' => ['60 seconds']],
+        ]);
+
         // Days
+        $this->seedCategory('counting-days', 'Days', [
+            ['kana' => 'ついたち', 'romaji' => 'tsuitachi', 'meanings' => ['1st']],
+            ['kana' => 'ふつか', 'romaji' => 'futsuka', 'meanings' => ['2nd']],
+            ['kana' => 'みっか', 'romaji' => 'mikka', 'meanings' => ['3rd']],
+            ['kana' => 'よっか', 'romaji' => 'yokka', 'meanings' => ['4th']],
+            ['kana' => 'いつか', 'romaji' => 'itsuka', 'meanings' => ['5th']],
+            ['kana' => 'むいか', 'romaji' => 'muika', 'meanings' => ['6th']],
+            ['kana' => 'なのか', 'romaji' => 'nanoka', 'meanings' => ['7th']],
+            ['kana' => 'ようか', 'romaji' => 'youka', 'meanings' => ['8th']],
+            ['kana' => 'ここのか', 'romaji' => 'kokonoka', 'meanings' => ['9th']],
+            ['kana' => 'とおか', 'romaji' => 'tooka', 'meanings' => ['10th']],
+            ['kana' => 'じゅういちにち', 'romaji' => 'juuichi nichi', 'meanings' => ['11th']],
+            ['kana' => 'じゅうににち', 'romaji' => 'juuni nichi', 'meanings' => ['12th']],
+            ['kana' => 'じゅうさんにち', 'romaji' => 'juusan nichi', 'meanings' => ['13th']],
+            ['kana' => 'じゅうよっか', 'romaji' => 'juuyokka', 'meanings' => ['14th']],
+            ['kana' => 'じゅうごにち', 'romaji' => 'juugo nichi', 'meanings' => ['15th']],
+            ['kana' => 'じゅうろくにち', 'romaji' => 'juuroku nichi', 'meanings' => ['16th']],
+            ['kana' => 'じゅうしちにち', 'romaji' => 'juushichi nichi', 'meanings' => ['17th']],
+            ['kana' => 'じゅうはちにち', 'romaji' => 'juuhachi nichi', 'meanings' => ['18th']],
+            ['kana' => 'じゅうくにち', 'romaji' => 'juuku nichi', 'meanings' => ['19th']],
+            ['kana' => 'はつか', 'romaji' => 'hatsuka', 'meanings' => ['20th']],
+            ['kana' => 'にじゅういちにち', 'romaji' => 'nijuuichi nichi', 'meanings' => ['21st']],
+            ['kana' => 'にじゅうににち', 'romaji' => 'nijuuni nichi', 'meanings' => ['22nd']],
+            ['kana' => 'にじゅうさんにち', 'romaji' => 'nijuusan nichi', 'meanings' => ['23rd']],
+            ['kana' => 'にじゅうよっか', 'romaji' => 'nijuuyokka', 'meanings' => ['24th']],
+            ['kana' => 'にじゅうごにち', 'romaji' => 'nijuugo nichi', 'meanings' => ['25th']],
+            ['kana' => 'にじゅうろくにち', 'romaji' => 'nijuuroku nichi', 'meanings' => ['26th']],
+            ['kana' => 'にじゅうしちにち', 'romaji' => 'nijuushichi nichi', 'meanings' => ['27th']],
+            ['kana' => 'にじゅうはちにち', 'romaji' => 'nijuuhachi nichi', 'meanings' => ['28th']],
+            ['kana' => 'にじゅうくにち', 'romaji' => 'nijuuku nichi', 'meanings' => ['29th']],
+            ['kana' => 'さんじゅうにち', 'romaji' => 'sanjuu nichi', 'meanings' => ['30th']],
+            ['kana' => 'さんじゅういちにち', 'romaji' => 'sanjuuichi nichi', 'meanings' => ['31st']],
+        ]);
+
         // Weeks
+        $this->seedCategory('counting-weeks', 'Weeks', [
+            ['kana' => 'いっしゅうかん', 'romaji' => 'isshuukan', 'meanings' => ['1 week']],
+            ['kana' => 'にしゅうかん', 'romaji' => 'nishuukan', 'meanings' => ['2 weeks']],
+            ['kana' => 'さんしゅうかん', 'romaji' => 'sanshuukan', 'meanings' => ['3 weeks']],
+            ['kana' => 'よんしゅうかん', 'romaji' => 'yonshuukan', 'meanings' => ['4 weeks']],
+            ['kana' => 'ごしゅうかん', 'romaji' => 'goshuukan', 'meanings' => ['5 weeks']],
+            ['kana' => 'ろくしゅうかん', 'romaji' => 'rokushuukan', 'meanings' => ['6 weeks']],
+            ['kana' => 'ななしゅうかん', 'romaji' => 'nanashuukan', 'meanings' => ['7 weeks']],
+            ['kana' => 'はっしゅうかん', 'romaji' => 'hasshuukan', 'meanings' => ['8 weeks']],
+            ['kana' => 'きゅうしゅうかん', 'romaji' => 'kyuushuukan', 'meanings' => ['9 weeks']],
+            ['kana' => 'じゅっしゅうかん', 'romaji' => 'jusshuukan', 'meanings' => ['10 weeks']],
+            ['kana' => 'じゅうにしゅうかん', 'romaji' => 'juunishuukan', 'meanings' => ['12 weeks']],
+            ['kana' => 'じゅうろくしゅうかん', 'romaji' => 'juurokushuukan', 'meanings' => ['16 weeks']],
+            ['kana' => 'にじゅっしゅうかん', 'romaji' => 'nijusshuukan', 'meanings' => ['20 weeks']],
+        ]);
+
         // Months
+        $this->seedCategory('counting-months', 'Months', [
+            ['kana' => 'いっかげつ', 'romaji' => 'ikkagetsu', 'meanings' => ['1 month']],
+            ['kana' => 'にかげつ', 'romaji' => 'nikagetsu', 'meanings' => ['2 months']],
+            ['kana' => 'さんかげつ', 'romaji' => 'sankagetsu', 'meanings' => ['3 months']],
+            ['kana' => 'よんかげつ', 'romaji' => 'yonkagetsu', 'meanings' => ['4 months']],
+            ['kana' => 'ごかげつ', 'romaji' => 'gokagetsu', 'meanings' => ['5 months']],
+            ['kana' => 'ろっかげつ', 'romaji' => 'rokkagetsu', 'meanings' => ['6 months']],
+            ['kana' => 'ななかげつ', 'romaji' => 'nanakagetsu', 'meanings' => ['7 months']],
+            ['kana' => 'はちかげつ', 'romaji' => 'hachikagetsu', 'meanings' => ['8 months']],
+            ['kana' => 'きゅうかげつ', 'romaji' => 'kyuukagetsu', 'meanings' => ['9 months']],
+            ['kana' => 'じゅっかげつ', 'romaji' => 'jukkagetsu', 'meanings' => ['10 months']],
+            ['kana' => 'じゅういっかげつ', 'romaji' => 'juuikkagetsu', 'meanings' => ['11 months']],
+            ['kana' => 'じゅうにかげつ', 'romaji' => 'juunikagetsu', 'meanings' => ['12 months']],
+            ['kana' => 'じゅうはちかげつ', 'romaji' => 'juuhachikagetsu', 'meanings' => ['18 months']],
+            ['kana' => 'にじゅうよんかげつ', 'romaji' => 'nijuuyonkagetsu', 'meanings' => ['24 months']],
+        ]);
+
         // Years
+        $this->seedCategory('counting-years', 'Years', [
+            ['kana' => 'いちねん', 'romaji' => 'ichi nen', 'meanings' => ['1 year']],
+            ['kana' => 'にねん', 'romaji' => 'ni nen', 'meanings' => ['2 years']],
+            ['kana' => 'さんねん', 'romaji' => 'san nen', 'meanings' => ['3 years']],
+            ['kana' => 'よねん', 'romaji' => 'yo nen', 'meanings' => ['4 years']],
+            ['kana' => 'ごねん', 'romaji' => 'go nen', 'meanings' => ['5 years']],
+            ['kana' => 'ろくねん', 'romaji' => 'roku nen', 'meanings' => ['6 years']],
+            ['kana' => 'ななねん', 'romaji' => 'nana nen', 'meanings' => ['7 years']],
+            ['kana' => 'はちねん', 'romaji' => 'hachi nen', 'meanings' => ['8 years']],
+            ['kana' => 'きゅうねん', 'romaji' => 'kyuu nen', 'meanings' => ['9 years']],
+            ['kana' => 'じゅうねん', 'romaji' => 'juu nen', 'meanings' => ['10 years']],
+            ['kana' => 'じゅうごねん', 'romaji' => 'juugo nen', 'meanings' => ['15 years']],
+            ['kana' => 'にじゅうねん', 'romaji' => 'nijuu nen', 'meanings' => ['20 years']],
+            ['kana' => 'にじゅうごねん', 'romaji' => 'nijuugo nen', 'meanings' => ['25 years']],
+            ['kana' => 'さんじゅうねん', 'romaji' => 'sanjuu nen', 'meanings' => ['30 years']],
+            ['kana' => 'よんじゅうねん', 'romaji' => 'yonjuu nen', 'meanings' => ['40 years']],
+            ['kana' => 'ごじゅうねん', 'romaji' => 'gojuu nen', 'meanings' => ['50 years']],
+        ]);
+
         // Times (Occurrences)
         // Abstract Things
         // Flat Objects
