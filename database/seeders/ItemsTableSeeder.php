@@ -1440,20 +1440,20 @@ class ItemsTableSeeder extends Seeder
 
         // Drinks (Cups/Glasses)
         $this->seedCategory('counting-drinks', 'Drinks (Cups/Glasses)', [
-            ['kana' => 'いっぱい', 'romaji' => 'ippai', 'meanings' => ['1 glass/cup']],
-            ['kana' => 'にはい', 'romaji' => 'nihai', 'meanings' => ['2 glasses/cups']],
-            ['kana' => 'さんばい', 'romaji' => 'sanbai', 'meanings' => ['3 glasses/cups']],
-            ['kana' => 'よんはい', 'romaji' => 'yonhai', 'meanings' => ['4 glasses/cups']],
-            ['kana' => 'ごはい', 'romaji' => 'gohai', 'meanings' => ['5 glasses/cups']],
-            ['kana' => 'ろっぱい', 'romaji' => 'roppai', 'meanings' => ['6 glasses/cups']],
-            ['kana' => 'ななはい', 'romaji' => 'nanahai', 'meanings' => ['7 glasses/cups']],
-            ['kana' => 'はっぱい', 'romaji' => 'happai', 'meanings' => ['8 glasses/cups']],
-            ['kana' => 'きゅうはい', 'romaji' => 'kyuuhai', 'meanings' => ['9 glasses/cups']],
-            ['kana' => 'じゅっぱい', 'romaji' => 'juppai', 'meanings' => ['10 glasses/cups']],
-            ['kana' => 'にじゅっぱい', 'romaji' => 'nijuppai', 'meanings' => ['20 glasses/cups']],
-            ['kana' => 'さんじゅっぱい', 'romaji' => 'sanjuppai', 'meanings' => ['30 glasses/cups']],
-            ['kana' => 'ごじゅっぱい', 'romaji' => 'gojuppai', 'meanings' => ['50 glasses/cups']],
-            ['kana' => 'ひゃっぱい', 'romaji' => 'hyappai', 'meanings' => ['100 glasses/cups']],
+            ['kana' => 'いっぱい', 'romaji' => 'ippai', 'meanings' => ['1 glass', '1 cup']],
+            ['kana' => 'にはい', 'romaji' => 'nihai', 'meanings' => ['2 glasses', '2 cups']],
+            ['kana' => 'さんばい', 'romaji' => 'sanbai', 'meanings' => ['3 glasses', '3 cups']],
+            ['kana' => 'よんはい', 'romaji' => 'yonhai', 'meanings' => ['4 glasses', '4 cups']],
+            ['kana' => 'ごはい', 'romaji' => 'gohai', 'meanings' => ['5 glasses', '5 cups']],
+            ['kana' => 'ろっぱい', 'romaji' => 'roppai', 'meanings' => ['6 glasses', '6 cups']],
+            ['kana' => 'ななはい', 'romaji' => 'nanahai', 'meanings' => ['7 glasses', '7 cups']],
+            ['kana' => 'はっぱい', 'romaji' => 'happai', 'meanings' => ['8 glasses', '8 cups']],
+            ['kana' => 'きゅうはい', 'romaji' => 'kyuuhai', 'meanings' => ['9 glasses', '9 cups']],
+            ['kana' => 'じゅっぱい', 'romaji' => 'juppai', 'meanings' => ['10 glasses', '10 cups']],
+            ['kana' => 'にじゅっぱい', 'romaji' => 'nijuppai', 'meanings' => ['20 glasses', '20 cups']],
+            ['kana' => 'さんじゅっぱい', 'romaji' => 'sanjuppai', 'meanings' => ['30 glasses', '30 cups']],
+            ['kana' => 'ごじゅっぱい', 'romaji' => 'gojuppai', 'meanings' => ['50 glasses', '50 cups']],
+            ['kana' => 'ひゃっぱい', 'romaji' => 'hyappai', 'meanings' => ['100 glasses', '100 cups']],
         ]);
 
 
