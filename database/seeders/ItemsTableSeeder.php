@@ -1396,11 +1396,185 @@ class ItemsTableSeeder extends Seeder
         ]);
 
         // Coins & Bills
+        $this->seedCategory('counting-coins-bills', 'Coins & Bills', [
+            ['kana' => 'いちえん', 'romaji' => 'ichi en', 'meanings' => ['1 yen']],
+            ['kana' => 'ごえん', 'romaji' => 'go en', 'meanings' => ['5 yen']],
+            ['kana' => 'じゅうえん', 'romaji' => 'juu en', 'meanings' => ['10 yen']],
+            ['kana' => 'ごじゅうえん', 'romaji' => 'gojuu en', 'meanings' => ['50 yen']],
+            ['kana' => 'ひゃくえん', 'romaji' => 'hyaku en', 'meanings' => ['100 yen']],
+            ['kana' => 'ごひゃくえん', 'romaji' => 'gohyaku en', 'meanings' => ['500 yen']],
+            ['kana' => 'せんえん', 'romaji' => 'sen en', 'meanings' => ['1,000 yen']],
+            ['kana' => 'にせんえん', 'romaji' => 'nisen en', 'meanings' => ['2,000 yen']],
+            ['kana' => 'ごせんえん', 'romaji' => 'gosen en', 'meanings' => ['5,000 yen']],
+            ['kana' => 'いちまんえん', 'romaji' => 'ichiman en', 'meanings' => ['10,000 yen']],
+        ]);
+
         // Prices
+        $this->seedCategory('counting-prices', 'Prices', [
+            ['kana' => 'ひゃくえん', 'romaji' => 'hyaku en', 'meanings' => ['100 yen']],
+            ['kana' => 'ひゃくごじゅうえん', 'romaji' => 'hyaku gojuu en', 'meanings' => ['150 yen']],
+            ['kana' => 'にひゃくえん', 'romaji' => 'nihyaku en', 'meanings' => ['200 yen']],
+            ['kana' => 'さんびゃくえん', 'romaji' => 'sanbyaku en', 'meanings' => ['300 yen']],
+            ['kana' => 'よんひゃくえん', 'romaji' => 'yonhyaku en', 'meanings' => ['400 yen']],
+            ['kana' => 'ごひゃくえん', 'romaji' => 'gohyaku en', 'meanings' => ['500 yen']],
+            ['kana' => 'ろっぴゃくえん', 'romaji' => 'ropphyaku en', 'meanings' => ['600 yen']],
+            ['kana' => 'ななひゃくえん', 'romaji' => 'nanahyaku en', 'meanings' => ['700 yen']],
+            ['kana' => 'はっぴゃくえん', 'romaji' => 'happyaku en', 'meanings' => ['800 yen']],
+            ['kana' => 'きゅうひゃくえん', 'romaji' => 'kyuuhyaku en', 'meanings' => ['900 yen']],
+            ['kana' => 'せんえん', 'romaji' => 'sen en', 'meanings' => ['1,000 yen']],
+            ['kana' => 'せんごひゃくえん', 'romaji' => 'sen gohyaku en', 'meanings' => ['1,500 yen']],
+            ['kana' => 'にせんえん', 'romaji' => 'nisen en', 'meanings' => ['2,000 yen']],
+            ['kana' => 'さんぜんえん', 'romaji' => 'sanzen en', 'meanings' => ['3,000 yen']],
+            ['kana' => 'ごせんえん', 'romaji' => 'gosen en', 'meanings' => ['5,000 yen']],
+            ['kana' => 'いちまんえん', 'romaji' => 'ichiman en', 'meanings' => ['10,000 yen']],
+            ['kana' => 'にまんえん', 'romaji' => 'niman en', 'meanings' => ['20,000 yen']],
+            ['kana' => 'さんまんえん', 'romaji' => 'sanman en', 'meanings' => ['30,000 yen']],
+            ['kana' => 'よんまんえん', 'romaji' => 'yonman en', 'meanings' => ['40,000 yen']],
+            ['kana' => 'ごまんえん', 'romaji' => 'goman en', 'meanings' => ['50,000 yen']],
+            ['kana' => 'ろくまんえん', 'romaji' => 'rokuman en', 'meanings' => ['60,000 yen']],
+            ['kana' => 'ななまんえん', 'romaji' => 'nanaman en', 'meanings' => ['70,000 yen']],
+            ['kana' => 'はちまんえん', 'romaji' => 'hachiman en', 'meanings' => ['80,000 yen']],
+            ['kana' => 'きゅうまんえん', 'romaji' => 'kyuuman en', 'meanings' => ['90,000 yen']],
+            ['kana' => 'じゅうまんえん', 'romaji' => 'juuman en', 'meanings' => ['100,000 yen']],
+        ]);
+
         // Drinks (Cups/Glasses)
+        $this->seedCategory('counting-drinks', 'Drinks (Cups/Glasses)', [
+            ['kana' => 'いっぱい', 'romaji' => 'ippai', 'meanings' => ['1 glass/cup']],
+            ['kana' => 'にはい', 'romaji' => 'nihai', 'meanings' => ['2 glasses/cups']],
+            ['kana' => 'さんばい', 'romaji' => 'sanbai', 'meanings' => ['3 glasses/cups']],
+            ['kana' => 'よんはい', 'romaji' => 'yonhai', 'meanings' => ['4 glasses/cups']],
+            ['kana' => 'ごはい', 'romaji' => 'gohai', 'meanings' => ['5 glasses/cups']],
+            ['kana' => 'ろっぱい', 'romaji' => 'roppai', 'meanings' => ['6 glasses/cups']],
+            ['kana' => 'ななはい', 'romaji' => 'nanahai', 'meanings' => ['7 glasses/cups']],
+            ['kana' => 'はっぱい', 'romaji' => 'happai', 'meanings' => ['8 glasses/cups']],
+            ['kana' => 'きゅうはい', 'romaji' => 'kyuuhai', 'meanings' => ['9 glasses/cups']],
+            ['kana' => 'じゅっぱい', 'romaji' => 'juppai', 'meanings' => ['10 glasses/cups']],
+            ['kana' => 'にじゅっぱい', 'romaji' => 'nijuppai', 'meanings' => ['20 glasses/cups']],
+            ['kana' => 'さんじゅっぱい', 'romaji' => 'sanjuppai', 'meanings' => ['30 glasses/cups']],
+            ['kana' => 'ごじゅっぱい', 'romaji' => 'gojuppai', 'meanings' => ['50 glasses/cups']],
+            ['kana' => 'ひゃっぱい', 'romaji' => 'hyappai', 'meanings' => ['100 glasses/cups']],
+        ]);
+
+
         // Round Objects
+        $this->seedCategory('counting-round-objects', 'Round Objects', [
+            ['kana' => 'いっこ', 'romaji' => 'ikko', 'meanings' => ['1 piece']],
+            ['kana' => 'にこ', 'romaji' => 'niko', 'meanings' => ['2 pieces']],
+            ['kana' => 'さんこ', 'romaji' => 'sanko', 'meanings' => ['3 pieces']],
+            ['kana' => 'よんこ', 'romaji' => 'yonko', 'meanings' => ['4 pieces']],
+            ['kana' => 'ごこ', 'romaji' => 'goko', 'meanings' => ['5 pieces']],
+            ['kana' => 'ろっこ', 'romaji' => 'rokko', 'meanings' => ['6 pieces']],
+            ['kana' => 'ななこ', 'romaji' => 'nanako', 'meanings' => ['7 pieces']],
+            ['kana' => 'はっこ', 'romaji' => 'hakko', 'meanings' => ['8 pieces']],
+            ['kana' => 'きゅうこ', 'romaji' => 'kyuuko', 'meanings' => ['9 pieces']],
+            ['kana' => 'じゅっこ', 'romaji' => 'jukko', 'meanings' => ['10 pieces']],
+            ['kana' => 'にじゅっこ', 'romaji' => 'nijukko', 'meanings' => ['20 pieces']],
+            ['kana' => 'さんじゅっこ', 'romaji' => 'sanjukko', 'meanings' => ['30 pieces']],
+            ['kana' => 'ごじゅっこ', 'romaji' => 'gojukko', 'meanings' => ['50 pieces']],
+            ['kana' => 'ひゃっこ', 'romaji' => 'hyakko', 'meanings' => ['100 pieces']],
+        ]);
+
         // Multiples
+        $this->seedCategory('counting-multiples', 'Multiples', [
+            ['kana' => 'いちばい', 'romaji' => 'ichibai', 'meanings' => ['1x', 'same']],
+            ['kana' => 'にばい', 'romaji' => 'nibai', 'meanings' => ['2x', 'double']],
+            ['kana' => 'さんばい', 'romaji' => 'sanbai', 'meanings' => ['3x', 'triple']],
+            ['kana' => 'よんばい', 'romaji' => 'yonbai', 'meanings' => ['4x']],
+            ['kana' => 'ごばい', 'romaji' => 'gobai', 'meanings' => ['5x']],
+            ['kana' => 'ろくばい', 'romaji' => 'rokubai', 'meanings' => ['6x']],
+            ['kana' => 'ななばい', 'romaji' => 'nanabai', 'meanings' => ['7x']],
+            ['kana' => 'はちばい', 'romaji' => 'hachibai', 'meanings' => ['8x']],
+            ['kana' => 'きゅうばい', 'romaji' => 'kyuubai', 'meanings' => ['9x']],
+            ['kana' => 'じゅうばい', 'romaji' => 'juubai', 'meanings' => ['10x']],
+            ['kana' => 'にじゅうばい', 'romaji' => 'nijuubai', 'meanings' => ['20x']],
+            ['kana' => 'ごじゅうばい', 'romaji' => 'gojuubai', 'meanings' => ['50x']],
+            ['kana' => 'ひゃくばい', 'romaji' => 'hyakubai', 'meanings' => ['100x']],
+        ]);
+
         // Irregular Counters
+        $this->seedCategory('counting-irregular', 'Irregular Counters', [
+            // 着 (ちゃく) - Outfits
+            ['kana' => 'いっちゃく', 'romaji' => 'icchaku', 'meanings' => ['1 outfit (着)']],
+            ['kana' => 'にちゃく', 'romaji' => 'nichaku', 'meanings' => ['2 outfits']],
+            ['kana' => 'さんちゃく', 'romaji' => 'sanchaku', 'meanings' => ['3 outfits']],
+            ['kana' => 'よんちゃく', 'romaji' => 'yonchaku', 'meanings' => ['4 outfits']],
+            ['kana' => 'ごちゃく', 'romaji' => 'gochaku', 'meanings' => ['5 outfits']],
+            ['kana' => 'ろくちゃく', 'romaji' => 'rokuchaku', 'meanings' => ['6 outfits']],
+            ['kana' => 'ななちゃく', 'romaji' => 'nanachaku', 'meanings' => ['7 outfits']],
+            ['kana' => 'はっちゃく', 'romaji' => 'hacchaku', 'meanings' => ['8 outfits']],
+            ['kana' => 'きゅうちゃく', 'romaji' => 'kyuuchaku', 'meanings' => ['9 outfits']],
+            ['kana' => 'じゅっちゃく', 'romaji' => 'jucchaku', 'meanings' => ['10 outfits']],
+
+            // 軒 (けん) - Houses/Buildings
+            ['kana' => 'いっけん', 'romaji' => 'ikken', 'meanings' => ['1 house/building (軒)']],
+            ['kana' => 'にけん', 'romaji' => 'niken', 'meanings' => ['2 houses']],
+            ['kana' => 'さんけん', 'romaji' => 'sanken', 'meanings' => ['3 houses']],
+            ['kana' => 'よんけん', 'romaji' => 'yonken', 'meanings' => ['4 houses']],
+            ['kana' => 'ごけん', 'romaji' => 'goken', 'meanings' => ['5 houses']],
+            ['kana' => 'ろっけん', 'romaji' => 'rokken', 'meanings' => ['6 houses']],
+            ['kana' => 'ななけん', 'romaji' => 'nanaken', 'meanings' => ['7 houses']],
+            ['kana' => 'はっけん', 'romaji' => 'hakken', 'meanings' => ['8 houses']],
+            ['kana' => 'きゅうけん', 'romaji' => 'kyuuken', 'meanings' => ['9 houses']],
+            ['kana' => 'じゅっけん', 'romaji' => 'jukken', 'meanings' => ['10 houses']],
+
+            // 台 (だい) - Machines/Vehicles
+            ['kana' => 'いちだい', 'romaji' => 'ichidai', 'meanings' => ['1 machine/car (台)']],
+            ['kana' => 'にだい', 'romaji' => 'nidai', 'meanings' => ['2 machines']],
+            ['kana' => 'さんだい', 'romaji' => 'sandai', 'meanings' => ['3 machines']],
+            ['kana' => 'よんだい', 'romaji' => 'yondai', 'meanings' => ['4 machines']],
+            ['kana' => 'ごだい', 'romaji' => 'godai', 'meanings' => ['5 machines']],
+            ['kana' => 'ろくだい', 'romaji' => 'rokudai', 'meanings' => ['6 machines']],
+            ['kana' => 'ななだい', 'romaji' => 'nanadai', 'meanings' => ['7 machines']],
+            ['kana' => 'はちだい', 'romaji' => 'hachidai', 'meanings' => ['8 machines']],
+            ['kana' => 'きゅうだい', 'romaji' => 'kyuudai', 'meanings' => ['9 machines']],
+            ['kana' => 'じゅうだい', 'romaji' => 'juudai', 'meanings' => ['10 machines']],
+            ['kana' => 'にじゅうだい', 'romaji' => 'nijuudai', 'meanings' => ['20 machines']],
+            ['kana' => 'ごじゅうだい', 'romaji' => 'gojuudai', 'meanings' => ['50 machines']],
+            ['kana' => 'ひゃくだい', 'romaji' => 'hyakudai', 'meanings' => ['100 machines']],
+
+            // 冊 (さつ) - Books
+            ['kana' => 'いっさつ', 'romaji' => 'issatsu', 'meanings' => ['1 book (冊)']],
+            ['kana' => 'にさつ', 'romaji' => 'nisatsu', 'meanings' => ['2 books']],
+            ['kana' => 'さんさつ', 'romaji' => 'sansatsu', 'meanings' => ['3 books']],
+            ['kana' => 'よんさつ', 'romaji' => 'yonsatsu', 'meanings' => ['4 books']],
+            ['kana' => 'ごさつ', 'romaji' => 'gosatsu', 'meanings' => ['5 books']],
+            ['kana' => 'ろくさつ', 'romaji' => 'rokusatsu', 'meanings' => ['6 books']],
+            ['kana' => 'ななさつ', 'romaji' => 'nanasatsu', 'meanings' => ['7 books']],
+            ['kana' => 'はっさつ', 'romaji' => 'hassatsu', 'meanings' => ['8 books']],
+            ['kana' => 'きゅうさつ', 'romaji' => 'kyuusatsu', 'meanings' => ['9 books']],
+            ['kana' => 'じゅっさつ', 'romaji' => 'jussatsu', 'meanings' => ['10 books']],
+            ['kana' => 'にじゅっさつ', 'romaji' => 'nijussatsu', 'meanings' => ['20 books']],
+            ['kana' => 'ごじゅっさつ', 'romaji' => 'gojussatsu', 'meanings' => ['50 books']],
+            ['kana' => 'ひゃくさつ', 'romaji' => 'hyakusatsu', 'meanings' => ['100 books']],
+
+            // 名 (めい) - People (formal)
+            ['kana' => 'いちめい', 'romaji' => 'ichimei', 'meanings' => ['1 person (formal) (名)']],
+            ['kana' => 'にめい', 'romaji' => 'nimei', 'meanings' => ['2 people']],
+            ['kana' => 'さんめい', 'romaji' => 'sanmei', 'meanings' => ['3 people']],
+            ['kana' => 'よんめい', 'romaji' => 'yonmei', 'meanings' => ['4 people']],
+            ['kana' => 'ごめい', 'romaji' => 'gomei', 'meanings' => ['5 people']],
+            ['kana' => 'ろくめい', 'romaji' => 'rokumei', 'meanings' => ['6 people']],
+            ['kana' => 'ななめい', 'romaji' => 'nanamei', 'meanings' => ['7 people']],
+            ['kana' => 'はちめい', 'romaji' => 'hachimei', 'meanings' => ['8 people']],
+            ['kana' => 'きゅうめい', 'romaji' => 'kyuumei', 'meanings' => ['9 people']],
+            ['kana' => 'じゅうめい', 'romaji' => 'juumei', 'meanings' => ['10 people']],
+
+            // 泊 (はく) - Overnight stays
+            ['kana' => 'いっぱく', 'romaji' => 'ippaku', 'meanings' => ['1 overnight stay (泊)']],
+            ['kana' => 'にはく', 'romaji' => 'nihaku', 'meanings' => ['2 nights']],
+            ['kana' => 'さんぱく', 'romaji' => 'sanpaku', 'meanings' => ['3 nights']],
+            ['kana' => 'よんはく', 'romaji' => 'yonhaku', 'meanings' => ['4 nights']],
+            ['kana' => 'ごはく', 'romaji' => 'gohaku', 'meanings' => ['5 nights']],
+            ['kana' => 'ろっぱく', 'romaji' => 'roppaku', 'meanings' => ['6 nights']],
+            ['kana' => 'ななはく', 'romaji' => 'nanahaku', 'meanings' => ['7 nights']],
+            ['kana' => 'はっぱく', 'romaji' => 'happaku', 'meanings' => ['8 nights']],
+            ['kana' => 'きゅうはく', 'romaji' => 'kyuuhaku', 'meanings' => ['9 nights']],
+            ['kana' => 'じゅっぱく', 'romaji' => 'juppaku', 'meanings' => ['10 nights']],
+            ['kana' => 'じゅうよんはく', 'romaji' => 'juuyonhaku', 'meanings' => ['14 nights']],
+            ['kana' => 'さんじゅっぱく', 'romaji' => 'sanjuppaku', 'meanings' => ['30 nights']],
+        ]);
+
     }
 
     private function seedCategory(string $slug, string $type, array $items): void
