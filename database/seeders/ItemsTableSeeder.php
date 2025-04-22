@@ -5216,20 +5216,36 @@ class ItemsTableSeeder extends Seeder
     private function createItemPair(int $categoryId, string $type, array $entry): void
     {
         $meanings = $entry['meanings'];
-        $mainMeaning = $meanings[0];
 
-        // Handle optional extra fullMeaning with parentheses
-        if (preg_match('/^(.+?)\s*\((.+)\)$/', $mainMeaning, $matches)) {
-            $cleanMeaning = trim($matches[1]);
-            $fullMeaning = trim($mainMeaning);
+        // Handle multi-language translation
+        $translations = [];
+        $mainMeaning = null;
+        $fullMeaning = null;
+        $altPrompts = [];
+
+        if (isset($meanings['en']) || isset($meanings['nl'])) {
+            $translations = $meanings;
+
+            // Set main meaning to first English if exists, fallback to Dutch
+            $mainMeaning = $translations['en'][0] ?? ($translations['nl'][0] ?? null);
+            $fullMeaning = $mainMeaning;
+
         } else {
-            $cleanMeaning = $mainMeaning;
-            $fullMeaning = null;
-        }
+            $mainMeaning = $meanings[0];
 
-        $altPrompts = array_slice($meanings, 1);
-        if ($fullMeaning && $fullMeaning !== $cleanMeaning) {
-            array_unshift($altPrompts, $fullMeaning);
+            // Handle optional extra fullMeaning with parentheses
+            if (preg_match('/^(.+?)\s*\((.+)\)$/', $mainMeaning, $matches)) {
+                $cleanMeaning = trim($matches[1]);
+                $fullMeaning = trim($mainMeaning);
+            } else {
+                $cleanMeaning = $mainMeaning;
+                $fullMeaning = null;
+            }
+
+            $altPrompts = array_slice($meanings, 1);
+            if ($fullMeaning && $fullMeaning !== $cleanMeaning) {
+                array_unshift($altPrompts, $fullMeaning);
+            }
         }
 
         // Split kana/romaji on slashes
@@ -5240,38 +5256,52 @@ class ItemsTableSeeder extends Seeder
         $altKana = array_slice($kanaVariants, 1);
         $altRomaji = array_slice($romajiVariants, 1);
 
+        $extraData = [];
+
+        if (!empty($translations)) {
+            $extraData['translations'] = $translations;
+        } else {
+            if (!empty($altPrompts)) {
+                $extraData['alt_answers'] = $altPrompts;
+            }
+        }
+
         // Recognition
         Item::create([
             'category_id' => $categoryId,
             'prompt' => $entry['kana'],
-            'answer' => $cleanMeaning,
+            'answer' => $mainMeaning,
             'romaji' => $entry['romaji'] ?? '',
             'direction' => 'recognition',
             'type' => $type,
-            'extra_data' => !empty($altPrompts) ? json_encode(['alt_answers' => $altPrompts]) : null,
+            'extra_data' => !empty($extraData) ? json_encode($extraData) : null,
         ]);
 
         // Define kana-only types where romaji should NOT be accepted for recall
         $kanaOnlyTypes = ['Main Kana', 'Dakuten Kana', 'Combination Kana', 'All Kana'];
 
-        // Prepare alt answers for recall
         $recallAltAnswers = in_array($type, $kanaOnlyTypes)
             ? $altKana
             : array_merge($altKana, $altRomaji);
+
         $recallExtra = [];
 
-        if (!empty($altPrompts)) {
-            $recallExtra['alt_prompts'] = $altPrompts;
-        }
+        if (!empty($translations)) {
+            $recallExtra['translations'] = $translations;
+        } else {
+            if (!empty($altPrompts)) {
+                $recallExtra['alt_prompts'] = $altPrompts;
+            }
 
-        if (!empty($recallAltAnswers)) {
-            $recallExtra['alt_answers'] = $recallAltAnswers;
+            if (!empty($recallAltAnswers)) {
+                $recallExtra['alt_answers'] = $recallAltAnswers;
+            }
         }
 
         // Recall
         Item::create([
             'category_id' => $categoryId,
-            'prompt' => $fullMeaning ?? $cleanMeaning,
+            'prompt' => $fullMeaning ?? $mainMeaning,
             'answer' => $mainKana,
             'romaji' => $romajiVariants[0] ?? '',
             'direction' => 'recall',
