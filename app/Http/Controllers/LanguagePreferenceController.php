@@ -16,6 +16,6 @@ class LanguagePreferenceController extends Controller
         $user->preferred_language = $request->preferred_language;
         $user->save();
 
-        return response()->json(['status' => 'ok']);
+        return redirect()->back();
     }
 }
