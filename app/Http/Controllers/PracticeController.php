@@ -44,19 +44,24 @@ class PracticeController extends Controller
         $items = session('practice.items');
         $current = session('practice.current', 0);
         $direction = session('practice.direction', 'recognition');
+        $lang = auth()->user()->preferred_language;
 
         if (!$items || !isset($items[$current])) {
             return redirect()->route('practice.results');
         }
 
         $item = (object) $items[$current];
+        $prompt = $item->prompt;
 
-        if ($direction === 'recall' && !empty($item->extra_data)) {
-            $extra = json_decode($item->extra_data, true);
-            if (!empty($extra['alt_prompts'])) {
-                $allPrompts = array_merge([$item->prompt], $extra['alt_prompts']);
-                $item->prompt = implode(' / ', $allPrompts);
+        $extra = !empty($item->extra_data) ? json_decode($item->extra_data, true) : [];
+
+        if ($direction === 'recall') {
+            if (!empty($extra['translations'][$lang])) {
+                $prompt = implode(' / ', $extra['translations'][$lang]);
+            } elseif (!empty($extra['translations']) && array_values($extra['translations']) === $extra['translations']) {
+                $prompt = implode(' / ', $extra['translations']);
             }
+            $item->prompt = $prompt;
         }
 
         return view('practice.question', compact('item'));
@@ -68,19 +73,32 @@ class PracticeController extends Controller
         $items = session('practice.items');
         $current = session('practice.current', 0);
         $direction = session('practice.direction', 'recognition');
-        $item = (object) $items[$current];
+        $lang = auth()->user()->preferred_language;
 
+        $item = (object) $items[$current];
         $submitted = strtolower($answer);
-        $validAnswers = [strtolower($item->answer)];
+
+        $validAnswers = [];
+        $extra = !empty($item->extra_data) ? json_decode($item->extra_data, true) : [];
 
         $kanaOnlyTypes = ['Main Kana', 'Dakuten Kana', 'Combination Kana', 'All Kana'];
 
-        if ($direction === 'recall' && !in_array($item->type, $kanaOnlyTypes) && !empty($item->romaji)) {
-            $validAnswers[] = strtolower($item->romaji);
-        }
+        if ($direction === 'recall') {
+            // Recall: answer should be kana (and maybe romaji)
+            $validAnswers[] = strtolower($item->answer);
+            if (!in_array($item->type, $kanaOnlyTypes) && !empty($item->romaji)) {
+                $validAnswers[] = strtolower($item->romaji);
+            }
+        } else {
+            // Recognition: answer is a translation (possibly with alternatives)
+            if (!empty($extra['translations'][$lang])) {
+                $validAnswers = array_map('strtolower', $extra['translations'][$lang]);
+            } elseif (!empty($extra['translations']) && array_values($extra['translations']) === $extra['translations']) {
+                $validAnswers = array_map('strtolower', $extra['translations']);
+            } else {
+                $validAnswers[] = strtolower($item->answer);
+            }
 
-        if ($direction === 'recognition' && !empty($item->extra_data)) {
-            $extra = json_decode($item->extra_data, true);
             if (!empty($extra['alt_answers'])) {
                 foreach ($extra['alt_answers'] as $alt) {
                     $validAnswers[] = strtolower($alt);
@@ -130,32 +148,45 @@ class PracticeController extends Controller
         $skipped = session('practice.skipped', []);
         $currentIndex = session('practice.current', 0);
         $direction = session('practice.direction', 'recognition');
+        $preferredLang = auth()->user()->preferred_language;
 
         $totalItems = count($allItems);
-        $incorrectCount = count($incorrect);
-        $skippedCount = count($skipped);
-
-        // If no questions were answered at all
-        if ($currentIndex === 0 && $incorrectCount === 0 && $skippedCount === 0) {
-            $correct = 0;
-            $missed = $totalItems;
-        } else {
-            $correct = $currentIndex;
-            $missed = $totalItems - $correct;
-        }
-
+        $correct = $currentIndex;
+        $missed = $totalItems - $correct;
         $accuracy = $totalItems > 0 ? round(($correct / $totalItems) * 100) : 0;
 
-        // Group incorrect items
         $incorrectCounts = [];
         foreach ($incorrect as $item) {
             $item = (object) $item;
             $id = $item->id;
             $extra = !empty($item->extra_data) ? json_decode($item->extra_data, true) : [];
 
-            $correctDisplay = $direction === 'recall'
-                ? $item->answer . (!empty($item->romaji) ? " ({$item->romaji})" : '')
-                : implode(' / ', array_merge([$item->answer], $extra['alt_answers'] ?? []));
+            // Build correct answer
+            if ($direction === 'recall') {
+                $answers = [$item->answer];
+                if (!empty($item->romaji)) {
+                    $answers[] = $item->romaji;
+                }
+                $correctDisplay = implode(' / ', $answers);
+            } else {
+                if (!empty($extra['translations'][$preferredLang])) {
+                    $correctAnswers = $extra['translations'][$preferredLang];
+                } elseif (!empty($extra['translations']) && array_values($extra['translations']) === $extra['translations']) {
+                    $correctAnswers = $extra['translations'];
+                } else {
+                    $correctAnswers = [$item->answer];
+                }
+                $correctDisplay = implode(' / ', $correctAnswers);
+            }
+
+            // Build translated prompt for recall
+            if ($direction === 'recall') {
+                if (!empty($extra['translations'][$preferredLang])) {
+                    $item->prompt = implode(' / ', $extra['translations'][$preferredLang]);
+                } elseif (!empty($extra['translations']) && array_values($extra['translations']) === $extra['translations']) {
+                    $item->prompt = implode(' / ', $extra['translations']);
+                }
+            }
 
             if (!isset($incorrectCounts[$id])) {
                 $incorrectCounts[$id] = [
@@ -168,24 +199,40 @@ class PracticeController extends Controller
             }
         }
 
-        // Group skipped items
         $skippedItems = [];
         foreach ($skipped as $item) {
             $item = (object) $item;
             $extra = !empty($item->extra_data) ? json_decode($item->extra_data, true) : [];
 
-            $item->correct_display = $direction === 'recall'
-                ? $item->answer . (!empty($item->romaji) ? " ({$item->romaji})" : '')
-                : implode(' / ', array_merge([$item->answer], $extra['alt_answers'] ?? []));
+            if ($direction === 'recall') {
+                if (!empty($extra['translations'][$preferredLang])) {
+                    $item->prompt = implode(' / ', $extra['translations'][$preferredLang]);
+                } elseif (!empty($extra['translations']) && array_values($extra['translations']) === $extra['translations']) {
+                    $item->prompt = implode(' / ', $extra['translations']);
+                }
+
+                $answers = [$item->answer];
+                if (!empty($item->romaji)) {
+                    $answers[] = $item->romaji;
+                }
+                $item->correct_display = implode(' / ', $answers);
+            } else {
+                if (!empty($extra['translations'][$preferredLang])) {
+                    $correctAnswers = $extra['translations'][$preferredLang];
+                } elseif (!empty($extra['translations']) && array_values($extra['translations']) === $extra['translations']) {
+                    $correctAnswers = $extra['translations'];
+                } else {
+                    $correctAnswers = [$item->answer];
+                }
+                $item->correct_display = implode(' / ', $correctAnswers);
+            }
 
             $skippedItems[$item->id] = $item;
         }
 
-        // Save to database
         $user = auth()->user();
         $languageSlug = session('practice.language_slug');
         $categorySlug = session('practice.category_slug');
-        $direction = session('practice.direction');
 
         $language = Language::where('slug', $languageSlug)->first();
         $category = Category::where('slug', $categorySlug)->first();
@@ -202,7 +249,6 @@ class PracticeController extends Controller
             ]);
         }
 
-        // Clear the session
         session()->forget([
             'practice.items',
             'practice.original_items',
