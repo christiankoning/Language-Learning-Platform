@@ -670,6 +670,73 @@ class ItemsTableSeeder extends Seeder
             ['kana' => '小', 'romaji' => 'chiisai / shou', 'meanings' => ['small']],
         ]);
 
+        // Kanji N4
+        // Verbs & Actions
+        $this->seedCategory('kanji-n4-verbs-and-actions', 'Verbs & Actions', [
+            ['kana' => '働', 'romaji' => 'hataraku', 'meanings' => ['to work']],
+            ['kana' => '走', 'romaji' => 'hashiru', 'meanings' => ['to run']],
+            ['kana' => '泳', 'romaji' => 'oyogu', 'meanings' => ['to swim']],
+            ['kana' => '持', 'romaji' => 'motsu', 'meanings' => ['to hold']],
+            ['kana' => '開', 'romaji' => 'hiraku / aku / kai', 'meanings' => ['to open']],
+            ['kana' => '閉', 'romaji' => 'tojiru / shimaru / hei', 'meanings' => ['to close']],
+            ['kana' => '始', 'romaji' => 'hajimeru / hajimaru', 'meanings' => ['to begin']],
+            ['kana' => '終', 'romaji' => 'owaru / shu', 'meanings' => ['to end']],
+        ]);
+
+        // Time & Frequency
+        $this->seedCategory('kanji-n4-time-and-frequency', 'Time & Frequency', [
+            ['kana' => '曜', 'romaji' => 'you', 'meanings' => ['day of the week']],
+            ['kana' => '毎', 'romaji' => 'mai', 'meanings' => ['every']],
+            ['kana' => '週', 'romaji' => 'shuu', 'meanings' => ['week']],
+            ['kana' => '昨', 'romaji' => 'saku', 'meanings' => ['last (past)', 'yesterday']],
+            ['kana' => '晩', 'romaji' => 'ban', 'meanings' => ['evening']],
+            ['kana' => '午', 'romaji' => 'go', 'meanings' => ['noon']],
+        ]);
+
+        // Places & Directions
+        $this->seedCategory('kanji-n4-places-and-directions', 'Places & Directions', [
+            ['kana' => '駅', 'romaji' => 'eki', 'meanings' => ['station']],
+            ['kana' => '店', 'romaji' => 'mise / ten', 'meanings' => ['shop']],
+            ['kana' => '場', 'romaji' => 'ba / jou', 'meanings' => ['place']],
+            ['kana' => '館', 'romaji' => 'kan', 'meanings' => ['building (hall)']],
+            ['kana' => '所', 'romaji' => 'tokoro / sho', 'meanings' => ['place']],
+            ['kana' => '近', 'romaji' => 'chikai / kin', 'meanings' => ['near']],
+            ['kana' => '遠', 'romaji' => 'tooi / en', 'meanings' => ['far']],
+            ['kana' => '通', 'romaji' => 'tooru / tsuu', 'meanings' => ['to pass', 'traffic']],
+        ]);
+
+        // Emotions & States
+        $this->seedCategory('kanji-n4-emotions-and-states', 'Emotions & States', [
+            ['kana' => '楽', 'romaji' => 'tanoshii / raku / gaku', 'meanings' => ['fun', 'comfort', 'music']],
+            ['kana' => '悲', 'romaji' => 'kanashii / hi', 'meanings' => ['sad']],
+            ['kana' => '怒', 'romaji' => 'okoru / do', 'meanings' => ['angry']],
+            ['kana' => '思', 'romaji' => 'omou / shi', 'meanings' => ['to think']],
+            ['kana' => '知', 'romaji' => 'shiru / chi', 'meanings' => ['to know']],
+            ['kana' => '忘', 'romaji' => 'wasureru / bou', 'meanings' => ['to forget']],
+        ]);
+
+        // Family & People
+        $this->seedCategory('kanji-n4-family-and-people', 'Family & People', [
+            ['kana' => '兄', 'romaji' => 'ani / kei / kyou', 'meanings' => ['older brother']],
+            ['kana' => '弟', 'romaji' => 'otouto / dai / tei', 'meanings' => ['younger brother']],
+            ['kana' => '姉', 'romaji' => 'ane / shi', 'meanings' => ['older sister']],
+            ['kana' => '妹', 'romaji' => 'imouto / mai', 'meanings' => ['younger sister']],
+            ['kana' => '家', 'romaji' => 'ie / ka / ke', 'meanings' => ['house', 'home']],
+            ['kana' => '族', 'romaji' => 'zoku', 'meanings' => ['tribe', 'family']],
+        ]);
+
+        // Common Nouns & Adjectives
+        $this->seedCategory('kanji-n4-nouns-and-adjectives', 'Common Nouns & Adjectives', [
+            ['kana' => '色', 'romaji' => 'iro / shoku', 'meanings' => ['color']],
+            ['kana' => '音', 'romaji' => 'oto / on', 'meanings' => ['sound']],
+            ['kana' => '光', 'romaji' => 'hikari / kou', 'meanings' => ['light']],
+            ['kana' => '新', 'romaji' => 'atarashii / shin', 'meanings' => ['new']],
+            ['kana' => '古', 'romaji' => 'furui / ko', 'meanings' => ['old']],
+            ['kana' => '明', 'romaji' => 'akarui / mei', 'meanings' => ['bright']],
+            ['kana' => '暗', 'romaji' => 'kurai / an', 'meanings' => ['dark']],
+            ['kana' => '強', 'romaji' => 'tsuyoi / kyou', 'meanings' => ['strong']],
+        ]);
+
 
         // Seed Core Particles
         $core = Category::where('slug', 'core-particles')->firstOrFail();
