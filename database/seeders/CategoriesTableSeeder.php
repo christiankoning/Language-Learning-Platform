@@ -226,5 +226,21 @@ class CategoriesTableSeeder extends Seeder
                 'description' => 'Miscellaneous or irregular counters that don’t fit neatly in the other categories. Great for intermediate to advanced learners.'
             ],
         ]);
+
+        $vtuber = $jp->categories()->create([
+            'name' => 'VTuber',
+            'slug' => 'vtuber',
+        ]);
+
+        $vtuber->children()->createMany([
+            ['language_id' => $jp->id, 'name' => 'Basic Stream Vocabulary', 'slug' => 'basic-stream-vocabulary'],
+            ['language_id' => $jp->id, 'name' => 'Useful Expressions', 'slug' => 'useful-expressions'],
+            ['language_id' => $jp->id, 'name' => 'Chat Lingo & Slang', 'slug' => 'chat-lingo-and-slang'],
+            ['language_id' => $jp->id, 'name' => 'Reactions & Emotions', 'slug' => 'reactions-and-emotions'],
+            ['language_id' => $jp->id, 'name' => 'Game-related Phrases', 'slug' => 'game-related-phrases'],
+            ['language_id' => $jp->id, 'name' => 'Technical Issues & Stream Setup', 'slug' => 'technical-issues-and-stream-setup'],
+            ['language_id' => $jp->id, 'name' => 'Fan Engagement', 'slug' => 'fan-engagement'],
+            ['language_id' => $jp->id, 'name' => 'End-of-Stream Phrases', 'slug' => 'end-of-stream-phrases'],
+        ]);
     }
 }
