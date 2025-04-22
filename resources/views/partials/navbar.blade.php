@@ -27,6 +27,16 @@
                    class="px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-md font-medium transition text-base">
                     Profile
                 </a>
+                <form id="language-form" class="inline-block" method="POST" action="{{ route('profile.update') }}">
+                    @csrf
+                    @method('PATCH')
+                    <select name="preferred_language" id="preferred_language"
+                            class="px-4 py-2 rounded-md bg-white/10 text-white text-sm font-medium border border-white/20 hover:bg-white/20 transition"
+                            onchange="document.getElementById('language-form').submit();">
+                        <option value="en" {{ auth()->user()->preferred_language === 'en' ? 'selected' : '' }}>EN</option>
+                        <option value="nl" {{ auth()->user()->preferred_language === 'nl' ? 'selected' : '' }}>NL</option>
+                    </select>
+                </form>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button type="submit"
