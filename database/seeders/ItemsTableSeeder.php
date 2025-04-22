@@ -1053,212 +1053,663 @@ class ItemsTableSeeder extends Seeder
         // Kanji N3
         // Work & Business
         $this->seedCategory('kanji-n3-work-and-business', 'Work & Business', [
-            ['kana' => '会', 'romaji' => 'kai', 'meanings' => ['meeting', 'association']],
-            ['kana' => '業', 'romaji' => 'gyou', 'meanings' => ['business', 'vocation']],
-            ['kana' => '仕', 'romaji' => 'shi', 'meanings' => ['to serve', 'work']],
-            ['kana' => '職', 'romaji' => 'shoku', 'meanings' => ['job', 'employment']],
-            ['kana' => '課', 'romaji' => 'ka', 'meanings' => ['section', 'lesson']],
-            ['kana' => '務', 'romaji' => 'mu', 'meanings' => ['duty', 'task']],
-            ['kana' => '給', 'romaji' => 'kyuu', 'meanings' => ['salary', 'wage']],
-            ['kana' => '責', 'romaji' => 'seki', 'meanings' => ['responsibility']],
-            ['kana' => '任', 'romaji' => 'nin', 'meanings' => ['duty', 'assignment']],
-            ['kana' => '報', 'romaji' => 'hou', 'meanings' => ['report', 'news']],
+            ['kana' => '会', 'romaji' => 'kai', 'meanings' => [
+                'en' => ['meeting', 'association'],
+                'nl' => ['vergadering', 'vereniging'],
+            ]],
+            ['kana' => '業', 'romaji' => 'gyou', 'meanings' => [
+                'en' => ['business', 'vocation'],
+                'nl' => ['bedrijf', 'beroep'],
+            ]],
+            ['kana' => '仕', 'romaji' => 'shi', 'meanings' => [
+                'en' => ['to serve', 'work'],
+                'nl' => ['dienen', 'werk'],
+            ]],
+            ['kana' => '職', 'romaji' => 'shoku', 'meanings' => [
+                'en' => ['job', 'employment'],
+                'nl' => ['baan', 'werkgelegenheid'],
+            ]],
+            ['kana' => '課', 'romaji' => 'ka', 'meanings' => [
+                'en' => ['section', 'lesson'],
+                'nl' => ['sectie', 'les'],
+            ]],
+            ['kana' => '務', 'romaji' => 'mu', 'meanings' => [
+                'en' => ['duty', 'task'],
+                'nl' => ['plicht', 'taak'],
+            ]],
+            ['kana' => '給', 'romaji' => 'kyuu', 'meanings' => [
+                'en' => ['salary', 'wage'],
+                'nl' => ['salaris', 'loon'],
+            ]],
+            ['kana' => '責', 'romaji' => 'seki', 'meanings' => [
+                'en' => ['responsibility'],
+                'nl' => ['verantwoordelijkheid'],
+            ]],
+            ['kana' => '任', 'romaji' => 'nin', 'meanings' => [
+                'en' => ['duty', 'assignment'],
+                'nl' => ['verplichting', 'taak'],
+            ]],
+            ['kana' => '報', 'romaji' => 'hou', 'meanings' => [
+                'en' => ['report', 'news'],
+                'nl' => ['rapport', 'nieuws'],
+            ]],
         ]);
 
         // School & Learning
         $this->seedCategory('kanji-n3-school-and-learning', 'School & Learning', [
-            ['kana' => '課', 'romaji' => 'ka', 'meanings' => ['lesson', 'section']],
-            ['kana' => '試', 'romaji' => 'shi', 'meanings' => ['test', 'try']],
-            ['kana' => '験', 'romaji' => 'ken', 'meanings' => ['test', 'experience']],
-            ['kana' => '質', 'romaji' => 'shitsu', 'meanings' => ['quality', 'question']],
-            ['kana' => '問', 'romaji' => 'mon', 'meanings' => ['question']],
-            ['kana' => '答', 'romaji' => 'tou', 'meanings' => ['answer']],
-            ['kana' => '教', 'romaji' => 'kyou', 'meanings' => ['teach', 'religion']],
-            ['kana' => '授', 'romaji' => 'ju', 'meanings' => ['instruct', 'grant']],
-            ['kana' => '宿', 'romaji' => 'shuku', 'meanings' => ['lodge', 'homework']],
-            ['kana' => '研', 'romaji' => 'ken', 'meanings' => ['research']],
+            ['kana' => '課', 'romaji' => 'ka', 'meanings' => [
+                'en' => ['lesson', 'section'],
+                'nl' => ['les', 'sectie'],
+            ]],
+            ['kana' => '試', 'romaji' => 'shi', 'meanings' => [
+                'en' => ['test', 'try'],
+                'nl' => ['toets', 'proberen'],
+            ]],
+            ['kana' => '験', 'romaji' => 'ken', 'meanings' => [
+                'en' => ['test', 'experience'],
+                'nl' => ['test', 'ervaring'],
+            ]],
+            ['kana' => '質', 'romaji' => 'shitsu', 'meanings' => [
+                'en' => ['quality', 'question'],
+                'nl' => ['kwaliteit', 'vraag'],
+            ]],
+            ['kana' => '問', 'romaji' => 'mon', 'meanings' => [
+                'en' => ['question'],
+                'nl' => ['vraag'],
+            ]],
+            ['kana' => '答', 'romaji' => 'tou', 'meanings' => [
+                'en' => ['answer'],
+                'nl' => ['antwoord'],
+            ]],
+            ['kana' => '教', 'romaji' => 'kyou', 'meanings' => [
+                'en' => ['teach', 'religion'],
+                'nl' => ['onderwijzen', 'religie'],
+            ]],
+            ['kana' => '授', 'romaji' => 'ju', 'meanings' => [
+                'en' => ['instruct', 'grant'],
+                'nl' => ['instrueren', 'toekennen'],
+            ]],
+            ['kana' => '宿', 'romaji' => 'shuku', 'meanings' => [
+                'en' => ['lodge', 'homework'],
+                'nl' => ['onderkomen', 'huiswerk'],
+            ]],
+            ['kana' => '研', 'romaji' => 'ken', 'meanings' => [
+                'en' => ['research'],
+                'nl' => ['onderzoek'],
+            ]],
         ]);
 
         // Emotions & Psychology
         $this->seedCategory('kanji-n3-emotions-and-psychology', 'Emotions & Psychology', [
-            ['kana' => '感', 'romaji' => 'kan', 'meanings' => ['feeling', 'emotion']],
-            ['kana' => '情', 'romaji' => 'jou', 'meanings' => ['emotion', 'condition']],
-            ['kana' => '怒', 'romaji' => 'do', 'meanings' => ['anger']],
-            ['kana' => '喜', 'romaji' => 'ki', 'meanings' => ['joy']],
-            ['kana' => '悲', 'romaji' => 'hi', 'meanings' => ['sadness']],
-            ['kana' => '恥', 'romaji' => 'chi', 'meanings' => ['shame']],
-            ['kana' => '欲', 'romaji' => 'yoku', 'meanings' => ['desire']],
-            ['kana' => '恋', 'romaji' => 'koi', 'meanings' => ['romantic love']],
-            ['kana' => '愛', 'romaji' => 'ai', 'meanings' => ['love']],
-            ['kana' => '怖', 'romaji' => 'fu', 'meanings' => ['fear']],
+            ['kana' => '感', 'romaji' => 'kan', 'meanings' => [
+                'en' => ['feeling', 'emotion'],
+                'nl' => ['gevoel', 'emotie'],
+            ]],
+            ['kana' => '情', 'romaji' => 'jou', 'meanings' => [
+                'en' => ['emotion', 'condition'],
+                'nl' => ['gevoel', 'toestand'],
+            ]],
+            ['kana' => '怒', 'romaji' => 'do', 'meanings' => [
+                'en' => ['anger'],
+                'nl' => ['woede'],
+            ]],
+            ['kana' => '喜', 'romaji' => 'ki', 'meanings' => [
+                'en' => ['joy'],
+                'nl' => ['vreugde'],
+            ]],
+            ['kana' => '悲', 'romaji' => 'hi', 'meanings' => [
+                'en' => ['sadness'],
+                'nl' => ['verdriet'],
+            ]],
+            ['kana' => '恥', 'romaji' => 'chi', 'meanings' => [
+                'en' => ['shame'],
+                'nl' => ['schaamte'],
+            ]],
+            ['kana' => '欲', 'romaji' => 'yoku', 'meanings' => [
+                'en' => ['desire'],
+                'nl' => ['verlangen'],
+            ]],
+            ['kana' => '恋', 'romaji' => 'koi', 'meanings' => [
+                'en' => ['romantic love'],
+                'nl' => ['romantische liefde'],
+            ]],
+            ['kana' => '愛', 'romaji' => 'ai', 'meanings' => [
+                'en' => ['love'],
+                'nl' => ['liefde'],
+            ]],
+            ['kana' => '怖', 'romaji' => 'fu', 'meanings' => [
+                'en' => ['fear'],
+                'nl' => ['angst'],
+            ]],
         ]);
 
         // Daily Activities
         $this->seedCategory('kanji-n3-daily-activities', 'Daily Activities', [
-            ['kana' => '洗', 'romaji' => 'sen', 'meanings' => ['wash']],
-            ['kana' => '掃', 'romaji' => 'sou', 'meanings' => ['sweep']],
-            ['kana' => '起', 'romaji' => 'ki', 'meanings' => ['wake up']],
-            ['kana' => '寝', 'romaji' => 'shin', 'meanings' => ['sleep']],
-            ['kana' => '遊', 'romaji' => 'yuu', 'meanings' => ['play']],
-            ['kana' => '働', 'romaji' => 'dou', 'meanings' => ['work']],
-            ['kana' => '習', 'romaji' => 'shuu', 'meanings' => ['learn']],
-            ['kana' => '準', 'romaji' => 'jun', 'meanings' => ['prepare']],
-            ['kana' => '終', 'romaji' => 'shuu', 'meanings' => ['end']],
-            ['kana' => '始', 'romaji' => 'shi', 'meanings' => ['begin']],
+            ['kana' => '洗', 'romaji' => 'sen', 'meanings' => [
+                'en' => ['wash'],
+                'nl' => ['wassen'],
+            ]],
+            ['kana' => '掃', 'romaji' => 'sou', 'meanings' => [
+                'en' => ['sweep'],
+                'nl' => ['vegen'],
+            ]],
+            ['kana' => '起', 'romaji' => 'ki', 'meanings' => [
+                'en' => ['wake up'],
+                'nl' => ['wakker worden'],
+            ]],
+            ['kana' => '寝', 'romaji' => 'shin', 'meanings' => [
+                'en' => ['sleep'],
+                'nl' => ['slapen'],
+            ]],
+            ['kana' => '遊', 'romaji' => 'yuu', 'meanings' => [
+                'en' => ['play'],
+                'nl' => ['spelen'],
+            ]],
+            ['kana' => '働', 'romaji' => 'dou', 'meanings' => [
+                'en' => ['work'],
+                'nl' => ['werken'],
+            ]],
+            ['kana' => '習', 'romaji' => 'shuu', 'meanings' => [
+                'en' => ['learn'],
+                'nl' => ['leren'],
+            ]],
+            ['kana' => '準', 'romaji' => 'jun', 'meanings' => [
+                'en' => ['prepare'],
+                'nl' => ['voorbereiden'],
+            ]],
+            ['kana' => '終', 'romaji' => 'shuu', 'meanings' => [
+                'en' => ['end'],
+                'nl' => ['einde'],
+            ]],
+            ['kana' => '始', 'romaji' => 'shi', 'meanings' => [
+                'en' => ['begin'],
+                'nl' => ['beginnen'],
+            ]],
         ]);
 
         // Time & Seasons
         $this->seedCategory('kanji-n3-time-and-seasons', 'Time & Seasons', [
-            ['kana' => '秒', 'romaji' => 'byou', 'meanings' => ['second (time)']],
-            ['kana' => '季', 'romaji' => 'ki', 'meanings' => ['season']],
-            ['kana' => '節', 'romaji' => 'setsu', 'meanings' => ['season', 'joint']],
-            ['kana' => '昨', 'romaji' => 'saku', 'meanings' => ['last (year/day)']],
-            ['kana' => '晩', 'romaji' => 'ban', 'meanings' => ['evening']],
-            ['kana' => '夜', 'romaji' => 'ya', 'meanings' => ['night']],
-            ['kana' => '朝', 'romaji' => 'chou', 'meanings' => ['morning']],
-            ['kana' => '昼', 'romaji' => 'chuu', 'meanings' => ['noon']],
-            ['kana' => '末', 'romaji' => 'matsu', 'meanings' => ['end']],
-            ['kana' => '週', 'romaji' => 'shuu', 'meanings' => ['week']],
+            ['kana' => '秒', 'romaji' => 'byou', 'meanings' => [
+                'en' => ['second (time)'],
+                'nl' => ['seconde'],
+            ]],
+            ['kana' => '季', 'romaji' => 'ki', 'meanings' => [
+                'en' => ['season'],
+                'nl' => ['seizoen'],
+            ]],
+            ['kana' => '節', 'romaji' => 'setsu', 'meanings' => [
+                'en' => ['season', 'joint'],
+                'nl' => ['seizoen', 'gewricht'],
+            ]],
+            ['kana' => '昨', 'romaji' => 'saku', 'meanings' => [
+                'en' => ['last (year/day)'],
+                'nl' => ['vorig (jaar/dag)'],
+            ]],
+            ['kana' => '晩', 'romaji' => 'ban', 'meanings' => [
+                'en' => ['evening'],
+                'nl' => ['avond'],
+            ]],
+            ['kana' => '夜', 'romaji' => 'ya', 'meanings' => [
+                'en' => ['night'],
+                'nl' => ['nacht'],
+            ]],
+            ['kana' => '朝', 'romaji' => 'chou', 'meanings' => [
+                'en' => ['morning'],
+                'nl' => ['ochtend'],
+            ]],
+            ['kana' => '昼', 'romaji' => 'chuu', 'meanings' => [
+                'en' => ['noon'],
+                'nl' => ['middag'],
+            ]],
+            ['kana' => '末', 'romaji' => 'matsu', 'meanings' => [
+                'en' => ['end'],
+                'nl' => ['einde'],
+            ]],
+            ['kana' => '週', 'romaji' => 'shuu', 'meanings' => [
+                'en' => ['week'],
+                'nl' => ['week'],
+            ]],
         ]);
 
         // Nature & Environment
         $this->seedCategory('kanji-n3-nature-and-environment', 'Nature & Environment', [
-            ['kana' => '湖', 'romaji' => 'ko', 'meanings' => ['lake']],
-            ['kana' => '島', 'romaji' => 'tou', 'meanings' => ['island']],
-            ['kana' => '岸', 'romaji' => 'gan', 'meanings' => ['shore']],
-            ['kana' => '砂', 'romaji' => 'sa', 'meanings' => ['sand']],
-            ['kana' => '氷', 'romaji' => 'hyou', 'meanings' => ['ice']],
-            ['kana' => '波', 'romaji' => 'ha', 'meanings' => ['wave']],
-            ['kana' => '岩', 'romaji' => 'gan', 'meanings' => ['rock']],
-            ['kana' => '星', 'romaji' => 'sei', 'meanings' => ['star']],
-            ['kana' => '暑', 'romaji' => 'sho', 'meanings' => ['hot (weather)']],
-            ['kana' => '寒', 'romaji' => 'kan', 'meanings' => ['cold']],
+            ['kana' => '湖', 'romaji' => 'ko', 'meanings' => [
+                'en' => ['lake'],
+                'nl' => ['meer'],
+            ]],
+            ['kana' => '島', 'romaji' => 'tou', 'meanings' => [
+                'en' => ['island'],
+                'nl' => ['eiland'],
+            ]],
+            ['kana' => '岸', 'romaji' => 'gan', 'meanings' => [
+                'en' => ['shore'],
+                'nl' => ['kust'],
+            ]],
+            ['kana' => '砂', 'romaji' => 'sa', 'meanings' => [
+                'en' => ['sand'],
+                'nl' => ['zand'],
+            ]],
+            ['kana' => '氷', 'romaji' => 'hyou', 'meanings' => [
+                'en' => ['ice'],
+                'nl' => ['ijs'],
+            ]],
+            ['kana' => '波', 'romaji' => 'ha', 'meanings' => [
+                'en' => ['wave'],
+                'nl' => ['golf'],
+            ]],
+            ['kana' => '岩', 'romaji' => 'gan', 'meanings' => [
+                'en' => ['rock'],
+                'nl' => ['rots'],
+            ]],
+            ['kana' => '星', 'romaji' => 'sei', 'meanings' => [
+                'en' => ['star'],
+                'nl' => ['ster'],
+            ]],
+            ['kana' => '暑', 'romaji' => 'sho', 'meanings' => [
+                'en' => ['hot (weather)'],
+                'nl' => ['heet (weer)'],
+            ]],
+            ['kana' => '寒', 'romaji' => 'kan', 'meanings' => [
+                'en' => ['cold'],
+                'nl' => ['koud'],
+            ]],
         ]);
 
         // Body & Health
         $this->seedCategory('kanji-n3-body-and-health', 'Body & Health', [
-            ['kana' => '頭', 'romaji' => 'tou', 'meanings' => ['head']],
-            ['kana' => '顔', 'romaji' => 'gan', 'meanings' => ['face']],
-            ['kana' => '首', 'romaji' => 'shu', 'meanings' => ['neck']],
-            ['kana' => '胸', 'romaji' => 'kyou', 'meanings' => ['chest']],
-            ['kana' => '腹', 'romaji' => 'fuku', 'meanings' => ['belly']],
-            ['kana' => '背', 'romaji' => 'hai', 'meanings' => ['back']],
-            ['kana' => '骨', 'romaji' => 'kotsu', 'meanings' => ['bone']],
-            ['kana' => '病', 'romaji' => 'byou', 'meanings' => ['illness']],
-            ['kana' => '痛', 'romaji' => 'tsuu', 'meanings' => ['pain']],
-            ['kana' => '薬', 'romaji' => 'yaku', 'meanings' => ['medicine']],
+            ['kana' => '頭', 'romaji' => 'tou', 'meanings' => [
+                'en' => ['head'],
+                'nl' => ['hoofd'],
+            ]],
+            ['kana' => '顔', 'romaji' => 'gan', 'meanings' => [
+                'en' => ['face'],
+                'nl' => ['gezicht'],
+            ]],
+            ['kana' => '首', 'romaji' => 'shu', 'meanings' => [
+                'en' => ['neck'],
+                'nl' => ['nek'],
+            ]],
+            ['kana' => '胸', 'romaji' => 'kyou', 'meanings' => [
+                'en' => ['chest'],
+                'nl' => ['borst'],
+            ]],
+            ['kana' => '腹', 'romaji' => 'fuku', 'meanings' => [
+                'en' => ['belly'],
+                'nl' => ['buik'],
+            ]],
+            ['kana' => '背', 'romaji' => 'hai', 'meanings' => [
+                'en' => ['back'],
+                'nl' => ['rug'],
+            ]],
+            ['kana' => '骨', 'romaji' => 'kotsu', 'meanings' => [
+                'en' => ['bone'],
+                'nl' => ['bot'],
+            ]],
+            ['kana' => '病', 'romaji' => 'byou', 'meanings' => [
+                'en' => ['illness'],
+                'nl' => ['ziekte'],
+            ]],
+            ['kana' => '痛', 'romaji' => 'tsuu', 'meanings' => [
+                'en' => ['pain'],
+                'nl' => ['pijn'],
+            ]],
+            ['kana' => '薬', 'romaji' => 'yaku', 'meanings' => [
+                'en' => ['medicine'],
+                'nl' => ['medicijn'],
+            ]],
         ]);
 
         // Movement & Travel
         $this->seedCategory('kanji-n3-movement-and-travel', 'Movement & Travel', [
-            ['kana' => '速', 'romaji' => 'soku', 'meanings' => ['fast']],
-            ['kana' => '遅', 'romaji' => 'chi', 'meanings' => ['slow']],
-            ['kana' => '通', 'romaji' => 'tsuu', 'meanings' => ['pass', 'commute']],
-            ['kana' => '進', 'romaji' => 'shin', 'meanings' => ['advance']],
-            ['kana' => '退', 'romaji' => 'tai', 'meanings' => ['retreat']],
-            ['kana' => '運', 'romaji' => 'un', 'meanings' => ['carry', 'luck']],
-            ['kana' => '泊', 'romaji' => 'haku', 'meanings' => ['stay overnight']],
-            ['kana' => '遊', 'romaji' => 'yuu', 'meanings' => ['play']],
-            ['kana' => '降', 'romaji' => 'kou', 'meanings' => ['descend']],
-            ['kana' => '乗', 'romaji' => 'jou', 'meanings' => ['ride']],
+            ['kana' => '速', 'romaji' => 'soku', 'meanings' => [
+                'en' => ['fast'],
+                'nl' => ['snel'],
+            ]],
+            ['kana' => '遅', 'romaji' => 'chi', 'meanings' => [
+                'en' => ['slow'],
+                'nl' => ['langzaam'],
+            ]],
+            ['kana' => '通', 'romaji' => 'tsuu', 'meanings' => [
+                'en' => ['pass', 'commute'],
+                'nl' => ['passeren', 'forensen'],
+            ]],
+            ['kana' => '進', 'romaji' => 'shin', 'meanings' => [
+                'en' => ['advance'],
+                'nl' => ['vooruitgang'],
+            ]],
+            ['kana' => '退', 'romaji' => 'tai', 'meanings' => [
+                'en' => ['retreat'],
+                'nl' => ['terugtrekken'],
+            ]],
+            ['kana' => '運', 'romaji' => 'un', 'meanings' => [
+                'en' => ['carry', 'luck'],
+                'nl' => ['dragen', 'geluk'],
+            ]],
+            ['kana' => '泊', 'romaji' => 'haku', 'meanings' => [
+                'en' => ['stay overnight'],
+                'nl' => ['overnachten'],
+            ]],
+            ['kana' => '遊', 'romaji' => 'yuu', 'meanings' => [
+                'en' => ['play'],
+                'nl' => ['spelen'],
+            ]],
+            ['kana' => '降', 'romaji' => 'kou', 'meanings' => [
+                'en' => ['descend'],
+                'nl' => ['afdalen'],
+            ]],
+            ['kana' => '乗', 'romaji' => 'jou', 'meanings' => [
+                'en' => ['ride'],
+                'nl' => ['rijden'],
+            ]],
         ]);
 
         // People & Society
         $this->seedCategory('kanji-n3-people-and-society', 'People & Society', [
-            ['kana' => '役', 'romaji' => 'yaku', 'meanings' => ['role']],
-            ['kana' => '民', 'romaji' => 'min', 'meanings' => ['people']],
-            ['kana' => '軍', 'romaji' => 'gun', 'meanings' => ['military']],
-            ['kana' => '警', 'romaji' => 'kei', 'meanings' => ['police']],
-            ['kana' => '官', 'romaji' => 'kan', 'meanings' => ['government official']],
-            ['kana' => '裁', 'romaji' => 'sai', 'meanings' => ['judge']],
-            ['kana' => '争', 'romaji' => 'sou', 'meanings' => ['conflict']],
-            ['kana' => '議', 'romaji' => 'gi', 'meanings' => ['deliberation']],
-            ['kana' => '党', 'romaji' => 'tou', 'meanings' => ['party']],
-            ['kana' => '族', 'romaji' => 'zoku', 'meanings' => ['family', 'tribe']],
+            ['kana' => '役', 'romaji' => 'yaku', 'meanings' => [
+                'en' => ['role'],
+                'nl' => ['rol'],
+            ]],
+            ['kana' => '民', 'romaji' => 'min', 'meanings' => [
+                'en' => ['people'],
+                'nl' => ['volk'],
+            ]],
+            ['kana' => '軍', 'romaji' => 'gun', 'meanings' => [
+                'en' => ['military'],
+                'nl' => ['leger'],
+            ]],
+            ['kana' => '警', 'romaji' => 'kei', 'meanings' => [
+                'en' => ['police'],
+                'nl' => ['politie'],
+            ]],
+            ['kana' => '官', 'romaji' => 'kan', 'meanings' => [
+                'en' => ['government official'],
+                'nl' => ['overheidsfunctionaris'],
+            ]],
+            ['kana' => '裁', 'romaji' => 'sai', 'meanings' => [
+                'en' => ['judge'],
+                'nl' => ['rechter'],
+            ]],
+            ['kana' => '争', 'romaji' => 'sou', 'meanings' => [
+                'en' => ['conflict'],
+                'nl' => ['conflict'],
+            ]],
+            ['kana' => '議', 'romaji' => 'gi', 'meanings' => [
+                'en' => ['deliberation'],
+                'nl' => ['overleg'],
+            ]],
+            ['kana' => '党', 'romaji' => 'tou', 'meanings' => [
+                'en' => ['party'],
+                'nl' => ['partij'],
+            ]],
+            ['kana' => '族', 'romaji' => 'zoku', 'meanings' => [
+                'en' => ['family', 'tribe'],
+                'nl' => ['familie', 'stam'],
+            ]],
         ]);
+
 
         // Tools & Objects
         $this->seedCategory('kanji-n3-tools-and-objects', 'Tools & Objects', [
-            ['kana' => '箱', 'romaji' => 'hako', 'meanings' => ['box']],
-            ['kana' => '鏡', 'romaji' => 'kagami', 'meanings' => ['mirror']],
-            ['kana' => '傘', 'romaji' => 'kasa', 'meanings' => ['umbrella']],
-            ['kana' => '棚', 'romaji' => 'tana', 'meanings' => ['shelf']],
-            ['kana' => '針', 'romaji' => 'hari', 'meanings' => ['needle']],
-            ['kana' => '布', 'romaji' => 'nuno', 'meanings' => ['cloth']],
-            ['kana' => '机', 'romaji' => 'tsukue', 'meanings' => ['desk']],
-            ['kana' => '椅', 'romaji' => 'i', 'meanings' => ['chair (stem)']],
-            ['kana' => '皿', 'romaji' => 'sara', 'meanings' => ['plate']],
-            ['kana' => '匙', 'romaji' => 'saji', 'meanings' => ['spoon']],
+            ['kana' => '箱', 'romaji' => 'hako', 'meanings' => [
+                'en' => ['box'],
+                'nl' => ['doos'],
+            ]],
+            ['kana' => '鏡', 'romaji' => 'kagami', 'meanings' => [
+                'en' => ['mirror'],
+                'nl' => ['spiegel'],
+            ]],
+            ['kana' => '傘', 'romaji' => 'kasa', 'meanings' => [
+                'en' => ['umbrella'],
+                'nl' => ['paraplu'],
+            ]],
+            ['kana' => '棚', 'romaji' => 'tana', 'meanings' => [
+                'en' => ['shelf'],
+                'nl' => ['plank'],
+            ]],
+            ['kana' => '針', 'romaji' => 'hari', 'meanings' => [
+                'en' => ['needle'],
+                'nl' => ['naald'],
+            ]],
+            ['kana' => '布', 'romaji' => 'nuno', 'meanings' => [
+                'en' => ['cloth'],
+                'nl' => ['stof'],
+            ]],
+            ['kana' => '机', 'romaji' => 'tsukue', 'meanings' => [
+                'en' => ['desk'],
+                'nl' => ['bureau'],
+            ]],
+            ['kana' => '椅', 'romaji' => 'i', 'meanings' => [
+                'en' => ['chair (stem)'],
+                'nl' => ['stoel (stam)'],
+            ]],
+            ['kana' => '皿', 'romaji' => 'sara', 'meanings' => [
+                'en' => ['plate'],
+                'nl' => ['bord'],
+            ]],
+            ['kana' => '匙', 'romaji' => 'saji', 'meanings' => [
+                'en' => ['spoon'],
+                'nl' => ['lepel'],
+            ]],
         ]);
 
-        // Food & Cooking
+// Food & Cooking
         $this->seedCategory('kanji-n3-food-and-cooking', 'Food & Cooking', [
-            ['kana' => '油', 'romaji' => 'abura', 'meanings' => ['oil']],
-            ['kana' => '塩', 'romaji' => 'shio', 'meanings' => ['salt']],
-            ['kana' => '砂糖', 'romaji' => 'satou', 'meanings' => ['sugar']],
-            ['kana' => '醤', 'romaji' => 'shou', 'meanings' => ['soy sauce']],
-            ['kana' => '酒', 'romaji' => 'sake', 'meanings' => ['alcohol']],
-            ['kana' => '皿', 'romaji' => 'sara', 'meanings' => ['plate']],
-            ['kana' => '鍋', 'romaji' => 'nabe', 'meanings' => ['pot']],
-            ['kana' => '焼', 'romaji' => 'yaki', 'meanings' => ['grill']],
-            ['kana' => '煮', 'romaji' => 'ni', 'meanings' => ['boil']],
-            ['kana' => '炒', 'romaji' => 'itame', 'meanings' => ['stir-fry']],
+            ['kana' => '油', 'romaji' => 'abura', 'meanings' => [
+                'en' => ['oil'],
+                'nl' => ['olie'],
+            ]],
+            ['kana' => '塩', 'romaji' => 'shio', 'meanings' => [
+                'en' => ['salt'],
+                'nl' => ['zout'],
+            ]],
+            ['kana' => '砂糖', 'romaji' => 'satou', 'meanings' => [
+                'en' => ['sugar'],
+                'nl' => ['suiker'],
+            ]],
+            ['kana' => '醤', 'romaji' => 'shou', 'meanings' => [
+                'en' => ['soy sauce'],
+                'nl' => ['sojasaus'],
+            ]],
+            ['kana' => '酒', 'romaji' => 'sake', 'meanings' => [
+                'en' => ['alcohol'],
+                'nl' => ['alcohol'],
+            ]],
+            ['kana' => '皿', 'romaji' => 'sara', 'meanings' => [
+                'en' => ['plate'],
+                'nl' => ['bord'],
+            ]],
+            ['kana' => '鍋', 'romaji' => 'nabe', 'meanings' => [
+                'en' => ['pot'],
+                'nl' => ['pan'],
+            ]],
+            ['kana' => '焼', 'romaji' => 'yaki', 'meanings' => [
+                'en' => ['grill'],
+                'nl' => ['grillen'],
+            ]],
+            ['kana' => '煮', 'romaji' => 'ni', 'meanings' => [
+                'en' => ['boil'],
+                'nl' => ['koken'],
+            ]],
+            ['kana' => '炒', 'romaji' => 'itame', 'meanings' => [
+                'en' => ['stir-fry'],
+                'nl' => ['roerbakken'],
+            ]],
         ]);
 
-        // Abstract Concepts
+// Abstract Concepts
         $this->seedCategory('kanji-n3-abstract-concepts', 'Abstract Concepts', [
-            ['kana' => '愛', 'romaji' => 'ai', 'meanings' => ['love']],
-            ['kana' => '夢', 'romaji' => 'yume', 'meanings' => ['dream']],
-            ['kana' => '望', 'romaji' => 'bou', 'meanings' => ['hope']],
-            ['kana' => '命', 'romaji' => 'inochi', 'meanings' => ['life']],
-            ['kana' => '感', 'romaji' => 'kan', 'meanings' => ['feeling']],
-            ['kana' => '想', 'romaji' => 'sou', 'meanings' => ['thought']],
-            ['kana' => '信', 'romaji' => 'shin', 'meanings' => ['trust']],
-            ['kana' => '義', 'romaji' => 'gi', 'meanings' => ['justice']],
-            ['kana' => '念', 'romaji' => 'nen', 'meanings' => ['wish', 'thought']],
-            ['kana' => '意', 'romaji' => 'i', 'meanings' => ['intention']],
+            ['kana' => '愛', 'romaji' => 'ai', 'meanings' => [
+                'en' => ['love'],
+                'nl' => ['liefde'],
+            ]],
+            ['kana' => '夢', 'romaji' => 'yume', 'meanings' => [
+                'en' => ['dream'],
+                'nl' => ['droom'],
+            ]],
+            ['kana' => '望', 'romaji' => 'bou', 'meanings' => [
+                'en' => ['hope'],
+                'nl' => ['hoop'],
+            ]],
+            ['kana' => '命', 'romaji' => 'inochi', 'meanings' => [
+                'en' => ['life'],
+                'nl' => ['leven'],
+            ]],
+            ['kana' => '感', 'romaji' => 'kan', 'meanings' => [
+                'en' => ['feeling'],
+                'nl' => ['gevoel'],
+            ]],
+            ['kana' => '想', 'romaji' => 'sou', 'meanings' => [
+                'en' => ['thought'],
+                'nl' => ['gedachte'],
+            ]],
+            ['kana' => '信', 'romaji' => 'shin', 'meanings' => [
+                'en' => ['trust'],
+                'nl' => ['vertrouwen'],
+            ]],
+            ['kana' => '義', 'romaji' => 'gi', 'meanings' => [
+                'en' => ['justice'],
+                'nl' => ['rechtvaardigheid'],
+            ]],
+            ['kana' => '念', 'romaji' => 'nen', 'meanings' => [
+                'en' => ['wish', 'thought'],
+                'nl' => ['wens', 'gedachte'],
+            ]],
+            ['kana' => '意', 'romaji' => 'i', 'meanings' => [
+                'en' => ['intention'],
+                'nl' => ['intentie'],
+            ]],
         ]);
 
-        // Verbs (Group 1)
+// Verbs (Group 1)
         $this->seedCategory('kanji-n3-verbs-group-1', 'Verbs (Group 1)', [
-            ['kana' => '打', 'romaji' => 'da', 'meanings' => ['hit']],
-            ['kana' => '引', 'romaji' => 'in', 'meanings' => ['pull']],
-            ['kana' => '押', 'romaji' => 'ou', 'meanings' => ['push']],
-            ['kana' => '切', 'romaji' => 'setsu', 'meanings' => ['cut']],
-            ['kana' => '持', 'romaji' => 'ji', 'meanings' => ['hold']],
-            ['kana' => '使', 'romaji' => 'shi', 'meanings' => ['use']],
-            ['kana' => '書', 'romaji' => 'sho', 'meanings' => ['write']],
-            ['kana' => '読', 'romaji' => 'doku', 'meanings' => ['read']],
-            ['kana' => '立', 'romaji' => 'ritsu', 'meanings' => ['stand']],
-            ['kana' => '座', 'romaji' => 'za', 'meanings' => ['sit']],
+            ['kana' => '打', 'romaji' => 'da', 'meanings' => [
+                'en' => ['hit'],
+                'nl' => ['slaan'],
+            ]],
+            ['kana' => '引', 'romaji' => 'in', 'meanings' => [
+                'en' => ['pull'],
+                'nl' => ['trekken'],
+            ]],
+            ['kana' => '押', 'romaji' => 'ou', 'meanings' => [
+                'en' => ['push'],
+                'nl' => ['duwen'],
+            ]],
+            ['kana' => '切', 'romaji' => 'setsu', 'meanings' => [
+                'en' => ['cut'],
+                'nl' => ['snijden'],
+            ]],
+            ['kana' => '持', 'romaji' => 'ji', 'meanings' => [
+                'en' => ['hold'],
+                'nl' => ['vasthouden'],
+            ]],
+            ['kana' => '使', 'romaji' => 'shi', 'meanings' => [
+                'en' => ['use'],
+                'nl' => ['gebruiken'],
+            ]],
+            ['kana' => '書', 'romaji' => 'sho', 'meanings' => [
+                'en' => ['write'],
+                'nl' => ['schrijven'],
+            ]],
+            ['kana' => '読', 'romaji' => 'doku', 'meanings' => [
+                'en' => ['read'],
+                'nl' => ['lezen'],
+            ]],
+            ['kana' => '立', 'romaji' => 'ritsu', 'meanings' => [
+                'en' => ['stand'],
+                'nl' => ['staan'],
+            ]],
+            ['kana' => '座', 'romaji' => 'za', 'meanings' => [
+                'en' => ['sit'],
+                'nl' => ['zitten'],
+            ]],
         ]);
 
-        // Verbs (Group 2)
+// Verbs (Group 2)
         $this->seedCategory('kanji-n3-verbs-group-2', 'Verbs (Group 2)', [
-            ['kana' => '食', 'romaji' => 'shoku', 'meanings' => ['eat']],
-            ['kana' => '見', 'romaji' => 'ken', 'meanings' => ['see']],
-            ['kana' => '開', 'romaji' => 'kai', 'meanings' => ['open']],
-            ['kana' => '閉', 'romaji' => 'hei', 'meanings' => ['close']],
-            ['kana' => '出', 'romaji' => 'shutsu', 'meanings' => ['exit']],
-            ['kana' => '入', 'romaji' => 'nyuu', 'meanings' => ['enter']],
-            ['kana' => '始', 'romaji' => 'shi', 'meanings' => ['begin']],
-            ['kana' => '終', 'romaji' => 'shuu', 'meanings' => ['end']],
-            ['kana' => '考', 'romaji' => 'kou', 'meanings' => ['think']],
-            ['kana' => '答', 'romaji' => 'tou', 'meanings' => ['answer']],
+            ['kana' => '食', 'romaji' => 'shoku', 'meanings' => [
+                'en' => ['eat'],
+                'nl' => ['eten'],
+            ]],
+            ['kana' => '見', 'romaji' => 'ken', 'meanings' => [
+                'en' => ['see'],
+                'nl' => ['zien'],
+            ]],
+            ['kana' => '開', 'romaji' => 'kai', 'meanings' => [
+                'en' => ['open'],
+                'nl' => ['openen'],
+            ]],
+            ['kana' => '閉', 'romaji' => 'hei', 'meanings' => [
+                'en' => ['close'],
+                'nl' => ['sluiten'],
+            ]],
+            ['kana' => '出', 'romaji' => 'shutsu', 'meanings' => [
+                'en' => ['exit'],
+                'nl' => ['uitgang'],
+            ]],
+            ['kana' => '入', 'romaji' => 'nyuu', 'meanings' => [
+                'en' => ['enter'],
+                'nl' => ['binnenkomen'],
+            ]],
+            ['kana' => '始', 'romaji' => 'shi', 'meanings' => [
+                'en' => ['begin'],
+                'nl' => ['beginnen'],
+            ]],
+            ['kana' => '終', 'romaji' => 'shuu', 'meanings' => [
+                'en' => ['end'],
+                'nl' => ['einde'],
+            ]],
+            ['kana' => '考', 'romaji' => 'kou', 'meanings' => [
+                'en' => ['think'],
+                'nl' => ['denken'],
+            ]],
+            ['kana' => '答', 'romaji' => 'tou', 'meanings' => [
+                'en' => ['answer'],
+                'nl' => ['antwoord'],
+            ]],
         ]);
 
-        // Adjectives & Descriptions
+// Adjectives & Descriptions
         $this->seedCategory('kanji-n3-adjectives-and-descriptions', 'Adjectives & Descriptions', [
-            ['kana' => '重', 'romaji' => 'omo(i)', 'meanings' => ['heavy']],
-            ['kana' => '軽', 'romaji' => 'karu(i)', 'meanings' => ['light (weight)']],
-            ['kana' => '太', 'romaji' => 'futo(i)', 'meanings' => ['thick', 'fat']],
-            ['kana' => '細', 'romaji' => 'hoso(i)', 'meanings' => ['thin', 'slender']],
-            ['kana' => '強', 'romaji' => 'tsuyo(i)', 'meanings' => ['strong']],
-            ['kana' => '弱', 'romaji' => 'yowa(i)', 'meanings' => ['weak']],
-            ['kana' => '深', 'romaji' => 'fuka(i)', 'meanings' => ['deep']],
-            ['kana' => '浅', 'romaji' => 'asa(i)', 'meanings' => ['shallow']],
-            ['kana' => '明', 'romaji' => 'aka(rui)', 'meanings' => ['bright']],
-            ['kana' => '暗', 'romaji' => 'kura(i)', 'meanings' => ['dark']],
+            ['kana' => '重', 'romaji' => 'omo(i)', 'meanings' => [
+                'en' => ['heavy'],
+                'nl' => ['zwaar'],
+            ]],
+            ['kana' => '軽', 'romaji' => 'karu(i)', 'meanings' => [
+                'en' => ['light (weight)'],
+                'nl' => ['licht (gewicht)'],
+            ]],
+            ['kana' => '太', 'romaji' => 'futo(i)', 'meanings' => [
+                'en' => ['thick', 'fat'],
+                'nl' => ['dik', 'vet'],
+            ]],
+            ['kana' => '細', 'romaji' => 'hoso(i)', 'meanings' => [
+                'en' => ['thin', 'slender'],
+                'nl' => ['dun', 'slank'],
+            ]],
+            ['kana' => '強', 'romaji' => 'tsuyo(i)', 'meanings' => [
+                'en' => ['strong'],
+                'nl' => ['sterk'],
+            ]],
+            ['kana' => '弱', 'romaji' => 'yowa(i)', 'meanings' => [
+                'en' => ['weak'],
+                'nl' => ['zwak'],
+            ]],
+            ['kana' => '深', 'romaji' => 'fuka(i)', 'meanings' => [
+                'en' => ['deep'],
+                'nl' => ['diep'],
+            ]],
+            ['kana' => '浅', 'romaji' => 'asa(i)', 'meanings' => [
+                'en' => ['shallow'],
+                'nl' => ['oppervlakkig'],
+            ]],
+            ['kana' => '明', 'romaji' => 'aka(rui)', 'meanings' => [
+                'en' => ['bright'],
+                'nl' => ['helder'],
+            ]],
+            ['kana' => '暗', 'romaji' => 'kura(i)', 'meanings' => [
+                'en' => ['dark'],
+                'nl' => ['donker'],
+            ]],
         ]);
 
         // Seed Core Particles
