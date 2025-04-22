@@ -47,17 +47,28 @@ class TimedController extends Controller
     {
         $items = session('timed.items');
         $current = session('timed.current', 0);
+        $startTime = session('timed.start_time');
 
         if (!$items || !isset($items[$current])) {
             return redirect()->route('timed.results');
         }
 
         $item = (object) $items[$current];
-        $startTime = session('timed.start_time');
+
+        $direction = session('timed.direction', 'recognition');
+        $lang = auth()->user()->preferred_language;
+        $extra = !empty($item->extra_data) ? json_decode($item->extra_data, true) : [];
+
+        if ($direction === 'recall') {
+            if (!empty($extra['translations'][$lang])) {
+                $item->prompt = implode(' / ', $extra['translations'][$lang]);
+            } elseif (!empty($extra['translations']) && array_values($extra['translations']) === $extra['translations']) {
+                $item->prompt = implode(' / ', $extra['translations']);
+            }
+        }
 
         return view('timed.question', compact('item', 'startTime'));
     }
-
 
     public function submit(Request $request)
     {
@@ -66,20 +77,36 @@ class TimedController extends Controller
         $current = session('timed.current', 0);
         $item = (object) $items[$current];
         $direction = session('timed.direction', 'recognition');
+        $lang = auth()->user()->preferred_language;
 
-        $validAnswers = [strtolower($item->answer)];
+        $validAnswers = [];
+        $extra = !empty($item->extra_data) ? json_decode($item->extra_data, true) : [];
 
         $kanaOnlyTypes = ['Main Kana', 'Dakuten Kana', 'Combination Kana', 'All Kana'];
 
-        if ($direction === 'recall' && !in_array($item->type, $kanaOnlyTypes) && !empty($item->romaji)) {
-            $validAnswers[] = strtolower($item->romaji);
-        }
+        if ($direction === 'recall') {
+            // In recall, prompt is translation (e.g. Dutch), so correct answer is kana/romaji
+            if (!empty($item->answer)) {
+                $validAnswers[] = strtolower($item->answer); // kana
+            }
+            if (!in_array($item->type, $kanaOnlyTypes) && !empty($item->romaji)) {
+                $validAnswers[] = strtolower($item->romaji);
+            }
+        } else {
+            // recognition mode, prompt is kana, answer is translated word
+            if (!empty($extra['translations'][$lang])) {
+                $validAnswers = array_map('strtolower', $extra['translations'][$lang]);
+            } elseif (!empty($extra['translations']) && array_values($extra['translations']) === $extra['translations']) {
+                $validAnswers = array_map('strtolower', $extra['translations']);
+            } else {
+                $validAnswers[] = strtolower($item->answer);
+            }
 
-        $extra = !empty($item->extra_data) ? json_decode($item->extra_data, true) : [];
-
-        if ($direction === 'recognition' && !empty($extra['alt_answers'])) {
-            foreach ($extra['alt_answers'] as $alt) {
-                $validAnswers[] = strtolower($alt);
+            // Include alt answers
+            if (!empty($extra['alt_answers'])) {
+                foreach ($extra['alt_answers'] as $alt) {
+                    $validAnswers[] = strtolower($alt);
+                }
             }
         }
 
@@ -93,6 +120,7 @@ class TimedController extends Controller
         session(['timed.current' => $current + 1]);
         return redirect()->route('timed.show');
     }
+
 
     public function skip()
     {
@@ -115,6 +143,7 @@ class TimedController extends Controller
     public function results()
     {
         $user = Auth::user();
+        $preferredLang = $user->preferred_language;
 
         $correct = session('timed.correct', 0);
         $total = session('timed.original_count', 1);
@@ -135,14 +164,39 @@ class TimedController extends Controller
         $language = Language::find($languageId);
         $category = Category::find($categoryId);
 
-        // Flags and previous stats
+        // Show skipped item translations
+        $skippedItems = session('timed.skipped', []);
+        $processedSkipped = [];
+
+        foreach ($skippedItems as $item) {
+            $item = (object) $item;
+            $extra = !empty($item->extra_data) ? json_decode($item->extra_data, true) : [];
+
+            if (!empty($extra['translations'][$preferredLang])) {
+                $answers = $extra['translations'][$preferredLang];
+            } elseif (!empty($extra['translations']) && array_values($extra['translations']) === $extra['translations']) {
+                $answers = $extra['translations'];
+            } else {
+                $answers = [$item->answer];
+            }
+
+            $item->translated_prompt = $direction === 'recall'
+                ? implode(' / ', $answers)
+                : $item->prompt;
+
+            $item->correct_display = $direction === 'recall'
+                ? $item->answer . (!empty($item->romaji) ? " ({$item->romaji})" : '')
+                : implode(' / ', array_merge([$item->answer], $extra['alt_answers'] ?? []));
+
+            $processedSkipped[$item->id] = $item;
+        }
+
         $newBestAccuracy = false;
         $newBestTime = false;
         $previousAccuracy = null;
         $previousTimeMs = null;
         $previousFormattedTime = null;
 
-        // Save individual timed attempt
         TimedAttempt::create([
             'user_id' => $user->id,
             'category_id' => $categoryId,
@@ -153,7 +207,6 @@ class TimedController extends Controller
             'finished_at' => $endTime,
         ]);
 
-        // Update best progress (only if better)
         $existing = CategoryUserProgress::where([
             'user_id' => $user->id,
             'category_id' => $categoryId,
@@ -211,7 +264,6 @@ class TimedController extends Controller
             );
         }
 
-        // Clear session
         session()->forget([
             'timed.items',
             'timed.original_count',
@@ -237,7 +289,9 @@ class TimedController extends Controller
             'newBestTime',
             'previousAccuracy',
             'previousTimeMs',
-            'previousFormattedTime'
+            'previousFormattedTime',
+            'processedSkipped'
         ));
     }
+
 }
