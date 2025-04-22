@@ -27,7 +27,7 @@
                    class="px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-md font-medium transition text-base">
                     Profile
                 </a>
-                <form id="language-form" class="inline-block" method="POST" action="{{ route('profile.update') }}">
+                <form id="language-form" class="inline-block" method="POST" action="{{ route('language-preference.update') }}">
                     @csrf
                     @method('PATCH')
                     <select name="preferred_language" id="preferred_language"

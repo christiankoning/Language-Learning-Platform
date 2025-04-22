@@ -22,9 +22,9 @@ Route::get('/dashboard', [DashboardController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-Route::post('/language-preference', [LanguagePreferenceController::class, 'update'])
+Route::patch('/language-preference', [LanguagePreferenceController::class, 'update'])
     ->middleware(['auth'])
-    ->name('language.update');
+    ->name('language-preference.update');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
