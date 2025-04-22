@@ -1575,6 +1575,129 @@ class ItemsTableSeeder extends Seeder
             ['kana' => 'さんじゅっぱく', 'romaji' => 'sanjuppaku', 'meanings' => ['30 nights']],
         ]);
 
+        // VTuber
+        // Basic Stream Vocabulary
+        $this->seedCategory('basic-stream-vocabulary', 'Basic Stream Vocabulary', [
+            ['kana' => 'こんにちは', 'romaji' => 'konnichiwa', 'meanings' => ['Hello']],
+            ['kana' => 'こんばんは', 'romaji' => 'konbanwa', 'meanings' => ['Good evening']],
+            ['kana' => 'おはようございます', 'romaji' => 'ohayou gozaimasu', 'meanings' => ['Good morning']],
+            ['kana' => 'ようこそ', 'romaji' => 'youkoso', 'meanings' => ['Welcome']],
+            ['kana' => 'みてくれてありがとう', 'romaji' => 'mite kurete arigatou', 'meanings' => ['Thanks for watching']],
+            ['kana' => 'きいてくれてありがとう', 'romaji' => 'kiite kurete arigatou', 'meanings' => ['Thanks for listening']],
+            ['kana' => 'コメントありがとう', 'romaji' => 'komento arigatou', 'meanings' => ['Thanks for the comment']],
+            ['kana' => 'ナイス', 'romaji' => 'naisu', 'meanings' => ['Nice!']],
+            ['kana' => 'ナイスパ', 'romaji' => 'naisu pa', 'meanings' => ['Nice superchat!']],
+            ['kana' => 'ありがとうスパチャ', 'romaji' => 'arigatou supacha', 'meanings' => ['Thanks for the superchat']],
+            ['kana' => 'チャンネルとうろくしてね', 'romaji' => 'chaneru touroku shite ne', 'meanings' => ['Please subscribe to the channel']],
+            ['kana' => 'フォローしてね', 'romaji' => 'foroo shite ne', 'meanings' => ['Please follow me']],
+            ['kana' => 'いいねしてね', 'romaji' => 'ii ne shite ne', 'meanings' => ['Please like (the video/stream)']],
+            ['kana' => 'シェアしてね', 'romaji' => 'shea shite ne', 'meanings' => ['Please share']],
+            ['kana' => 'もうすぐはじまるよ', 'romaji' => 'mou sugu hajimaru yo', 'meanings' => ['It’s starting soon']],
+            ['kana' => 'じゅんびできた？', 'romaji' => 'junbi dekita?', 'meanings' => ['Are you ready?']],
+            ['kana' => 'いくよ！', 'romaji' => 'iku yo!', 'meanings' => ['Let’s go!']],
+            ['kana' => 'さいこう！', 'romaji' => 'saikou!', 'meanings' => ['Awesome!', 'The best!']],
+            ['kana' => 'つぎいこう！', 'romaji' => 'tsugi ikou!', 'meanings' => ['Let’s move on to the next!']],
+            ['kana' => 'またあとで！', 'romaji' => 'mata ato de!', 'meanings' => ['See you later!']],
+        ]);
+
+        // Useful Expressions
+        $this->seedCategory('useful-expressions', 'Useful Expressions', [
+            ['kana' => 'ちょっとまって', 'romaji' => 'chotto matte', 'meanings' => ['Wait a moment']],
+            ['kana' => 'ごめんね', 'romaji' => 'gomen ne', 'meanings' => ['Sorry']],
+            ['kana' => 'だいじょうぶ？', 'romaji' => 'daijoubu?', 'meanings' => ['Are you okay?']],
+            ['kana' => 'だいじょうぶです', 'romaji' => 'daijoubu desu', 'meanings' => ['It’s okay']],
+            ['kana' => 'どうしたの？', 'romaji' => 'doushita no?', 'meanings' => ['What’s wrong?']],
+            ['kana' => 'まかせて！', 'romaji' => 'makasete!', 'meanings' => ['Leave it to me!']],
+            ['kana' => 'まちがえた', 'romaji' => 'machigaeta', 'meanings' => ['I messed up']],
+            ['kana' => 'まってました！', 'romaji' => 'matte mashita!', 'meanings' => ['I’ve been waiting!']],
+            ['kana' => 'いってきます', 'romaji' => 'ittekimasu', 'meanings' => ['I’ll be back (leaving temporarily)']],
+            ['kana' => 'ただいま', 'romaji' => 'tadaima', 'meanings' => ['I’m back']],
+        ]);
+
+        // Chat Lingo & Slang
+        $this->seedCategory('chat-lingo-and-slang', 'Chat Lingo & Slang', [
+            ['kana' => 'わこつ', 'romaji' => 'wakotsu', 'meanings' => ['Thanks for starting the stream']],
+            ['kana' => 'おつ', 'romaji' => 'otsu', 'meanings' => ['Good job!', 'Bye (casual)']],
+            ['kana' => 'おつかれ', 'romaji' => 'otsukare', 'meanings' => ['Thanks for the hard work']],
+            ['kana' => 'は？', 'romaji' => 'ha?', 'meanings' => ['Huh?', 'What?']],
+            ['kana' => '888', 'romaji' => 'pachi pachi pachi', 'meanings' => ['Clap clap clap']],
+            ['kana' => 'わら', 'romaji' => 'wara', 'meanings' => ['lol']],
+            ['kana' => 'くさ', 'romaji' => 'kusa', 'meanings' => ['lol (literally "grass", slang for laughing)']],
+            ['kana' => 'りょ', 'romaji' => 'ryo', 'meanings' => ['Got it (short for ryoukai)']],
+            ['kana' => 'おこ', 'romaji' => 'oko', 'meanings' => ['Angry (slang)']],
+            ['kana' => 'ガチ', 'romaji' => 'gachi', 'meanings' => ['Seriously', 'For real']],
+        ]);
+
+        // Reactions & Emotions
+        $this->seedCategory('reactions-and-emotions', 'Reactions & Emotions', [
+            ['kana' => 'すごい！', 'romaji' => 'sugoi!', 'meanings' => ['Amazing!', 'Wow!']],
+            ['kana' => 'やったー！', 'romaji' => 'yattaa!', 'meanings' => ['I did it!', 'Yay!']],
+            ['kana' => 'うれしい', 'romaji' => 'ureshii', 'meanings' => ['I’m happy']],
+            ['kana' => 'たのしい', 'romaji' => 'tanoshii', 'meanings' => ['Fun']],
+            ['kana' => 'かなしい', 'romaji' => 'kanashii', 'meanings' => ['Sad']],
+            ['kana' => 'こわい', 'romaji' => 'kowai', 'meanings' => ['Scary']],
+            ['kana' => 'びっくりした！', 'romaji' => 'bikkuri shita!', 'meanings' => ['That surprised me!']],
+            ['kana' => 'むずかしい', 'romaji' => 'muzukashii', 'meanings' => ['Difficult']],
+            ['kana' => 'ねむい', 'romaji' => 'nemui', 'meanings' => ['Sleepy']],
+            ['kana' => 'つかれた', 'romaji' => 'tsukareta', 'meanings' => ['Tired']],
+        ]);
+
+        // Game-related Phrases
+        $this->seedCategory('game-related-phrases', 'Game-related Phrases', [
+            ['kana' => 'ゲームをはじめよう', 'romaji' => 'geemu o hajimeyou', 'meanings' => ['Let’s start the game']],
+            ['kana' => 'スタート！', 'romaji' => 'sutaato!', 'meanings' => ['Start!']],
+            ['kana' => 'クリアした！', 'romaji' => 'kuria shita!', 'meanings' => ['Cleared it!']],
+            ['kana' => 'まけた～', 'romaji' => 'maketa~', 'meanings' => ['I lost~']],
+            ['kana' => 'かんたん！', 'romaji' => 'kantan!', 'meanings' => ['Easy!']],
+            ['kana' => 'むずかしすぎる！', 'romaji' => 'muzukashi sugiru!', 'meanings' => ['Too hard!']],
+            ['kana' => 'バグった', 'romaji' => 'bagutta', 'meanings' => ['It bugged out']],
+            ['kana' => 'ちょっとラグい', 'romaji' => 'chotto ragui', 'meanings' => ['It’s a bit laggy']],
+            ['kana' => 'つよい！', 'romaji' => 'tsuyoi!', 'meanings' => ['Strong!']],
+            ['kana' => 'ナイス！', 'romaji' => 'naisu!', 'meanings' => ['Nice!']],
+        ]);
+
+        // Technical Issues & Stream Setup
+        $this->seedCategory('technical-issues-and-stream-setup', 'Technical Issues & Stream Setup', [
+            ['kana' => 'マイクテスト', 'romaji' => 'maiku tesuto', 'meanings' => ['Mic test']],
+            ['kana' => 'きこえますか？', 'romaji' => 'kikoemasu ka?', 'meanings' => ['Can you hear me?']],
+            ['kana' => 'おとがきれい', 'romaji' => 'oto ga kirei', 'meanings' => ['The sound is clear']],
+            ['kana' => 'ラグがあります', 'romaji' => 'ragu ga arimasu', 'meanings' => ['There’s lag']],
+            ['kana' => 'こしょうしたみたい', 'romaji' => 'koshou shita mitai', 'meanings' => ['Seems broken']],
+            ['kana' => 'パソコンがおかしい', 'romaji' => 'pasokon ga okashii', 'meanings' => ['My computer is acting weird']],
+            ['kana' => 'もういちどためします', 'romaji' => 'mou ichido tameshimasu', 'meanings' => ['I’ll try again']],
+            ['kana' => 'さいせっていちゅう', 'romaji' => 'saise tteichuu', 'meanings' => ['Reconfiguring']],
+            ['kana' => 'こえがきれちゃった', 'romaji' => 'koe ga kirechatta', 'meanings' => ['The audio cut out']],
+            ['kana' => 'すこしおまちください', 'romaji' => 'sukoshi omachi kudasai', 'meanings' => ['Please wait a moment']],
+        ]);
+
+        // Fan Engagement
+        $this->seedCategory('fan-engagement', 'Fan Engagement', [
+            ['kana' => 'コメントありがとう！', 'romaji' => 'komento arigatou!', 'meanings' => ['Thanks for the comment!']],
+            ['kana' => 'スパチャありがとう！', 'romaji' => 'supacha arigatou!', 'meanings' => ['Thanks for the super chat!']],
+            ['kana' => 'しつもんがあればきいてね', 'romaji' => 'shitsumon ga areba kiite ne', 'meanings' => ['Ask if you have any questions']],
+            ['kana' => 'たのしんでる？', 'romaji' => 'tanoshinderu?', 'meanings' => ['Are you having fun?']],
+            ['kana' => 'いつもおうえんありがとう', 'romaji' => 'itsumo ouen arigatou', 'meanings' => ['Thanks for always supporting me']],
+            ['kana' => 'はじめてのひともいらっしゃい！', 'romaji' => 'hajimete no hito mo irasshai!', 'meanings' => ['Welcome, first-timers!']],
+            ['kana' => 'フォローしてね', 'romaji' => 'foroo shite ne', 'meanings' => ['Please follow me']],
+            ['kana' => 'チャンネルとうろくしてね', 'romaji' => 'channeru touroku shite ne', 'meanings' => ['Please subscribe to the channel']],
+            ['kana' => 'きょうもきてくれてありがとう', 'romaji' => 'kyou mo kite kurete arigatou', 'meanings' => ['Thanks for coming today too']],
+            ['kana' => 'またあそびにきてね！', 'romaji' => 'mata asobi ni kite ne!', 'meanings' => ['Come hang out again!']],
+        ]);
+
+        // End-of-Stream Phrases
+        $this->seedCategory('end-of-stream-phrases', 'End-of-Stream Phrases', [
+            ['kana' => 'きょうはここまで！', 'romaji' => 'kyou wa koko made!', 'meanings' => ['That’s all for today!']],
+            ['kana' => 'おつかれさまでした！', 'romaji' => 'otsukaresama deshita!', 'meanings' => ['Great work everyone!']],
+            ['kana' => 'またね！', 'romaji' => 'mata ne!', 'meanings' => ['See you!']],
+            ['kana' => 'じゃあね～', 'romaji' => 'jaa ne~', 'meanings' => ['Bye~']],
+            ['kana' => 'ばいばい～', 'romaji' => 'baibai~', 'meanings' => ['Bye bye~']],
+            ['kana' => 'つぎのはいしんもたのしみにしてね！', 'romaji' => 'tsugi no haishin mo tanoshimi ni shite ne!', 'meanings' => ['Look forward to the next stream!']],
+            ['kana' => 'よるおそいのでゆっくりやすんでね', 'romaji' => 'yoru osoi node yukkuri yasunde ne', 'meanings' => ['It’s late, so rest well']],
+            ['kana' => 'きょうもありがとう！', 'romaji' => 'kyou mo arigatou!', 'meanings' => ['Thanks again for today!']],
+            ['kana' => 'おつVTuber！', 'romaji' => 'otsu VTuber!', 'meanings' => ['VTuber-style sign-off']],
+            ['kana' => 'さいごまでみてくれてありがとう！', 'romaji' => 'saigo made mite kurete arigatou!', 'meanings' => ['Thanks for watching till the end!']],
+        ]);
+
     }
 
     private function seedCategory(string $slug, string $type, array $items): void
