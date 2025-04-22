@@ -587,6 +587,367 @@ class ItemsTableSeeder extends Seeder
             ['kana' => 'イェ', 'romaji' => 'ye', 'meanings' => ['ye']],
         ]);
 
+        // Kanji N5
+        // Numbers & Time
+        $this->seedCategory('kanji-n5-numbers-and-time', 'Numbers & Time', [
+            ['kana' => '一', 'romaji' => 'ichi', 'meanings' => ['one']],
+            ['kana' => '二', 'romaji' => 'ni', 'meanings' => ['two']],
+            ['kana' => '三', 'romaji' => 'san', 'meanings' => ['three']],
+            ['kana' => '四', 'romaji' => 'shi / yon', 'meanings' => ['four']],
+            ['kana' => '五', 'romaji' => 'go', 'meanings' => ['five']],
+            ['kana' => '六', 'romaji' => 'roku', 'meanings' => ['six']],
+            ['kana' => '七', 'romaji' => 'shichi / nana', 'meanings' => ['seven']],
+            ['kana' => '八', 'romaji' => 'hachi', 'meanings' => ['eight']],
+            ['kana' => '九', 'romaji' => 'kyuu / ku', 'meanings' => ['nine']],
+            ['kana' => '十', 'romaji' => 'juu', 'meanings' => ['ten']],
+            ['kana' => '百', 'romaji' => 'hyaku', 'meanings' => ['hundred']],
+            ['kana' => '千', 'romaji' => 'sen', 'meanings' => ['thousand']],
+            ['kana' => '万', 'romaji' => 'man', 'meanings' => ['ten thousand']],
+            ['kana' => '時', 'romaji' => 'ji', 'meanings' => ['o\'clock', 'time']],
+            ['kana' => '分', 'romaji' => 'fun / pun', 'meanings' => ['minute', 'part']],
+            ['kana' => '半', 'romaji' => 'han', 'meanings' => ['half']],
+        ]);
+
+        // People & Pronouns
+        $this->seedCategory('kanji-n5-people-and-pronouns', 'People & Pronouns', [
+            ['kana' => '人', 'romaji' => 'hito / jin / nin', 'meanings' => ['person']],
+            ['kana' => '私', 'romaji' => 'watashi', 'meanings' => ['I', 'me']],
+            ['kana' => '男', 'romaji' => 'otoko', 'meanings' => ['man', 'male']],
+            ['kana' => '女', 'romaji' => 'onna', 'meanings' => ['woman', 'female']],
+            ['kana' => '子', 'romaji' => 'ko', 'meanings' => ['child']],
+            ['kana' => '父', 'romaji' => 'chichi', 'meanings' => ['father']],
+            ['kana' => '母', 'romaji' => 'haha', 'meanings' => ['mother']],
+            ['kana' => '友', 'romaji' => 'tomo', 'meanings' => ['friend']],
+            ['kana' => '名', 'romaji' => 'na / mei / myou', 'meanings' => ['name']],
+        ]);
+
+        // Nature & Environment
+        $this->seedCategory('kanji-n5-nature-and-environment', 'Nature & Environment', [
+            ['kana' => '山', 'romaji' => 'yama / san', 'meanings' => ['mountain']],
+            ['kana' => '川', 'romaji' => 'kawa', 'meanings' => ['river']],
+            ['kana' => '田', 'romaji' => 'ta / den', 'meanings' => ['rice field']],
+            ['kana' => '天', 'romaji' => 'ten', 'meanings' => ['heaven', 'sky']],
+            ['kana' => '気', 'romaji' => 'ki', 'meanings' => ['spirit', 'air']],
+            ['kana' => '空', 'romaji' => 'sora / kuu / kara', 'meanings' => ['sky', 'empty']],
+            ['kana' => '雨', 'romaji' => 'ame', 'meanings' => ['rain']],
+            ['kana' => '火', 'romaji' => 'hi / ka', 'meanings' => ['fire']],
+            ['kana' => '水', 'romaji' => 'mizu / sui', 'meanings' => ['water']],
+            ['kana' => '木', 'romaji' => 'ki / moku', 'meanings' => ['tree', 'wood']],
+            ['kana' => '金', 'romaji' => 'kane / kin', 'meanings' => ['gold', 'money']],
+            ['kana' => '土', 'romaji' => 'tsuchi / do', 'meanings' => ['earth', 'soil']],
+        ]);
+
+        // Daily Life & School
+        $this->seedCategory('kanji-n5-daily-life-and-school', 'Daily Life & School', [
+            ['kana' => '日', 'romaji' => 'hi / nichi / jitsu', 'meanings' => ['day', 'sun']],
+            ['kana' => '月', 'romaji' => 'tsuki / getsu / gatsu', 'meanings' => ['moon', 'month']],
+            ['kana' => '年', 'romaji' => 'toshi / nen', 'meanings' => ['year']],
+            ['kana' => '先', 'romaji' => 'saki / sen', 'meanings' => ['ahead', 'previous']],
+            ['kana' => '生', 'romaji' => 'sei / shou / ikiru / nama', 'meanings' => ['life', 'birth', 'raw']],
+            ['kana' => '学', 'romaji' => 'gaku / mana', 'meanings' => ['study', 'learning']],
+            ['kana' => '校', 'romaji' => 'kou', 'meanings' => ['school']],
+            ['kana' => '時', 'romaji' => 'ji', 'meanings' => ['time', 'hour']],
+            ['kana' => '間', 'romaji' => 'aida / kan', 'meanings' => ['interval', 'space']],
+        ]);
+
+        // Common Verbs & Adjectives
+        $this->seedCategory('kanji-n5-verbs-and-adjectives', 'Common Verbs & Adjectives', [
+            ['kana' => '行', 'romaji' => 'iku / kou / gyou', 'meanings' => ['to go']],
+            ['kana' => '来', 'romaji' => 'kuru / rai', 'meanings' => ['to come']],
+            ['kana' => '見', 'romaji' => 'miru / ken', 'meanings' => ['to see']],
+            ['kana' => '聞', 'romaji' => 'kiku / bun', 'meanings' => ['to hear']],
+            ['kana' => '言', 'romaji' => 'iu / gen / gon', 'meanings' => ['to say']],
+            ['kana' => '食', 'romaji' => 'taberu / shoku', 'meanings' => ['to eat']],
+            ['kana' => '飲', 'romaji' => 'nomu / in', 'meanings' => ['to drink']],
+            ['kana' => '出', 'romaji' => 'deru / shutsu', 'meanings' => ['to exit', 'to go out']],
+            ['kana' => '入', 'romaji' => 'hairu / nyuu', 'meanings' => ['to enter']],
+            ['kana' => '立', 'romaji' => 'tatsu / ritsu', 'meanings' => ['to stand']],
+            ['kana' => '休', 'romaji' => 'yasumu / kyuu', 'meanings' => ['to rest']],
+            ['kana' => '買', 'romaji' => 'kau', 'meanings' => ['to buy']],
+            ['kana' => '高', 'romaji' => 'takai / kou', 'meanings' => ['tall', 'expensive']],
+            ['kana' => '安', 'romaji' => 'yasui / an', 'meanings' => ['cheap', 'peaceful']],
+            ['kana' => '大', 'romaji' => 'ookii / dai / tai', 'meanings' => ['big']],
+            ['kana' => '小', 'romaji' => 'chiisai / shou', 'meanings' => ['small']],
+        ]);
+
+        // Kanji N4
+        // Verbs & Actions
+        $this->seedCategory('kanji-n4-verbs-and-actions', 'Verbs & Actions', [
+            ['kana' => '働', 'romaji' => 'hataraku', 'meanings' => ['to work']],
+            ['kana' => '走', 'romaji' => 'hashiru', 'meanings' => ['to run']],
+            ['kana' => '泳', 'romaji' => 'oyogu', 'meanings' => ['to swim']],
+            ['kana' => '持', 'romaji' => 'motsu', 'meanings' => ['to hold']],
+            ['kana' => '開', 'romaji' => 'hiraku / aku / kai', 'meanings' => ['to open']],
+            ['kana' => '閉', 'romaji' => 'tojiru / shimaru / hei', 'meanings' => ['to close']],
+            ['kana' => '始', 'romaji' => 'hajimeru / hajimaru', 'meanings' => ['to begin']],
+            ['kana' => '終', 'romaji' => 'owaru / shu', 'meanings' => ['to end']],
+        ]);
+
+        // Time & Frequency
+        $this->seedCategory('kanji-n4-time-and-frequency', 'Time & Frequency', [
+            ['kana' => '曜', 'romaji' => 'you', 'meanings' => ['day of the week']],
+            ['kana' => '毎', 'romaji' => 'mai', 'meanings' => ['every']],
+            ['kana' => '週', 'romaji' => 'shuu', 'meanings' => ['week']],
+            ['kana' => '昨', 'romaji' => 'saku', 'meanings' => ['last (past)', 'yesterday']],
+            ['kana' => '晩', 'romaji' => 'ban', 'meanings' => ['evening']],
+            ['kana' => '午', 'romaji' => 'go', 'meanings' => ['noon']],
+        ]);
+
+        // Places & Directions
+        $this->seedCategory('kanji-n4-places-and-directions', 'Places & Directions', [
+            ['kana' => '駅', 'romaji' => 'eki', 'meanings' => ['station']],
+            ['kana' => '店', 'romaji' => 'mise / ten', 'meanings' => ['shop']],
+            ['kana' => '場', 'romaji' => 'ba / jou', 'meanings' => ['place']],
+            ['kana' => '館', 'romaji' => 'kan', 'meanings' => ['building (hall)']],
+            ['kana' => '所', 'romaji' => 'tokoro / sho', 'meanings' => ['place']],
+            ['kana' => '近', 'romaji' => 'chikai / kin', 'meanings' => ['near']],
+            ['kana' => '遠', 'romaji' => 'tooi / en', 'meanings' => ['far']],
+            ['kana' => '通', 'romaji' => 'tooru / tsuu', 'meanings' => ['to pass', 'traffic']],
+        ]);
+
+        // Emotions & States
+        $this->seedCategory('kanji-n4-emotions-and-states', 'Emotions & States', [
+            ['kana' => '楽', 'romaji' => 'tanoshii / raku / gaku', 'meanings' => ['fun', 'comfort', 'music']],
+            ['kana' => '悲', 'romaji' => 'kanashii / hi', 'meanings' => ['sad']],
+            ['kana' => '怒', 'romaji' => 'okoru / do', 'meanings' => ['angry']],
+            ['kana' => '思', 'romaji' => 'omou / shi', 'meanings' => ['to think']],
+            ['kana' => '知', 'romaji' => 'shiru / chi', 'meanings' => ['to know']],
+            ['kana' => '忘', 'romaji' => 'wasureru / bou', 'meanings' => ['to forget']],
+        ]);
+
+        // Family & People
+        $this->seedCategory('kanji-n4-family-and-people', 'Family & People', [
+            ['kana' => '兄', 'romaji' => 'ani / kei / kyou', 'meanings' => ['older brother']],
+            ['kana' => '弟', 'romaji' => 'otouto / dai / tei', 'meanings' => ['younger brother']],
+            ['kana' => '姉', 'romaji' => 'ane / shi', 'meanings' => ['older sister']],
+            ['kana' => '妹', 'romaji' => 'imouto / mai', 'meanings' => ['younger sister']],
+            ['kana' => '家', 'romaji' => 'ie / ka / ke', 'meanings' => ['house', 'home']],
+            ['kana' => '族', 'romaji' => 'zoku', 'meanings' => ['tribe', 'family']],
+        ]);
+
+        // Common Nouns & Adjectives
+        $this->seedCategory('kanji-n4-nouns-and-adjectives', 'Common Nouns & Adjectives', [
+            ['kana' => '色', 'romaji' => 'iro / shoku', 'meanings' => ['color']],
+            ['kana' => '音', 'romaji' => 'oto / on', 'meanings' => ['sound']],
+            ['kana' => '光', 'romaji' => 'hikari / kou', 'meanings' => ['light']],
+            ['kana' => '新', 'romaji' => 'atarashii / shin', 'meanings' => ['new']],
+            ['kana' => '古', 'romaji' => 'furui / ko', 'meanings' => ['old']],
+            ['kana' => '明', 'romaji' => 'akarui / mei', 'meanings' => ['bright']],
+            ['kana' => '暗', 'romaji' => 'kurai / an', 'meanings' => ['dark']],
+            ['kana' => '強', 'romaji' => 'tsuyoi / kyou', 'meanings' => ['strong']],
+        ]);
+
+        // Kanji N3
+        // Work & Business
+        $this->seedCategory('kanji-n3-work-and-business', 'Work & Business', [
+            ['kana' => '会', 'romaji' => 'kai', 'meanings' => ['meeting', 'association']],
+            ['kana' => '業', 'romaji' => 'gyou', 'meanings' => ['business', 'vocation']],
+            ['kana' => '仕', 'romaji' => 'shi', 'meanings' => ['to serve', 'work']],
+            ['kana' => '職', 'romaji' => 'shoku', 'meanings' => ['job', 'employment']],
+            ['kana' => '課', 'romaji' => 'ka', 'meanings' => ['section', 'lesson']],
+            ['kana' => '務', 'romaji' => 'mu', 'meanings' => ['duty', 'task']],
+            ['kana' => '給', 'romaji' => 'kyuu', 'meanings' => ['salary', 'wage']],
+            ['kana' => '責', 'romaji' => 'seki', 'meanings' => ['responsibility']],
+            ['kana' => '任', 'romaji' => 'nin', 'meanings' => ['duty', 'assignment']],
+            ['kana' => '報', 'romaji' => 'hou', 'meanings' => ['report', 'news']],
+        ]);
+
+        // School & Learning
+        $this->seedCategory('kanji-n3-school-and-learning', 'School & Learning', [
+            ['kana' => '課', 'romaji' => 'ka', 'meanings' => ['lesson', 'section']],
+            ['kana' => '試', 'romaji' => 'shi', 'meanings' => ['test', 'try']],
+            ['kana' => '験', 'romaji' => 'ken', 'meanings' => ['test', 'experience']],
+            ['kana' => '質', 'romaji' => 'shitsu', 'meanings' => ['quality', 'question']],
+            ['kana' => '問', 'romaji' => 'mon', 'meanings' => ['question']],
+            ['kana' => '答', 'romaji' => 'tou', 'meanings' => ['answer']],
+            ['kana' => '教', 'romaji' => 'kyou', 'meanings' => ['teach', 'religion']],
+            ['kana' => '授', 'romaji' => 'ju', 'meanings' => ['instruct', 'grant']],
+            ['kana' => '宿', 'romaji' => 'shuku', 'meanings' => ['lodge', 'homework']],
+            ['kana' => '研', 'romaji' => 'ken', 'meanings' => ['research']],
+        ]);
+
+        // Emotions & Psychology
+        $this->seedCategory('kanji-n3-emotions-and-psychology', 'Emotions & Psychology', [
+            ['kana' => '感', 'romaji' => 'kan', 'meanings' => ['feeling', 'emotion']],
+            ['kana' => '情', 'romaji' => 'jou', 'meanings' => ['emotion', 'condition']],
+            ['kana' => '怒', 'romaji' => 'do', 'meanings' => ['anger']],
+            ['kana' => '喜', 'romaji' => 'ki', 'meanings' => ['joy']],
+            ['kana' => '悲', 'romaji' => 'hi', 'meanings' => ['sadness']],
+            ['kana' => '恥', 'romaji' => 'chi', 'meanings' => ['shame']],
+            ['kana' => '欲', 'romaji' => 'yoku', 'meanings' => ['desire']],
+            ['kana' => '恋', 'romaji' => 'koi', 'meanings' => ['romantic love']],
+            ['kana' => '愛', 'romaji' => 'ai', 'meanings' => ['love']],
+            ['kana' => '怖', 'romaji' => 'fu', 'meanings' => ['fear']],
+        ]);
+
+        // Daily Activities
+        $this->seedCategory('kanji-n3-daily-activities', 'Daily Activities', [
+            ['kana' => '洗', 'romaji' => 'sen', 'meanings' => ['wash']],
+            ['kana' => '掃', 'romaji' => 'sou', 'meanings' => ['sweep']],
+            ['kana' => '起', 'romaji' => 'ki', 'meanings' => ['wake up']],
+            ['kana' => '寝', 'romaji' => 'shin', 'meanings' => ['sleep']],
+            ['kana' => '遊', 'romaji' => 'yuu', 'meanings' => ['play']],
+            ['kana' => '働', 'romaji' => 'dou', 'meanings' => ['work']],
+            ['kana' => '習', 'romaji' => 'shuu', 'meanings' => ['learn']],
+            ['kana' => '準', 'romaji' => 'jun', 'meanings' => ['prepare']],
+            ['kana' => '終', 'romaji' => 'shuu', 'meanings' => ['end']],
+            ['kana' => '始', 'romaji' => 'shi', 'meanings' => ['begin']],
+        ]);
+
+        // Time & Seasons
+        $this->seedCategory('kanji-n3-time-and-seasons', 'Time & Seasons', [
+            ['kana' => '秒', 'romaji' => 'byou', 'meanings' => ['second (time)']],
+            ['kana' => '季', 'romaji' => 'ki', 'meanings' => ['season']],
+            ['kana' => '節', 'romaji' => 'setsu', 'meanings' => ['season', 'joint']],
+            ['kana' => '昨', 'romaji' => 'saku', 'meanings' => ['last (year/day)']],
+            ['kana' => '晩', 'romaji' => 'ban', 'meanings' => ['evening']],
+            ['kana' => '夜', 'romaji' => 'ya', 'meanings' => ['night']],
+            ['kana' => '朝', 'romaji' => 'chou', 'meanings' => ['morning']],
+            ['kana' => '昼', 'romaji' => 'chuu', 'meanings' => ['noon']],
+            ['kana' => '末', 'romaji' => 'matsu', 'meanings' => ['end']],
+            ['kana' => '週', 'romaji' => 'shuu', 'meanings' => ['week']],
+        ]);
+
+        // Nature & Environment
+        $this->seedCategory('kanji-n3-nature-and-environment', 'Nature & Environment', [
+            ['kana' => '湖', 'romaji' => 'ko', 'meanings' => ['lake']],
+            ['kana' => '島', 'romaji' => 'tou', 'meanings' => ['island']],
+            ['kana' => '岸', 'romaji' => 'gan', 'meanings' => ['shore']],
+            ['kana' => '砂', 'romaji' => 'sa', 'meanings' => ['sand']],
+            ['kana' => '氷', 'romaji' => 'hyou', 'meanings' => ['ice']],
+            ['kana' => '波', 'romaji' => 'ha', 'meanings' => ['wave']],
+            ['kana' => '岩', 'romaji' => 'gan', 'meanings' => ['rock']],
+            ['kana' => '星', 'romaji' => 'sei', 'meanings' => ['star']],
+            ['kana' => '暑', 'romaji' => 'sho', 'meanings' => ['hot (weather)']],
+            ['kana' => '寒', 'romaji' => 'kan', 'meanings' => ['cold']],
+        ]);
+
+        // Body & Health
+        $this->seedCategory('kanji-n3-body-and-health', 'Body & Health', [
+            ['kana' => '頭', 'romaji' => 'tou', 'meanings' => ['head']],
+            ['kana' => '顔', 'romaji' => 'gan', 'meanings' => ['face']],
+            ['kana' => '首', 'romaji' => 'shu', 'meanings' => ['neck']],
+            ['kana' => '胸', 'romaji' => 'kyou', 'meanings' => ['chest']],
+            ['kana' => '腹', 'romaji' => 'fuku', 'meanings' => ['belly']],
+            ['kana' => '背', 'romaji' => 'hai', 'meanings' => ['back']],
+            ['kana' => '骨', 'romaji' => 'kotsu', 'meanings' => ['bone']],
+            ['kana' => '病', 'romaji' => 'byou', 'meanings' => ['illness']],
+            ['kana' => '痛', 'romaji' => 'tsuu', 'meanings' => ['pain']],
+            ['kana' => '薬', 'romaji' => 'yaku', 'meanings' => ['medicine']],
+        ]);
+
+        // Movement & Travel
+        $this->seedCategory('kanji-n3-movement-and-travel', 'Movement & Travel', [
+            ['kana' => '速', 'romaji' => 'soku', 'meanings' => ['fast']],
+            ['kana' => '遅', 'romaji' => 'chi', 'meanings' => ['slow']],
+            ['kana' => '通', 'romaji' => 'tsuu', 'meanings' => ['pass', 'commute']],
+            ['kana' => '進', 'romaji' => 'shin', 'meanings' => ['advance']],
+            ['kana' => '退', 'romaji' => 'tai', 'meanings' => ['retreat']],
+            ['kana' => '運', 'romaji' => 'un', 'meanings' => ['carry', 'luck']],
+            ['kana' => '泊', 'romaji' => 'haku', 'meanings' => ['stay overnight']],
+            ['kana' => '遊', 'romaji' => 'yuu', 'meanings' => ['play']],
+            ['kana' => '降', 'romaji' => 'kou', 'meanings' => ['descend']],
+            ['kana' => '乗', 'romaji' => 'jou', 'meanings' => ['ride']],
+        ]);
+
+        // People & Society
+        $this->seedCategory('kanji-n3-people-and-society', 'People & Society', [
+            ['kana' => '役', 'romaji' => 'yaku', 'meanings' => ['role']],
+            ['kana' => '民', 'romaji' => 'min', 'meanings' => ['people']],
+            ['kana' => '軍', 'romaji' => 'gun', 'meanings' => ['military']],
+            ['kana' => '警', 'romaji' => 'kei', 'meanings' => ['police']],
+            ['kana' => '官', 'romaji' => 'kan', 'meanings' => ['government official']],
+            ['kana' => '裁', 'romaji' => 'sai', 'meanings' => ['judge']],
+            ['kana' => '争', 'romaji' => 'sou', 'meanings' => ['conflict']],
+            ['kana' => '議', 'romaji' => 'gi', 'meanings' => ['deliberation']],
+            ['kana' => '党', 'romaji' => 'tou', 'meanings' => ['party']],
+            ['kana' => '族', 'romaji' => 'zoku', 'meanings' => ['family', 'tribe']],
+        ]);
+
+        // Tools & Objects
+        $this->seedCategory('kanji-n3-tools-and-objects', 'Tools & Objects', [
+            ['kana' => '箱', 'romaji' => 'hako', 'meanings' => ['box']],
+            ['kana' => '鏡', 'romaji' => 'kagami', 'meanings' => ['mirror']],
+            ['kana' => '傘', 'romaji' => 'kasa', 'meanings' => ['umbrella']],
+            ['kana' => '棚', 'romaji' => 'tana', 'meanings' => ['shelf']],
+            ['kana' => '針', 'romaji' => 'hari', 'meanings' => ['needle']],
+            ['kana' => '布', 'romaji' => 'nuno', 'meanings' => ['cloth']],
+            ['kana' => '机', 'romaji' => 'tsukue', 'meanings' => ['desk']],
+            ['kana' => '椅', 'romaji' => 'i', 'meanings' => ['chair (stem)']],
+            ['kana' => '皿', 'romaji' => 'sara', 'meanings' => ['plate']],
+            ['kana' => '匙', 'romaji' => 'saji', 'meanings' => ['spoon']],
+        ]);
+
+        // Food & Cooking
+        $this->seedCategory('kanji-n3-food-and-cooking', 'Food & Cooking', [
+            ['kana' => '油', 'romaji' => 'abura', 'meanings' => ['oil']],
+            ['kana' => '塩', 'romaji' => 'shio', 'meanings' => ['salt']],
+            ['kana' => '砂糖', 'romaji' => 'satou', 'meanings' => ['sugar']],
+            ['kana' => '醤', 'romaji' => 'shou', 'meanings' => ['soy sauce']],
+            ['kana' => '酒', 'romaji' => 'sake', 'meanings' => ['alcohol']],
+            ['kana' => '皿', 'romaji' => 'sara', 'meanings' => ['plate']],
+            ['kana' => '鍋', 'romaji' => 'nabe', 'meanings' => ['pot']],
+            ['kana' => '焼', 'romaji' => 'yaki', 'meanings' => ['grill']],
+            ['kana' => '煮', 'romaji' => 'ni', 'meanings' => ['boil']],
+            ['kana' => '炒', 'romaji' => 'itame', 'meanings' => ['stir-fry']],
+        ]);
+
+        // Abstract Concepts
+        $this->seedCategory('kanji-n3-abstract-concepts', 'Abstract Concepts', [
+            ['kana' => '愛', 'romaji' => 'ai', 'meanings' => ['love']],
+            ['kana' => '夢', 'romaji' => 'yume', 'meanings' => ['dream']],
+            ['kana' => '望', 'romaji' => 'bou', 'meanings' => ['hope']],
+            ['kana' => '命', 'romaji' => 'inochi', 'meanings' => ['life']],
+            ['kana' => '感', 'romaji' => 'kan', 'meanings' => ['feeling']],
+            ['kana' => '想', 'romaji' => 'sou', 'meanings' => ['thought']],
+            ['kana' => '信', 'romaji' => 'shin', 'meanings' => ['trust']],
+            ['kana' => '義', 'romaji' => 'gi', 'meanings' => ['justice']],
+            ['kana' => '念', 'romaji' => 'nen', 'meanings' => ['wish', 'thought']],
+            ['kana' => '意', 'romaji' => 'i', 'meanings' => ['intention']],
+        ]);
+
+        // Verbs (Group 1)
+        $this->seedCategory('kanji-n3-verbs-group-1', 'Verbs (Group 1)', [
+            ['kana' => '打', 'romaji' => 'da', 'meanings' => ['hit']],
+            ['kana' => '引', 'romaji' => 'in', 'meanings' => ['pull']],
+            ['kana' => '押', 'romaji' => 'ou', 'meanings' => ['push']],
+            ['kana' => '切', 'romaji' => 'setsu', 'meanings' => ['cut']],
+            ['kana' => '持', 'romaji' => 'ji', 'meanings' => ['hold']],
+            ['kana' => '使', 'romaji' => 'shi', 'meanings' => ['use']],
+            ['kana' => '書', 'romaji' => 'sho', 'meanings' => ['write']],
+            ['kana' => '読', 'romaji' => 'doku', 'meanings' => ['read']],
+            ['kana' => '立', 'romaji' => 'ritsu', 'meanings' => ['stand']],
+            ['kana' => '座', 'romaji' => 'za', 'meanings' => ['sit']],
+        ]);
+
+        // Verbs (Group 2)
+        $this->seedCategory('kanji-n3-verbs-group-2', 'Verbs (Group 2)', [
+            ['kana' => '食', 'romaji' => 'shoku', 'meanings' => ['eat']],
+            ['kana' => '見', 'romaji' => 'ken', 'meanings' => ['see']],
+            ['kana' => '開', 'romaji' => 'kai', 'meanings' => ['open']],
+            ['kana' => '閉', 'romaji' => 'hei', 'meanings' => ['close']],
+            ['kana' => '出', 'romaji' => 'shutsu', 'meanings' => ['exit']],
+            ['kana' => '入', 'romaji' => 'nyuu', 'meanings' => ['enter']],
+            ['kana' => '始', 'romaji' => 'shi', 'meanings' => ['begin']],
+            ['kana' => '終', 'romaji' => 'shuu', 'meanings' => ['end']],
+            ['kana' => '考', 'romaji' => 'kou', 'meanings' => ['think']],
+            ['kana' => '答', 'romaji' => 'tou', 'meanings' => ['answer']],
+        ]);
+
+        // Adjectives & Descriptions
+        $this->seedCategory('kanji-n3-adjectives-and-descriptions', 'Adjectives & Descriptions', [
+            ['kana' => '重', 'romaji' => 'omo(i)', 'meanings' => ['heavy']],
+            ['kana' => '軽', 'romaji' => 'karu(i)', 'meanings' => ['light (weight)']],
+            ['kana' => '太', 'romaji' => 'futo(i)', 'meanings' => ['thick', 'fat']],
+            ['kana' => '細', 'romaji' => 'hoso(i)', 'meanings' => ['thin', 'slender']],
+            ['kana' => '強', 'romaji' => 'tsuyo(i)', 'meanings' => ['strong']],
+            ['kana' => '弱', 'romaji' => 'yowa(i)', 'meanings' => ['weak']],
+            ['kana' => '深', 'romaji' => 'fuka(i)', 'meanings' => ['deep']],
+            ['kana' => '浅', 'romaji' => 'asa(i)', 'meanings' => ['shallow']],
+            ['kana' => '明', 'romaji' => 'aka(rui)', 'meanings' => ['bright']],
+            ['kana' => '暗', 'romaji' => 'kura(i)', 'meanings' => ['dark']],
+        ]);
+
         // Seed Core Particles
         $core = Category::where('slug', 'core-particles')->firstOrFail();
 

@@ -39,6 +39,56 @@ class CategoriesTableSeeder extends Seeder
             ['language_id' => $jp->id, 'name' => 'All Kana', 'slug' => 'katakana-all-kana'],
         ]);
 
+        $kanji_n5 = $jp->categories()->create([
+            'name' => 'Kanji N5',
+            'slug' => 'kanji-n5',
+        ]);
+
+        $kanji_n5->children()->createMany([
+            ['language_id' => $jp->id, 'name' => 'Numbers & Time', 'slug' => 'kanji-n5-numbers-and-time'],
+            ['language_id' => $jp->id, 'name' => 'People & Pronouns', 'slug' => 'kanji-n5-people-and-pronouns'],
+            ['language_id' => $jp->id, 'name' => 'Nature & Environment', 'slug' => 'kanji-n5-nature-and-environment'],
+            ['language_id' => $jp->id, 'name' => 'Daily Life & School', 'slug' => 'kanji-n5-daily-life-and-school'],
+            ['language_id' => $jp->id, 'name' => 'Common Verbs & Adjectives', 'slug' => 'kanji-n5-verbs-and-adjectives'],
+        ]);
+
+        $kanji_n4 = $jp->categories()->create([
+            'name' => 'Kanji N4',
+            'slug' => 'kanji-n4',
+        ]);
+
+        $kanji_n4->children()->createMany([
+            ['language_id' => $jp->id, 'name' => 'Verbs & Actions', 'slug' => 'kanji-n4-verbs-and-actions'],
+            ['language_id' => $jp->id, 'name' => 'Time & Frequency', 'slug' => 'kanji-n4-time-and-frequency'],
+            ['language_id' => $jp->id, 'name' => 'Places & Directions', 'slug' => 'kanji-n4-places-and-directions'],
+            ['language_id' => $jp->id, 'name' => 'Emotions & States', 'slug' => 'kanji-n4-emotions-and-states'],
+            ['language_id' => $jp->id, 'name' => 'Family & People', 'slug' => 'kanji-n4-family-and-people'],
+            ['language_id' => $jp->id, 'name' => 'Common Nouns & Adjectives', 'slug' => 'kanji-n4-nouns-and-adjectives'],
+        ]);
+
+        $kanji_n3 = $jp->categories()->create([
+            'name' => 'Kanji N3',
+            'slug' => 'kanji-n3',
+        ]);
+
+        $kanji_n3->children()->createMany([
+            ['language_id' => $jp->id, 'name' => 'Work & Business', 'slug' => 'kanji-n3-work-and-business'],
+            ['language_id' => $jp->id, 'name' => 'School & Learning', 'slug' => 'kanji-n3-school-and-learning'],
+            ['language_id' => $jp->id, 'name' => 'Emotions & Psychology', 'slug' => 'kanji-n3-emotions-and-psychology'],
+            ['language_id' => $jp->id, 'name' => 'Daily Activities', 'slug' => 'kanji-n3-daily-activities'],
+            ['language_id' => $jp->id, 'name' => 'Time & Seasons', 'slug' => 'kanji-n3-time-and-seasons'],
+            ['language_id' => $jp->id, 'name' => 'Nature & Environment', 'slug' => 'kanji-n3-nature-and-environment'],
+            ['language_id' => $jp->id, 'name' => 'Body & Health', 'slug' => 'kanji-n3-body-and-health'],
+            ['language_id' => $jp->id, 'name' => 'Movement & Travel', 'slug' => 'kanji-n3-movement-and-travel'],
+            ['language_id' => $jp->id, 'name' => 'People & Society', 'slug' => 'kanji-n3-people-and-society'],
+            ['language_id' => $jp->id, 'name' => 'Tools & Objects', 'slug' => 'kanji-n3-tools-and-objects'],
+            ['language_id' => $jp->id, 'name' => 'Food & Cooking', 'slug' => 'kanji-n3-food-and-cooking'],
+            ['language_id' => $jp->id, 'name' => 'Abstract Concepts', 'slug' => 'kanji-n3-abstract-concepts'],
+            ['language_id' => $jp->id, 'name' => 'Verbs (Group 1)', 'slug' => 'kanji-n3-verbs-group-1'],
+            ['language_id' => $jp->id, 'name' => 'Verbs (Group 2)', 'slug' => 'kanji-n3-verbs-group-2'],
+            ['language_id' => $jp->id, 'name' => 'Adjectives & Descriptions', 'slug' => 'kanji-n3-adjectives-and-descriptions'],
+        ]);
+
         $jp->categories()->createMany([
             ['name' => 'Core Particles', 'slug' => 'core-particles'],
             ['name' => 'Additional Particles', 'slug' => 'additional-particles'],
