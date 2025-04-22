@@ -1716,16 +1716,46 @@ class ItemsTableSeeder extends Seeder
         $core = Category::where('slug', 'core-particles')->firstOrFail();
 
         $particles = [
-            ['kana' => 'は', 'romaji' => 'wa', 'meanings' => ['topic marker']],
-            ['kana' => 'を', 'romaji' => 'o', 'meanings' => ['direct object']],
-            ['kana' => 'に', 'romaji' => 'ni', 'meanings' => ['direction', 'time']],
-            ['kana' => 'で', 'romaji' => 'de', 'meanings' => ['place of action', 'means']],
-            ['kana' => 'と', 'romaji' => 'to', 'meanings' => ['and', 'with']],
-            ['kana' => 'も', 'romaji' => 'mo', 'meanings' => ['also', 'too']],
-            ['kana' => 'が', 'romaji' => 'ga', 'meanings' => ['subject', 'emphasis']],
-            ['kana' => 'の', 'romaji' => 'no', 'meanings' => ["possession", "'s"]],
-            ['kana' => 'から', 'romaji' => 'kara', 'meanings' => ['from', 'because']],
-            ['kana' => 'まで', 'romaji' => 'made', 'meanings' => ['until', 'up to']],
+            ['kana' => 'は', 'romaji' => 'wa', 'meanings' => [
+                'en' => ['topic marker'],
+                'nl' => ['onderwerpmarkeerder'],
+            ]],
+            ['kana' => 'を', 'romaji' => 'o', 'meanings' => [
+                'en' => ['direct object'],
+                'nl' => ['lijdend voorwerp'],
+            ]],
+            ['kana' => 'に', 'romaji' => 'ni', 'meanings' => [
+                'en' => ['direction', 'time'],
+                'nl' => ['richting', 'tijd'],
+            ]],
+            ['kana' => 'で', 'romaji' => 'de', 'meanings' => [
+                'en' => ['place of action', 'means'],
+                'nl' => ['plaats van handeling', 'middel'],
+            ]],
+            ['kana' => 'と', 'romaji' => 'to', 'meanings' => [
+                'en' => ['and', 'with'],
+                'nl' => ['en', 'met'],
+            ]],
+            ['kana' => 'も', 'romaji' => 'mo', 'meanings' => [
+                'en' => ['also', 'too'],
+                'nl' => ['ook', 'eveneens'],
+            ]],
+            ['kana' => 'が', 'romaji' => 'ga', 'meanings' => [
+                'en' => ['subject', 'emphasis'],
+                'nl' => ['onderwerp', 'nadruk'],
+            ]],
+            ['kana' => 'の', 'romaji' => 'no', 'meanings' => [
+                'en' => ['possession', "'s"],
+                'nl' => ['bezit', "'s"],
+            ]],
+            ['kana' => 'から', 'romaji' => 'kara', 'meanings' => [
+                'en' => ['from', 'because'],
+                'nl' => ['van', 'omdat'],
+            ]],
+            ['kana' => 'まで', 'romaji' => 'made', 'meanings' => [
+                'en' => ['until', 'up to'],
+                'nl' => ['tot', 'tot aan'],
+            ]],
         ];
 
         foreach ($particles as $p) {
@@ -1734,421 +1764,1480 @@ class ItemsTableSeeder extends Seeder
 
         // Additional Particles
         $this->seedCategory('additional-particles', 'Additional Particles', [
-            ['kana' => 'へ', 'romaji' => 'e', 'meanings' => ['direction']],
-            ['kana' => 'や', 'romaji' => 'ya', 'meanings' => ['and', 'non-exhaustive list']],
-            ['kana' => 'ね', 'romaji' => 'ne', 'meanings' => ['right?', 'agreement']],
-            ['kana' => 'よ', 'romaji' => 'yo', 'meanings' => ['emphasis']],
-            ['kana' => 'だけ', 'romaji' => 'dake', 'meanings' => ['only']],
-            ['kana' => 'しか', 'romaji' => 'shika', 'meanings' => ['only (with negative)']],
-            ['kana' => 'でも', 'romaji' => 'demo', 'meanings' => ['even', 'but']],
-            ['kana' => 'ほど', 'romaji' => 'hodo', 'meanings' => ['to the extent of', 'comparison']],
-            ['kana' => 'ながら', 'romaji' => 'nagara', 'meanings' => ['while doing', 'simultaneous actions']],
+            ['kana' => 'へ', 'romaji' => 'e', 'meanings' => [
+                'en' => ['direction'],
+                'nl' => ['richting'],
+            ]],
+            ['kana' => 'や', 'romaji' => 'ya', 'meanings' => [
+                'en' => ['and', 'non-exhaustive list'],
+                'nl' => ['en', 'niet-uitputtende lijst'],
+            ]],
+            ['kana' => 'ね', 'romaji' => 'ne', 'meanings' => [
+                'en' => ['right?', 'agreement'],
+                'nl' => ['hè?', 'instemming'],
+            ]],
+            ['kana' => 'よ', 'romaji' => 'yo', 'meanings' => [
+                'en' => ['emphasis'],
+                'nl' => ['nadruk'],
+            ]],
+            ['kana' => 'だけ', 'romaji' => 'dake', 'meanings' => [
+                'en' => ['only'],
+                'nl' => ['alleen'],
+            ]],
+            ['kana' => 'しか', 'romaji' => 'shika', 'meanings' => [
+                'en' => ['only (with negative)'],
+                'nl' => ['alleen (met negatie)'],
+            ]],
+            ['kana' => 'でも', 'romaji' => 'demo', 'meanings' => [
+                'en' => ['even', 'but'],
+                'nl' => ['zelfs', 'maar'],
+            ]],
+            ['kana' => 'ほど', 'romaji' => 'hodo', 'meanings' => [
+                'en' => ['to the extent of', 'comparison'],
+                'nl' => ['tot op zekere hoogte', 'vergelijking'],
+            ]],
+            ['kana' => 'ながら', 'romaji' => 'nagara', 'meanings' => [
+                'en' => ['while doing', 'simultaneous actions'],
+                'nl' => ['tijdens het doen', 'gelijktijdige handelingen'],
+            ]],
         ]);
 
         // Verbs
         // N5 Part 1
         $this->seedCategory('n5-part-1', 'N5 Part 1', [
-            ['kana' => 'たべる', 'romaji' => 'taberu', 'meanings' => ['to eat']],
-            ['kana' => 'のむ', 'romaji' => 'nomu', 'meanings' => ['to drink']],
-            ['kana' => 'いく', 'romaji' => 'iku', 'meanings' => ['to go']],
-            ['kana' => 'くる', 'romaji' => 'kuru', 'meanings' => ['to come']],
-            ['kana' => 'かえる', 'romaji' => 'kaeru', 'meanings' => ['to return (home)']],
-            ['kana' => 'みる', 'romaji' => 'miru', 'meanings' => ['to see', 'to watch', 'to look']],
-            ['kana' => 'きく', 'romaji' => 'kiku', 'meanings' => ['to listen', 'to ask']],
-            ['kana' => 'はなす', 'romaji' => 'hanasu', 'meanings' => ['to speak', 'to talk']],
-            ['kana' => 'よむ', 'romaji' => 'yomu', 'meanings' => ['to read']],
-            ['kana' => 'かく', 'romaji' => 'kaku', 'meanings' => ['to write']],
-            ['kana' => 'かう', 'romaji' => 'kau', 'meanings' => ['to buy']],
-            ['kana' => 'うる', 'romaji' => 'uru', 'meanings' => ['to sell']],
-            ['kana' => 'つかう', 'romaji' => 'tsukau', 'meanings' => ['to use']],
-            ['kana' => 'する', 'romaji' => 'suru', 'meanings' => ['to do']],
-            ['kana' => 'ある', 'romaji' => 'aru', 'meanings' => ['to exist (non-living)']],
-            ['kana' => 'いる', 'romaji' => 'iru', 'meanings' => ['to exist (living)', 'to need']],
-            ['kana' => 'おきる', 'romaji' => 'okiru', 'meanings' => ['to wake up']],
-            ['kana' => 'ねる', 'romaji' => 'neru', 'meanings' => ['to sleep']],
-            ['kana' => 'はたらく', 'romaji' => 'hataraku', 'meanings' => ['to work']],
-            ['kana' => 'やすむ', 'romaji' => 'yasumu', 'meanings' => ['to rest', 'to take a break']],
-            ['kana' => 'あう', 'romaji' => 'au', 'meanings' => ['to meet']],
-            ['kana' => 'あける', 'romaji' => 'akeru', 'meanings' => ['to open']],
-            ['kana' => 'しめる', 'romaji' => 'shimeru', 'meanings' => ['to close']],
-            ['kana' => 'はいる', 'romaji' => 'hairu', 'meanings' => ['to enter']],
-            ['kana' => 'でる', 'romaji' => 'deru', 'meanings' => ['to exit', 'to leave']],
-            ['kana' => 'すわる', 'romaji' => 'suwaru', 'meanings' => ['to sit']],
-            ['kana' => 'たつ', 'romaji' => 'tatsu', 'meanings' => ['to stand']],
-            ['kana' => 'まつ', 'romaji' => 'matsu', 'meanings' => ['to wait']],
-            ['kana' => 'もつ', 'romaji' => 'motsu', 'meanings' => ['to hold', 'to carry']],
-            ['kana' => 'およぐ', 'romaji' => 'oyogu', 'meanings' => ['to swim']],
+            ['kana' => 'たべる', 'romaji' => 'taberu', 'meanings' => [
+                'en' => ['to eat'],
+                'nl' => ['eten'],
+            ]],
+            ['kana' => 'のむ', 'romaji' => 'nomu', 'meanings' => [
+                'en' => ['to drink'],
+                'nl' => ['drinken'],
+            ]],
+            ['kana' => 'いく', 'romaji' => 'iku', 'meanings' => [
+                'en' => ['to go'],
+                'nl' => ['gaan'],
+            ]],
+            ['kana' => 'くる', 'romaji' => 'kuru', 'meanings' => [
+                'en' => ['to come'],
+                'nl' => ['komen'],
+            ]],
+            ['kana' => 'かえる', 'romaji' => 'kaeru', 'meanings' => [
+                'en' => ['to return (home)'],
+                'nl' => ['terugkeren (naar huis)'],
+            ]],
+            ['kana' => 'みる', 'romaji' => 'miru', 'meanings' => [
+                'en' => ['to see', 'to watch', 'to look'],
+                'nl' => ['zien', 'kijken', 'aanschouwen'],
+            ]],
+            ['kana' => 'きく', 'romaji' => 'kiku', 'meanings' => [
+                'en' => ['to listen', 'to ask'],
+                'nl' => ['luisteren', 'vragen'],
+            ]],
+            ['kana' => 'はなす', 'romaji' => 'hanasu', 'meanings' => [
+                'en' => ['to speak', 'to talk'],
+                'nl' => ['spreken', 'praten'],
+            ]],
+            ['kana' => 'よむ', 'romaji' => 'yomu', 'meanings' => [
+                'en' => ['to read'],
+                'nl' => ['lezen'],
+            ]],
+            ['kana' => 'かく', 'romaji' => 'kaku', 'meanings' => [
+                'en' => ['to write'],
+                'nl' => ['schrijven'],
+            ]],
+            ['kana' => 'かう', 'romaji' => 'kau', 'meanings' => [
+                'en' => ['to buy'],
+                'nl' => ['kopen'],
+            ]],
+            ['kana' => 'うる', 'romaji' => 'uru', 'meanings' => [
+                'en' => ['to sell'],
+                'nl' => ['verkopen'],
+            ]],
+            ['kana' => 'つかう', 'romaji' => 'tsukau', 'meanings' => [
+                'en' => ['to use'],
+                'nl' => ['gebruiken'],
+            ]],
+            ['kana' => 'する', 'romaji' => 'suru', 'meanings' => [
+                'en' => ['to do'],
+                'nl' => ['doen'],
+            ]],
+            ['kana' => 'ある', 'romaji' => 'aru', 'meanings' => [
+                'en' => ['to exist (non-living)'],
+                'nl' => ['bestaan (levenloos)'],
+            ]],
+            ['kana' => 'いる', 'romaji' => 'iru', 'meanings' => [
+                'en' => ['to exist (living)', 'to need'],
+                'nl' => ['bestaan (levend)', 'nodig hebben'],
+            ]],
+            ['kana' => 'おきる', 'romaji' => 'okiru', 'meanings' => [
+                'en' => ['to wake up'],
+                'nl' => ['wakker worden'],
+            ]],
+            ['kana' => 'ねる', 'romaji' => 'neru', 'meanings' => [
+                'en' => ['to sleep'],
+                'nl' => ['slapen'],
+            ]],
+            ['kana' => 'はたらく', 'romaji' => 'hataraku', 'meanings' => [
+                'en' => ['to work'],
+                'nl' => ['werken'],
+            ]],
+            ['kana' => 'やすむ', 'romaji' => 'yasumu', 'meanings' => [
+                'en' => ['to rest', 'to take a break'],
+                'nl' => ['rusten', 'pauze nemen'],
+            ]],
+            ['kana' => 'あう', 'romaji' => 'au', 'meanings' => [
+                'en' => ['to meet'],
+                'nl' => ['ontmoeten'],
+            ]],
+            ['kana' => 'あける', 'romaji' => 'akeru', 'meanings' => [
+                'en' => ['to open'],
+                'nl' => ['openen'],
+            ]],
+            ['kana' => 'しめる', 'romaji' => 'shimeru', 'meanings' => [
+                'en' => ['to close'],
+                'nl' => ['sluiten'],
+            ]],
+            ['kana' => 'はいる', 'romaji' => 'hairu', 'meanings' => [
+                'en' => ['to enter'],
+                'nl' => ['binnenkomen'],
+            ]],
+            ['kana' => 'でる', 'romaji' => 'deru', 'meanings' => [
+                'en' => ['to exit', 'to leave'],
+                'nl' => ['verlaten', 'uitgaan'],
+            ]],
+            ['kana' => 'すわる', 'romaji' => 'suwaru', 'meanings' => [
+                'en' => ['to sit'],
+                'nl' => ['zitten'],
+            ]],
+            ['kana' => 'たつ', 'romaji' => 'tatsu', 'meanings' => [
+                'en' => ['to stand'],
+                'nl' => ['opstaan'],
+            ]],
+            ['kana' => 'まつ', 'romaji' => 'matsu', 'meanings' => [
+                'en' => ['to wait'],
+                'nl' => ['wachten'],
+            ]],
+            ['kana' => 'もつ', 'romaji' => 'motsu', 'meanings' => [
+                'en' => ['to hold', 'to carry'],
+                'nl' => ['vasthouden', 'dragen'],
+            ]],
+            ['kana' => 'およぐ', 'romaji' => 'oyogu', 'meanings' => [
+                'en' => ['to swim'],
+                'nl' => ['zwemmen'],
+            ]],
         ]);
 
         // N5 Part 2
         $this->seedCategory('n5-part-2', 'N5 Part 2', [
-            ['kana' => 'はしる', 'romaji' => 'hashiru', 'meanings' => ['to run']],
-            ['kana' => 'あるく', 'romaji' => 'aruku', 'meanings' => ['to walk']],
-            ['kana' => 'のる', 'romaji' => 'noru', 'meanings' => ['to ride', 'to get on']],
-            ['kana' => 'おりる', 'romaji' => 'oriru', 'meanings' => ['to get off', 'to descend']],
-            ['kana' => 'いれる', 'romaji' => 'ireru', 'meanings' => ['to put in', 'to insert']],
-            ['kana' => 'だす', 'romaji' => 'dasu', 'meanings' => ['to take out', 'to submit']],
-            ['kana' => 'つける', 'romaji' => 'tsukeru', 'meanings' => ['to turn on']],
-            ['kana' => 'けす', 'romaji' => 'kesu', 'meanings' => ['to turn off', 'to erase']],
-            ['kana' => 'あらう', 'romaji' => 'arau', 'meanings' => ['to wash']],
-            ['kana' => 'そうじする', 'romaji' => 'souji suru', 'meanings' => ['to clean']],
-            ['kana' => 'せんたくする', 'romaji' => 'sentaku suru', 'meanings' => ['to do laundry']],
-            ['kana' => 'りょうりする', 'romaji' => 'ryouri suru', 'meanings' => ['to cook']],
-            ['kana' => 'べんきょうする', 'romaji' => 'benkyou suru', 'meanings' => ['to study']],
-            ['kana' => 'けんがくする', 'romaji' => 'kengaku suru', 'meanings' => ['to tour', 'to observe']],
-            ['kana' => 'でんわする', 'romaji' => 'denwa suru', 'meanings' => ['to call (by phone)']],
-            ['kana' => 'うんてんする', 'romaji' => 'unten suru', 'meanings' => ['to drive']],
-            ['kana' => 'つくる', 'romaji' => 'tsukuru', 'meanings' => ['to make', 'to create']],
-            ['kana' => 'なおす', 'romaji' => 'naosu', 'meanings' => ['to fix', 'to repair']],
-            ['kana' => 'つかれる', 'romaji' => 'tsukareru', 'meanings' => ['to get tired']],
-            ['kana' => 'おぼえる', 'romaji' => 'oboeru', 'meanings' => ['to remember', 'to memorize']],
-            ['kana' => 'わすれる', 'romaji' => 'wasureru', 'meanings' => ['to forget']],
-            ['kana' => 'しぬ', 'romaji' => 'shinu', 'meanings' => ['to die']],
-            ['kana' => 'あそぶ', 'romaji' => 'asobu', 'meanings' => ['to play', 'to hang out']],
-            ['kana' => 'ならう', 'romaji' => 'narau', 'meanings' => ['to learn']],
-            ['kana' => 'おしえる', 'romaji' => 'oshieru', 'meanings' => ['to teach', 'to tell']],
-            ['kana' => 'つたえる', 'romaji' => 'tsutaeru', 'meanings' => ['to convey', 'to report']],
-            ['kana' => 'なる', 'romaji' => 'naru', 'meanings' => ['to become']],
-            ['kana' => 'もらう', 'romaji' => 'morau', 'meanings' => ['to receive']],
+            ['kana' => 'はしる', 'romaji' => 'hashiru', 'meanings' => [
+                'en' => ['to run'],
+                'nl' => ['rennen'],
+            ]],
+            ['kana' => 'あるく', 'romaji' => 'aruku', 'meanings' => [
+                'en' => ['to walk'],
+                'nl' => ['lopen'],
+            ]],
+            ['kana' => 'のる', 'romaji' => 'noru', 'meanings' => [
+                'en' => ['to ride', 'to get on'],
+                'nl' => ['rijden', 'instappen'],
+            ]],
+            ['kana' => 'おりる', 'romaji' => 'oriru', 'meanings' => [
+                'en' => ['to get off', 'to descend'],
+                'nl' => ['uitstappen', 'afdalen'],
+            ]],
+            ['kana' => 'いれる', 'romaji' => 'ireru', 'meanings' => [
+                'en' => ['to put in', 'to insert'],
+                'nl' => ['erin doen', 'invoegen'],
+            ]],
+            ['kana' => 'だす', 'romaji' => 'dasu', 'meanings' => [
+                'en' => ['to take out', 'to submit'],
+                'nl' => ['uithalen', 'indienen'],
+            ]],
+            ['kana' => 'つける', 'romaji' => 'tsukeru', 'meanings' => [
+                'en' => ['to turn on'],
+                'nl' => ['aanzetten'],
+            ]],
+            ['kana' => 'けす', 'romaji' => 'kesu', 'meanings' => [
+                'en' => ['to turn off', 'to erase'],
+                'nl' => ['uitzetten', 'wissen'],
+            ]],
+            ['kana' => 'あらう', 'romaji' => 'arau', 'meanings' => [
+                'en' => ['to wash'],
+                'nl' => ['wassen'],
+            ]],
+            ['kana' => 'そうじする', 'romaji' => 'souji suru', 'meanings' => [
+                'en' => ['to clean'],
+                'nl' => ['schoonmaken'],
+            ]],
+            ['kana' => 'せんたくする', 'romaji' => 'sentaku suru', 'meanings' => [
+                'en' => ['to do laundry'],
+                'nl' => ['de was doen'],
+            ]],
+            ['kana' => 'りょうりする', 'romaji' => 'ryouri suru', 'meanings' => [
+                'en' => ['to cook'],
+                'nl' => ['koken'],
+            ]],
+            ['kana' => 'べんきょうする', 'romaji' => 'benkyou suru', 'meanings' => [
+                'en' => ['to study'],
+                'nl' => ['studeren'],
+            ]],
+            ['kana' => 'けんがくする', 'romaji' => 'kengaku suru', 'meanings' => [
+                'en' => ['to tour', 'to observe'],
+                'nl' => ['bezichtigen', 'observeren'],
+            ]],
+            ['kana' => 'でんわする', 'romaji' => 'denwa suru', 'meanings' => [
+                'en' => ['to call (by phone)'],
+                'nl' => ['bellen'],
+            ]],
+            ['kana' => 'うんてんする', 'romaji' => 'unten suru', 'meanings' => [
+                'en' => ['to drive'],
+                'nl' => ['rijden'],
+            ]],
+            ['kana' => 'つくる', 'romaji' => 'tsukuru', 'meanings' => [
+                'en' => ['to make', 'to create'],
+                'nl' => ['maken', 'creëren'],
+            ]],
+            ['kana' => 'なおす', 'romaji' => 'naosu', 'meanings' => [
+                'en' => ['to fix', 'to repair'],
+                'nl' => ['repareren', 'herstellen'],
+            ]],
+            ['kana' => 'つかれる', 'romaji' => 'tsukareru', 'meanings' => [
+                'en' => ['to get tired'],
+                'nl' => ['moe worden'],
+            ]],
+            ['kana' => 'おぼえる', 'romaji' => 'oboeru', 'meanings' => [
+                'en' => ['to remember', 'to memorize'],
+                'nl' => ['onthouden', 'uit het hoofd leren'],
+            ]],
+            ['kana' => 'わすれる', 'romaji' => 'wasureru', 'meanings' => [
+                'en' => ['to forget'],
+                'nl' => ['vergeten'],
+            ]],
+            ['kana' => 'しぬ', 'romaji' => 'shinu', 'meanings' => [
+                'en' => ['to die'],
+                'nl' => ['sterven'],
+            ]],
+            ['kana' => 'あそぶ', 'romaji' => 'asobu', 'meanings' => [
+                'en' => ['to play', 'to hang out'],
+                'nl' => ['spelen', 'rondhangen'],
+            ]],
+            ['kana' => 'ならう', 'romaji' => 'narau', 'meanings' => [
+                'en' => ['to learn'],
+                'nl' => ['leren'],
+            ]],
+            ['kana' => 'おしえる', 'romaji' => 'oshieru', 'meanings' => [
+                'en' => ['to teach', 'to tell'],
+                'nl' => ['onderwijzen', 'vertellen'],
+            ]],
+            ['kana' => 'つたえる', 'romaji' => 'tsutaeru', 'meanings' => [
+                'en' => ['to convey', 'to report'],
+                'nl' => ['overbrengen', 'melden'],
+            ]],
+            ['kana' => 'なる', 'romaji' => 'naru', 'meanings' => [
+                'en' => ['to become'],
+                'nl' => ['worden'],
+            ]],
+            ['kana' => 'もらう', 'romaji' => 'morau', 'meanings' => [
+                'en' => ['to receive'],
+                'nl' => ['ontvangen'],
+            ]],
         ]);
 
         // N4 Part 1
         $this->seedCategory('n4-part-1', 'N4 Part 1', [
-            ['kana' => 'かす', 'romaji' => 'kasu', 'meanings' => ['to lend']],
-            ['kana' => 'かりる', 'romaji' => 'kariru', 'meanings' => ['to borrow']],
-            ['kana' => 'なおる', 'romaji' => 'naoru', 'meanings' => ['to recover', 'to be fixed']],
-            ['kana' => 'こわす', 'romaji' => 'kowasu', 'meanings' => ['to break (something)']],
-            ['kana' => 'こわれる', 'romaji' => 'kowareru', 'meanings' => ['to be broken']],
-            ['kana' => 'おちる', 'romaji' => 'ochiru', 'meanings' => ['to fall', 'to drop']],
-            ['kana' => 'ひく', 'romaji' => 'hiku', 'meanings' => ['to pull', 'to play (instrument)']],
-            ['kana' => 'おす', 'romaji' => 'osu', 'meanings' => ['to push']],
-            ['kana' => 'ならぶ', 'romaji' => 'narabu', 'meanings' => ['to line up']],
-            ['kana' => 'ならべる', 'romaji' => 'naraberu', 'meanings' => ['to arrange', 'to line up (trans.)']],
-            ['kana' => 'えらぶ', 'romaji' => 'erabu', 'meanings' => ['to choose']],
-            ['kana' => 'さがす', 'romaji' => 'sagasu', 'meanings' => ['to search', 'to look for']],
-            ['kana' => 'みつける', 'romaji' => 'mitsukeru', 'meanings' => ['to find']],
-            ['kana' => 'おもう', 'romaji' => 'omou', 'meanings' => ['to think', 'to feel']],
-            ['kana' => 'かんがえる', 'romaji' => 'kangaeru', 'meanings' => ['to consider', 'to think about']],
-            ['kana' => 'うごく', 'romaji' => 'ugoku', 'meanings' => ['to move']],
-            ['kana' => 'つづける', 'romaji' => 'tsuzukeru', 'meanings' => ['to continue']],
-            ['kana' => 'とまる', 'romaji' => 'tomaru', 'meanings' => ['to stop (moving)']],
-            ['kana' => 'とめる', 'romaji' => 'tomeru', 'meanings' => ['to stop (something)']],
-            ['kana' => 'はじまる', 'romaji' => 'hajimaru', 'meanings' => ['to begin (intransitive)']],
-            ['kana' => 'はじめる', 'romaji' => 'hajimeru', 'meanings' => ['to begin (transitive)']],
-            ['kana' => 'おわる', 'romaji' => 'owaru', 'meanings' => ['to end', 'to finish']],
-            ['kana' => 'きまる', 'romaji' => 'kimaru', 'meanings' => ['to be decided']],
-            ['kana' => 'きめる', 'romaji' => 'kimeru', 'meanings' => ['to decide']],
-            ['kana' => 'つたわる', 'romaji' => 'tsutawaru', 'meanings' => ['to be transmitted']],
+            ['kana' => 'かす', 'romaji' => 'kasu', 'meanings' => [
+                'en' => ['to lend'],
+                'nl' => ['uitlenen'],
+            ]],
+            ['kana' => 'かりる', 'romaji' => 'kariru', 'meanings' => [
+                'en' => ['to borrow'],
+                'nl' => ['lenen'],
+            ]],
+            ['kana' => 'なおる', 'romaji' => 'naoru', 'meanings' => [
+                'en' => ['to recover', 'to be fixed'],
+                'nl' => ['genezen', 'gerepareerd worden'],
+            ]],
+            ['kana' => 'こわす', 'romaji' => 'kowasu', 'meanings' => [
+                'en' => ['to break (something)'],
+                'nl' => ['kapot maken'],
+            ]],
+            ['kana' => 'こわれる', 'romaji' => 'kowareru', 'meanings' => [
+                'en' => ['to be broken'],
+                'nl' => ['kapot gaan'],
+            ]],
+            ['kana' => 'おちる', 'romaji' => 'ochiru', 'meanings' => [
+                'en' => ['to fall', 'to drop'],
+                'nl' => ['vallen', 'laten vallen'],
+            ]],
+            ['kana' => 'ひく', 'romaji' => 'hiku', 'meanings' => [
+                'en' => ['to pull', 'to play (instrument)'],
+                'nl' => ['trekken', '(instrument) bespelen'],
+            ]],
+            ['kana' => 'おす', 'romaji' => 'osu', 'meanings' => [
+                'en' => ['to push'],
+                'nl' => ['duwen'],
+            ]],
+            ['kana' => 'ならぶ', 'romaji' => 'narabu', 'meanings' => [
+                'en' => ['to line up'],
+                'nl' => ['in de rij staan'],
+            ]],
+            ['kana' => 'ならべる', 'romaji' => 'naraberu', 'meanings' => [
+                'en' => ['to arrange', 'to line up (trans.)'],
+                'nl' => ['ordenen', 'op een rij zetten'],
+            ]],
+            ['kana' => 'えらぶ', 'romaji' => 'erabu', 'meanings' => [
+                'en' => ['to choose'],
+                'nl' => ['kiezen'],
+            ]],
+            ['kana' => 'さがす', 'romaji' => 'sagasu', 'meanings' => [
+                'en' => ['to search', 'to look for'],
+                'nl' => ['zoeken'],
+            ]],
+            ['kana' => 'みつける', 'romaji' => 'mitsukeru', 'meanings' => [
+                'en' => ['to find'],
+                'nl' => ['vinden'],
+            ]],
+            ['kana' => 'おもう', 'romaji' => 'omou', 'meanings' => [
+                'en' => ['to think', 'to feel'],
+                'nl' => ['denken', 'voelen'],
+            ]],
+            ['kana' => 'かんがえる', 'romaji' => 'kangaeru', 'meanings' => [
+                'en' => ['to consider', 'to think about'],
+                'nl' => ['overwegen', 'nadenken over'],
+            ]],
+            ['kana' => 'うごく', 'romaji' => 'ugoku', 'meanings' => [
+                'en' => ['to move'],
+                'nl' => ['bewegen'],
+            ]],
+            ['kana' => 'つづける', 'romaji' => 'tsuzukeru', 'meanings' => [
+                'en' => ['to continue'],
+                'nl' => ['doorgaan'],
+            ]],
+            ['kana' => 'とまる', 'romaji' => 'tomaru', 'meanings' => [
+                'en' => ['to stop (moving)'],
+                'nl' => ['stoppen (met bewegen)'],
+            ]],
+            ['kana' => 'とめる', 'romaji' => 'tomeru', 'meanings' => [
+                'en' => ['to stop (something)'],
+                'nl' => ['iets stoppen'],
+            ]],
+            ['kana' => 'はじまる', 'romaji' => 'hajimaru', 'meanings' => [
+                'en' => ['to begin (intransitive)'],
+                'nl' => ['beginnen (zelfstandig)'],
+            ]],
+            ['kana' => 'はじめる', 'romaji' => 'hajimeru', 'meanings' => [
+                'en' => ['to begin (transitive)'],
+                'nl' => ['beginnen (iets)'],
+            ]],
+            ['kana' => 'おわる', 'romaji' => 'owaru', 'meanings' => [
+                'en' => ['to end', 'to finish'],
+                'nl' => ['eindigen', 'afronden'],
+            ]],
+            ['kana' => 'きまる', 'romaji' => 'kimaru', 'meanings' => [
+                'en' => ['to be decided'],
+                'nl' => ['beslist worden'],
+            ]],
+            ['kana' => 'きめる', 'romaji' => 'kimeru', 'meanings' => [
+                'en' => ['to decide'],
+                'nl' => ['beslissen'],
+            ]],
+            ['kana' => 'つたわる', 'romaji' => 'tsutawaru', 'meanings' => [
+                'en' => ['to be transmitted'],
+                'nl' => ['overgedragen worden'],
+            ]],
         ]);
 
         // N4 Part 2
         $this->seedCategory('n4-part-2', 'N4 Part 2', [
-            ['kana' => 'うける', 'romaji' => 'ukeru', 'meanings' => ['to receive', 'to take (an exam)']],
-            ['kana' => 'まにあう', 'romaji' => 'maniau', 'meanings' => ['to be on time']],
-            ['kana' => 'おくれる', 'romaji' => 'okureru', 'meanings' => ['to be late']],
-            ['kana' => 'ぬぐ', 'romaji' => 'nugu', 'meanings' => ['to take off (clothes)']],
-            ['kana' => 'はく', 'romaji' => 'haku', 'meanings' => ['to wear (lower body)']],
-            ['kana' => 'きる', 'romaji' => 'kiru', 'meanings' => ['to wear (upper body)']],
-            ['kana' => 'かぶる', 'romaji' => 'kaburu', 'meanings' => ['to wear (on head)']],
-            ['kana' => 'やめる', 'romaji' => 'yameru', 'meanings' => ['to quit', 'to stop doing']],
-            ['kana' => 'よやくする', 'romaji' => 'yoyaku suru', 'meanings' => ['to reserve', 'to book']],
-            ['kana' => 'けっこんする', 'romaji' => 'kekkon suru', 'meanings' => ['to marry']],
-            ['kana' => 'しつもんする', 'romaji' => 'shitsumon suru', 'meanings' => ['to ask a question']],
-            ['kana' => 'うけつける', 'romaji' => 'uketsukeru', 'meanings' => ['to accept', 'to receive (forms)']],
-            ['kana' => 'きえる', 'romaji' => 'kieru', 'meanings' => ['to disappear', 'to go out']],
-            ['kana' => 'わらう', 'romaji' => 'warau', 'meanings' => ['to laugh', 'to smile']],
-            ['kana' => 'なく', 'romaji' => 'naku', 'meanings' => ['to cry']],
-            ['kana' => 'おこる', 'romaji' => 'okoru', 'meanings' => ['to get angry']],
-            ['kana' => 'よろこぶ', 'romaji' => 'yorokobu', 'meanings' => ['to be happy']],
-            ['kana' => 'まよう', 'romaji' => 'mayou', 'meanings' => ['to be lost', 'to be unsure']],
-            ['kana' => 'むかえる', 'romaji' => 'mukaeru', 'meanings' => ['to welcome', 'to pick up (person)']],
-            ['kana' => 'とどける', 'romaji' => 'todokeru', 'meanings' => ['to deliver']],
-            ['kana' => 'きく（たずねる）', 'romaji' => 'kiku (tazuneru)', 'meanings' => ['to ask (a question)']],
-            ['kana' => 'とぶ', 'romaji' => 'tobu', 'meanings' => ['to fly', 'to jump']],
+            ['kana' => 'うける', 'romaji' => 'ukeru', 'meanings' => [
+                'en' => ['to receive', 'to take (an exam)'],
+                'nl' => ['ontvangen', '(examen) afleggen'],
+            ]],
+            ['kana' => 'まにあう', 'romaji' => 'maniau', 'meanings' => [
+                'en' => ['to be on time'],
+                'nl' => ['op tijd zijn'],
+            ]],
+            ['kana' => 'おくれる', 'romaji' => 'okureru', 'meanings' => [
+                'en' => ['to be late'],
+                'nl' => ['te laat zijn'],
+            ]],
+            ['kana' => 'ぬぐ', 'romaji' => 'nugu', 'meanings' => [
+                'en' => ['to take off (clothes)'],
+                'nl' => ['uittrekken (kleding)'],
+            ]],
+            ['kana' => 'はく', 'romaji' => 'haku', 'meanings' => [
+                'en' => ['to wear (lower body)'],
+                'nl' => ['dragen (onderlichaam)'],
+            ]],
+            ['kana' => 'きる', 'romaji' => 'kiru', 'meanings' => [
+                'en' => ['to wear (upper body)'],
+                'nl' => ['dragen (bovenlichaam)'],
+            ]],
+            ['kana' => 'かぶる', 'romaji' => 'kaburu', 'meanings' => [
+                'en' => ['to wear (on head)'],
+                'nl' => ['dragen (op het hoofd)'],
+            ]],
+            ['kana' => 'やめる', 'romaji' => 'yameru', 'meanings' => [
+                'en' => ['to quit', 'to stop doing'],
+                'nl' => ['stoppen', 'ophouden met'],
+            ]],
+            ['kana' => 'よやくする', 'romaji' => 'yoyaku suru', 'meanings' => [
+                'en' => ['to reserve', 'to book'],
+                'nl' => ['reserveren', 'boeken'],
+            ]],
+            ['kana' => 'けっこんする', 'romaji' => 'kekkon suru', 'meanings' => [
+                'en' => ['to marry'],
+                'nl' => ['trouwen'],
+            ]],
+            ['kana' => 'しつもんする', 'romaji' => 'shitsumon suru', 'meanings' => [
+                'en' => ['to ask a question'],
+                'nl' => ['een vraag stellen'],
+            ]],
+            ['kana' => 'うけつける', 'romaji' => 'uketsukeru', 'meanings' => [
+                'en' => ['to accept', 'to receive (forms)'],
+                'nl' => ['accepteren', '(formulieren) ontvangen'],
+            ]],
+            ['kana' => 'きえる', 'romaji' => 'kieru', 'meanings' => [
+                'en' => ['to disappear', 'to go out'],
+                'nl' => ['verdwijnen', 'uitgaan (licht)'],
+            ]],
+            ['kana' => 'わらう', 'romaji' => 'warau', 'meanings' => [
+                'en' => ['to laugh', 'to smile'],
+                'nl' => ['lachen', 'glimlachen'],
+            ]],
+            ['kana' => 'なく', 'romaji' => 'naku', 'meanings' => [
+                'en' => ['to cry'],
+                'nl' => ['huilen'],
+            ]],
+            ['kana' => 'おこる', 'romaji' => 'okoru', 'meanings' => [
+                'en' => ['to get angry'],
+                'nl' => ['boos worden'],
+            ]],
+            ['kana' => 'よろこぶ', 'romaji' => 'yorokobu', 'meanings' => [
+                'en' => ['to be happy'],
+                'nl' => ['blij zijn'],
+            ]],
+            ['kana' => 'まよう', 'romaji' => 'mayou', 'meanings' => [
+                'en' => ['to be lost', 'to be unsure'],
+                'nl' => ['verdwaald zijn', 'twijfelen'],
+            ]],
+            ['kana' => 'むかえる', 'romaji' => 'mukaeru', 'meanings' => [
+                'en' => ['to welcome', 'to pick up (person)'],
+                'nl' => ['verwelkomen', 'ophalen (persoon)'],
+            ]],
+            ['kana' => 'とどける', 'romaji' => 'todokeru', 'meanings' => [
+                'en' => ['to deliver'],
+                'nl' => ['bezorgen'],
+            ]],
+            ['kana' => 'きく（たずねる）', 'romaji' => 'kiku (tazuneru)', 'meanings' => [
+                'en' => ['to ask (a question)'],
+                'nl' => ['vragen (een vraag stellen)'],
+            ]],
+            ['kana' => 'とぶ', 'romaji' => 'tobu', 'meanings' => [
+                'en' => ['to fly', 'to jump'],
+                'nl' => ['vliegen', 'springen'],
+            ]],
         ]);
 
         // Formal Verb Forms
         $this->seedCategory('formal-verb-forms', 'Formal Verb Forms', [
-            ['kana' => 'ます', 'romaji' => 'masu', 'meanings' => ['polite present / future']],
-            ['kana' => 'ません', 'romaji' => 'masen', 'meanings' => ['polite negative']],
-            ['kana' => 'ました', 'romaji' => 'mashita', 'meanings' => ['polite past']],
-            ['kana' => 'ませんでした', 'romaji' => 'masen deshita', 'meanings' => ['polite past negative']],
-            ['kana' => 'たい', 'romaji' => 'tai', 'meanings' => ['want to']],
-            ['kana' => 'たいですか', 'romaji' => 'tai desu ka', 'meanings' => ['want to?']],
-            ['kana' => 'たいください', 'romaji' => 'tai kudesai', 'meanings' => ['please do']],
-            ['kana' => 'てもいいですか', 'romaji' => 'te mo ii desuka', 'meanings' => ['may I...?']],
-            ['kana' => 'てはいけません', 'romaji' => 'te wa ikemasen', 'meanings' => ['must not']],
+            ['kana' => 'ます', 'romaji' => 'masu', 'meanings' => [
+                'en' => ['polite present', 'polite future'],
+                'nl' => ['beleefde tegenwoordige', 'beleefde toekomstige tijd'],
+            ]],
+            ['kana' => 'ません', 'romaji' => 'masen', 'meanings' => [
+                'en' => ['polite negative'],
+                'nl' => ['beleefde ontkenning'],
+            ]],
+            ['kana' => 'ました', 'romaji' => 'mashita', 'meanings' => [
+                'en' => ['polite past'],
+                'nl' => ['beleefde verleden tijd'],
+            ]],
+            ['kana' => 'ませんでした', 'romaji' => 'masen deshita', 'meanings' => [
+                'en' => ['polite past negative'],
+                'nl' => ['beleefde verleden ontkenning'],
+            ]],
+            ['kana' => 'たい', 'romaji' => 'tai', 'meanings' => [
+                'en' => ['want to'],
+                'nl' => ['willen'],
+            ]],
+            ['kana' => 'たいですか', 'romaji' => 'tai desu ka', 'meanings' => [
+                'en' => ['want to?'],
+                'nl' => ['wil je?'],
+            ]],
+            ['kana' => 'たいください', 'romaji' => 'tai kudesai', 'meanings' => [
+                'en' => ['please do'],
+                'nl' => ['alsjeblieft doe het'],
+            ]],
+            ['kana' => 'てもいいですか', 'romaji' => 'te mo ii desuka', 'meanings' => [
+                'en' => ['may I...?', 'may I?'],
+                'nl' => ['mag ik...?', 'mag ik?'],
+            ]],
+            ['kana' => 'てはいけません', 'romaji' => 'te wa ikemasen', 'meanings' => [
+                'en' => ['must not'],
+                'nl' => ['mag niet'],
+            ]],
         ]);
 
         // Casual Verb Forms
         $this->seedCategory('casual-verb-forms', 'Casual Verb Forms', [
-            ['kana' => 'る / う / く', 'romaji' => 'ru / u / ku', 'meanings' => ['dictionary form endings']],
-            ['kana' => 'ない', 'romaji' => 'nai', 'meanings' => ["negative (don't)"]],
-            ['kana' => 'た', 'romaji' => 'ta', 'meanings' => ['past (did)']],
-            ['kana' => 'なかった', 'romaji' => 'nakatta', 'meanings' => ["past negative (didn't)"]],
-            ['kana' => 'よう / おう', 'romaji' => 'you / ou', 'meanings' => ["volitional (let's ...)"]],
-            ['kana' => 'られる / える', 'romaji' => 'rareru / eru', 'meanings' => ['potential (can do)']],
-            ['kana' => 'られる', 'romaji' => 'rareru', 'meanings' => ['passive (be done)']],
-            ['kana' => 'させる', 'romaji' => 'saseru', 'meanings' => ['causative (make / let do)']],
-            ['kana' => 'たら', 'romaji' => 'tara', 'meanings' => ['conditional (if ...)']],
-            ['kana' => 'て', 'romaji' => 'te', 'meanings' => ['te-form (linking, request, command)']],
-            ['kana' => 'ちゃう / じゃう', 'romaji' => 'chou / jou', 'meanings' => ['completed / accidental (casual)']],
+            ['kana' => 'る / う / く', 'romaji' => 'ru / u / ku', 'meanings' => [
+                'en' => ['dictionary form endings'],
+                'nl' => ['woordenboekvorm-uitgangen'],
+            ]],
+            ['kana' => 'ない', 'romaji' => 'nai', 'meanings' => [
+                'en' => ["negative (don't)"],
+                'nl' => ['ontkenning (niet)'],
+            ]],
+            ['kana' => 'た', 'romaji' => 'ta', 'meanings' => [
+                'en' => ['past (did)'],
+                'nl' => ['verleden tijd (deed)'],
+            ]],
+            ['kana' => 'なかった', 'romaji' => 'nakatta', 'meanings' => [
+                'en' => ["past negative (didn't)"],
+                'nl' => ['verleden tijd ontkenning (deed niet)'],
+            ]],
+            ['kana' => 'よう / おう', 'romaji' => 'you / ou', 'meanings' => [
+                'en' => ["volitional (let's ...)"],
+                'nl' => ['intentioneel (laten we ...)'],
+            ]],
+            ['kana' => 'られる / える', 'romaji' => 'rareru / eru', 'meanings' => [
+                'en' => ['potential (can do)'],
+                'nl' => ['mogelijkheidsvorm (kunnen)'],
+            ]],
+            ['kana' => 'られる', 'romaji' => 'rareru', 'meanings' => [
+                'en' => ['passive (be done)'],
+                'nl' => ['lijdende vorm (gedaan worden)'],
+            ]],
+            ['kana' => 'させる', 'romaji' => 'saseru', 'meanings' => [
+                'en' => ['causative (make / let do)'],
+                'nl' => ['doen-vorm (laten doen / dwingen)'],
+            ]],
+            ['kana' => 'たら', 'romaji' => 'tara', 'meanings' => [
+                'en' => ['conditional (if ...)'],
+                'nl' => ['voorwaardelijk (als ...)'],
+            ]],
+            ['kana' => 'て', 'romaji' => 'te', 'meanings' => [
+                'en' => ['te-form (linking, request, command)'],
+                'nl' => ['te-vorm (verbinden, verzoek, bevel)'],
+            ]],
+            ['kana' => 'ちゃう / じゃう', 'romaji' => 'chou / jou', 'meanings' => [
+                'en' => ['completed', 'accidental (casual)'],
+                'nl' => ['afgerond', 'per ongeluk (informeel)'],
+            ]],
         ]);
 
         // Question Words
         $this->seedCategory('question-words', 'Question Words', [
-            ['kana' => 'なに / なん', 'romaji' => 'nani / nan', 'meanings' => ['what']],
-            ['kana' => 'どこ', 'romaji' => 'doko', 'meanings' => ['where']],
-            ['kana' => 'いつ', 'romaji' => 'itsu', 'meanings' => ['when']],
-            ['kana' => 'いくら', 'romaji' => 'ikura', 'meanings' => ['how much']],
-            ['kana' => 'どう', 'romaji' => 'dou', 'meanings' => ['how']],
-            ['kana' => 'どうして / なぜ', 'romaji' => 'doushite / naze', 'meanings' => ['why']],
-            ['kana' => 'だれ', 'romaji' => 'dare', 'meanings' => ['who (casual)']],
-            ['kana' => 'どなた', 'romaji' => 'donata', 'meanings' => ['who (polite)']],
-            ['kana' => 'どれ', 'romaji' => 'dore', 'meanings' => ['which one']],
-            ['kana' => 'どの', 'romaji' => 'dono', 'meanings' => ['which (before a noun)']],
-            ['kana' => 'どんな', 'romaji' => 'donna', 'meanings' => ['what kind of']],
-            ['kana' => 'どのくらい', 'romaji' => 'dono kurai', 'meanings' => ['how long']],
-            ['kana' => 'どれくらい', 'romaji' => 'dore kurai', 'meanings' => ['how much']],
+            ['kana' => 'なに / なん', 'romaji' => 'nani / nan', 'meanings' => [
+                'en' => ['what'],
+                'nl' => ['wat'],
+            ]],
+            ['kana' => 'どこ', 'romaji' => 'doko', 'meanings' => [
+                'en' => ['where'],
+                'nl' => ['waar'],
+            ]],
+            ['kana' => 'いつ', 'romaji' => 'itsu', 'meanings' => [
+                'en' => ['when'],
+                'nl' => ['wanneer'],
+            ]],
+            ['kana' => 'いくら', 'romaji' => 'ikura', 'meanings' => [
+                'en' => ['how much'],
+                'nl' => ['hoeveel (prijs)'],
+            ]],
+            ['kana' => 'どう', 'romaji' => 'dou', 'meanings' => [
+                'en' => ['how'],
+                'nl' => ['hoe'],
+            ]],
+            ['kana' => 'どうして / なぜ', 'romaji' => 'doushite / naze', 'meanings' => [
+                'en' => ['why'],
+                'nl' => ['waarom'],
+            ]],
+            ['kana' => 'だれ', 'romaji' => 'dare', 'meanings' => [
+                'en' => ['who (casual)'],
+                'nl' => ['wie (informeel)'],
+            ]],
+            ['kana' => 'どなた', 'romaji' => 'donata', 'meanings' => [
+                'en' => ['who (polite)'],
+                'nl' => ['wie (beleefd)'],
+            ]],
+            ['kana' => 'どれ', 'romaji' => 'dore', 'meanings' => [
+                'en' => ['which one'],
+                'nl' => ['welke (één van velen)'],
+            ]],
+            ['kana' => 'どの', 'romaji' => 'dono', 'meanings' => [
+                'en' => ['which (before a noun)'],
+                'nl' => ['welke (voor een zelfstandig naamwoord)'],
+            ]],
+            ['kana' => 'どんな', 'romaji' => 'donna', 'meanings' => [
+                'en' => ['what kind of'],
+                'nl' => ['wat voor soort'],
+            ]],
+            ['kana' => 'どのくらい', 'romaji' => 'dono kurai', 'meanings' => [
+                'en' => ['how long'],
+                'nl' => ['hoe lang'],
+            ]],
+            ['kana' => 'どれくらい', 'romaji' => 'dore kurai', 'meanings' => [
+                'en' => ['how much'],
+                'nl' => ['hoeveel'],
+            ]],
         ]);
 
         // Copulas
         $this->seedCategory('copulas', 'Copulas', [
-            ['kana' => 'です', 'romaji' => 'desu', 'meanings' => ['polite "is" / "are"']],
-            ['kana' => 'だ', 'romaji' => 'da', 'meanings' => ['casual "is" / "are"']],
-            ['kana' => 'じゃない', 'romaji' => 'ja nai', 'meanings' => ['casual negative (is not)']],
-            ['kana' => 'ではありません', 'romaji' => 'de wa arimasen', 'meanings' => ['polite negative']],
-            ['kana' => 'でした', 'romaji' => 'deshita', 'meanings' => ['polite past']],
-            ['kana' => 'だった', 'romaji' => 'datta', 'meanings' => ['casual past']],
-            ['kana' => 'じゃなかった', 'romaji' => 'ja nakatta', 'meanings' => ['casual past negative']],
-            ['kana' => 'ではありませんでした', 'romaji' => 'de wa arimasen deshita', 'meanings' => ['polite past negative']],
+            ['kana' => 'です', 'romaji' => 'desu', 'meanings' => [
+                'en' => ['polite "is"', 'polite "are"'],
+                'nl' => ['beleefd "is"', 'beleefd "zijn"'],
+            ]],
+            ['kana' => 'だ', 'romaji' => 'da', 'meanings' => [
+                'en' => ['casual "is"', 'casual "are"'],
+                'nl' => ['informeel "is"', 'informeel "zijn"'],
+            ]],
+            ['kana' => 'じゃない', 'romaji' => 'ja nai', 'meanings' => [
+                'en' => ['casual negative (is not)'],
+                'nl' => ['informeel negatief (is niet)'],
+            ]],
+            ['kana' => 'ではありません', 'romaji' => 'de wa arimasen', 'meanings' => [
+                'en' => ['polite negative'],
+                'nl' => ['beleefd negatief'],
+            ]],
+            ['kana' => 'でした', 'romaji' => 'deshita', 'meanings' => [
+                'en' => ['polite past'],
+                'nl' => ['beleefd verleden tijd'],
+            ]],
+            ['kana' => 'だった', 'romaji' => 'datta', 'meanings' => [
+                'en' => ['casual past'],
+                'nl' => ['informeel verleden tijd'],
+            ]],
+            ['kana' => 'じゃなかった', 'romaji' => 'ja nakatta', 'meanings' => [
+                'en' => ['casual past negative'],
+                'nl' => ['informeel verleden negatief'],
+            ]],
+            ['kana' => 'ではありませんでした', 'romaji' => 'de wa arimasen deshita', 'meanings' => [
+                'en' => ['polite past negative'],
+                'nl' => ['beleefd verleden negatief'],
+            ]],
         ]);
 
         // Topics
         $this->seedCategory('topics', 'Topics', [
-            ['kana' => 'わたし', 'romaji' => 'watashi', 'meanings' => ['I', 'me']],
-            ['kana' => 'あなた', 'romaji' => 'anata', 'meanings' => ['you']],
-            ['kana' => 'かれ', 'romaji' => 'kare', 'meanings' => ['he', 'him']],
-            ['kana' => 'かのじょ', 'romaji' => 'kanojo', 'meanings' => ['she', 'her']],
-            ['kana' => 'かぞく', 'romaji' => 'kazoku', 'meanings' => ['family']],
-            ['kana' => 'こども', 'romaji' => 'kodomo', 'meanings' => ['child']],
-            ['kana' => 'せんせい', 'romaji' => 'sensei', 'meanings' => ['teacher']],
-            ['kana' => 'がくせい', 'romaji' => 'gakusei', 'meanings' => ['student']],
-            ['kana' => 'ともだち', 'romaji' => 'tomodachi', 'meanings' => ['friend']],
-            ['kana' => 'ひと', 'romaji' => 'hito', 'meanings' => ['person', 'people']],
+            ['kana' => 'わたし', 'romaji' => 'watashi', 'meanings' => [
+                'en' => ['I', 'me'],
+                'nl' => ['ik', 'mij'],
+            ]],
+            ['kana' => 'あなた', 'romaji' => 'anata', 'meanings' => [
+                'en' => ['you'],
+                'nl' => ['jij', 'je', 'u'],
+            ]],
+            ['kana' => 'かれ', 'romaji' => 'kare', 'meanings' => [
+                'en' => ['he', 'him'],
+                'nl' => ['hij', 'hem'],
+            ]],
+            ['kana' => 'かのじょ', 'romaji' => 'kanojo', 'meanings' => [
+                'en' => ['she', 'her'],
+                'nl' => ['zij', 'haar'],
+            ]],
+            ['kana' => 'かぞく', 'romaji' => 'kazoku', 'meanings' => [
+                'en' => ['family'],
+                'nl' => ['familie'],
+            ]],
+            ['kana' => 'こども', 'romaji' => 'kodomo', 'meanings' => [
+                'en' => ['child'],
+                'nl' => ['kind'],
+            ]],
+            ['kana' => 'せんせい', 'romaji' => 'sensei', 'meanings' => [
+                'en' => ['teacher'],
+                'nl' => ['leraar', 'lerares'],
+            ]],
+            ['kana' => 'がくせい', 'romaji' => 'gakusei', 'meanings' => [
+                'en' => ['student'],
+                'nl' => ['student'],
+            ]],
+            ['kana' => 'ともだち', 'romaji' => 'tomodachi', 'meanings' => [
+                'en' => ['friend'],
+                'nl' => ['vriend', 'vriendin'],
+            ]],
+            ['kana' => 'ひと', 'romaji' => 'hito', 'meanings' => [
+                'en' => ['person', 'people'],
+                'nl' => ['persoon', 'mensen'],
+            ]],
         ]);
 
         // Objects
         // Food & Drinks
         $this->seedCategory('foods-and-drinks', 'Foods & Drinks', [
-            ['kana' => 'ごはん', 'romaji' => 'gohan', 'meanings' => ['rice', 'meal']],
-            ['kana' => 'パン', 'romaji' => 'pan', 'meanings' => ['bread']],
-            ['kana' => 'にく', 'romaji' => 'niku', 'meanings' => ['meat']],
-            ['kana' => 'さかな', 'romaji' => 'sakana', 'meanings' => ['fish']],
-            ['kana' => 'たまご', 'romaji' => 'tamago', 'meanings' => ['egg']],
-            ['kana' => 'やさい', 'romaji' => 'yasai', 'meanings' => ['vegetables']],
-            ['kana' => 'くだもの', 'romaji' => 'kudamono', 'meanings' => ['fruit']],
-            ['kana' => 'みず', 'romaji' => 'mizu', 'meanings' => ['water']],
-            ['kana' => 'おちゃ', 'romaji' => 'ocha', 'meanings' => ['tea']],
-            ['kana' => 'コーヒー', 'romaji' => 'koohii', 'meanings' => ['coffee']],
-            ['kana' => 'ジュース', 'romaji' => 'juusu', 'meanings' => ['juice']],
-            ['kana' => 'ビール', 'romaji' => 'biiru', 'meanings' => ['beer']],
-            ['kana' => 'ワイン', 'romaji' => 'wain', 'meanings' => ['wine']],
-            ['kana' => 'スープ', 'romaji' => 'suupu', 'meanings' => ['soup']],
-            ['kana' => 'サラダ', 'romaji' => 'sarada', 'meanings' => ['salad']],
-            ['kana' => 'カレー', 'romaji' => 'karee', 'meanings' => ['curry']],
-            ['kana' => 'みそしる', 'romaji' => 'misoshiru', 'meanings' => ['miso soup']],
-            ['kana' => 'うどん', 'romaji' => 'udon', 'meanings' => ['udon']],
-            ['kana' => 'そば', 'romaji' => 'soba', 'meanings' => ['soba']],
-            ['kana' => 'ラーメン', 'romaji' => 'raamen', 'meanings' => ['ramen']],
-            ['kana' => 'ぎゅうにゅう', 'romaji' => 'gyuunyuu', 'meanings' => ['milk']],
-            ['kana' => 'チーズ', 'romaji' => 'chiizu', 'meanings' => ['cheese']],
-            ['kana' => 'バター', 'romaji' => 'bataa', 'meanings' => ['butter']],
-            ['kana' => 'ケーキ', 'romaji' => 'keeki', 'meanings' => ['cake']],
-            ['kana' => 'クッキー', 'romaji' => 'kukkii', 'meanings' => ['cookie']],
-            ['kana' => 'アイスクリーム', 'romaji' => 'aisukuriimu', 'meanings' => ['ice cream']],
-            ['kana' => 'あめ', 'romaji' => 'ame', 'meanings' => ['candy']],
-            ['kana' => 'おにぎり', 'romaji' => 'onigiri', 'meanings' => ['riceball']],
-            ['kana' => 'べんとう', 'romaji' => 'bentou', 'meanings' => ['boxed lunch']],
-            ['kana' => 'ピザ', 'romaji' => 'piza', 'meanings' => ['pizza']],
-            ['kana' => 'ハンバーガー', 'romaji' => 'hanbaagaa', 'meanings' => ['hamburger']],
-            ['kana' => 'ポテト', 'romaji' => 'poteto', 'meanings' => ['potato', 'fries']],
-            ['kana' => 'さら', 'romaji' => 'sara', 'meanings' => ['plate']],
-            ['kana' => 'コップ', 'romaji' => 'koppu', 'meanings' => ['cup', 'glass']],
-            ['kana' => 'フォーク', 'romaji' => 'fooku', 'meanings' => ['fork']],
-            ['kana' => 'スプーン', 'romaji' => 'supuun', 'meanings' => ['spoon']],
-            ['kana' => 'ナイフ', 'romaji' => 'naifu', 'meanings' => ['knife']],
-            ['kana' => 'レストラン', 'romaji' => 'resutoran', 'meanings' => ['restaurant']],
-            ['kana' => 'メニュー', 'romaji' => 'menyuu', 'meanings' => ['menu']],
+            ['kana' => 'ごはん', 'romaji' => 'gohan', 'meanings' => [
+                'en' => ['rice', 'meal'],
+                'nl' => ['rijst', 'maaltijd'],
+            ]],
+            ['kana' => 'パン', 'romaji' => 'pan', 'meanings' => [
+                'en' => ['bread'],
+                'nl' => ['brood'],
+            ]],
+            ['kana' => 'にく', 'romaji' => 'niku', 'meanings' => [
+                'en' => ['meat'],
+                'nl' => ['vlees'],
+            ]],
+            ['kana' => 'さかな', 'romaji' => 'sakana', 'meanings' => [
+                'en' => ['fish'],
+                'nl' => ['vis'],
+            ]],
+            ['kana' => 'たまご', 'romaji' => 'tamago', 'meanings' => [
+                'en' => ['egg'],
+                'nl' => ['ei'],
+            ]],
+            ['kana' => 'やさい', 'romaji' => 'yasai', 'meanings' => [
+                'en' => ['vegetables'],
+                'nl' => ['groenten'],
+            ]],
+            ['kana' => 'くだもの', 'romaji' => 'kudamono', 'meanings' => [
+                'en' => ['fruit'],
+                'nl' => ['fruit'],
+            ]],
+            ['kana' => 'みず', 'romaji' => 'mizu', 'meanings' => [
+                'en' => ['water'],
+                'nl' => ['water'],
+            ]],
+            ['kana' => 'おちゃ', 'romaji' => 'ocha', 'meanings' => [
+                'en' => ['tea'],
+                'nl' => ['thee'],
+            ]],
+            ['kana' => 'コーヒー', 'romaji' => 'koohii', 'meanings' => [
+                'en' => ['coffee'],
+                'nl' => ['koffie'],
+            ]],
+            ['kana' => 'ジュース', 'romaji' => 'juusu', 'meanings' => [
+                'en' => ['juice'],
+                'nl' => ['sap'],
+            ]],
+            ['kana' => 'ビール', 'romaji' => 'biiru', 'meanings' => [
+                'en' => ['beer'],
+                'nl' => ['bier'],
+            ]],
+            ['kana' => 'ワイン', 'romaji' => 'wain', 'meanings' => [
+                'en' => ['wine'],
+                'nl' => ['wijn'],
+            ]],
+            ['kana' => 'スープ', 'romaji' => 'suupu', 'meanings' => [
+                'en' => ['soup'],
+                'nl' => ['soep'],
+            ]],
+            ['kana' => 'サラダ', 'romaji' => 'sarada', 'meanings' => [
+                'en' => ['salad'],
+                'nl' => ['salade'],
+            ]],
+            ['kana' => 'カレー', 'romaji' => 'karee', 'meanings' => [
+                'en' => ['curry'],
+                'nl' => ['curry'],
+            ]],
+            ['kana' => 'みそしる', 'romaji' => 'misoshiru', 'meanings' => [
+                'en' => ['miso soup'],
+                'nl' => ['miso-soep'],
+            ]],
+            ['kana' => 'うどん', 'romaji' => 'udon', 'meanings' => [
+                'en' => ['udon'],
+                'nl' => ['udon'],
+            ]],
+            ['kana' => 'そば', 'romaji' => 'soba', 'meanings' => [
+                'en' => ['soba'],
+                'nl' => ['soba'],
+            ]],
+            ['kana' => 'ラーメン', 'romaji' => 'raamen', 'meanings' => [
+                'en' => ['ramen'],
+                'nl' => ['ramen'],
+            ]],
+            ['kana' => 'ぎゅうにゅう', 'romaji' => 'gyuunyuu', 'meanings' => [
+                'en' => ['milk'],
+                'nl' => ['melk'],
+            ]],
+            ['kana' => 'チーズ', 'romaji' => 'chiizu', 'meanings' => [
+                'en' => ['cheese'],
+                'nl' => ['kaas'],
+            ]],
+            ['kana' => 'バター', 'romaji' => 'bataa', 'meanings' => [
+                'en' => ['butter'],
+                'nl' => ['boter'],
+            ]],
+            ['kana' => 'ケーキ', 'romaji' => 'keeki', 'meanings' => [
+                'en' => ['cake'],
+                'nl' => ['taart'],
+            ]],
+            ['kana' => 'クッキー', 'romaji' => 'kukkii', 'meanings' => [
+                'en' => ['cookie'],
+                'nl' => ['koekje'],
+            ]],
+            ['kana' => 'アイスクリーム', 'romaji' => 'aisukuriimu', 'meanings' => [
+                'en' => ['ice cream'],
+                'nl' => ['ijs'],
+            ]],
+            ['kana' => 'あめ', 'romaji' => 'ame', 'meanings' => [
+                'en' => ['candy'],
+                'nl' => ['snoep'],
+            ]],
+            ['kana' => 'おにぎり', 'romaji' => 'onigiri', 'meanings' => [
+                'en' => ['riceball'],
+                'nl' => ['rijstbal'],
+            ]],
+            ['kana' => 'べんとう', 'romaji' => 'bentou', 'meanings' => [
+                'en' => ['boxed lunch'],
+                'nl' => ['bento'],
+            ]],
+            ['kana' => 'ピザ', 'romaji' => 'piza', 'meanings' => [
+                'en' => ['pizza'],
+                'nl' => ['pizza'],
+            ]],
+            ['kana' => 'ハンバーガー', 'romaji' => 'hanbaagaa', 'meanings' => [
+                'en' => ['hamburger'],
+                'nl' => ['hamburger'],
+            ]],
+            ['kana' => 'ポテト', 'romaji' => 'poteto', 'meanings' => [
+                'en' => ['potato', 'fries'],
+                'nl' => ['aardappel', 'friet'],
+            ]],
+            ['kana' => 'さら', 'romaji' => 'sara', 'meanings' => [
+                'en' => ['plate'],
+                'nl' => ['bord'],
+            ]],
+            ['kana' => 'コップ', 'romaji' => 'koppu', 'meanings' => [
+                'en' => ['cup', 'glass'],
+                'nl' => ['kop', 'glas'],
+            ]],
+            ['kana' => 'フォーク', 'romaji' => 'fooku', 'meanings' => [
+                'en' => ['fork'],
+                'nl' => ['vork'],
+            ]],
+            ['kana' => 'スプーン', 'romaji' => 'supuun', 'meanings' => [
+                'en' => ['spoon'],
+                'nl' => ['lepel'],
+            ]],
+            ['kana' => 'ナイフ', 'romaji' => 'naifu', 'meanings' => [
+                'en' => ['knife'],
+                'nl' => ['mes'],
+            ]],
+            ['kana' => 'レストラン', 'romaji' => 'resutoran', 'meanings' => [
+                'en' => ['restaurant'],
+                'nl' => ['restaurant'],
+            ]],
+            ['kana' => 'メニュー', 'romaji' => 'menyuu', 'meanings' => [
+                'en' => ['menu'],
+                'nl' => ['menu'],
+            ]],
         ]);
 
         // Shopping
         $this->seedCategory('shopping', 'Shopping', [
-            ['kana' => 'さいふ', 'romaji' => 'saifu', 'meanings' => ['wallet']],
-            ['kana' => 'おかね', 'romaji' => 'okane', 'meanings' => ['money']],
-            ['kana' => 'カード', 'romaji' => 'kaado', 'meanings' => ['card', 'credit card', 'debit card']],
-            ['kana' => 'レジ', 'romaji' => 'reji', 'meanings' => ['register', 'checkout']],
-            ['kana' => 'ふくろ', 'romaji' => 'fukuro', 'meanings' => ['bag']],
-            ['kana' => 'レジぶくろ', 'romaji' => 'rejibukuro', 'meanings' => ['plastic shopping bag']],
-            ['kana' => 'セール', 'romaji' => 'seeru', 'meanings' => ['sale']],
-            ['kana' => 'サイズ', 'romaji' => 'saizu', 'meanings' => ['size']],
-            ['kana' => 'シャツ', 'romaji' => 'shatsu', 'meanings' => ['shirt']],
-            ['kana' => 'ズボン', 'romaji' => 'zubon', 'meanings' => ['pants']],
-            ['kana' => 'スカート', 'romaji' => 'sukaato', 'meanings' => ['skirt']],
-            ['kana' => 'ワンピース', 'romaji' => 'wanpiisu', 'meanings' => ['dress']],
-            ['kana' => 'コート', 'romaji' => 'kooto', 'meanings' => ['coat']],
-            ['kana' => 'ジャケット', 'romaji' => 'jaketto', 'meanings' => ['jacket']],
-            ['kana' => 'くつ', 'romaji' => 'kutsu', 'meanings' => ['shoes']],
-            ['kana' => 'くつした', 'romaji' => 'kutsushita', 'meanings' => ['socks']],
-            ['kana' => 'ぼうし', 'romaji' => 'boushi', 'meanings' => ['hat']],
-            ['kana' => 'てぶくろ', 'romaji' => 'tebukuro', 'meanings' => ['gloves']],
-            ['kana' => 'かばん', 'romaji' => 'kaban', 'meanings' => ['bag']],
-            ['kana' => 'ネクタイ', 'romaji' => 'nekutai', 'meanings' => ['necktie']],
-            ['kana' => 'ベルト', 'romaji' => 'beruto', 'meanings' => ['belt']],
-            ['kana' => 'サンダル', 'romaji' => 'sandaru', 'meanings' => ['sandals']],
-            ['kana' => 'ブーツ', 'romaji' => 'buutsu', 'meanings' => ['boots']],
-            ['kana' => 'アクセサリー', 'romaji' => 'akusesarii', 'meanings' => ['accessories']],
-            ['kana' => 'てちょう', 'romaji' => 'techou', 'meanings' => ['notebook', 'pocket diary']],
-            ['kana' => 'えんぴつ', 'romaji' => 'enpitsu', 'meanings' => ['pencil']],
-            ['kana' => 'ペン', 'romaji' => 'pen', 'meanings' => ['pen']],
-            ['kana' => 'ノート', 'romaji' => 'nooto', 'meanings' => ['notebook']],
-            ['kana' => 'かさ', 'romaji' => 'kasa', 'meanings' => ['umbrella']],
+            ['kana' => 'さいふ', 'romaji' => 'saifu', 'meanings' => [
+                'en' => ['wallet'],
+                'nl' => ['portemonnee'],
+            ]],
+            ['kana' => 'おかね', 'romaji' => 'okane', 'meanings' => [
+                'en' => ['money'],
+                'nl' => ['geld'],
+            ]],
+            ['kana' => 'カード', 'romaji' => 'kaado', 'meanings' => [
+                'en' => ['card', 'credit card', 'debit card'],
+                'nl' => ['kaart', 'creditcard', 'pinpas'],
+            ]],
+            ['kana' => 'レジ', 'romaji' => 'reji', 'meanings' => [
+                'en' => ['register', 'checkout'],
+                'nl' => ['kassa'],
+            ]],
+            ['kana' => 'ふくろ', 'romaji' => 'fukuro', 'meanings' => [
+                'en' => ['bag'],
+                'nl' => ['tas', 'zak'],
+            ]],
+            ['kana' => 'レジぶくろ', 'romaji' => 'rejibukuro', 'meanings' => [
+                'en' => ['plastic shopping bag'],
+                'nl' => ['plastic boodschappentas'],
+            ]],
+            ['kana' => 'セール', 'romaji' => 'seeru', 'meanings' => [
+                'en' => ['sale'],
+                'nl' => ['uitverkoop'],
+            ]],
+            ['kana' => 'サイズ', 'romaji' => 'saizu', 'meanings' => [
+                'en' => ['size'],
+                'nl' => ['maat'],
+            ]],
+            ['kana' => 'シャツ', 'romaji' => 'shatsu', 'meanings' => [
+                'en' => ['shirt'],
+                'nl' => ['overhemd'],
+            ]],
+            ['kana' => 'ズボン', 'romaji' => 'zubon', 'meanings' => [
+                'en' => ['pants'],
+                'nl' => ['broek'],
+            ]],
+            ['kana' => 'スカート', 'romaji' => 'sukaato', 'meanings' => [
+                'en' => ['skirt'],
+                'nl' => ['rok'],
+            ]],
+            ['kana' => 'ワンピース', 'romaji' => 'wanpiisu', 'meanings' => [
+                'en' => ['dress'],
+                'nl' => ['jurk'],
+            ]],
+            ['kana' => 'コート', 'romaji' => 'kooto', 'meanings' => [
+                'en' => ['coat'],
+                'nl' => ['jas'],
+            ]],
+            ['kana' => 'ジャケット', 'romaji' => 'jaketto', 'meanings' => [
+                'en' => ['jacket'],
+                'nl' => ['jack', 'jasje'],
+            ]],
+            ['kana' => 'くつ', 'romaji' => 'kutsu', 'meanings' => [
+                'en' => ['shoes'],
+                'nl' => ['schoenen'],
+            ]],
+            ['kana' => 'くつした', 'romaji' => 'kutsushita', 'meanings' => [
+                'en' => ['socks'],
+                'nl' => ['sokken'],
+            ]],
+            ['kana' => 'ぼうし', 'romaji' => 'boushi', 'meanings' => [
+                'en' => ['hat'],
+                'nl' => ['hoed', 'pet'],
+            ]],
+            ['kana' => 'てぶくろ', 'romaji' => 'tebukuro', 'meanings' => [
+                'en' => ['gloves'],
+                'nl' => ['handschoenen'],
+            ]],
+            ['kana' => 'かばん', 'romaji' => 'kaban', 'meanings' => [
+                'en' => ['bag'],
+                'nl' => ['tas'],
+            ]],
+            ['kana' => 'ネクタイ', 'romaji' => 'nekutai', 'meanings' => [
+                'en' => ['necktie'],
+                'nl' => ['stropdas'],
+            ]],
+            ['kana' => 'ベルト', 'romaji' => 'beruto', 'meanings' => [
+                'en' => ['belt'],
+                'nl' => ['riem'],
+            ]],
+            ['kana' => 'サンダル', 'romaji' => 'sandaru', 'meanings' => [
+                'en' => ['sandals'],
+                'nl' => ['sandalen'],
+            ]],
+            ['kana' => 'ブーツ', 'romaji' => 'buutsu', 'meanings' => [
+                'en' => ['boots'],
+                'nl' => ['laarzen'],
+            ]],
+            ['kana' => 'アクセサリー', 'romaji' => 'akusesarii', 'meanings' => [
+                'en' => ['accessories'],
+                'nl' => ['accessoires'],
+            ]],
+            ['kana' => 'てちょう', 'romaji' => 'techou', 'meanings' => [
+                'en' => ['notebook', 'pocket diary'],
+                'nl' => ['notitieboekje', 'zakagenda'],
+            ]],
+            ['kana' => 'えんぴつ', 'romaji' => 'enpitsu', 'meanings' => [
+                'en' => ['pencil'],
+                'nl' => ['potlood'],
+            ]],
+            ['kana' => 'ペン', 'romaji' => 'pen', 'meanings' => [
+                'en' => ['pen'],
+                'nl' => ['pen'],
+            ]],
+            ['kana' => 'ノート', 'romaji' => 'nooto', 'meanings' => [
+                'en' => ['notebook'],
+                'nl' => ['schrift'],
+            ]],
+            ['kana' => 'かさ', 'romaji' => 'kasa', 'meanings' => [
+                'en' => ['umbrella'],
+                'nl' => ['paraplu'],
+            ]],
         ]);
 
         // Konbini & Supermarket
         $this->seedCategory('konbini-and-supermarket', 'Konbini & Supermarket', [
-            ['kana' => 'カップめん', 'romaji' => 'kappu men', 'meanings' => ['cup noodles']],
-            ['kana' => 'チョコ', 'romaji' => 'choko', 'meanings' => ['chocolate']],
-            ['kana' => 'アイス', 'romaji' => 'aisu', 'meanings' => ['ice cream']],
-            ['kana' => 'しんぶん', 'romaji' => 'shinbun', 'meanings' => ['newspaper']],
-            ['kana' => 'ざっし', 'romaji' => 'zasshi', 'meanings' => ['magazine']],
-            ['kana' => 'でんち', 'romaji' => 'denchi', 'meanings' => ['batteries']],
-            ['kana' => 'シャンプー', 'romaji' => 'shanpuu', 'meanings' => ['shampoo']],
-            ['kana' => 'リンス', 'romaji' => 'rinsu', 'meanings' => ['conditioner']],
-            ['kana' => 'はぶらし', 'romaji' => 'haburashi', 'meanings' => ['toothbrush']],
-            ['kana' => 'はみがき', 'romaji' => 'hamigaki', 'meanings' => ['toothpaste']],
-            ['kana' => 'ごみぶくろ', 'romaji' => 'gomibukuro', 'meanings' => ['trash bag']],
-            ['kana' => 'マスク', 'romaji' => 'masuku', 'meanings' => ['face mask']],
-            ['kana' => 'ひやけどめ', 'romaji' => 'hiyakedome', 'meanings' => ['sunscreen']],
-            ['kana' => 'カイロ', 'romaji' => 'kairo', 'meanings' => ['disposable hand warmer']],
-            ['kana' => 'ばんそうこう', 'romaji' => 'bansoukou', 'meanings' => ['band-aid']],
-            ['kana' => 'テープ', 'romaji' => 'teepu', 'meanings' => ['tape']],
-            ['kana' => 'のり', 'romaji' => 'nori', 'meanings' => ['glue']],
-            ['kana' => 'えんぴつけずり', 'romaji' => 'enpitsukezuri', 'meanings' => ['pencil sharpener']],
-            ['kana' => 'ライター', 'romaji' => 'raitaa', 'meanings' => ['lighter']],
-            ['kana' => 'せんぷうき', 'romaji' => 'senpuuki', 'meanings' => ['electric fan']],
-            ['kana' => 'でんきゅう', 'romaji' => 'denkyuu', 'meanings' => ['light bulb']],
-            ['kana' => 'メモちょう', 'romaji' => 'memo chou', 'meanings' => ['memo pad']],
-            ['kana' => 'メールびん', 'romaji' => 'meerubin', 'meanings' => ['mailing envelope']],
-            ['kana' => 'ふうとう', 'romaji' => 'fuutou', 'meanings' => ['envelope']],
-            ['kana' => 'きって', 'romaji' => 'kitte', 'meanings' => ['stamp']],
-            ['kana' => 'はがき', 'romaji' => 'hagaki', 'meanings' => ['postcard']],
-            ['kana' => 'ティッシュ', 'romaji' => 'tisshu', 'meanings' => ['tissue']],
-            ['kana' => 'トイレットペーパー', 'romaji' => 'toiretto peepaa', 'meanings' => ['toilet paper']],
+            ['kana' => 'カップめん', 'romaji' => 'kappu men', 'meanings' => [
+                'en' => ['cup noodles'],
+                'nl' => ['instantnoedels'],
+            ]],
+            ['kana' => 'チョコ', 'romaji' => 'choko', 'meanings' => [
+                'en' => ['chocolate'],
+                'nl' => ['chocolade'],
+            ]],
+            ['kana' => 'アイス', 'romaji' => 'aisu', 'meanings' => [
+                'en' => ['ice cream'],
+                'nl' => ['ijs'],
+            ]],
+            ['kana' => 'しんぶん', 'romaji' => 'shinbun', 'meanings' => [
+                'en' => ['newspaper'],
+                'nl' => ['krant'],
+            ]],
+            ['kana' => 'ざっし', 'romaji' => 'zasshi', 'meanings' => [
+                'en' => ['magazine'],
+                'nl' => ['tijdschrift'],
+            ]],
+            ['kana' => 'でんち', 'romaji' => 'denchi', 'meanings' => [
+                'en' => ['batteries'],
+                'nl' => ['batterijen'],
+            ]],
+            ['kana' => 'シャンプー', 'romaji' => 'shanpuu', 'meanings' => [
+                'en' => ['shampoo'],
+                'nl' => ['shampoo'],
+            ]],
+            ['kana' => 'リンス', 'romaji' => 'rinsu', 'meanings' => [
+                'en' => ['conditioner'],
+                'nl' => ['conditioner'],
+            ]],
+            ['kana' => 'はぶらし', 'romaji' => 'haburashi', 'meanings' => [
+                'en' => ['toothbrush'],
+                'nl' => ['tandenborstel'],
+            ]],
+            ['kana' => 'はみがき', 'romaji' => 'hamigaki', 'meanings' => [
+                'en' => ['toothpaste'],
+                'nl' => ['tandpasta'],
+            ]],
+            ['kana' => 'ごみぶくろ', 'romaji' => 'gomibukuro', 'meanings' => [
+                'en' => ['trash bag'],
+                'nl' => ['vuilniszak'],
+            ]],
+            ['kana' => 'マスク', 'romaji' => 'masuku', 'meanings' => [
+                'en' => ['face mask'],
+                'nl' => ['mondkapje'],
+            ]],
+            ['kana' => 'ひやけどめ', 'romaji' => 'hiyakedome', 'meanings' => [
+                'en' => ['sunscreen'],
+                'nl' => ['zonnebrandcrème'],
+            ]],
+            ['kana' => 'カイロ', 'romaji' => 'kairo', 'meanings' => [
+                'en' => ['disposable hand warmer'],
+                'nl' => ['handwarmer'],
+            ]],
+            ['kana' => 'ばんそうこう', 'romaji' => 'bansoukou', 'meanings' => [
+                'en' => ['band-aid'],
+                'nl' => ['pleister'],
+            ]],
+            ['kana' => 'テープ', 'romaji' => 'teepu', 'meanings' => [
+                'en' => ['tape'],
+                'nl' => ['tape'],
+            ]],
+            ['kana' => 'のり', 'romaji' => 'nori', 'meanings' => [
+                'en' => ['glue'],
+                'nl' => ['lijm'],
+            ]],
+            ['kana' => 'えんぴつけずり', 'romaji' => 'enpitsukezuri', 'meanings' => [
+                'en' => ['pencil sharpener'],
+                'nl' => ['puntenslijper'],
+            ]],
+            ['kana' => 'ライター', 'romaji' => 'raitaa', 'meanings' => [
+                'en' => ['lighter'],
+                'nl' => ['aansteker'],
+            ]],
+            ['kana' => 'せんぷうき', 'romaji' => 'senpuuki', 'meanings' => [
+                'en' => ['electric fan'],
+                'nl' => ['ventilator'],
+            ]],
+            ['kana' => 'でんきゅう', 'romaji' => 'denkyuu', 'meanings' => [
+                'en' => ['light bulb'],
+                'nl' => ['gloeilamp'],
+            ]],
+            ['kana' => 'メモちょう', 'romaji' => 'memo chou', 'meanings' => [
+                'en' => ['memo pad'],
+                'nl' => ['notitieblok'],
+            ]],
+            ['kana' => 'メールびん', 'romaji' => 'meerubin', 'meanings' => [
+                'en' => ['mailing envelope'],
+                'nl' => ['verzendenvelop'],
+            ]],
+            ['kana' => 'ふうとう', 'romaji' => 'fuutou', 'meanings' => [
+                'en' => ['envelope'],
+                'nl' => ['envelop'],
+            ]],
+            ['kana' => 'きって', 'romaji' => 'kitte', 'meanings' => [
+                'en' => ['stamp'],
+                'nl' => ['postzegel'],
+            ]],
+            ['kana' => 'はがき', 'romaji' => 'hagaki', 'meanings' => [
+                'en' => ['postcard'],
+                'nl' => ['ansichtkaart'],
+            ]],
+            ['kana' => 'ティッシュ', 'romaji' => 'tisshu', 'meanings' => [
+                'en' => ['tissue'],
+                'nl' => ['zakdoekje'],
+            ]],
+            ['kana' => 'トイレットペーパー', 'romaji' => 'toiretto peepaa', 'meanings' => [
+                'en' => ['toilet paper'],
+                'nl' => ['toiletpapier'],
+            ]],
         ]);
 
         // Household & Toiletries
         $this->seedCategory('household-and-toiletries', 'Household & Toiletries', [
-            ['kana' => 'タオル', 'romaji' => 'taoru', 'meanings' => ['towel']],
-            ['kana' => 'バスタオル', 'romaji' => 'basutaoru', 'meanings' => ['bath towel']],
-            ['kana' => 'せっけん', 'romaji' => 'sekken', 'meanings' => ['soap']],
-            ['kana' => 'シャワー', 'romaji' => 'shawaa', 'meanings' => ['shower']],
-            ['kana' => 'トイレ', 'romaji' => 'toire', 'meanings' => ['toilet']],
-            ['kana' => 'おふろ', 'romaji' => 'ofuro', 'meanings' => ['bath']],
-            ['kana' => 'ふろおけ', 'romaji' => 'furooke', 'meanings' => ['bath bucket']],
-            ['kana' => 'トイレブラシ', 'romaji' => 'toire burashi', 'meanings' => ['toilet brush']],
-            ['kana' => 'そうじき', 'romaji' => 'soujiki', 'meanings' => ['vacuum cleaner']],
-            ['kana' => 'ほうき', 'romaji' => 'houki', 'meanings' => ['broom']],
-            ['kana' => 'ちりとり', 'romaji' => 'chiritori', 'meanings' => ['dustpan']],
-            ['kana' => 'モップ', 'romaji' => 'moppu', 'meanings' => ['mop']],
-            ['kana' => 'ごみばこ', 'romaji' => 'gomibako', 'meanings' => ['trash bin']],
-            ['kana' => 'でんき', 'romaji' => 'denki', 'meanings' => ['electricity', 'light']],
-            ['kana' => 'スイッチ', 'romaji' => 'suicchi', 'meanings' => ['switch']],
-            ['kana' => 'エアコン', 'romaji' => 'eakon', 'meanings' => ['air conditioner']],
-            ['kana' => 'ストーブ', 'romaji' => 'sutoobu', 'meanings' => ['heater']],
-            ['kana' => 'まど', 'romaji' => 'mado', 'meanings' => ['window']],
-            ['kana' => 'ドア', 'romaji' => 'doa', 'meanings' => ['door']],
-            ['kana' => 'かがみ', 'romaji' => 'kagami', 'meanings' => ['mirror']],
-            ['kana' => 'カーテン', 'romaji' => 'kaaten', 'meanings' => ['curtain']],
-            ['kana' => 'ベッド', 'romaji' => 'beddo', 'meanings' => ['bed']],
-            ['kana' => 'まくら', 'romaji' => 'makura', 'meanings' => ['pillow']],
-            ['kana' => 'ふとん', 'romaji' => 'futon', 'meanings' => ['futon']],
-            ['kana' => 'もうふ', 'romaji' => 'moufu', 'meanings' => ['blanket']],
-            ['kana' => 'たんす', 'romaji' => 'tansu', 'meanings' => ['dresser', 'chest']],
-            ['kana' => 'ハンガー', 'romaji' => 'hangaa', 'meanings' => ['hanger']],
-            ['kana' => 'アイロン', 'romaji' => 'airon', 'meanings' => ['iron']],
-            ['kana' => 'せんたくき', 'romaji' => 'sentakuki', 'meanings' => ['washing machine']],
-            ['kana' => 'ものほし', 'romaji' => 'monohoshi', 'meanings' => ['laundry hanger']],
+            ['kana' => 'タオル', 'romaji' => 'taoru', 'meanings' => [
+                'en' => ['towel'],
+                'nl' => ['handdoek'],
+            ]],
+            ['kana' => 'バスタオル', 'romaji' => 'basutaoru', 'meanings' => [
+                'en' => ['bath towel'],
+                'nl' => ['badhanddoek'],
+            ]],
+            ['kana' => 'せっけん', 'romaji' => 'sekken', 'meanings' => [
+                'en' => ['soap'],
+                'nl' => ['zeep'],
+            ]],
+            ['kana' => 'シャワー', 'romaji' => 'shawaa', 'meanings' => [
+                'en' => ['shower'],
+                'nl' => ['douche'],
+            ]],
+            ['kana' => 'トイレ', 'romaji' => 'toire', 'meanings' => [
+                'en' => ['toilet'],
+                'nl' => ['toilet'],
+            ]],
+            ['kana' => 'おふろ', 'romaji' => 'ofuro', 'meanings' => [
+                'en' => ['bath'],
+                'nl' => ['bad'],
+            ]],
+            ['kana' => 'ふろおけ', 'romaji' => 'furooke', 'meanings' => [
+                'en' => ['bath bucket'],
+                'nl' => ['waskuipje'],
+            ]],
+            ['kana' => 'トイレブラシ', 'romaji' => 'toire burashi', 'meanings' => [
+                'en' => ['toilet brush'],
+                'nl' => ['wc-borstel'],
+            ]],
+            ['kana' => 'そうじき', 'romaji' => 'soujiki', 'meanings' => [
+                'en' => ['vacuum cleaner'],
+                'nl' => ['stofzuiger'],
+            ]],
+            ['kana' => 'ほうき', 'romaji' => 'houki', 'meanings' => [
+                'en' => ['broom'],
+                'nl' => ['bezem'],
+            ]],
+            ['kana' => 'ちりとり', 'romaji' => 'chiritori', 'meanings' => [
+                'en' => ['dustpan'],
+                'nl' => ['stofblik'],
+            ]],
+            ['kana' => 'モップ', 'romaji' => 'moppu', 'meanings' => [
+                'en' => ['mop'],
+                'nl' => ['dweil'],
+            ]],
+            ['kana' => 'ごみばこ', 'romaji' => 'gomibako', 'meanings' => [
+                'en' => ['trash bin'],
+                'nl' => ['prullenbak'],
+            ]],
+            ['kana' => 'でんき', 'romaji' => 'denki', 'meanings' => [
+                'en' => ['electricity', 'light'],
+                'nl' => ['elektriciteit', 'licht'],
+            ]],
+            ['kana' => 'スイッチ', 'romaji' => 'suicchi', 'meanings' => [
+                'en' => ['switch'],
+                'nl' => ['schakelaar'],
+            ]],
+            ['kana' => 'エアコン', 'romaji' => 'eakon', 'meanings' => [
+                'en' => ['air conditioner'],
+                'nl' => ['airco'],
+            ]],
+            ['kana' => 'ストーブ', 'romaji' => 'sutoobu', 'meanings' => [
+                'en' => ['heater'],
+                'nl' => ['kachel'],
+            ]],
+            ['kana' => 'まど', 'romaji' => 'mado', 'meanings' => [
+                'en' => ['window'],
+                'nl' => ['raam'],
+            ]],
+            ['kana' => 'ドア', 'romaji' => 'doa', 'meanings' => [
+                'en' => ['door'],
+                'nl' => ['deur'],
+            ]],
+            ['kana' => 'かがみ', 'romaji' => 'kagami', 'meanings' => [
+                'en' => ['mirror'],
+                'nl' => ['spiegel'],
+            ]],
+            ['kana' => 'カーテン', 'romaji' => 'kaaten', 'meanings' => [
+                'en' => ['curtain'],
+                'nl' => ['gordijn'],
+            ]],
+            ['kana' => 'ベッド', 'romaji' => 'beddo', 'meanings' => [
+                'en' => ['bed'],
+                'nl' => ['bed'],
+            ]],
+            ['kana' => 'まくら', 'romaji' => 'makura', 'meanings' => [
+                'en' => ['pillow'],
+                'nl' => ['kussen'],
+            ]],
+            ['kana' => 'ふとん', 'romaji' => 'futon', 'meanings' => [
+                'en' => ['futon'],
+                'nl' => ['futon'],
+            ]],
+            ['kana' => 'もうふ', 'romaji' => 'moufu', 'meanings' => [
+                'en' => ['blanket'],
+                'nl' => ['deken'],
+            ]],
+            ['kana' => 'たんす', 'romaji' => 'tansu', 'meanings' => [
+                'en' => ['dresser', 'chest'],
+                'nl' => ['ladekast', 'kist'],
+            ]],
+            ['kana' => 'ハンガー', 'romaji' => 'hangaa', 'meanings' => [
+                'en' => ['hanger'],
+                'nl' => ['kleerhanger'],
+            ]],
+            ['kana' => 'アイロン', 'romaji' => 'airon', 'meanings' => [
+                'en' => ['iron'],
+                'nl' => ['strijkijzer'],
+            ]],
+            ['kana' => 'せんたくき', 'romaji' => 'sentakuki', 'meanings' => [
+                'en' => ['washing machine'],
+                'nl' => ['wasmachine'],
+            ]],
+            ['kana' => 'ものほし', 'romaji' => 'monohoshi', 'meanings' => [
+                'en' => ['laundry hanger'],
+                'nl' => ['wasrek'],
+            ]],
         ]);
 
         // Tech & Tools
         $this->seedCategory('tech-and-tools', 'Tech & Tools', [
-            ['kana' => 'スマホ', 'romaji' => 'sumaho', 'meanings' => ['smartphone']],
-            ['kana' => 'けいたい', 'romaji' => 'keitai', 'meanings' => ['cellphone']],
-            ['kana' => 'パソコン', 'romaji' => 'pasokon', 'meanings' => ['computer', 'laptop']],
-            ['kana' => 'タブレット', 'romaji' => 'taburetto', 'meanings' => ['tablet']],
-            ['kana' => 'でんわ', 'romaji' => 'denwa', 'meanings' => ['telephone']],
-            ['kana' => 'イヤホン', 'romaji' => 'iyahon', 'meanings' => ['earphones']],
-            ['kana' => 'ヘッドホン', 'romaji' => 'heddohon', 'meanings' => ['headphones']],
-            ['kana' => 'リモコン', 'romaji' => 'rimokon', 'meanings' => ['remote control']],
-            ['kana' => 'マウス', 'romaji' => 'mausu', 'meanings' => ['computer mouse']],
-            ['kana' => 'キーボード', 'romaji' => 'kiiboodo', 'meanings' => ['keyboard']],
-            ['kana' => 'スクリーン', 'romaji' => 'sukuriin', 'meanings' => ['screen']],
-            ['kana' => 'ワイファイルーター', 'romaji' => 'waifai ruutaa', 'meanings' => ['WiFi router']],
-            ['kana' => 'ケーブル', 'romaji' => 'keeburu', 'meanings' => ['cable']],
-            ['kana' => 'じゅうでんき', 'romaji' => 'juudenki', 'meanings' => ['charger']],
-            ['kana' => 'USBメモリ', 'romaji' => 'yuuesubii memori', 'meanings' => ['USB drive']],
-            ['kana' => 'SDカード', 'romaji' => 'esudii kaado', 'meanings' => ['SD card']],
-            ['kana' => 'カメラ', 'romaji' => 'kamera', 'meanings' => ['camera']],
-            ['kana' => 'ラジオ', 'romaji' => 'rajio', 'meanings' => ['radio']],
-            ['kana' => 'テレビ', 'romaji' => 'terebi', 'meanings' => ['television']],
-            ['kana' => 'プリンター', 'romaji' => 'purintaa', 'meanings' => ['printer']],
-            ['kana' => 'スキャナー', 'romaji' => 'sukyanaa', 'meanings' => ['scanner']],
-            ['kana' => 'とけい', 'romaji' => 'tokei', 'meanings' => ['clock', 'watch']],
-            ['kana' => 'アラーム', 'romaji' => 'araamu', 'meanings' => ['alarm']],
-            ['kana' => 'はさみ', 'romaji' => 'hasami', 'meanings' => ['scissors']],
-            ['kana' => 'ドライバー', 'romaji' => 'doraibaa', 'meanings' => ['screwdriver']],
-            ['kana' => 'レンチ', 'romaji' => 'renchi', 'meanings' => ['wrench']],
-            ['kana' => 'かなづち', 'romaji' => 'kanazuchi', 'meanings' => ['hammer']],
-            ['kana' => 'ものさし', 'romaji' => 'monosashi', 'meanings' => ['ruler']],
-            ['kana' => 'ホッチキス', 'romaji' => 'hotchikisu', 'meanings' => ['stapler']],
-            ['kana' => 'カッター', 'romaji' => 'kattaa', 'meanings' => ['box cutter']],
-            ['kana' => 'クリップ', 'romaji' => 'kurippu', 'meanings' => ['paper clip']],
-            ['kana' => 'じょうぎ', 'romaji' => 'jougi', 'meanings' => ['ruler (alternative)']],
+            ['kana' => 'スマホ', 'romaji' => 'sumaho', 'meanings' => [
+                'en' => ['smartphone'],
+                'nl' => ['smartphone'],
+            ]],
+            ['kana' => 'けいたい', 'romaji' => 'keitai', 'meanings' => [
+                'en' => ['cellphone'],
+                'nl' => ['mobiele telefoon'],
+            ]],
+            ['kana' => 'パソコン', 'romaji' => 'pasokon', 'meanings' => [
+                'en' => ['computer', 'laptop'],
+                'nl' => ['computer', 'laptop'],
+            ]],
+            ['kana' => 'タブレット', 'romaji' => 'taburetto', 'meanings' => [
+                'en' => ['tablet'],
+                'nl' => ['tablet'],
+            ]],
+            ['kana' => 'でんわ', 'romaji' => 'denwa', 'meanings' => [
+                'en' => ['telephone'],
+                'nl' => ['telefoon'],
+            ]],
+            ['kana' => 'イヤホン', 'romaji' => 'iyahon', 'meanings' => [
+                'en' => ['earphones'],
+                'nl' => ['oordopjes'],
+            ]],
+            ['kana' => 'ヘッドホン', 'romaji' => 'heddohon', 'meanings' => [
+                'en' => ['headphones'],
+                'nl' => ['koptelefoon'],
+            ]],
+            ['kana' => 'リモコン', 'romaji' => 'rimokon', 'meanings' => [
+                'en' => ['remote control'],
+                'nl' => ['afstandbediening'],
+            ]],
+            ['kana' => 'マウス', 'romaji' => 'mausu', 'meanings' => [
+                'en' => ['computer mouse'],
+                'nl' => ['muis'],
+            ]],
+            ['kana' => 'キーボード', 'romaji' => 'kiiboodo', 'meanings' => [
+                'en' => ['keyboard'],
+                'nl' => ['toetsenbord'],
+            ]],
+            ['kana' => 'スクリーン', 'romaji' => 'sukuriin', 'meanings' => [
+                'en' => ['screen'],
+                'nl' => ['scherm'],
+            ]],
+            ['kana' => 'ワイファイルーター', 'romaji' => 'waifai ruutaa', 'meanings' => [
+                'en' => ['WiFi router'],
+                'nl' => ['wifi-router'],
+            ]],
+            ['kana' => 'ケーブル', 'romaji' => 'keeburu', 'meanings' => [
+                'en' => ['cable'],
+                'nl' => ['kabel'],
+            ]],
+            ['kana' => 'じゅうでんき', 'romaji' => 'juudenki', 'meanings' => [
+                'en' => ['charger'],
+                'nl' => ['oplader'],
+            ]],
+            ['kana' => 'USBメモリ', 'romaji' => 'yuuesubii memori', 'meanings' => [
+                'en' => ['USB drive'],
+                'nl' => ['USB-stick'],
+            ]],
+            ['kana' => 'SDカード', 'romaji' => 'esudii kaado', 'meanings' => [
+                'en' => ['SD card'],
+                'nl' => ['SD-kaart'],
+            ]],
+            ['kana' => 'カメラ', 'romaji' => 'kamera', 'meanings' => [
+                'en' => ['camera'],
+                'nl' => ['camera'],
+            ]],
+            ['kana' => 'ラジオ', 'romaji' => 'rajio', 'meanings' => [
+                'en' => ['radio'],
+                'nl' => ['radio'],
+            ]],
+            ['kana' => 'テレビ', 'romaji' => 'terebi', 'meanings' => [
+                'en' => ['television'],
+                'nl' => ['televisie'],
+            ]],
+            ['kana' => 'プリンター', 'romaji' => 'purintaa', 'meanings' => [
+                'en' => ['printer'],
+                'nl' => ['printer'],
+            ]],
+            ['kana' => 'スキャナー', 'romaji' => 'sukyanaa', 'meanings' => [
+                'en' => ['scanner'],
+                'nl' => ['scanner'],
+            ]],
+            ['kana' => 'とけい', 'romaji' => 'tokei', 'meanings' => [
+                'en' => ['clock', 'watch'],
+                'nl' => ['klok', 'horloge'],
+            ]],
+            ['kana' => 'アラーム', 'romaji' => 'araamu', 'meanings' => [
+                'en' => ['alarm'],
+                'nl' => ['wekker', 'alarm'],
+            ]],
+            ['kana' => 'はさみ', 'romaji' => 'hasami', 'meanings' => [
+                'en' => ['scissors'],
+                'nl' => ['schaar'],
+            ]],
+            ['kana' => 'ドライバー', 'romaji' => 'doraibaa', 'meanings' => [
+                'en' => ['screwdriver'],
+                'nl' => ['schroevendraaier'],
+            ]],
+            ['kana' => 'レンチ', 'romaji' => 'renchi', 'meanings' => [
+                'en' => ['wrench'],
+                'nl' => ['moersleutel'],
+            ]],
+            ['kana' => 'かなづち', 'romaji' => 'kanazuchi', 'meanings' => [
+                'en' => ['hammer'],
+                'nl' => ['hamer'],
+            ]],
+            ['kana' => 'ものさし', 'romaji' => 'monosashi', 'meanings' => [
+                'en' => ['ruler'],
+                'nl' => ['lineaal'],
+            ]],
+            ['kana' => 'ホッチキス', 'romaji' => 'hotchikisu', 'meanings' => [
+                'en' => ['stapler'],
+                'nl' => ['nietmachine'],
+            ]],
+            ['kana' => 'カッター', 'romaji' => 'kattaa', 'meanings' => [
+                'en' => ['box cutter'],
+                'nl' => ['stanleymes'],
+            ]],
+            ['kana' => 'クリップ', 'romaji' => 'kurippu', 'meanings' => [
+                'en' => ['paper clip'],
+                'nl' => ['paperclip'],
+            ]],
+            ['kana' => 'じょうぎ', 'romaji' => 'jougi', 'meanings' => [
+                'en' => ['ruler (alternative)'],
+                'nl' => ['liniaal (alternatief)'],
+            ]],
         ]);
 
         // Government/Admin/Paperwork
         $this->seedCategory('government-admin-paperwork', 'Government/Admin/Paperwork', [
-            ['kana' => 'パスポート', 'romaji' => 'pasupooto', 'meanings' => ['passport']],
-            ['kana' => 'しょうめいしょ', 'romaji' => 'shoumeisho', 'meanings' => ['certificate', 'proof of ID']],
-            ['kana' => 'がいこくじんカード', 'romaji' => 'gaikokujin kaado', 'meanings' => ['residence card']],
-            ['kana' => 'かみ', 'romaji' => 'kami', 'meanings' => ['paper']],
-            ['kana' => 'しょるい', 'romaji' => 'shorui', 'meanings' => ['document']],
-            ['kana' => 'しんせいしょ', 'romaji' => 'shinseisho', 'meanings' => ['application form']],
-            ['kana' => 'もうしこみしょ', 'romaji' => 'moushikomisho', 'meanings' => ['registration form']],
-            ['kana' => 'はんこ', 'romaji' => 'hanko', 'meanings' => ['personal seal']],
-            ['kana' => 'いんかん', 'romaji' => 'inkan', 'meanings' => ['registered seal']],
-            ['kana' => 'じゅうしょ', 'romaji' => 'juusho', 'meanings' => ['address']],
-            ['kana' => 'けいたいばんごう', 'romaji' => 'keitai bangou', 'meanings' => ['mobile number']],
-            ['kana' => 'ばんごう', 'romaji' => 'bangou', 'meanings' => ['number']],
-            ['kana' => 'せいねんがっぴ', 'romaji' => 'seinengappi', 'meanings' => ['date of birth']],
-            ['kana' => 'けんこうほけん', 'romaji' => 'kenkou hoken', 'meanings' => ['health insurance']],
-            ['kana' => 'こくみんねんきん', 'romaji' => 'kokumin nenkin', 'meanings' => ['national pension']],
-            ['kana' => 'ぜいきん', 'romaji' => 'zeikin', 'meanings' => ['tax']],
-            ['kana' => 'くやくしょ', 'romaji' => 'kuyakusho', 'meanings' => ['ward office']],
-            ['kana' => 'としょかん', 'romaji' => 'toshokan', 'meanings' => ['library']],
-            ['kana' => 'ゆうびんきょく', 'romaji' => 'yuubinkyoku', 'meanings' => ['post office']],
-            ['kana' => 'ぎんこう', 'romaji' => 'ginkou', 'meanings' => ['bank']],
-            ['kana' => 'ATM', 'romaji' => 'eeteemu', 'meanings' => ['ATM']],
-            ['kana' => 'こうざ', 'romaji' => 'kouza', 'meanings' => ['bank account']],
-            ['kana' => 'キャッシュカード', 'romaji' => 'kyashu kaado', 'meanings' => ['cash card', 'bank card']],
-            ['kana' => 'てがみ', 'romaji' => 'tegami', 'meanings' => ['letter']],
-            ['kana' => 'にゅうがくしょうめいしょ', 'romaji' => 'nyuugaku shoumeisho', 'meanings' => ['school enrollment certificate']],
-            ['kana' => 'がくせいしょう', 'romaji' => 'gakuseisho', 'meanings' => ['student ID']],
-            ['kana' => 'こうふしょ', 'romaji' => 'koufusho', 'meanings' => ['official receipt', 'issue slip']],
-            ['kana' => 'じゅうみんひょう', 'romaji' => 'juuminhyou', 'meanings' => ['residence certificate']],
-            ['kana' => 'せいふく', 'romaji' => 'seifuku', 'meanings' => ['uniform']],
-            ['kana' => 'こくみんけんこうほけん', 'romaji' => 'kokumin kenkou hoken', 'meanings' => ['national health insurance']],
+            ['kana' => 'パスポート', 'romaji' => 'pasupooto', 'meanings' => [
+                'en' => ['passport'],
+                'nl' => ['paspoort'],
+            ]],
+            ['kana' => 'しょうめいしょ', 'romaji' => 'shoumeisho', 'meanings' => [
+                'en' => ['certificate', 'proof of ID'],
+                'nl' => ['certificaat', 'bewijs van identiteit'],
+            ]],
+            ['kana' => 'がいこくじんカード', 'romaji' => 'gaikokujin kaado', 'meanings' => [
+                'en' => ['residence card'],
+                'nl' => ['verblijfskaart'],
+            ]],
+            ['kana' => 'かみ', 'romaji' => 'kami', 'meanings' => [
+                'en' => ['paper'],
+                'nl' => ['papier'],
+            ]],
+            ['kana' => 'しょるい', 'romaji' => 'shorui', 'meanings' => [
+                'en' => ['document'],
+                'nl' => ['document'],
+            ]],
+            ['kana' => 'しんせいしょ', 'romaji' => 'shinseisho', 'meanings' => [
+                'en' => ['application form'],
+                'nl' => ['aanvraagformulier'],
+            ]],
+            ['kana' => 'もうしこみしょ', 'romaji' => 'moushikomisho', 'meanings' => [
+                'en' => ['registration form'],
+                'nl' => ['inschrijfformulier'],
+            ]],
+            ['kana' => 'はんこ', 'romaji' => 'hanko', 'meanings' => [
+                'en' => ['personal seal'],
+                'nl' => ['persoonlijke stempel'],
+            ]],
+            ['kana' => 'いんかん', 'romaji' => 'inkan', 'meanings' => [
+                'en' => ['registered seal'],
+                'nl' => ['geregistreerde stempel'],
+            ]],
+            ['kana' => 'じゅうしょ', 'romaji' => 'juusho', 'meanings' => [
+                'en' => ['address'],
+                'nl' => ['adres'],
+            ]],
+            ['kana' => 'けいたいばんごう', 'romaji' => 'keitai bangou', 'meanings' => [
+                'en' => ['mobile number'],
+                'nl' => ['mobiel nummer'],
+            ]],
+            ['kana' => 'ばんごう', 'romaji' => 'bangou', 'meanings' => [
+                'en' => ['number'],
+                'nl' => ['nummer'],
+            ]],
+            ['kana' => 'せいねんがっぴ', 'romaji' => 'seinengappi', 'meanings' => [
+                'en' => ['date of birth'],
+                'nl' => ['geboortedatum'],
+            ]],
+            ['kana' => 'けんこうほけん', 'romaji' => 'kenkou hoken', 'meanings' => [
+                'en' => ['health insurance'],
+                'nl' => ['ziektekostenverzekering'],
+            ]],
+            ['kana' => 'こくみんねんきん', 'romaji' => 'kokumin nenkin', 'meanings' => [
+                'en' => ['national pension'],
+                'nl' => ['nationale pensioenregeling'],
+            ]],
+            ['kana' => 'ぜいきん', 'romaji' => 'zeikin', 'meanings' => [
+                'en' => ['tax'],
+                'nl' => ['belasting'],
+            ]],
+            ['kana' => 'くやくしょ', 'romaji' => 'kuyakusho', 'meanings' => [
+                'en' => ['ward office'],
+                'nl' => ['wijkkantoor'],
+            ]],
+            ['kana' => 'としょかん', 'romaji' => 'toshokan', 'meanings' => [
+                'en' => ['library'],
+                'nl' => ['bibliotheek'],
+            ]],
+            ['kana' => 'ゆうびんきょく', 'romaji' => 'yuubinkyoku', 'meanings' => [
+                'en' => ['post office'],
+                'nl' => ['postkantoor'],
+            ]],
+            ['kana' => 'ぎんこう', 'romaji' => 'ginkou', 'meanings' => [
+                'en' => ['bank'],
+                'nl' => ['bank'],
+            ]],
+            ['kana' => 'ATM', 'romaji' => 'eeteemu', 'meanings' => [
+                'en' => ['ATM'],
+                'nl' => ['geldautomaat'],
+            ]],
+            ['kana' => 'こうざ', 'romaji' => 'kouza', 'meanings' => [
+                'en' => ['bank account'],
+                'nl' => ['bankrekening'],
+            ]],
+            ['kana' => 'キャッシュカード', 'romaji' => 'kyashu kaado', 'meanings' => [
+                'en' => ['cash card', 'bank card'],
+                'nl' => ['pinpas', 'bankkaart'],
+            ]],
+            ['kana' => 'てがみ', 'romaji' => 'tegami', 'meanings' => [
+                'en' => ['letter'],
+                'nl' => ['brief'],
+            ]],
+            ['kana' => 'にゅうがくしょうめいしょ', 'romaji' => 'nyuugaku shoumeisho', 'meanings' => [
+                'en' => ['school enrollment certificate'],
+                'nl' => ['bewijs van schoolinschrijving'],
+            ]],
+            ['kana' => 'がくせいしょう', 'romaji' => 'gakuseisho', 'meanings' => [
+                'en' => ['student ID'],
+                'nl' => ['studentenkaart'],
+            ]],
+            ['kana' => 'こうふしょ', 'romaji' => 'koufusho', 'meanings' => [
+                'en' => ['official receipt', 'issue slip'],
+                'nl' => ['officieel ontvangstbewijs', 'uitgiftebon'],
+            ]],
+            ['kana' => 'じゅうみんひょう', 'romaji' => 'juuminhyou', 'meanings' => [
+                'en' => ['residence certificate'],
+                'nl' => ['inwonersverklaring'],
+            ]],
+            ['kana' => 'せいふく', 'romaji' => 'seifuku', 'meanings' => [
+                'en' => ['uniform'],
+                'nl' => ['uniform'],
+            ]],
+            ['kana' => 'こくみんけんこうほけん', 'romaji' => 'kokumin kenkou hoken', 'meanings' => [
+                'en' => ['national health insurance'],
+                'nl' => ['nationale ziektekostenverzekering'],
+            ]],
         ]);
 
         // Counting
