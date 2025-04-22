@@ -3275,338 +3275,1062 @@ class ItemsTableSeeder extends Seeder
 
         // People
         $this->seedCategory('counting-people', 'People', [
-            ['kana' => 'ひとり', 'romaji' => 'hitori', 'meanings' => ['1 person']],
-            ['kana' => 'ふたり', 'romaji' => 'futari', 'meanings' => ['2 people']],
-            ['kana' => 'さんにん', 'romaji' => 'sannin', 'meanings' => ['3 people']],
-            ['kana' => 'よにん', 'romaji' => 'yonin', 'meanings' => ['4 people']],
-            ['kana' => 'ごにん', 'romaji' => 'gonin', 'meanings' => ['5 people']],
-            ['kana' => 'ろくにん', 'romaji' => 'rokunin', 'meanings' => ['6 people']],
-            ['kana' => 'ななにん', 'romaji' => 'nananin', 'meanings' => ['7 people', 'しちにん']],
-            ['kana' => 'はちにん', 'romaji' => 'hachinin', 'meanings' => ['8 people']],
-            ['kana' => 'きゅうにん', 'romaji' => 'kyuunin', 'meanings' => ['9 people']],
-            ['kana' => 'じゅうにん', 'romaji' => 'juunin', 'meanings' => ['10 people']],
+            ['kana' => 'ひとり', 'romaji' => 'hitori', 'meanings' => [
+                'en' => ['1 person'],
+                'nl' => ['1 persoon'],
+            ]],
+            ['kana' => 'ふたり', 'romaji' => 'futari', 'meanings' => [
+                'en' => ['2 people'],
+                'nl' => ['2 personen'],
+            ]],
+            ['kana' => 'さんにん', 'romaji' => 'sannin', 'meanings' => [
+                'en' => ['3 people'],
+                'nl' => ['3 personen'],
+            ]],
+            ['kana' => 'よにん', 'romaji' => 'yonin', 'meanings' => [
+                'en' => ['4 people'],
+                'nl' => ['4 personen'],
+            ]],
+            ['kana' => 'ごにん', 'romaji' => 'gonin', 'meanings' => [
+                'en' => ['5 people'],
+                'nl' => ['5 personen'],
+            ]],
+            ['kana' => 'ろくにん', 'romaji' => 'rokunin', 'meanings' => [
+                'en' => ['6 people'],
+                'nl' => ['6 personen'],
+            ]],
+            ['kana' => 'ななにん', 'romaji' => 'nananin', 'meanings' => [
+                'en' => ['7 people'],
+                'nl' => ['7 personen'],
+            ]],
+            ['kana' => 'はちにん', 'romaji' => 'hachinin', 'meanings' => [
+                'en' => ['8 people'],
+                'nl' => ['8 personen'],
+            ]],
+            ['kana' => 'きゅうにん', 'romaji' => 'kyuunin', 'meanings' => [
+                'en' => ['9 people'],
+                'nl' => ['9 personen'],
+            ]],
+            ['kana' => 'じゅうにん', 'romaji' => 'juunin', 'meanings' => [
+                'en' => ['10 people'],
+                'nl' => ['10 personen'],
+            ]],
         ]);
 
         // Age
         $this->seedCategory('counting-age', 'Age', [
-            ['kana' => 'いっさい', 'romaji' => 'issai', 'meanings' => ['1 year old']],
-            ['kana' => 'にさい', 'romaji' => 'nisai', 'meanings' => ['2 years old']],
-            ['kana' => 'さんさい', 'romaji' => 'sansai', 'meanings' => ['3 years old']],
-            ['kana' => 'よんさい', 'romaji' => 'yonsai', 'meanings' => ['4 years old']],
-            ['kana' => 'ごさい', 'romaji' => 'gosai', 'meanings' => ['5 years old']],
-            ['kana' => 'ろくさい', 'romaji' => 'rokusai', 'meanings' => ['6 years old']],
-            ['kana' => 'ななさい', 'romaji' => 'nanasai', 'meanings' => ['7 years old']],
-            ['kana' => 'はっさい', 'romaji' => 'hassai', 'meanings' => ['8 years old']],
-            ['kana' => 'きゅうさい', 'romaji' => 'kyuusai', 'meanings' => ['9 years old']],
-            ['kana' => 'じゅっさい', 'romaji' => 'jussai', 'meanings' => ['10 years old', 'じっさい']],
-            ['kana' => 'じゅういっさい', 'romaji' => 'juuissai', 'meanings' => ['11 years old']],
-            ['kana' => 'じゅうにさい', 'romaji' => 'juunisai', 'meanings' => ['12 years old']],
-            ['kana' => 'じゅうさんさい', 'romaji' => 'juusansai', 'meanings' => ['13 years old']],
-            ['kana' => 'じゅうよんさい', 'romaji' => 'juuyonsai', 'meanings' => ['14 years old']],
-            ['kana' => 'じゅうごさい', 'romaji' => 'juugosai', 'meanings' => ['15 years old']],
-            ['kana' => 'じゅうろくさい', 'romaji' => 'juurokusai', 'meanings' => ['16 years old']],
-            ['kana' => 'じゅうななさい', 'romaji' => 'juunanasai', 'meanings' => ['17 years old']],
-            ['kana' => 'じゅうはっさい', 'romaji' => 'juuhassai', 'meanings' => ['18 years old']],
-            ['kana' => 'じゅうきゅうさい', 'romaji' => 'juukyuusai', 'meanings' => ['19 years old']],
-            ['kana' => 'はたち', 'romaji' => 'hatachi', 'meanings' => ['20 years old']],
+            ['kana' => 'いっさい', 'romaji' => 'issai', 'meanings' => [
+                'en' => ['1 year old'],
+                'nl' => ['1 jaar oud'],
+            ]],
+            ['kana' => 'にさい', 'romaji' => 'nisai', 'meanings' => [
+                'en' => ['2 years old'],
+                'nl' => ['2 jaar oud'],
+            ]],
+            ['kana' => 'さんさい', 'romaji' => 'sansai', 'meanings' => [
+                'en' => ['3 years old'],
+                'nl' => ['3 jaar oud'],
+            ]],
+            ['kana' => 'よんさい', 'romaji' => 'yonsai', 'meanings' => [
+                'en' => ['4 years old'],
+                'nl' => ['4 jaar oud'],
+            ]],
+            ['kana' => 'ごさい', 'romaji' => 'gosai', 'meanings' => [
+                'en' => ['5 years old'],
+                'nl' => ['5 jaar oud'],
+            ]],
+            ['kana' => 'ろくさい', 'romaji' => 'rokusai', 'meanings' => [
+                'en' => ['6 years old'],
+                'nl' => ['6 jaar oud'],
+            ]],
+            ['kana' => 'ななさい', 'romaji' => 'nanasai', 'meanings' => [
+                'en' => ['7 years old'],
+                'nl' => ['7 jaar oud'],
+            ]],
+            ['kana' => 'はっさい', 'romaji' => 'hassai', 'meanings' => [
+                'en' => ['8 years old'],
+                'nl' => ['8 jaar oud'],
+            ]],
+            ['kana' => 'きゅうさい', 'romaji' => 'kyuusai', 'meanings' => [
+                'en' => ['9 years old'],
+                'nl' => ['9 jaar oud'],
+            ]],
+            ['kana' => 'じゅっさい', 'romaji' => 'jussai', 'meanings' => [
+                'en' => ['10 years old'],
+                'nl' => ['10 jaar oud'],
+            ]],
+            ['kana' => 'じゅういっさい', 'romaji' => 'juuissai', 'meanings' => [
+                'en' => ['11 years old'],
+                'nl' => ['11 jaar oud'],
+            ]],
+            ['kana' => 'じゅうにさい', 'romaji' => 'juunisai', 'meanings' => [
+                'en' => ['12 years old'],
+                'nl' => ['12 jaar oud'],
+            ]],
+            ['kana' => 'じゅうさんさい', 'romaji' => 'juusansai', 'meanings' => [
+                'en' => ['13 years old'],
+                'nl' => ['13 jaar oud'],
+            ]],
+            ['kana' => 'じゅうよんさい', 'romaji' => 'juuyonsai', 'meanings' => [
+                'en' => ['14 years old'],
+                'nl' => ['14 jaar oud'],
+            ]],
+            ['kana' => 'じゅうごさい', 'romaji' => 'juugosai', 'meanings' => [
+                'en' => ['15 years old'],
+                'nl' => ['15 jaar oud'],
+            ]],
+            ['kana' => 'じゅうろくさい', 'romaji' => 'juurokusai', 'meanings' => [
+                'en' => ['16 years old'],
+                'nl' => ['16 jaar oud'],
+            ]],
+            ['kana' => 'じゅうななさい', 'romaji' => 'juunanasai', 'meanings' => [
+                'en' => ['17 years old'],
+                'nl' => ['17 jaar oud'],
+            ]],
+            ['kana' => 'じゅうはっさい', 'romaji' => 'juuhassai', 'meanings' => [
+                'en' => ['18 years old'],
+                'nl' => ['18 jaar oud'],
+            ]],
+            ['kana' => 'じゅうきゅうさい', 'romaji' => 'juukyuusai', 'meanings' => [
+                'en' => ['19 years old'],
+                'nl' => ['19 jaar oud'],
+            ]],
+            ['kana' => 'はたち', 'romaji' => 'hatachi', 'meanings' => [
+                'en' => ['20 years old'],
+                'nl' => ['20 jaar oud'],
+            ]],
         ]);
 
         // Hours
         $this->seedCategory('counting-hours', 'Hours', [
-            ['kana' => 'れいじ', 'romaji' => 'rei ji', 'meanings' => ['0 o\'clock']],
-            ['kana' => 'いちじ', 'romaji' => 'ichi ji', 'meanings' => ['1 o\'clock']],
-            ['kana' => 'にじ', 'romaji' => 'ni ji', 'meanings' => ['2 o\'clock']],
-            ['kana' => 'さんじ', 'romaji' => 'san ji', 'meanings' => ['3 o\'clock']],
-            ['kana' => 'よじ', 'romaji' => 'yo ji', 'meanings' => ['4 o\'clock']],
-            ['kana' => 'ごじ', 'romaji' => 'go ji', 'meanings' => ['5 o\'clock']],
-            ['kana' => 'ろくじ', 'romaji' => 'roku ji', 'meanings' => ['6 o\'clock']],
-            ['kana' => 'しちじ', 'romaji' => 'shichi ji', 'meanings' => ['7 o\'clock']],
-            ['kana' => 'はちじ', 'romaji' => 'hachi ji', 'meanings' => ['8 o\'clock']],
-            ['kana' => 'くじ', 'romaji' => 'ku ji', 'meanings' => ['9 o\'clock']],
-            ['kana' => 'じゅうじ', 'romaji' => 'juu ji', 'meanings' => ['10 o\'clock']],
-            ['kana' => 'じゅういちじ', 'romaji' => 'juuichi ji', 'meanings' => ['11 o\'clock']],
-            ['kana' => 'じゅうにじ', 'romaji' => 'juuni ji', 'meanings' => ['12 o\'clock']],
-            ['kana' => 'じゅうさんじ', 'romaji' => 'juusan ji', 'meanings' => ['13 o\'clock']],
-            ['kana' => 'じゅうよじ', 'romaji' => 'juuyo ji', 'meanings' => ['14 o\'clock']],
-            ['kana' => 'じゅうごじ', 'romaji' => 'juugo ji', 'meanings' => ['15 o\'clock']],
-            ['kana' => 'じゅうろくじ', 'romaji' => 'juuroku ji', 'meanings' => ['16 o\'clock']],
-            ['kana' => 'じゅうしちじ', 'romaji' => 'juushichi ji', 'meanings' => ['17 o\'clock']],
-            ['kana' => 'じゅうはちじ', 'romaji' => 'juuhachi ji', 'meanings' => ['18 o\'clock']],
-            ['kana' => 'じゅうくじ', 'romaji' => 'juuku ji', 'meanings' => ['19 o\'clock']],
-            ['kana' => 'にじゅうじ', 'romaji' => 'nijuu ji', 'meanings' => ['20 o\'clock']],
-            ['kana' => 'にじゅういちじ', 'romaji' => 'nijuuichi ji', 'meanings' => ['21 o\'clock']],
-            ['kana' => 'にじゅうにじ', 'romaji' => 'nijuuni ji', 'meanings' => ['22 o\'clock']],
-            ['kana' => 'にじゅうさんじ', 'romaji' => 'nijuusan ji', 'meanings' => ['23 o\'clock']],
-            ['kana' => 'にじゅうよじ', 'romaji' => 'nijuuyo ji', 'meanings' => ['24 o\'clock']],
+            ['kana' => 'れいじ', 'romaji' => 'rei ji', 'meanings' => [
+                'en' => ['0 o\'clock'],
+                'nl' => ['0 uur'],
+            ]],
+            ['kana' => 'いちじ', 'romaji' => 'ichi ji', 'meanings' => [
+                'en' => ['1 o\'clock'],
+                'nl' => ['1 uur'],
+            ]],
+            ['kana' => 'にじ', 'romaji' => 'ni ji', 'meanings' => [
+                'en' => ['2 o\'clock'],
+                'nl' => ['2 uur'],
+            ]],
+            ['kana' => 'さんじ', 'romaji' => 'san ji', 'meanings' => [
+                'en' => ['3 o\'clock'],
+                'nl' => ['3 uur'],
+            ]],
+            ['kana' => 'よじ', 'romaji' => 'yo ji', 'meanings' => [
+                'en' => ['4 o\'clock'],
+                'nl' => ['4 uur'],
+            ]],
+            ['kana' => 'ごじ', 'romaji' => 'go ji', 'meanings' => [
+                'en' => ['5 o\'clock'],
+                'nl' => ['5 uur'],
+            ]],
+            ['kana' => 'ろくじ', 'romaji' => 'roku ji', 'meanings' => [
+                'en' => ['6 o\'clock'],
+                'nl' => ['6 uur'],
+            ]],
+            ['kana' => 'しちじ', 'romaji' => 'shichi ji', 'meanings' => [
+                'en' => ['7 o\'clock'],
+                'nl' => ['7 uur'],
+            ]],
+            ['kana' => 'はちじ', 'romaji' => 'hachi ji', 'meanings' => [
+                'en' => ['8 o\'clock'],
+                'nl' => ['8 uur'],
+            ]],
+            ['kana' => 'くじ', 'romaji' => 'ku ji', 'meanings' => [
+                'en' => ['9 o\'clock'],
+                'nl' => ['9 uur'],
+            ]],
+            ['kana' => 'じゅうじ', 'romaji' => 'juu ji', 'meanings' => [
+                'en' => ['10 o\'clock'],
+                'nl' => ['10 uur'],
+            ]],
+            ['kana' => 'じゅういちじ', 'romaji' => 'juuichi ji', 'meanings' => [
+                'en' => ['11 o\'clock'],
+                'nl' => ['11 uur'],
+            ]],
+            ['kana' => 'じゅうにじ', 'romaji' => 'juuni ji', 'meanings' => [
+                'en' => ['12 o\'clock'],
+                'nl' => ['12 uur'],
+            ]],
+            ['kana' => 'じゅうさんじ', 'romaji' => 'juusan ji', 'meanings' => [
+                'en' => ['13 o\'clock'],
+                'nl' => ['13 uur'],
+            ]],
+            ['kana' => 'じゅうよじ', 'romaji' => 'juuyo ji', 'meanings' => [
+                'en' => ['14 o\'clock'],
+                'nl' => ['14 uur'],
+            ]],
+            ['kana' => 'じゅうごじ', 'romaji' => 'juugo ji', 'meanings' => [
+                'en' => ['15 o\'clock'],
+                'nl' => ['15 uur'],
+            ]],
+            ['kana' => 'じゅうろくじ', 'romaji' => 'juuroku ji', 'meanings' => [
+                'en' => ['16 o\'clock'],
+                'nl' => ['16 uur'],
+            ]],
+            ['kana' => 'じゅうしちじ', 'romaji' => 'juushichi ji', 'meanings' => [
+                'en' => ['17 o\'clock'],
+                'nl' => ['17 uur'],
+            ]],
+            ['kana' => 'じゅうはちじ', 'romaji' => 'juuhachi ji', 'meanings' => [
+                'en' => ['18 o\'clock'],
+                'nl' => ['18 uur'],
+            ]],
+            ['kana' => 'じゅうくじ', 'romaji' => 'juuku ji', 'meanings' => [
+                'en' => ['19 o\'clock'],
+                'nl' => ['19 uur'],
+            ]],
+            ['kana' => 'にじゅうじ', 'romaji' => 'nijuu ji', 'meanings' => [
+                'en' => ['20 o\'clock'],
+                'nl' => ['20 uur'],
+            ]],
+            ['kana' => 'にじゅういちじ', 'romaji' => 'nijuuichi ji', 'meanings' => [
+                'en' => ['21 o\'clock'],
+                'nl' => ['21 uur'],
+            ]],
+            ['kana' => 'にじゅうにじ', 'romaji' => 'nijuuni ji', 'meanings' => [
+                'en' => ['22 o\'clock'],
+                'nl' => ['22 uur'],
+            ]],
+            ['kana' => 'にじゅうさんじ', 'romaji' => 'nijuusan ji', 'meanings' => [
+                'en' => ['23 o\'clock'],
+                'nl' => ['23 uur'],
+            ]],
+            ['kana' => 'にじゅうよじ', 'romaji' => 'nijuuyo ji', 'meanings' => [
+                'en' => ['24 o\'clock'],
+                'nl' => ['24 uur'],
+            ]],
         ]);
 
         // Minutes
         $this->seedCategory('counting-minutes', 'Minutes', [
-            ['kana' => 'いっぷん', 'romaji' => 'ippun', 'meanings' => ['1 minute']],
-            ['kana' => 'にふん', 'romaji' => 'ni fun', 'meanings' => ['2 minutes']],
-            ['kana' => 'さんぷん', 'romaji' => 'san pun', 'meanings' => ['3 minutes']],
-            ['kana' => 'よんぷん', 'romaji' => 'yon pun', 'meanings' => ['4 minutes']],
-            ['kana' => 'ごふん', 'romaji' => 'go fun', 'meanings' => ['5 minutes']],
-            ['kana' => 'ろっぷん', 'romaji' => 'roppun', 'meanings' => ['6 minutes']],
-            ['kana' => 'ななふん', 'romaji' => 'nana fun', 'meanings' => ['7 minutes']],
-            ['kana' => 'はっぷん', 'romaji' => 'happun', 'meanings' => ['8 minutes']],
-            ['kana' => 'きゅうふん', 'romaji' => 'kyuu fun', 'meanings' => ['9 minutes']],
-            ['kana' => 'じゅっぷん', 'romaji' => 'juppun', 'meanings' => ['10 minutes']],
-            ['kana' => 'じゅうごふん', 'romaji' => 'juugo fun', 'meanings' => ['15 minutes']],
-            ['kana' => 'にじゅっぷん', 'romaji' => 'nijuppun', 'meanings' => ['20 minutes']],
-            ['kana' => 'にじゅうごふん', 'romaji' => 'nijuugo fun', 'meanings' => ['25 minutes']],
-            ['kana' => 'さんじゅっぷん', 'romaji' => 'sanjuppun', 'meanings' => ['30 minutes']],
-            ['kana' => 'さんじゅうごふん', 'romaji' => 'sanjuugo fun', 'meanings' => ['35 minutes']],
-            ['kana' => 'よんじゅっぷん', 'romaji' => 'yonjuppun', 'meanings' => ['40 minutes']],
-            ['kana' => 'よんじゅうごふん', 'romaji' => 'yonjuugo fun', 'meanings' => ['45 minutes']],
-            ['kana' => 'ごじゅっぷん', 'romaji' => 'gojuppun', 'meanings' => ['50 minutes']],
-            ['kana' => 'ごじゅうごふん', 'romaji' => 'gojuugo fun', 'meanings' => ['55 minutes']],
-            ['kana' => 'ろくじゅっぷん', 'romaji' => 'rokujuppun', 'meanings' => ['60 minutes']],
+            ['kana' => 'いっぷん', 'romaji' => 'ippun', 'meanings' => [
+                'en' => ['1 minute'],
+                'nl' => ['1 minuut'],
+            ]],
+            ['kana' => 'にふん', 'romaji' => 'ni fun', 'meanings' => [
+                'en' => ['2 minutes'],
+                'nl' => ['2 minuten'],
+            ]],
+            ['kana' => 'さんぷん', 'romaji' => 'san pun', 'meanings' => [
+                'en' => ['3 minutes'],
+                'nl' => ['3 minuten'],
+            ]],
+            ['kana' => 'よんぷん', 'romaji' => 'yon pun', 'meanings' => [
+                'en' => ['4 minutes'],
+                'nl' => ['4 minuten'],
+            ]],
+            ['kana' => 'ごふん', 'romaji' => 'go fun', 'meanings' => [
+                'en' => ['5 minutes'],
+                'nl' => ['5 minuten'],
+            ]],
+            ['kana' => 'ろっぷん', 'romaji' => 'roppun', 'meanings' => [
+                'en' => ['6 minutes'],
+                'nl' => ['6 minuten'],
+            ]],
+            ['kana' => 'ななふん', 'romaji' => 'nana fun', 'meanings' => [
+                'en' => ['7 minutes'],
+                'nl' => ['7 minuten'],
+            ]],
+            ['kana' => 'はっぷん', 'romaji' => 'happun', 'meanings' => [
+                'en' => ['8 minutes'],
+                'nl' => ['8 minuten'],
+            ]],
+            ['kana' => 'きゅうふん', 'romaji' => 'kyuu fun', 'meanings' => [
+                'en' => ['9 minutes'],
+                'nl' => ['9 minuten'],
+            ]],
+            ['kana' => 'じゅっぷん', 'romaji' => 'juppun', 'meanings' => [
+                'en' => ['10 minutes'],
+                'nl' => ['10 minuten'],
+            ]],
+            ['kana' => 'じゅうごふん', 'romaji' => 'juugo fun', 'meanings' => [
+                'en' => ['15 minutes'],
+                'nl' => ['15 minuten'],
+            ]],
+            ['kana' => 'にじゅっぷん', 'romaji' => 'nijuppun', 'meanings' => [
+                'en' => ['20 minutes'],
+                'nl' => ['20 minuten'],
+            ]],
+            ['kana' => 'にじゅうごふん', 'romaji' => 'nijuugo fun', 'meanings' => [
+                'en' => ['25 minutes'],
+                'nl' => ['25 minuten'],
+            ]],
+            ['kana' => 'さんじゅっぷん', 'romaji' => 'sanjuppun', 'meanings' => [
+                'en' => ['30 minutes'],
+                'nl' => ['30 minuten'],
+            ]],
+            ['kana' => 'さんじゅうごふん', 'romaji' => 'sanjuugo fun', 'meanings' => [
+                'en' => ['35 minutes'],
+                'nl' => ['35 minuten'],
+            ]],
+            ['kana' => 'よんじゅっぷん', 'romaji' => 'yonjuppun', 'meanings' => [
+                'en' => ['40 minutes'],
+                'nl' => ['40 minuten'],
+            ]],
+            ['kana' => 'よんじゅうごふん', 'romaji' => 'yonjuugo fun', 'meanings' => [
+                'en' => ['45 minutes'],
+                'nl' => ['45 minuten'],
+            ]],
+            ['kana' => 'ごじゅっぷん', 'romaji' => 'gojuppun', 'meanings' => [
+                'en' => ['50 minutes'],
+                'nl' => ['50 minuten'],
+            ]],
+            ['kana' => 'ごじゅうごふん', 'romaji' => 'gojuugo fun', 'meanings' => [
+                'en' => ['55 minutes'],
+                'nl' => ['55 minuten'],
+            ]],
+            ['kana' => 'ろくじゅっぷん', 'romaji' => 'rokujuppun', 'meanings' => [
+                'en' => ['60 minutes'],
+                'nl' => ['60 minuten'],
+            ]],
         ]);
 
         // Seconds
         $this->seedCategory('counting-seconds', 'Seconds', [
-            ['kana' => 'いちびょう', 'romaji' => 'ichi byou', 'meanings' => ['1 second']],
-            ['kana' => 'にびょう', 'romaji' => 'ni byou', 'meanings' => ['2 seconds']],
-            ['kana' => 'さんびょう', 'romaji' => 'san byou', 'meanings' => ['3 seconds']],
-            ['kana' => 'よんびょう', 'romaji' => 'yon byou', 'meanings' => ['4 seconds']],
-            ['kana' => 'ごびょう', 'romaji' => 'go byou', 'meanings' => ['5 seconds']],
-            ['kana' => 'ろくびょう', 'romaji' => 'roku byou', 'meanings' => ['6 seconds']],
-            ['kana' => 'ななびょう', 'romaji' => 'nana byou', 'meanings' => ['7 seconds']],
-            ['kana' => 'はちびょう', 'romaji' => 'hachi byou', 'meanings' => ['8 seconds']],
-            ['kana' => 'きゅうびょう', 'romaji' => 'kyuu byou', 'meanings' => ['9 seconds']],
-            ['kana' => 'じゅうびょう', 'romaji' => 'juu byou', 'meanings' => ['10 seconds']],
-            ['kana' => 'じゅうごびょう', 'romaji' => 'juugo byou', 'meanings' => ['15 seconds']],
-            ['kana' => 'さんじゅっびょう', 'romaji' => 'sanjuppyou', 'meanings' => ['30 seconds']],
-            ['kana' => 'よんじゅうごびょう', 'romaji' => 'yonjuugo byou', 'meanings' => ['45 seconds']],
-            ['kana' => 'ろくじゅっびょう', 'romaji' => 'rokujuppyou', 'meanings' => ['60 seconds']],
+            ['kana' => 'いちびょう', 'romaji' => 'ichi byou', 'meanings' => [
+                'en' => ['1 second'],
+                'nl' => ['1 seconde'],
+            ]],
+            ['kana' => 'にびょう', 'romaji' => 'ni byou', 'meanings' => [
+                'en' => ['2 seconds'],
+                'nl' => ['2 seconden'],
+            ]],
+            ['kana' => 'さんびょう', 'romaji' => 'san byou', 'meanings' => [
+                'en' => ['3 seconds'],
+                'nl' => ['3 seconden'],
+            ]],
+            ['kana' => 'よんびょう', 'romaji' => 'yon byou', 'meanings' => [
+                'en' => ['4 seconds'],
+                'nl' => ['4 seconden'],
+            ]],
+            ['kana' => 'ごびょう', 'romaji' => 'go byou', 'meanings' => [
+                'en' => ['5 seconds'],
+                'nl' => ['5 seconden'],
+            ]],
+            ['kana' => 'ろくびょう', 'romaji' => 'roku byou', 'meanings' => [
+                'en' => ['6 seconds'],
+                'nl' => ['6 seconden'],
+            ]],
+            ['kana' => 'ななびょう', 'romaji' => 'nana byou', 'meanings' => [
+                'en' => ['7 seconds'],
+                'nl' => ['7 seconden'],
+            ]],
+            ['kana' => 'はちびょう', 'romaji' => 'hachi byou', 'meanings' => [
+                'en' => ['8 seconds'],
+                'nl' => ['8 seconden'],
+            ]],
+            ['kana' => 'きゅうびょう', 'romaji' => 'kyuu byou', 'meanings' => [
+                'en' => ['9 seconds'],
+                'nl' => ['9 seconden'],
+            ]],
+            ['kana' => 'じゅうびょう', 'romaji' => 'juu byou', 'meanings' => [
+                'en' => ['10 seconds'],
+                'nl' => ['10 seconden'],
+            ]],
+            ['kana' => 'じゅうごびょう', 'romaji' => 'juugo byou', 'meanings' => [
+                'en' => ['15 seconds'],
+                'nl' => ['15 seconden'],
+            ]],
+            ['kana' => 'さんじゅっびょう', 'romaji' => 'sanjuppyou', 'meanings' => [
+                'en' => ['30 seconds'],
+                'nl' => ['30 seconden'],
+            ]],
+            ['kana' => 'よんじゅうごびょう', 'romaji' => 'yonjuugo byou', 'meanings' => [
+                'en' => ['45 seconds'],
+                'nl' => ['45 seconden'],
+            ]],
+            ['kana' => 'ろくじゅっびょう', 'romaji' => 'rokujuppyou', 'meanings' => [
+                'en' => ['60 seconds'],
+                'nl' => ['60 seconden'],
+            ]],
         ]);
 
         // Days
         $this->seedCategory('counting-days', 'Days', [
-            ['kana' => 'ついたち', 'romaji' => 'tsuitachi', 'meanings' => ['1st']],
-            ['kana' => 'ふつか', 'romaji' => 'futsuka', 'meanings' => ['2nd']],
-            ['kana' => 'みっか', 'romaji' => 'mikka', 'meanings' => ['3rd']],
-            ['kana' => 'よっか', 'romaji' => 'yokka', 'meanings' => ['4th']],
-            ['kana' => 'いつか', 'romaji' => 'itsuka', 'meanings' => ['5th']],
-            ['kana' => 'むいか', 'romaji' => 'muika', 'meanings' => ['6th']],
-            ['kana' => 'なのか', 'romaji' => 'nanoka', 'meanings' => ['7th']],
-            ['kana' => 'ようか', 'romaji' => 'youka', 'meanings' => ['8th']],
-            ['kana' => 'ここのか', 'romaji' => 'kokonoka', 'meanings' => ['9th']],
-            ['kana' => 'とおか', 'romaji' => 'tooka', 'meanings' => ['10th']],
-            ['kana' => 'じゅういちにち', 'romaji' => 'juuichi nichi', 'meanings' => ['11th']],
-            ['kana' => 'じゅうににち', 'romaji' => 'juuni nichi', 'meanings' => ['12th']],
-            ['kana' => 'じゅうさんにち', 'romaji' => 'juusan nichi', 'meanings' => ['13th']],
-            ['kana' => 'じゅうよっか', 'romaji' => 'juuyokka', 'meanings' => ['14th']],
-            ['kana' => 'じゅうごにち', 'romaji' => 'juugo nichi', 'meanings' => ['15th']],
-            ['kana' => 'じゅうろくにち', 'romaji' => 'juuroku nichi', 'meanings' => ['16th']],
-            ['kana' => 'じゅうしちにち', 'romaji' => 'juushichi nichi', 'meanings' => ['17th']],
-            ['kana' => 'じゅうはちにち', 'romaji' => 'juuhachi nichi', 'meanings' => ['18th']],
-            ['kana' => 'じゅうくにち', 'romaji' => 'juuku nichi', 'meanings' => ['19th']],
-            ['kana' => 'はつか', 'romaji' => 'hatsuka', 'meanings' => ['20th']],
-            ['kana' => 'にじゅういちにち', 'romaji' => 'nijuuichi nichi', 'meanings' => ['21st']],
-            ['kana' => 'にじゅうににち', 'romaji' => 'nijuuni nichi', 'meanings' => ['22nd']],
-            ['kana' => 'にじゅうさんにち', 'romaji' => 'nijuusan nichi', 'meanings' => ['23rd']],
-            ['kana' => 'にじゅうよっか', 'romaji' => 'nijuuyokka', 'meanings' => ['24th']],
-            ['kana' => 'にじゅうごにち', 'romaji' => 'nijuugo nichi', 'meanings' => ['25th']],
-            ['kana' => 'にじゅうろくにち', 'romaji' => 'nijuuroku nichi', 'meanings' => ['26th']],
-            ['kana' => 'にじゅうしちにち', 'romaji' => 'nijuushichi nichi', 'meanings' => ['27th']],
-            ['kana' => 'にじゅうはちにち', 'romaji' => 'nijuuhachi nichi', 'meanings' => ['28th']],
-            ['kana' => 'にじゅうくにち', 'romaji' => 'nijuuku nichi', 'meanings' => ['29th']],
-            ['kana' => 'さんじゅうにち', 'romaji' => 'sanjuu nichi', 'meanings' => ['30th']],
-            ['kana' => 'さんじゅういちにち', 'romaji' => 'sanjuuichi nichi', 'meanings' => ['31st']],
+            ['kana' => 'ついたち', 'romaji' => 'tsuitachi', 'meanings' => [
+                'en' => ['1st'],
+                'nl' => ['1e'],
+            ]],
+            ['kana' => 'ふつか', 'romaji' => 'futsuka', 'meanings' => [
+                'en' => ['2nd'],
+                'nl' => ['2e'],
+            ]],
+            ['kana' => 'みっか', 'romaji' => 'mikka', 'meanings' => [
+                'en' => ['3rd'],
+                'nl' => ['3e'],
+            ]],
+            ['kana' => 'よっか', 'romaji' => 'yokka', 'meanings' => [
+                'en' => ['4th'],
+                'nl' => ['4e'],
+            ]],
+            ['kana' => 'いつか', 'romaji' => 'itsuka', 'meanings' => [
+                'en' => ['5th'],
+                'nl' => ['5e'],
+            ]],
+            ['kana' => 'むいか', 'romaji' => 'muika', 'meanings' => [
+                'en' => ['6th'],
+                'nl' => ['6e'],
+            ]],
+            ['kana' => 'なのか', 'romaji' => 'nanoka', 'meanings' => [
+                'en' => ['7th'],
+                'nl' => ['7e'],
+            ]],
+            ['kana' => 'ようか', 'romaji' => 'youka', 'meanings' => [
+                'en' => ['8th'],
+                'nl' => ['8e'],
+            ]],
+            ['kana' => 'ここのか', 'romaji' => 'kokonoka', 'meanings' => [
+                'en' => ['9th'],
+                'nl' => ['9e'],
+            ]],
+            ['kana' => 'とおか', 'romaji' => 'tooka', 'meanings' => [
+                'en' => ['10th'],
+                'nl' => ['10e'],
+            ]],
+            ['kana' => 'じゅういちにち', 'romaji' => 'juuichi nichi', 'meanings' => [
+                'en' => ['11th'],
+                'nl' => ['11e'],
+            ]],
+            ['kana' => 'じゅうににち', 'romaji' => 'juuni nichi', 'meanings' => [
+                'en' => ['12th'],
+                'nl' => ['12e'],
+            ]],
+            ['kana' => 'じゅうさんにち', 'romaji' => 'juusan nichi', 'meanings' => [
+                'en' => ['13th'],
+                'nl' => ['13e'],
+            ]],
+            ['kana' => 'じゅうよっか', 'romaji' => 'juuyokka', 'meanings' => [
+                'en' => ['14th'],
+                'nl' => ['14e'],
+            ]],
+            ['kana' => 'じゅうごにち', 'romaji' => 'juugo nichi', 'meanings' => [
+                'en' => ['15th'],
+                'nl' => ['15e'],
+            ]],
+            ['kana' => 'じゅうろくにち', 'romaji' => 'juuroku nichi', 'meanings' => [
+                'en' => ['16th'],
+                'nl' => ['16e'],
+            ]],
+            ['kana' => 'じゅうしちにち', 'romaji' => 'juushichi nichi', 'meanings' => [
+                'en' => ['17th'],
+                'nl' => ['17e'],
+            ]],
+            ['kana' => 'じゅうはちにち', 'romaji' => 'juuhachi nichi', 'meanings' => [
+                'en' => ['18th'],
+                'nl' => ['18e'],
+            ]],
+            ['kana' => 'じゅうくにち', 'romaji' => 'juuku nichi', 'meanings' => [
+                'en' => ['19th'],
+                'nl' => ['19e'],
+            ]],
+            ['kana' => 'はつか', 'romaji' => 'hatsuka', 'meanings' => [
+                'en' => ['20th'],
+                'nl' => ['20e'],
+            ]],
+            ['kana' => 'にじゅういちにち', 'romaji' => 'nijuuichi nichi', 'meanings' => [
+                'en' => ['21st'],
+                'nl' => ['21e'],
+            ]],
+            ['kana' => 'にじゅうににち', 'romaji' => 'nijuuni nichi', 'meanings' => [
+                'en' => ['22nd'],
+                'nl' => ['22e'],
+            ]],
+            ['kana' => 'にじゅうさんにち', 'romaji' => 'nijuusan nichi', 'meanings' => [
+                'en' => ['23rd'],
+                'nl' => ['23e'],
+            ]],
+            ['kana' => 'にじゅうよっか', 'romaji' => 'nijuuyokka', 'meanings' => [
+                'en' => ['24th'],
+                'nl' => ['24e'],
+            ]],
+            ['kana' => 'にじゅうごにち', 'romaji' => 'nijuugo nichi', 'meanings' => [
+                'en' => ['25th'],
+                'nl' => ['25e'],
+            ]],
+            ['kana' => 'にじゅうろくにち', 'romaji' => 'nijuuroku nichi', 'meanings' => [
+                'en' => ['26th'],
+                'nl' => ['26e'],
+            ]],
+            ['kana' => 'にじゅうしちにち', 'romaji' => 'nijuushichi nichi', 'meanings' => [
+                'en' => ['27th'],
+                'nl' => ['27e'],
+            ]],
+            ['kana' => 'にじゅうはちにち', 'romaji' => 'nijuuhachi nichi', 'meanings' => [
+                'en' => ['28th'],
+                'nl' => ['28e'],
+            ]],
+            ['kana' => 'にじゅうくにち', 'romaji' => 'nijuuku nichi', 'meanings' => [
+                'en' => ['29th'],
+                'nl' => ['29e'],
+            ]],
+            ['kana' => 'さんじゅうにち', 'romaji' => 'sanjuu nichi', 'meanings' => [
+                'en' => ['30th'],
+                'nl' => ['30e'],
+            ]],
+            ['kana' => 'さんじゅういちにち', 'romaji' => 'sanjuuichi nichi', 'meanings' => [
+                'en' => ['31st'],
+                'nl' => ['31e'],
+            ]],
         ]);
 
         // Weeks
         $this->seedCategory('counting-weeks', 'Weeks', [
-            ['kana' => 'いっしゅうかん', 'romaji' => 'isshuukan', 'meanings' => ['1 week']],
-            ['kana' => 'にしゅうかん', 'romaji' => 'nishuukan', 'meanings' => ['2 weeks']],
-            ['kana' => 'さんしゅうかん', 'romaji' => 'sanshuukan', 'meanings' => ['3 weeks']],
-            ['kana' => 'よんしゅうかん', 'romaji' => 'yonshuukan', 'meanings' => ['4 weeks']],
-            ['kana' => 'ごしゅうかん', 'romaji' => 'goshuukan', 'meanings' => ['5 weeks']],
-            ['kana' => 'ろくしゅうかん', 'romaji' => 'rokushuukan', 'meanings' => ['6 weeks']],
-            ['kana' => 'ななしゅうかん', 'romaji' => 'nanashuukan', 'meanings' => ['7 weeks']],
-            ['kana' => 'はっしゅうかん', 'romaji' => 'hasshuukan', 'meanings' => ['8 weeks']],
-            ['kana' => 'きゅうしゅうかん', 'romaji' => 'kyuushuukan', 'meanings' => ['9 weeks']],
-            ['kana' => 'じゅっしゅうかん', 'romaji' => 'jusshuukan', 'meanings' => ['10 weeks']],
-            ['kana' => 'じゅうにしゅうかん', 'romaji' => 'juunishuukan', 'meanings' => ['12 weeks']],
-            ['kana' => 'じゅうろくしゅうかん', 'romaji' => 'juurokushuukan', 'meanings' => ['16 weeks']],
-            ['kana' => 'にじゅっしゅうかん', 'romaji' => 'nijusshuukan', 'meanings' => ['20 weeks']],
+            ['kana' => 'いっしゅうかん', 'romaji' => 'isshuukan', 'meanings' => [
+                'en' => ['1 week'],
+                'nl' => ['1 week'],
+            ]],
+            ['kana' => 'にしゅうかん', 'romaji' => 'nishuukan', 'meanings' => [
+                'en' => ['2 weeks'],
+                'nl' => ['2 weken'],
+            ]],
+            ['kana' => 'さんしゅうかん', 'romaji' => 'sanshuukan', 'meanings' => [
+                'en' => ['3 weeks'],
+                'nl' => ['3 weken'],
+            ]],
+            ['kana' => 'よんしゅうかん', 'romaji' => 'yonshuukan', 'meanings' => [
+                'en' => ['4 weeks'],
+                'nl' => ['4 weken'],
+            ]],
+            ['kana' => 'ごしゅうかん', 'romaji' => 'goshuukan', 'meanings' => [
+                'en' => ['5 weeks'],
+                'nl' => ['5 weken'],
+            ]],
+            ['kana' => 'ろくしゅうかん', 'romaji' => 'rokushuukan', 'meanings' => [
+                'en' => ['6 weeks'],
+                'nl' => ['6 weken'],
+            ]],
+            ['kana' => 'ななしゅうかん', 'romaji' => 'nanashuukan', 'meanings' => [
+                'en' => ['7 weeks'],
+                'nl' => ['7 weken'],
+            ]],
+            ['kana' => 'はっしゅうかん', 'romaji' => 'hasshuukan', 'meanings' => [
+                'en' => ['8 weeks'],
+                'nl' => ['8 weken'],
+            ]],
+            ['kana' => 'きゅうしゅうかん', 'romaji' => 'kyuushuukan', 'meanings' => [
+                'en' => ['9 weeks'],
+                'nl' => ['9 weken'],
+            ]],
+            ['kana' => 'じゅっしゅうかん', 'romaji' => 'jusshuukan', 'meanings' => [
+                'en' => ['10 weeks'],
+                'nl' => ['10 weken'],
+            ]],
+            ['kana' => 'じゅうにしゅうかん', 'romaji' => 'juunishuukan', 'meanings' => [
+                'en' => ['12 weeks'],
+                'nl' => ['12 weken'],
+            ]],
+            ['kana' => 'じゅうろくしゅうかん', 'romaji' => 'juurokushuukan', 'meanings' => [
+                'en' => ['16 weeks'],
+                'nl' => ['16 weken'],
+            ]],
+            ['kana' => 'にじゅっしゅうかん', 'romaji' => 'nijusshuukan', 'meanings' => [
+                'en' => ['20 weeks'],
+                'nl' => ['20 weken'],
+            ]],
         ]);
 
         // Months
         $this->seedCategory('counting-months', 'Months', [
-            ['kana' => 'いっかげつ', 'romaji' => 'ikkagetsu', 'meanings' => ['1 month']],
-            ['kana' => 'にかげつ', 'romaji' => 'nikagetsu', 'meanings' => ['2 months']],
-            ['kana' => 'さんかげつ', 'romaji' => 'sankagetsu', 'meanings' => ['3 months']],
-            ['kana' => 'よんかげつ', 'romaji' => 'yonkagetsu', 'meanings' => ['4 months']],
-            ['kana' => 'ごかげつ', 'romaji' => 'gokagetsu', 'meanings' => ['5 months']],
-            ['kana' => 'ろっかげつ', 'romaji' => 'rokkagetsu', 'meanings' => ['6 months']],
-            ['kana' => 'ななかげつ', 'romaji' => 'nanakagetsu', 'meanings' => ['7 months']],
-            ['kana' => 'はちかげつ', 'romaji' => 'hachikagetsu', 'meanings' => ['8 months']],
-            ['kana' => 'きゅうかげつ', 'romaji' => 'kyuukagetsu', 'meanings' => ['9 months']],
-            ['kana' => 'じゅっかげつ', 'romaji' => 'jukkagetsu', 'meanings' => ['10 months']],
-            ['kana' => 'じゅういっかげつ', 'romaji' => 'juuikkagetsu', 'meanings' => ['11 months']],
-            ['kana' => 'じゅうにかげつ', 'romaji' => 'juunikagetsu', 'meanings' => ['12 months']],
-            ['kana' => 'じゅうはちかげつ', 'romaji' => 'juuhachikagetsu', 'meanings' => ['18 months']],
-            ['kana' => 'にじゅうよんかげつ', 'romaji' => 'nijuuyonkagetsu', 'meanings' => ['24 months']],
+            ['kana' => 'いっかげつ', 'romaji' => 'ikkagetsu', 'meanings' => [
+                'en' => ['1 month'],
+                'nl' => ['1 maand'],
+            ]],
+            ['kana' => 'にかげつ', 'romaji' => 'nikagetsu', 'meanings' => [
+                'en' => ['2 months'],
+                'nl' => ['2 maanden'],
+            ]],
+            ['kana' => 'さんかげつ', 'romaji' => 'sankagetsu', 'meanings' => [
+                'en' => ['3 months'],
+                'nl' => ['3 maanden'],
+            ]],
+            ['kana' => 'よんかげつ', 'romaji' => 'yonkagetsu', 'meanings' => [
+                'en' => ['4 months'],
+                'nl' => ['4 maanden'],
+            ]],
+            ['kana' => 'ごかげつ', 'romaji' => 'gokagetsu', 'meanings' => [
+                'en' => ['5 months'],
+                'nl' => ['5 maanden'],
+            ]],
+            ['kana' => 'ろっかげつ', 'romaji' => 'rokkagetsu', 'meanings' => [
+                'en' => ['6 months'],
+                'nl' => ['6 maanden'],
+            ]],
+            ['kana' => 'ななかげつ', 'romaji' => 'nanakagetsu', 'meanings' => [
+                'en' => ['7 months'],
+                'nl' => ['7 maanden'],
+            ]],
+            ['kana' => 'はちかげつ', 'romaji' => 'hachikagetsu', 'meanings' => [
+                'en' => ['8 months'],
+                'nl' => ['8 maanden'],
+            ]],
+            ['kana' => 'きゅうかげつ', 'romaji' => 'kyuukagetsu', 'meanings' => [
+                'en' => ['9 months'],
+                'nl' => ['9 maanden'],
+            ]],
+            ['kana' => 'じゅっかげつ', 'romaji' => 'jukkagetsu', 'meanings' => [
+                'en' => ['10 months'],
+                'nl' => ['10 maanden'],
+            ]],
+            ['kana' => 'じゅういっかげつ', 'romaji' => 'juuikkagetsu', 'meanings' => [
+                'en' => ['11 months'],
+                'nl' => ['11 maanden'],
+            ]],
+            ['kana' => 'じゅうにかげつ', 'romaji' => 'juunikagetsu', 'meanings' => [
+                'en' => ['12 months'],
+                'nl' => ['12 maanden'],
+            ]],
+            ['kana' => 'じゅうはちかげつ', 'romaji' => 'juuhachikagetsu', 'meanings' => [
+                'en' => ['18 months'],
+                'nl' => ['18 maanden'],
+            ]],
+            ['kana' => 'にじゅうよんかげつ', 'romaji' => 'nijuuyonkagetsu', 'meanings' => [
+                'en' => ['24 months'],
+                'nl' => ['24 maanden'],
+            ]],
         ]);
 
         // Years
         $this->seedCategory('counting-years', 'Years', [
-            ['kana' => 'いちねん', 'romaji' => 'ichi nen', 'meanings' => ['1 year']],
-            ['kana' => 'にねん', 'romaji' => 'ni nen', 'meanings' => ['2 years']],
-            ['kana' => 'さんねん', 'romaji' => 'san nen', 'meanings' => ['3 years']],
-            ['kana' => 'よねん', 'romaji' => 'yo nen', 'meanings' => ['4 years']],
-            ['kana' => 'ごねん', 'romaji' => 'go nen', 'meanings' => ['5 years']],
-            ['kana' => 'ろくねん', 'romaji' => 'roku nen', 'meanings' => ['6 years']],
-            ['kana' => 'ななねん', 'romaji' => 'nana nen', 'meanings' => ['7 years']],
-            ['kana' => 'はちねん', 'romaji' => 'hachi nen', 'meanings' => ['8 years']],
-            ['kana' => 'きゅうねん', 'romaji' => 'kyuu nen', 'meanings' => ['9 years']],
-            ['kana' => 'じゅうねん', 'romaji' => 'juu nen', 'meanings' => ['10 years']],
-            ['kana' => 'じゅうごねん', 'romaji' => 'juugo nen', 'meanings' => ['15 years']],
-            ['kana' => 'にじゅうねん', 'romaji' => 'nijuu nen', 'meanings' => ['20 years']],
-            ['kana' => 'にじゅうごねん', 'romaji' => 'nijuugo nen', 'meanings' => ['25 years']],
-            ['kana' => 'さんじゅうねん', 'romaji' => 'sanjuu nen', 'meanings' => ['30 years']],
-            ['kana' => 'よんじゅうねん', 'romaji' => 'yonjuu nen', 'meanings' => ['40 years']],
-            ['kana' => 'ごじゅうねん', 'romaji' => 'gojuu nen', 'meanings' => ['50 years']],
+            ['kana' => 'いちねん', 'romaji' => 'ichi nen', 'meanings' => [
+                'en' => ['1 year'],
+                'nl' => ['1 jaar'],
+            ]],
+            ['kana' => 'にねん', 'romaji' => 'ni nen', 'meanings' => [
+                'en' => ['2 years'],
+                'nl' => ['2 jaar'],
+            ]],
+            ['kana' => 'さんねん', 'romaji' => 'san nen', 'meanings' => [
+                'en' => ['3 years'],
+                'nl' => ['3 jaar'],
+            ]],
+            ['kana' => 'よねん', 'romaji' => 'yo nen', 'meanings' => [
+                'en' => ['4 years'],
+                'nl' => ['4 jaar'],
+            ]],
+            ['kana' => 'ごねん', 'romaji' => 'go nen', 'meanings' => [
+                'en' => ['5 years'],
+                'nl' => ['5 jaar'],
+            ]],
+            ['kana' => 'ろくねん', 'romaji' => 'roku nen', 'meanings' => [
+                'en' => ['6 years'],
+                'nl' => ['6 jaar'],
+            ]],
+            ['kana' => 'ななねん', 'romaji' => 'nana nen', 'meanings' => [
+                'en' => ['7 years'],
+                'nl' => ['7 jaar'],
+            ]],
+            ['kana' => 'はちねん', 'romaji' => 'hachi nen', 'meanings' => [
+                'en' => ['8 years'],
+                'nl' => ['8 jaar'],
+            ]],
+            ['kana' => 'きゅうねん', 'romaji' => 'kyuu nen', 'meanings' => [
+                'en' => ['9 years'],
+                'nl' => ['9 jaar'],
+            ]],
+            ['kana' => 'じゅうねん', 'romaji' => 'juu nen', 'meanings' => [
+                'en' => ['10 years'],
+                'nl' => ['10 jaar'],
+            ]],
+            ['kana' => 'じゅうごねん', 'romaji' => 'juugo nen', 'meanings' => [
+                'en' => ['15 years'],
+                'nl' => ['15 jaar'],
+            ]],
+            ['kana' => 'にじゅうねん', 'romaji' => 'nijuu nen', 'meanings' => [
+                'en' => ['20 years'],
+                'nl' => ['20 jaar'],
+            ]],
+            ['kana' => 'にじゅうごねん', 'romaji' => 'nijuugo nen', 'meanings' => [
+                'en' => ['25 years'],
+                'nl' => ['25 jaar'],
+            ]],
+            ['kana' => 'さんじゅうねん', 'romaji' => 'sanjuu nen', 'meanings' => [
+                'en' => ['30 years'],
+                'nl' => ['30 jaar'],
+            ]],
+            ['kana' => 'よんじゅうねん', 'romaji' => 'yonjuu nen', 'meanings' => [
+                'en' => ['40 years'],
+                'nl' => ['40 jaar'],
+            ]],
+            ['kana' => 'ごじゅうねん', 'romaji' => 'gojuu nen', 'meanings' => [
+                'en' => ['50 years'],
+                'nl' => ['50 jaar'],
+            ]],
         ]);
 
         // Times (Occurrences)
         $this->seedCategory('counting-times', 'Times (Occurrences)', [
-            ['kana' => 'いっかい', 'romaji' => 'ikkai', 'meanings' => ['once']],
-            ['kana' => 'にかい', 'romaji' => 'nikai', 'meanings' => ['twice']],
-            ['kana' => 'さんかい', 'romaji' => 'sankai', 'meanings' => ['three times']],
-            ['kana' => 'よんかい', 'romaji' => 'yonkai', 'meanings' => ['four times']],
-            ['kana' => 'ごかい', 'romaji' => 'gokai', 'meanings' => ['five times']],
-            ['kana' => 'ろっかい', 'romaji' => 'rokkai', 'meanings' => ['six times']],
-            ['kana' => 'ななかい', 'romaji' => 'nanakai', 'meanings' => ['seven times']],
-            ['kana' => 'はちかい', 'romaji' => 'hachikai', 'meanings' => ['eight times']],
-            ['kana' => 'きゅうかい', 'romaji' => 'kyuukai', 'meanings' => ['nine times']],
-            ['kana' => 'じゅっかい', 'romaji' => 'jukkai', 'meanings' => ['ten times']],
-            ['kana' => 'じゅうごかい', 'romaji' => 'juugo kai', 'meanings' => ['15 times']],
-            ['kana' => 'にじゅっかい', 'romaji' => 'nijukkai', 'meanings' => ['20 times']],
-            ['kana' => 'ごじゅっかい', 'romaji' => 'gojukkai', 'meanings' => ['50 times']],
-            ['kana' => 'ひゃっかい', 'romaji' => 'hyakkai', 'meanings' => ['100 times']],
+            ['kana' => 'いっかい', 'romaji' => 'ikkai', 'meanings' => [
+                'en' => ['once'],
+                'nl' => ['één keer'],
+            ]],
+            ['kana' => 'にかい', 'romaji' => 'nikai', 'meanings' => [
+                'en' => ['twice'],
+                'nl' => ['twee keer'],
+            ]],
+            ['kana' => 'さんかい', 'romaji' => 'sankai', 'meanings' => [
+                'en' => ['three times'],
+                'nl' => ['drie keer'],
+            ]],
+            ['kana' => 'よんかい', 'romaji' => 'yonkai', 'meanings' => [
+                'en' => ['four times'],
+                'nl' => ['vier keer'],
+            ]],
+            ['kana' => 'ごかい', 'romaji' => 'gokai', 'meanings' => [
+                'en' => ['five times'],
+                'nl' => ['vijf keer'],
+            ]],
+            ['kana' => 'ろっかい', 'romaji' => 'rokkai', 'meanings' => [
+                'en' => ['six times'],
+                'nl' => ['zes keer'],
+            ]],
+            ['kana' => 'ななかい', 'romaji' => 'nanakai', 'meanings' => [
+                'en' => ['seven times'],
+                'nl' => ['zeven keer'],
+            ]],
+            ['kana' => 'はちかい', 'romaji' => 'hachikai', 'meanings' => [
+                'en' => ['eight times'],
+                'nl' => ['acht keer'],
+            ]],
+            ['kana' => 'きゅうかい', 'romaji' => 'kyuukai', 'meanings' => [
+                'en' => ['nine times'],
+                'nl' => ['negen keer'],
+            ]],
+            ['kana' => 'じゅっかい', 'romaji' => 'jukkai', 'meanings' => [
+                'en' => ['ten times'],
+                'nl' => ['tien keer'],
+            ]],
+            ['kana' => 'じゅうごかい', 'romaji' => 'juugo kai', 'meanings' => [
+                'en' => ['fifteen times'],
+                'nl' => ['vijftien keer'],
+            ]],
+            ['kana' => 'にじゅっかい', 'romaji' => 'nijukkai', 'meanings' => [
+                'en' => ['twenty times'],
+                'nl' => ['twintig keer'],
+            ]],
+            ['kana' => 'ごじゅっかい', 'romaji' => 'gojukkai', 'meanings' => [
+                'en' => ['fifty times'],
+                'nl' => ['vijftig keer'],
+            ]],
+            ['kana' => 'ひゃっかい', 'romaji' => 'hyakkai', 'meanings' => [
+                'en' => ['hundred times'],
+                'nl' => ['honderd keer'],
+            ]],
         ]);
 
         // Abstract Things
         $this->seedCategory('counting-abstract-things', 'Abstract Things', [
-            ['kana' => 'ひとつ', 'romaji' => 'hitotsu', 'meanings' => ['one thing']],
-            ['kana' => 'ふたつ', 'romaji' => 'futatsu', 'meanings' => ['two things']],
-            ['kana' => 'みっつ', 'romaji' => 'mittsu', 'meanings' => ['three things']],
-            ['kana' => 'よっつ', 'romaji' => 'yottsu', 'meanings' => ['four things']],
-            ['kana' => 'いつつ', 'romaji' => 'itsutsu', 'meanings' => ['five things']],
-            ['kana' => 'むっつ', 'romaji' => 'muttsu', 'meanings' => ['six things']],
-            ['kana' => 'ななつ', 'romaji' => 'nanatsu', 'meanings' => ['seven things']],
-            ['kana' => 'やっつ', 'romaji' => 'yattsu', 'meanings' => ['eight things']],
-            ['kana' => 'ここのつ', 'romaji' => 'kokonotsu', 'meanings' => ['nine things']],
-            ['kana' => 'とお', 'romaji' => 'too', 'meanings' => ['ten things']],
+            ['kana' => 'ひとつ', 'romaji' => 'hitotsu', 'meanings' => [
+                'en' => ['one thing'],
+                'nl' => ['één ding'],
+            ]],
+            ['kana' => 'ふたつ', 'romaji' => 'futatsu', 'meanings' => [
+                'en' => ['two things'],
+                'nl' => ['twee dingen'],
+            ]],
+            ['kana' => 'みっつ', 'romaji' => 'mittsu', 'meanings' => [
+                'en' => ['three things'],
+                'nl' => ['drie dingen'],
+            ]],
+            ['kana' => 'よっつ', 'romaji' => 'yottsu', 'meanings' => [
+                'en' => ['four things'],
+                'nl' => ['vier dingen'],
+            ]],
+            ['kana' => 'いつつ', 'romaji' => 'itsutsu', 'meanings' => [
+                'en' => ['five things'],
+                'nl' => ['vijf dingen'],
+            ]],
+            ['kana' => 'むっつ', 'romaji' => 'muttsu', 'meanings' => [
+                'en' => ['six things'],
+                'nl' => ['zes dingen'],
+            ]],
+            ['kana' => 'ななつ', 'romaji' => 'nanatsu', 'meanings' => [
+                'en' => ['seven things'],
+                'nl' => ['zeven dingen'],
+            ]],
+            ['kana' => 'やっつ', 'romaji' => 'yattsu', 'meanings' => [
+                'en' => ['eight things'],
+                'nl' => ['acht dingen'],
+            ]],
+            ['kana' => 'ここのつ', 'romaji' => 'kokonotsu', 'meanings' => [
+                'en' => ['nine things'],
+                'nl' => ['negen dingen'],
+            ]],
+            ['kana' => 'とお', 'romaji' => 'too', 'meanings' => [
+                'en' => ['ten things'],
+                'nl' => ['tien dingen'],
+            ]],
         ]);
 
         // Flat Objects
         $this->seedCategory('counting-flat-objects', 'Flat Objects', [
-            ['kana' => 'いちまい', 'romaji' => 'ichi mai', 'meanings' => ['one (flat object)']],
-            ['kana' => 'にまい', 'romaji' => 'ni mai', 'meanings' => ['two (flat objects)']],
-            ['kana' => 'さんまい', 'romaji' => 'san mai', 'meanings' => ['three (flat objects)']],
-            ['kana' => 'よんまい', 'romaji' => 'yon mai', 'meanings' => ['four (flat objects)']],
-            ['kana' => 'ごまい', 'romaji' => 'go mai', 'meanings' => ['five (flat objects)']],
-            ['kana' => 'ろくまい', 'romaji' => 'roku mai', 'meanings' => ['six (flat objects)']],
-            ['kana' => 'ななまい', 'romaji' => 'nana mai', 'meanings' => ['seven (flat objects)']],
-            ['kana' => 'はちまい', 'romaji' => 'hachi mai', 'meanings' => ['eight (flat objects)']],
-            ['kana' => 'きゅうまい', 'romaji' => 'kyuu mai', 'meanings' => ['nine (flat objects)']],
-            ['kana' => 'じゅうまい', 'romaji' => 'juu mai', 'meanings' => ['ten (flat objects)']],
-            ['kana' => 'にじゅうまい', 'romaji' => 'nijuu mai', 'meanings' => ['twenty (flat objects)']],
-            ['kana' => 'さんじゅうまい', 'romaji' => 'sanjuu mai', 'meanings' => ['thirty (flat objects)']],
-            ['kana' => 'ごじゅうまい', 'romaji' => 'gojuu mai', 'meanings' => ['fifty (flat objects)']],
-            ['kana' => 'ひゃくまい', 'romaji' => 'hyaku mai', 'meanings' => ['hundred (flat objects)']],
+            ['kana' => 'いちまい', 'romaji' => 'ichi mai', 'meanings' => [
+                'en' => ['one (flat object)'],
+                'nl' => ['één (plat object)'],
+            ]],
+            ['kana' => 'にまい', 'romaji' => 'ni mai', 'meanings' => [
+                'en' => ['two (flat objects)'],
+                'nl' => ['twee (platte objecten)'],
+            ]],
+            ['kana' => 'さんまい', 'romaji' => 'san mai', 'meanings' => [
+                'en' => ['three (flat objects)'],
+                'nl' => ['drie (platte objecten)'],
+            ]],
+            ['kana' => 'よんまい', 'romaji' => 'yon mai', 'meanings' => [
+                'en' => ['four (flat objects)'],
+                'nl' => ['vier (platte objecten)'],
+            ]],
+            ['kana' => 'ごまい', 'romaji' => 'go mai', 'meanings' => [
+                'en' => ['five (flat objects)'],
+                'nl' => ['vijf (platte objecten)'],
+            ]],
+            ['kana' => 'ろくまい', 'romaji' => 'roku mai', 'meanings' => [
+                'en' => ['six (flat objects)'],
+                'nl' => ['zes (platte objecten)'],
+            ]],
+            ['kana' => 'ななまい', 'romaji' => 'nana mai', 'meanings' => [
+                'en' => ['seven (flat objects)'],
+                'nl' => ['zeven (platte objecten)'],
+            ]],
+            ['kana' => 'はちまい', 'romaji' => 'hachi mai', 'meanings' => [
+                'en' => ['eight (flat objects)'],
+                'nl' => ['acht (platte objecten)'],
+            ]],
+            ['kana' => 'きゅうまい', 'romaji' => 'kyuu mai', 'meanings' => [
+                'en' => ['nine (flat objects)'],
+                'nl' => ['negen (platte objecten)'],
+            ]],
+            ['kana' => 'じゅうまい', 'romaji' => 'juu mai', 'meanings' => [
+                'en' => ['ten (flat objects)'],
+                'nl' => ['tien (platte objecten)'],
+            ]],
         ]);
 
         // Long Objects
         $this->seedCategory('counting-long-objects', 'Long Objects', [
-            ['kana' => 'いっぽん', 'romaji' => 'ippon', 'meanings' => ['one (long object)']],
-            ['kana' => 'にほん', 'romaji' => 'nihon', 'meanings' => ['two (long objects)']],
-            ['kana' => 'さんぼん', 'romaji' => 'sanbon', 'meanings' => ['three (long objects)']],
-            ['kana' => 'よんほん', 'romaji' => 'yonhon', 'meanings' => ['four (long objects)']],
-            ['kana' => 'ごほん', 'romaji' => 'gohon', 'meanings' => ['five (long objects)']],
-            ['kana' => 'ろっぽん', 'romaji' => 'roppon', 'meanings' => ['six (long objects)']],
-            ['kana' => 'ななほん', 'romaji' => 'nanahon', 'meanings' => ['seven (long objects)']],
-            ['kana' => 'はっぽん', 'romaji' => 'happon', 'meanings' => ['eight (long objects)']],
-            ['kana' => 'きゅうほん', 'romaji' => 'kyuuhon', 'meanings' => ['nine (long objects)']],
-            ['kana' => 'じゅっぽん', 'romaji' => 'juppon', 'meanings' => ['ten (long objects)']],
-            ['kana' => 'にじゅっぽん', 'romaji' => 'nijuppon', 'meanings' => ['twenty (long objects)']],
-            ['kana' => 'さんじゅっぽん', 'romaji' => 'sanjuppon', 'meanings' => ['thirty (long objects)']],
-            ['kana' => 'ごじゅっぽん', 'romaji' => 'gojuppon', 'meanings' => ['fifty (long objects)']],
-            ['kana' => 'ひゃっぽん', 'romaji' => 'hyappon', 'meanings' => ['hundred (long objects)']],
+            ['kana' => 'いっぽん', 'romaji' => 'ippon', 'meanings' => [
+                'en' => ['one (long object)'],
+                'nl' => ['één (lang object)'],
+            ]],
+            ['kana' => 'にほん', 'romaji' => 'nihon', 'meanings' => [
+                'en' => ['two (long objects)'],
+                'nl' => ['twee (lange objecten)'],
+            ]],
+            ['kana' => 'さんぼん', 'romaji' => 'sanbon', 'meanings' => [
+                'en' => ['three (long objects)'],
+                'nl' => ['drie (lange objecten)'],
+            ]],
+            ['kana' => 'よんほん', 'romaji' => 'yonhon', 'meanings' => [
+                'en' => ['four (long objects)'],
+                'nl' => ['vier (lange objecten)'],
+            ]],
+            ['kana' => 'ごほん', 'romaji' => 'gohon', 'meanings' => [
+                'en' => ['five (long objects)'],
+                'nl' => ['vijf (lange objecten)'],
+            ]],
+            ['kana' => 'ろっぽん', 'romaji' => 'roppon', 'meanings' => [
+                'en' => ['six (long objects)'],
+                'nl' => ['zes (lange objecten)'],
+            ]],
+            ['kana' => 'ななほん', 'romaji' => 'nanahon', 'meanings' => [
+                'en' => ['seven (long objects)'],
+                'nl' => ['zeven (lange objecten)'],
+            ]],
+            ['kana' => 'はっぽん', 'romaji' => 'happon', 'meanings' => [
+                'en' => ['eight (long objects)'],
+                'nl' => ['acht (lange objecten)'],
+            ]],
+            ['kana' => 'きゅうほん', 'romaji' => 'kyuuhon', 'meanings' => [
+                'en' => ['nine (long objects)'],
+                'nl' => ['negen (lange objecten)'],
+            ]],
+            ['kana' => 'じゅっぽん', 'romaji' => 'juppon', 'meanings' => [
+                'en' => ['ten (long objects)'],
+                'nl' => ['tien (lange objecten)'],
+            ]],
         ]);
 
         // Small Animals
         $this->seedCategory('counting-small-animals', 'Small Animals', [
-            ['kana' => 'いっぴき', 'romaji' => 'ippiki', 'meanings' => ['1 small animal']],
-            ['kana' => 'にひき', 'romaji' => 'nihiki', 'meanings' => ['2 small animals']],
-            ['kana' => 'さんびき', 'romaji' => 'sanbiki', 'meanings' => ['3 small animals']],
-            ['kana' => 'よんひき', 'romaji' => 'yonhiki', 'meanings' => ['4 small animals']],
-            ['kana' => 'ごひき', 'romaji' => 'gohiki', 'meanings' => ['5 small animals']],
-            ['kana' => 'ろっぴき', 'romaji' => 'roppiki', 'meanings' => ['6 small animals']],
-            ['kana' => 'ななひき', 'romaji' => 'nanahiki', 'meanings' => ['7 small animals']],
-            ['kana' => 'はっぴき', 'romaji' => 'happiki', 'meanings' => ['8 small animals']],
-            ['kana' => 'きゅうひき', 'romaji' => 'kyuuhiki', 'meanings' => ['9 small animals']],
-            ['kana' => 'じゅっぴき', 'romaji' => 'juppiki', 'meanings' => ['10 small animals']],
-            ['kana' => 'にじゅっぴき', 'romaji' => 'nijuppiki', 'meanings' => ['20 small animals']],
-            ['kana' => 'さんじゅっぴき', 'romaji' => 'sanjuppiki', 'meanings' => ['30 small animals']],
-            ['kana' => 'ごじゅっぴき', 'romaji' => 'gojuppiki', 'meanings' => ['50 small animals']],
-            ['kana' => 'ひゃっぴき', 'romaji' => 'hyappiki', 'meanings' => ['100 small animals']],
+            ['kana' => 'いっぴき', 'romaji' => 'ippiki', 'meanings' => [
+                'en' => ['1 small animal'],
+                'nl' => ['1 klein dier'],
+            ]],
+            ['kana' => 'にひき', 'romaji' => 'nihiki', 'meanings' => [
+                'en' => ['2 small animals'],
+                'nl' => ['2 kleine dieren'],
+            ]],
+            ['kana' => 'さんびき', 'romaji' => 'sanbiki', 'meanings' => [
+                'en' => ['3 small animals'],
+                'nl' => ['3 kleine dieren'],
+            ]],
+            ['kana' => 'よんひき', 'romaji' => 'yonhiki', 'meanings' => [
+                'en' => ['4 small animals'],
+                'nl' => ['4 kleine dieren'],
+            ]],
+            ['kana' => 'ごひき', 'romaji' => 'gohiki', 'meanings' => [
+                'en' => ['5 small animals'],
+                'nl' => ['5 kleine dieren'],
+            ]],
+            ['kana' => 'ろっぴき', 'romaji' => 'roppiki', 'meanings' => [
+                'en' => ['6 small animals'],
+                'nl' => ['6 kleine dieren'],
+            ]],
+            ['kana' => 'ななひき', 'romaji' => 'nanahiki', 'meanings' => [
+                'en' => ['7 small animals'],
+                'nl' => ['7 kleine dieren'],
+            ]],
+            ['kana' => 'はっぴき', 'romaji' => 'happiki', 'meanings' => [
+                'en' => ['8 small animals'],
+                'nl' => ['8 kleine dieren'],
+            ]],
+            ['kana' => 'きゅうひき', 'romaji' => 'kyuuhiki', 'meanings' => [
+                'en' => ['9 small animals'],
+                'nl' => ['9 kleine dieren'],
+            ]],
+            ['kana' => 'じゅっぴき', 'romaji' => 'juppiki', 'meanings' => [
+                'en' => ['10 small animals'],
+                'nl' => ['10 kleine dieren'],
+            ]],
         ]);
 
         // Big Animals
         $this->seedCategory('counting-big-animals', 'Big Animals', [
-            ['kana' => 'いっとう', 'romaji' => 'ittou', 'meanings' => ['1 big animal']],
-            ['kana' => 'にとう', 'romaji' => 'nitou', 'meanings' => ['2 big animals']],
-            ['kana' => 'さんとう', 'romaji' => 'santou', 'meanings' => ['3 big animals']],
-            ['kana' => 'よんとう', 'romaji' => 'yontou', 'meanings' => ['4 big animals']],
-            ['kana' => 'ごとう', 'romaji' => 'gotou', 'meanings' => ['5 big animals']],
-            ['kana' => 'ろくとう', 'romaji' => 'rokutou', 'meanings' => ['6 big animals']],
-            ['kana' => 'ななとう', 'romaji' => 'nanatou', 'meanings' => ['7 big animals']],
-            ['kana' => 'はちとう', 'romaji' => 'hachitou', 'meanings' => ['8 big animals']],
-            ['kana' => 'きゅうとう', 'romaji' => 'kyuutou', 'meanings' => ['9 big animals']],
-            ['kana' => 'じゅっとう', 'romaji' => 'juttou', 'meanings' => ['10 big animals']],
-            ['kana' => 'にじゅっとう', 'romaji' => 'nijuttou', 'meanings' => ['20 big animals']],
-            ['kana' => 'さんじゅっとう', 'romaji' => 'sanjuttou', 'meanings' => ['30 big animals']],
-            ['kana' => 'ごじゅっとう', 'romaji' => 'gojuttou', 'meanings' => ['50 big animals']],
-            ['kana' => 'ひゃくとう', 'romaji' => 'hyakutou', 'meanings' => ['100 big animals']],
+            ['kana' => 'いっとう', 'romaji' => 'ittou', 'meanings' => [
+                'en' => ['1 big animal'],
+                'nl' => ['1 groot dier'],
+            ]],
+            ['kana' => 'にとう', 'romaji' => 'nitou', 'meanings' => [
+                'en' => ['2 big animals'],
+                'nl' => ['2 grote dieren'],
+            ]],
+            ['kana' => 'さんとう', 'romaji' => 'santou', 'meanings' => [
+                'en' => ['3 big animals'],
+                'nl' => ['3 grote dieren'],
+            ]],
+            ['kana' => 'よんとう', 'romaji' => 'yontou', 'meanings' => [
+                'en' => ['4 big animals'],
+                'nl' => ['4 grote dieren'],
+            ]],
+            ['kana' => 'ごとう', 'romaji' => 'gotou', 'meanings' => [
+                'en' => ['5 big animals'],
+                'nl' => ['5 grote dieren'],
+            ]],
+            ['kana' => 'ろくとう', 'romaji' => 'rokutou', 'meanings' => [
+                'en' => ['6 big animals'],
+                'nl' => ['6 grote dieren'],
+            ]],
+            ['kana' => 'ななとう', 'romaji' => 'nanatou', 'meanings' => [
+                'en' => ['7 big animals'],
+                'nl' => ['7 grote dieren'],
+            ]],
+            ['kana' => 'はちとう', 'romaji' => 'hachitou', 'meanings' => [
+                'en' => ['8 big animals'],
+                'nl' => ['8 grote dieren'],
+            ]],
+            ['kana' => 'きゅうとう', 'romaji' => 'kyuutou', 'meanings' => [
+                'en' => ['9 big animals'],
+                'nl' => ['9 grote dieren'],
+            ]],
+            ['kana' => 'じゅっとう', 'romaji' => 'juttou', 'meanings' => [
+                'en' => ['10 big animals'],
+                'nl' => ['10 grote dieren'],
+            ]],
         ]);
 
         // Birds & Rabbits
         $this->seedCategory('counting-birds-rabbits', 'Birds & Rabbits', [
-            ['kana' => 'いちわ', 'romaji' => 'ichiwa', 'meanings' => ['1 bird', '1 rabbit']],
-            ['kana' => 'にわ', 'romaji' => 'niwa', 'meanings' => ['2 birds', '2 rabbits']],
-            ['kana' => 'さんわ', 'romaji' => 'sanwa', 'meanings' => ['3 birds', '3 rabbits']],
-            ['kana' => 'よんわ', 'romaji' => 'yonwa', 'meanings' => ['4 birds', '4 rabbits']],
-            ['kana' => 'ごわ', 'romaji' => 'gowa', 'meanings' => ['5 birds', '5 rabbits']],
-            ['kana' => 'ろくわ', 'romaji' => 'rokuwa', 'meanings' => ['6 birds', '6 rabbits']],
-            ['kana' => 'ななわ', 'romaji' => 'nanawa', 'meanings' => ['7 birds', '7 rabbits']],
-            ['kana' => 'はちわ', 'romaji' => 'hachiwa', 'meanings' => ['8 birds', '8 rabbits']],
-            ['kana' => 'きゅうわ', 'romaji' => 'kyuuwa', 'meanings' => ['9 birds', '9 rabbits']],
-            ['kana' => 'じゅうわ', 'romaji' => 'juuwa', 'meanings' => ['10 birds', '10 rabbits']],
-            ['kana' => 'にじゅうわ', 'romaji' => 'nijuuwa', 'meanings' => ['20 birds', '20 rabbits']],
-            ['kana' => 'さんじゅうわ', 'romaji' => 'sanjuuwa', 'meanings' => ['30 birds', '30 rabbits']],
-            ['kana' => 'ごじゅうわ', 'romaji' => 'gojuuwa', 'meanings' => ['50 birds', '50 rabbits']],
-            ['kana' => 'ひゃくわ', 'romaji' => 'hyakuwa', 'meanings' => ['100 birds', '100 rabbits']],
+            ['kana' => 'いちわ', 'romaji' => 'ichiwa', 'meanings' => [
+                'en' => ['1 bird', '1 rabbit'],
+                'nl' => ['1 vogel', '1 konijn'],
+            ]],
+            ['kana' => 'にわ', 'romaji' => 'niwa', 'meanings' => [
+                'en' => ['2 birds', '2 rabbits'],
+                'nl' => ['2 vogels', '2 konijnen'],
+            ]],
+            ['kana' => 'さんわ', 'romaji' => 'sanwa', 'meanings' => [
+                'en' => ['3 birds', '3 rabbits'],
+                'nl' => ['3 vogels', '3 konijnen'],
+            ]],
+            ['kana' => 'よんわ', 'romaji' => 'yonwa', 'meanings' => [
+                'en' => ['4 birds', '4 rabbits'],
+                'nl' => ['4 vogels', '4 konijnen'],
+            ]],
+            ['kana' => 'ごわ', 'romaji' => 'gowa', 'meanings' => [
+                'en' => ['5 birds', '5 rabbits'],
+                'nl' => ['5 vogels', '5 konijnen'],
+            ]],
+            ['kana' => 'ろくわ', 'romaji' => 'rokuwa', 'meanings' => [
+                'en' => ['6 birds', '6 rabbits'],
+                'nl' => ['6 vogels', '6 konijnen'],
+            ]],
+            ['kana' => 'ななわ', 'romaji' => 'nanawa', 'meanings' => [
+                'en' => ['7 birds', '7 rabbits'],
+                'nl' => ['7 vogels', '7 konijnen'],
+            ]],
+            ['kana' => 'はちわ', 'romaji' => 'hachiwa', 'meanings' => [
+                'en' => ['8 birds', '8 rabbits'],
+                'nl' => ['8 vogels', '8 konijnen'],
+            ]],
+            ['kana' => 'きゅうわ', 'romaji' => 'kyuuwa', 'meanings' => [
+                'en' => ['9 birds', '9 rabbits'],
+                'nl' => ['9 vogels', '9 konijnen'],
+            ]],
+            ['kana' => 'じゅうわ', 'romaji' => 'juuwa', 'meanings' => [
+                'en' => ['10 birds', '10 rabbits'],
+                'nl' => ['10 vogels', '10 konijnen'],
+            ]],
         ]);
 
-        // Floors/Levels
-        $this->seedCategory('counting-floors', 'Floors/Levels', [
-            ['kana' => 'ちかいっかい', 'romaji' => 'chika ikkai', 'meanings' => ['B1 (Basement level)']],
-            ['kana' => 'いっかい', 'romaji' => 'ikkai', 'meanings' => ['1st floor', 'first floor']],
-            ['kana' => 'にかい', 'romaji' => 'nikai', 'meanings' => ['2nd floor', 'second floor']],
-            ['kana' => 'さんがい', 'romaji' => 'sangai', 'meanings' => ['3rd floor', 'third floor']],
-            ['kana' => 'よんかい', 'romaji' => 'yonkai', 'meanings' => ['4th floor', 'fourth floor']],
-            ['kana' => 'ごかい', 'romaji' => 'gokai', 'meanings' => ['5th floor', 'fifth floor']],
-            ['kana' => 'ろっかい', 'romaji' => 'rokkai', 'meanings' => ['6th floor', 'sixth floor']],
-            ['kana' => 'ななかい', 'romaji' => 'nanakai', 'meanings' => ['7th floor', 'seventh floor']],
-            ['kana' => 'はっかい', 'romaji' => 'hakkai', 'meanings' => ['8th floor', 'eighth floor']],
-            ['kana' => 'きゅうかい', 'romaji' => 'kyuukai', 'meanings' => ['9th floor', 'ninth floor']],
-            ['kana' => 'じゅっかい', 'romaji' => 'jukkai', 'meanings' => ['10th floor', 'tenth floor']],
+        // Floors / Levels
+        $this->seedCategory('counting-floors', 'Floors / Levels', [
+            ['kana' => 'ちかいっかい', 'romaji' => 'chika ikkai', 'meanings' => [
+                'en' => ['B1 (basement level)'],
+                'nl' => ['kelderverdieping'],
+            ]],
+            ['kana' => 'いっかい', 'romaji' => 'ikkai', 'meanings' => [
+                'en' => ['1st floor'],
+                'nl' => ['1e verdieping'],
+            ]],
+            ['kana' => 'にかい', 'romaji' => 'nikai', 'meanings' => [
+                'en' => ['2nd floor'],
+                'nl' => ['2e verdieping'],
+            ]],
+            ['kana' => 'さんがい', 'romaji' => 'sangai', 'meanings' => [
+                'en' => ['3rd floor'],
+                'nl' => ['3e verdieping'],
+            ]],
+            ['kana' => 'よんかい', 'romaji' => 'yonkai', 'meanings' => [
+                'en' => ['4th floor'],
+                'nl' => ['4e verdieping'],
+            ]],
+            ['kana' => 'ごかい', 'romaji' => 'gokai', 'meanings' => [
+                'en' => ['5th floor'],
+                'nl' => ['5e verdieping'],
+            ]],
+            ['kana' => 'ろっかい', 'romaji' => 'rokkai', 'meanings' => [
+                'en' => ['6th floor'],
+                'nl' => ['6e verdieping'],
+            ]],
+            ['kana' => 'ななかい', 'romaji' => 'nanakai', 'meanings' => [
+                'en' => ['7th floor'],
+                'nl' => ['7e verdieping'],
+            ]],
+            ['kana' => 'はっかい', 'romaji' => 'hakkai', 'meanings' => [
+                'en' => ['8th floor'],
+                'nl' => ['8e verdieping'],
+            ]],
+            ['kana' => 'きゅうかい', 'romaji' => 'kyuukai', 'meanings' => [
+                'en' => ['9th floor'],
+                'nl' => ['9e verdieping'],
+            ]],
+            ['kana' => 'じゅっかい', 'romaji' => 'jukkai', 'meanings' => [
+                'en' => ['10th floor'],
+                'nl' => ['10e verdieping'],
+            ]],
         ]);
 
         // Coins & Bills
@@ -3654,46 +4378,138 @@ class ItemsTableSeeder extends Seeder
 
         // Drinks (Cups/Glasses)
         $this->seedCategory('counting-drinks', 'Drinks (Cups/Glasses)', [
-            ['kana' => 'いっぱい', 'romaji' => 'ippai', 'meanings' => ['1 glass', '1 cup']],
-            ['kana' => 'にはい', 'romaji' => 'nihai', 'meanings' => ['2 glasses', '2 cups']],
-            ['kana' => 'さんばい', 'romaji' => 'sanbai', 'meanings' => ['3 glasses', '3 cups']],
-            ['kana' => 'よんはい', 'romaji' => 'yonhai', 'meanings' => ['4 glasses', '4 cups']],
-            ['kana' => 'ごはい', 'romaji' => 'gohai', 'meanings' => ['5 glasses', '5 cups']],
-            ['kana' => 'ろっぱい', 'romaji' => 'roppai', 'meanings' => ['6 glasses', '6 cups']],
-            ['kana' => 'ななはい', 'romaji' => 'nanahai', 'meanings' => ['7 glasses', '7 cups']],
-            ['kana' => 'はっぱい', 'romaji' => 'happai', 'meanings' => ['8 glasses', '8 cups']],
-            ['kana' => 'きゅうはい', 'romaji' => 'kyuuhai', 'meanings' => ['9 glasses', '9 cups']],
-            ['kana' => 'じゅっぱい', 'romaji' => 'juppai', 'meanings' => ['10 glasses', '10 cups']],
-            ['kana' => 'にじゅっぱい', 'romaji' => 'nijuppai', 'meanings' => ['20 glasses', '20 cups']],
-            ['kana' => 'さんじゅっぱい', 'romaji' => 'sanjuppai', 'meanings' => ['30 glasses', '30 cups']],
-            ['kana' => 'ごじゅっぱい', 'romaji' => 'gojuppai', 'meanings' => ['50 glasses', '50 cups']],
-            ['kana' => 'ひゃっぱい', 'romaji' => 'hyappai', 'meanings' => ['100 glasses', '100 cups']],
+            ['kana' => 'いっぱい', 'romaji' => 'ippai', 'meanings' => [
+                'en' => ['1 glass', '1 cup'],
+                'nl' => ['1 glas', '1 kop'],
+            ]],
+            ['kana' => 'にはい', 'romaji' => 'nihai', 'meanings' => [
+                'en' => ['2 glasses', '2 cups'],
+                'nl' => ['2 glazen', '2 koppen'],
+            ]],
+            ['kana' => 'さんばい', 'romaji' => 'sanbai', 'meanings' => [
+                'en' => ['3 glasses', '3 cups'],
+                'nl' => ['3 glazen', '3 koppen'],
+            ]],
+            ['kana' => 'よんはい', 'romaji' => 'yonhai', 'meanings' => [
+                'en' => ['4 glasses', '4 cups'],
+                'nl' => ['4 glazen', '4 koppen'],
+            ]],
+            ['kana' => 'ごはい', 'romaji' => 'gohai', 'meanings' => [
+                'en' => ['5 glasses', '5 cups'],
+                'nl' => ['5 glazen', '5 koppen'],
+            ]],
+            ['kana' => 'ろっぱい', 'romaji' => 'roppai', 'meanings' => [
+                'en' => ['6 glasses', '6 cups'],
+                'nl' => ['6 glazen', '6 koppen'],
+            ]],
+            ['kana' => 'ななはい', 'romaji' => 'nanahai', 'meanings' => [
+                'en' => ['7 glasses', '7 cups'],
+                'nl' => ['7 glazen', '7 koppen'],
+            ]],
+            ['kana' => 'はっぱい', 'romaji' => 'happai', 'meanings' => [
+                'en' => ['8 glasses', '8 cups'],
+                'nl' => ['8 glazen', '8 koppen'],
+            ]],
+            ['kana' => 'きゅうはい', 'romaji' => 'kyuuhai', 'meanings' => [
+                'en' => ['9 glasses', '9 cups'],
+                'nl' => ['9 glazen', '9 koppen'],
+            ]],
+            ['kana' => 'じゅっぱい', 'romaji' => 'juppai', 'meanings' => [
+                'en' => ['10 glasses', '10 cups'],
+                'nl' => ['10 glazen', '10 koppen'],
+            ]],
+            ['kana' => 'にじゅっぱい', 'romaji' => 'nijuppai', 'meanings' => [
+                'en' => ['20 glasses', '20 cups'],
+                'nl' => ['20 glazen', '20 koppen'],
+            ]],
+            ['kana' => 'さんじゅっぱい', 'romaji' => 'sanjuppai', 'meanings' => [
+                'en' => ['30 glasses', '30 cups'],
+                'nl' => ['30 glazen', '30 koppen'],
+            ]],
+            ['kana' => 'ごじゅっぱい', 'romaji' => 'gojuppai', 'meanings' => [
+                'en' => ['50 glasses', '50 cups'],
+                'nl' => ['50 glazen', '50 koppen'],
+            ]],
+            ['kana' => 'ひゃっぱい', 'romaji' => 'hyappai', 'meanings' => [
+                'en' => ['100 glasses', '100 cups'],
+                'nl' => ['100 glazen', '100 koppen'],
+            ]],
         ]);
-
 
         // Round Objects
         $this->seedCategory('counting-round-objects', 'Round Objects', [
-            ['kana' => 'いっこ', 'romaji' => 'ikko', 'meanings' => ['1 piece']],
-            ['kana' => 'にこ', 'romaji' => 'niko', 'meanings' => ['2 pieces']],
-            ['kana' => 'さんこ', 'romaji' => 'sanko', 'meanings' => ['3 pieces']],
-            ['kana' => 'よんこ', 'romaji' => 'yonko', 'meanings' => ['4 pieces']],
-            ['kana' => 'ごこ', 'romaji' => 'goko', 'meanings' => ['5 pieces']],
-            ['kana' => 'ろっこ', 'romaji' => 'rokko', 'meanings' => ['6 pieces']],
-            ['kana' => 'ななこ', 'romaji' => 'nanako', 'meanings' => ['7 pieces']],
-            ['kana' => 'はっこ', 'romaji' => 'hakko', 'meanings' => ['8 pieces']],
-            ['kana' => 'きゅうこ', 'romaji' => 'kyuuko', 'meanings' => ['9 pieces']],
-            ['kana' => 'じゅっこ', 'romaji' => 'jukko', 'meanings' => ['10 pieces']],
-            ['kana' => 'にじゅっこ', 'romaji' => 'nijukko', 'meanings' => ['20 pieces']],
-            ['kana' => 'さんじゅっこ', 'romaji' => 'sanjukko', 'meanings' => ['30 pieces']],
-            ['kana' => 'ごじゅっこ', 'romaji' => 'gojukko', 'meanings' => ['50 pieces']],
-            ['kana' => 'ひゃっこ', 'romaji' => 'hyakko', 'meanings' => ['100 pieces']],
+            ['kana' => 'いっこ', 'romaji' => 'ikko', 'meanings' => [
+                'en' => ['1 piece'],
+                'nl' => ['1 stuk'],
+            ]],
+            ['kana' => 'にこ', 'romaji' => 'niko', 'meanings' => [
+                'en' => ['2 pieces'],
+                'nl' => ['2 stuks'],
+            ]],
+            ['kana' => 'さんこ', 'romaji' => 'sanko', 'meanings' => [
+                'en' => ['3 pieces'],
+                'nl' => ['3 stuks'],
+            ]],
+            ['kana' => 'よんこ', 'romaji' => 'yonko', 'meanings' => [
+                'en' => ['4 pieces'],
+                'nl' => ['4 stuks'],
+            ]],
+            ['kana' => 'ごこ', 'romaji' => 'goko', 'meanings' => [
+                'en' => ['5 pieces'],
+                'nl' => ['5 stuks'],
+            ]],
+            ['kana' => 'ろっこ', 'romaji' => 'rokko', 'meanings' => [
+                'en' => ['6 pieces'],
+                'nl' => ['6 stuks'],
+            ]],
+            ['kana' => 'ななこ', 'romaji' => 'nanako', 'meanings' => [
+                'en' => ['7 pieces'],
+                'nl' => ['7 stuks'],
+            ]],
+            ['kana' => 'はっこ', 'romaji' => 'hakko', 'meanings' => [
+                'en' => ['8 pieces'],
+                'nl' => ['8 stuks'],
+            ]],
+            ['kana' => 'きゅうこ', 'romaji' => 'kyuuko', 'meanings' => [
+                'en' => ['9 pieces'],
+                'nl' => ['9 stuks'],
+            ]],
+            ['kana' => 'じゅっこ', 'romaji' => 'jukko', 'meanings' => [
+                'en' => ['10 pieces'],
+                'nl' => ['10 stuks'],
+            ]],
+            ['kana' => 'にじゅっこ', 'romaji' => 'nijukko', 'meanings' => [
+                'en' => ['20 pieces'],
+                'nl' => ['20 stuks'],
+            ]],
+            ['kana' => 'さんじゅっこ', 'romaji' => 'sanjukko', 'meanings' => [
+                'en' => ['30 pieces'],
+                'nl' => ['30 stuks'],
+            ]],
+            ['kana' => 'ごじゅっこ', 'romaji' => 'gojukko', 'meanings' => [
+                'en' => ['50 pieces'],
+                'nl' => ['50 stuks'],
+            ]],
+            ['kana' => 'ひゃっこ', 'romaji' => 'hyakko', 'meanings' => [
+                'en' => ['100 pieces'],
+                'nl' => ['100 stuks'],
+            ]],
         ]);
 
         // Multiples
         $this->seedCategory('counting-multiples', 'Multiples', [
-            ['kana' => 'いちばい', 'romaji' => 'ichibai', 'meanings' => ['1x', 'same']],
-            ['kana' => 'にばい', 'romaji' => 'nibai', 'meanings' => ['2x', 'double']],
-            ['kana' => 'さんばい', 'romaji' => 'sanbai', 'meanings' => ['3x', 'triple']],
+            ['kana' => 'いちばい', 'romaji' => 'ichibai', 'meanings' => [
+                'en' => ['1x', 'same'],
+                'nl' => ['1x', 'hetzelfde'],
+            ]],
+            ['kana' => 'にばい', 'romaji' => 'nibai', 'meanings' => [
+                'en' => ['2x', 'double'],
+                'nl' => ['2x', 'dubbel'],
+            ]],
+            ['kana' => 'さんばい', 'romaji' => 'sanbai', 'meanings' => [
+                'en' => ['3x', 'triple'],
+                'nl' => ['3x', 'driedubbel'],
+            ]],
             ['kana' => 'よんばい', 'romaji' => 'yonbai', 'meanings' => ['4x']],
             ['kana' => 'ごばい', 'romaji' => 'gobai', 'meanings' => ['5x']],
             ['kana' => 'ろくばい', 'romaji' => 'rokubai', 'meanings' => ['6x']],
@@ -3709,207 +4525,681 @@ class ItemsTableSeeder extends Seeder
         // Irregular Counters
         $this->seedCategory('counting-irregular', 'Irregular Counters', [
             // 着 (ちゃく) - Outfits
-            ['kana' => 'いっちゃく', 'romaji' => 'icchaku', 'meanings' => ['1 outfit (着)']],
-            ['kana' => 'にちゃく', 'romaji' => 'nichaku', 'meanings' => ['2 outfits']],
-            ['kana' => 'さんちゃく', 'romaji' => 'sanchaku', 'meanings' => ['3 outfits']],
-            ['kana' => 'よんちゃく', 'romaji' => 'yonchaku', 'meanings' => ['4 outfits']],
-            ['kana' => 'ごちゃく', 'romaji' => 'gochaku', 'meanings' => ['5 outfits']],
-            ['kana' => 'ろくちゃく', 'romaji' => 'rokuchaku', 'meanings' => ['6 outfits']],
-            ['kana' => 'ななちゃく', 'romaji' => 'nanachaku', 'meanings' => ['7 outfits']],
-            ['kana' => 'はっちゃく', 'romaji' => 'hacchaku', 'meanings' => ['8 outfits']],
-            ['kana' => 'きゅうちゃく', 'romaji' => 'kyuuchaku', 'meanings' => ['9 outfits']],
-            ['kana' => 'じゅっちゃく', 'romaji' => 'jucchaku', 'meanings' => ['10 outfits']],
+            ['kana' => 'いっちゃく', 'romaji' => 'icchaku', 'meanings' => [
+                'en' => ['1 outfit'],
+                'nl' => ['1 outfit'],
+            ]],
+            ['kana' => 'にちゃく', 'romaji' => 'nichaku', 'meanings' => [
+                'en' => ['2 outfits'],
+                'nl' => ['2 outfits'],
+            ]],
+            ['kana' => 'さんちゃく', 'romaji' => 'sanchaku', 'meanings' => [
+                'en' => ['3 outfits'],
+                'nl' => ['3 outfits'],
+            ]],
+            ['kana' => 'よんちゃく', 'romaji' => 'yonchaku', 'meanings' => [
+                'en' => ['4 outfits'],
+                'nl' => ['4 outfits'],
+            ]],
+            ['kana' => 'ごちゃく', 'romaji' => 'gochaku', 'meanings' => [
+                'en' => ['5 outfits'],
+                'nl' => ['5 outfits'],
+            ]],
+            ['kana' => 'ろくちゃく', 'romaji' => 'rokuchaku', 'meanings' => [
+                'en' => ['6 outfits'],
+                'nl' => ['6 outfits'],
+            ]],
+            ['kana' => 'ななちゃく', 'romaji' => 'nanachaku', 'meanings' => [
+                'en' => ['7 outfits'],
+                'nl' => ['7 outfits'],
+            ]],
+            ['kana' => 'はっちゃく', 'romaji' => 'hacchaku', 'meanings' => [
+                'en' => ['8 outfits'],
+                'nl' => ['8 outfits'],
+            ]],
+            ['kana' => 'きゅうちゃく', 'romaji' => 'kyuuchaku', 'meanings' => [
+                'en' => ['9 outfits'],
+                'nl' => ['9 outfits'],
+            ]],
+            ['kana' => 'じゅっちゃく', 'romaji' => 'jucchaku', 'meanings' => [
+                'en' => ['10 outfits'],
+                'nl' => ['10 outfits'],
+            ]],
 
             // 軒 (けん) - Houses/Buildings
-            ['kana' => 'いっけん', 'romaji' => 'ikken', 'meanings' => ['1 house (軒)', '1 building']],
-            ['kana' => 'にけん', 'romaji' => 'niken', 'meanings' => ['2 houses', '2 buildings']],
-            ['kana' => 'さんけん', 'romaji' => 'sanken', 'meanings' => ['3 houses', '3 buildings']],
-            ['kana' => 'よんけん', 'romaji' => 'yonken', 'meanings' => ['4 houses', '4 buildings']],
-            ['kana' => 'ごけん', 'romaji' => 'goken', 'meanings' => ['5 houses', '5 buildings']],
-            ['kana' => 'ろっけん', 'romaji' => 'rokken', 'meanings' => ['6 houses', '6 buildings']],
-            ['kana' => 'ななけん', 'romaji' => 'nanaken', 'meanings' => ['7 houses', '7 buildings']],
-            ['kana' => 'はっけん', 'romaji' => 'hakken', 'meanings' => ['8 houses', '8 buildings']],
-            ['kana' => 'きゅうけん', 'romaji' => 'kyuuken', 'meanings' => ['9 houses', '9 buildings']],
-            ['kana' => 'じゅっけん', 'romaji' => 'jukken', 'meanings' => ['10 houses', '10 buildings']],
+            ['kana' => 'いっけん', 'romaji' => 'ikken', 'meanings' => [
+                'en' => ['1 house', '1 building'],
+                'nl' => ['1 huis', '1 gebouw'],
+            ]],
+            ['kana' => 'にけん', 'romaji' => 'niken', 'meanings' => [
+                'en' => ['2 houses', '2 buildings'],
+                'nl' => ['2 huizen', '2 gebouwen'],
+            ]],
+            ['kana' => 'さんけん', 'romaji' => 'sanken', 'meanings' => [
+                'en' => ['3 houses', '3 buildings'],
+                'nl' => ['3 huizen', '3 gebouwen'],
+            ]],
+            ['kana' => 'よんけん', 'romaji' => 'yonken', 'meanings' => [
+                'en' => ['4 houses', '4 buildings'],
+                'nl' => ['4 huizen', '4 gebouwen'],
+            ]],
+            ['kana' => 'ごけん', 'romaji' => 'goken', 'meanings' => [
+                'en' => ['5 houses', '5 buildings'],
+                'nl' => ['5 huizen', '5 gebouwen'],
+            ]],
+            ['kana' => 'ろっけん', 'romaji' => 'rokken', 'meanings' => [
+                'en' => ['6 houses', '6 buildings'],
+                'nl' => ['6 huizen', '6 gebouwen'],
+            ]],
+            ['kana' => 'ななけん', 'romaji' => 'nanaken', 'meanings' => [
+                'en' => ['7 houses', '7 buildings'],
+                'nl' => ['7 huizen', '7 gebouwen'],
+            ]],
+            ['kana' => 'はっけん', 'romaji' => 'hakken', 'meanings' => [
+                'en' => ['8 houses', '8 buildings'],
+                'nl' => ['8 huizen', '8 gebouwen'],
+            ]],
+            ['kana' => 'きゅうけん', 'romaji' => 'kyuuken', 'meanings' => [
+                'en' => ['9 houses', '9 buildings'],
+                'nl' => ['9 huizen', '9 gebouwen'],
+            ]],
+            ['kana' => 'じゅっけん', 'romaji' => 'jukken', 'meanings' => [
+                'en' => ['10 houses', '10 buildings'],
+                'nl' => ['10 huizen', '10 gebouwen'],
+            ]],
 
             // 台 (だい) - Machines/Vehicles
-            ['kana' => 'いちだい', 'romaji' => 'ichidai', 'meanings' => ['1 machine (台)', '1 vehicle']],
-            ['kana' => 'にだい', 'romaji' => 'nidai', 'meanings' => ['2 machines', '2 vehicles']],
-            ['kana' => 'さんだい', 'romaji' => 'sandai', 'meanings' => ['3 machines', '3 vehicles']],
-            ['kana' => 'よんだい', 'romaji' => 'yondai', 'meanings' => ['4 machines', '4 vehicles']],
-            ['kana' => 'ごだい', 'romaji' => 'godai', 'meanings' => ['5 machines', '5 vehicles']],
-            ['kana' => 'ろくだい', 'romaji' => 'rokudai', 'meanings' => ['6 machines', '6 vehicles']],
-            ['kana' => 'ななだい', 'romaji' => 'nanadai', 'meanings' => ['7 machines', '7 vehicles']],
-            ['kana' => 'はちだい', 'romaji' => 'hachidai', 'meanings' => ['8 machines', '8 vehicles']],
-            ['kana' => 'きゅうだい', 'romaji' => 'kyuudai', 'meanings' => ['9 machines', '9 vehicles']],
-            ['kana' => 'じゅうだい', 'romaji' => 'juudai', 'meanings' => ['10 machines', '10 vehicles']],
-            ['kana' => 'にじゅうだい', 'romaji' => 'nijuudai', 'meanings' => ['20 machines', '20 vehicles']],
-            ['kana' => 'ごじゅうだい', 'romaji' => 'gojuudai', 'meanings' => ['50 machines', '50 vehicles']],
-            ['kana' => 'ひゃくだい', 'romaji' => 'hyakudai', 'meanings' => ['100 machines', '100 vehicles']],
+            ['kana' => 'いちだい', 'romaji' => 'ichidai', 'meanings' => [
+                'en' => ['1 machine', '1 vehicle'],
+                'nl' => ['1 machine', '1 voertuig'],
+            ]],
+            ['kana' => 'にだい', 'romaji' => 'nidai', 'meanings' => [
+                'en' => ['2 machines', '2 vehicles'],
+                'nl' => ['2 machines', '2 voertuigen'],
+            ]],
+            ['kana' => 'さんだい', 'romaji' => 'sandai', 'meanings' => [
+                'en' => ['3 machines', '3 vehicles'],
+                'nl' => ['3 machines', '3 voertuigen'],
+            ]],
+            ['kana' => 'よんだい', 'romaji' => 'yondai', 'meanings' => [
+                'en' => ['4 machines', '4 vehicles'],
+                'nl' => ['4 machines', '4 voertuigen'],
+            ]],
+            ['kana' => 'ごだい', 'romaji' => 'godai', 'meanings' => [
+                'en' => ['5 machines', '5 vehicles'],
+                'nl' => ['5 machines', '5 voertuigen'],
+            ]],
+            ['kana' => 'ろくだい', 'romaji' => 'rokudai', 'meanings' => [
+                'en' => ['6 machines', '6 vehicles'],
+                'nl' => ['6 machines', '6 voertuigen'],
+            ]],
+            ['kana' => 'ななだい', 'romaji' => 'nanadai', 'meanings' => [
+                'en' => ['7 machines', '7 vehicles'],
+                'nl' => ['7 machines', '7 voertuigen'],
+            ]],
+            ['kana' => 'はちだい', 'romaji' => 'hachidai', 'meanings' => [
+                'en' => ['8 machines', '8 vehicles'],
+                'nl' => ['8 machines', '8 voertuigen'],
+            ]],
+            ['kana' => 'きゅうだい', 'romaji' => 'kyuudai', 'meanings' => [
+                'en' => ['9 machines', '9 vehicles'],
+                'nl' => ['9 machines', '9 voertuigen'],
+            ]],
+            ['kana' => 'じゅうだい', 'romaji' => 'juudai', 'meanings' => [
+                'en' => ['10 machines', '10 vehicles'],
+                'nl' => ['10 machines', '10 voertuigen'],
+            ]],
+            ['kana' => 'にじゅうだい', 'romaji' => 'nijuudai', 'meanings' => [
+                'en' => ['20 machines', '20 vehicles'],
+                'nl' => ['20 machines', '20 voertuigen'],
+            ]],
+            ['kana' => 'ごじゅうだい', 'romaji' => 'gojuudai', 'meanings' => [
+                'en' => ['50 machines', '50 vehicles'],
+                'nl' => ['50 machines', '50 voertuigen'],
+            ]],
+            ['kana' => 'ひゃくだい', 'romaji' => 'hyakudai', 'meanings' => [
+                'en' => ['100 machines', '100 vehicles'],
+                'nl' => ['100 machines', '100 voertuigen'],
+            ]],
 
             // 冊 (さつ) - Books
-            ['kana' => 'いっさつ', 'romaji' => 'issatsu', 'meanings' => ['1 book (冊)']],
-            ['kana' => 'にさつ', 'romaji' => 'nisatsu', 'meanings' => ['2 books']],
-            ['kana' => 'さんさつ', 'romaji' => 'sansatsu', 'meanings' => ['3 books']],
-            ['kana' => 'よんさつ', 'romaji' => 'yonsatsu', 'meanings' => ['4 books']],
-            ['kana' => 'ごさつ', 'romaji' => 'gosatsu', 'meanings' => ['5 books']],
-            ['kana' => 'ろくさつ', 'romaji' => 'rokusatsu', 'meanings' => ['6 books']],
-            ['kana' => 'ななさつ', 'romaji' => 'nanasatsu', 'meanings' => ['7 books']],
-            ['kana' => 'はっさつ', 'romaji' => 'hassatsu', 'meanings' => ['8 books']],
-            ['kana' => 'きゅうさつ', 'romaji' => 'kyuusatsu', 'meanings' => ['9 books']],
-            ['kana' => 'じゅっさつ', 'romaji' => 'jussatsu', 'meanings' => ['10 books']],
-            ['kana' => 'にじゅっさつ', 'romaji' => 'nijussatsu', 'meanings' => ['20 books']],
-            ['kana' => 'ごじゅっさつ', 'romaji' => 'gojussatsu', 'meanings' => ['50 books']],
-            ['kana' => 'ひゃくさつ', 'romaji' => 'hyakusatsu', 'meanings' => ['100 books']],
+            ['kana' => 'いっさつ', 'romaji' => 'issatsu', 'meanings' => [
+                'en' => ['1 book'],
+                'nl' => ['1 boek'],
+            ]],
+            ['kana' => 'にさつ', 'romaji' => 'nisatsu', 'meanings' => [
+                'en' => ['2 books'],
+                'nl' => ['2 boeken'],
+            ]],
+            ['kana' => 'さんさつ', 'romaji' => 'sansatsu', 'meanings' => [
+                'en' => ['3 books'],
+                'nl' => ['3 boeken'],
+            ]],
+            ['kana' => 'よんさつ', 'romaji' => 'yonsatsu', 'meanings' => [
+                'en' => ['4 books'],
+                'nl' => ['4 boeken'],
+            ]],
+            ['kana' => 'ごさつ', 'romaji' => 'gosatsu', 'meanings' => [
+                'en' => ['5 books'],
+                'nl' => ['5 boeken'],
+            ]],
+            ['kana' => 'ろくさつ', 'romaji' => 'rokusatsu', 'meanings' => [
+                'en' => ['6 books'],
+                'nl' => ['6 boeken'],
+            ]],
+            ['kana' => 'ななさつ', 'romaji' => 'nanasatsu', 'meanings' => [
+                'en' => ['7 books'],
+                'nl' => ['7 boeken'],
+            ]],
+            ['kana' => 'はっさつ', 'romaji' => 'hassatsu', 'meanings' => [
+                'en' => ['8 books'],
+                'nl' => ['8 boeken'],
+            ]],
+            ['kana' => 'きゅうさつ', 'romaji' => 'kyuusatsu', 'meanings' => [
+                'en' => ['9 books'],
+                'nl' => ['9 boeken'],
+            ]],
+            ['kana' => 'じゅっさつ', 'romaji' => 'jussatsu', 'meanings' => [
+                'en' => ['10 books'],
+                'nl' => ['10 boeken'],
+            ]],
+            ['kana' => 'にじゅっさつ', 'romaji' => 'nijussatsu', 'meanings' => [
+                'en' => ['20 books'],
+                'nl' => ['20 boeken'],
+            ]],
+            ['kana' => 'ごじゅっさつ', 'romaji' => 'gojussatsu', 'meanings' => [
+                'en' => ['50 books'],
+                'nl' => ['50 boeken'],
+            ]],
+            ['kana' => 'ひゃくさつ', 'romaji' => 'hyakusatsu', 'meanings' => [
+                'en' => ['100 books'],
+                'nl' => ['100 boeken'],
+            ]],
 
             // 名 (めい) - People (formal)
-            ['kana' => 'いちめい', 'romaji' => 'ichimei', 'meanings' => ['1 person (formal) (名)']],
-            ['kana' => 'にめい', 'romaji' => 'nimei', 'meanings' => ['2 people']],
-            ['kana' => 'さんめい', 'romaji' => 'sanmei', 'meanings' => ['3 people']],
-            ['kana' => 'よんめい', 'romaji' => 'yonmei', 'meanings' => ['4 people']],
-            ['kana' => 'ごめい', 'romaji' => 'gomei', 'meanings' => ['5 people']],
-            ['kana' => 'ろくめい', 'romaji' => 'rokumei', 'meanings' => ['6 people']],
-            ['kana' => 'ななめい', 'romaji' => 'nanamei', 'meanings' => ['7 people']],
-            ['kana' => 'はちめい', 'romaji' => 'hachimei', 'meanings' => ['8 people']],
-            ['kana' => 'きゅうめい', 'romaji' => 'kyuumei', 'meanings' => ['9 people']],
-            ['kana' => 'じゅうめい', 'romaji' => 'juumei', 'meanings' => ['10 people']],
+            ['kana' => 'いちめい', 'romaji' => 'ichimei', 'meanings' => [
+                'en' => ['1 person (formal)'],
+                'nl' => ['1 persoon (formeel)'],
+            ]],
+            ['kana' => 'にめい', 'romaji' => 'nimei', 'meanings' => [
+                'en' => ['2 people'],
+                'nl' => ['2 personen'],
+            ]],
+            ['kana' => 'さんめい', 'romaji' => 'sanmei', 'meanings' => [
+                'en' => ['3 people'],
+                'nl' => ['3 personen'],
+            ]],
+            ['kana' => 'よんめい', 'romaji' => 'yonmei', 'meanings' => [
+                'en' => ['4 people'],
+                'nl' => ['4 personen'],
+            ]],
+            ['kana' => 'ごめい', 'romaji' => 'gomei', 'meanings' => [
+                'en' => ['5 people'],
+                'nl' => ['5 personen'],
+            ]],
+            ['kana' => 'ろくめい', 'romaji' => 'rokumei', 'meanings' => [
+                'en' => ['6 people'],
+                'nl' => ['6 personen'],
+            ]],
+            ['kana' => 'ななめい', 'romaji' => 'nanamei', 'meanings' => [
+                'en' => ['7 people'],
+                'nl' => ['7 personen'],
+            ]],
+            ['kana' => 'はちめい', 'romaji' => 'hachimei', 'meanings' => [
+                'en' => ['8 people'],
+                'nl' => ['8 personen'],
+            ]],
+            ['kana' => 'きゅうめい', 'romaji' => 'kyuumei', 'meanings' => [
+                'en' => ['9 people'],
+                'nl' => ['9 personen'],
+            ]],
+            ['kana' => 'じゅうめい', 'romaji' => 'juumei', 'meanings' => [
+                'en' => ['10 people'],
+                'nl' => ['10 personen'],
+            ]],
 
             // 泊 (はく) - Overnight stays
-            ['kana' => 'いっぱく', 'romaji' => 'ippaku', 'meanings' => ['1 overnight stay (泊)', '1 night']],
-            ['kana' => 'にはく', 'romaji' => 'nihaku', 'meanings' => ['2 nights']],
-            ['kana' => 'さんぱく', 'romaji' => 'sanpaku', 'meanings' => ['3 nights']],
-            ['kana' => 'よんはく', 'romaji' => 'yonhaku', 'meanings' => ['4 nights']],
-            ['kana' => 'ごはく', 'romaji' => 'gohaku', 'meanings' => ['5 nights']],
-            ['kana' => 'ろっぱく', 'romaji' => 'roppaku', 'meanings' => ['6 nights']],
-            ['kana' => 'ななはく', 'romaji' => 'nanahaku', 'meanings' => ['7 nights']],
-            ['kana' => 'はっぱく', 'romaji' => 'happaku', 'meanings' => ['8 nights']],
-            ['kana' => 'きゅうはく', 'romaji' => 'kyuuhaku', 'meanings' => ['9 nights']],
-            ['kana' => 'じゅっぱく', 'romaji' => 'juppaku', 'meanings' => ['10 nights']],
-            ['kana' => 'じゅうよんはく', 'romaji' => 'juuyonhaku', 'meanings' => ['14 nights']],
-            ['kana' => 'さんじゅっぱく', 'romaji' => 'sanjuppaku', 'meanings' => ['30 nights']],
+            ['kana' => 'いっぱく', 'romaji' => 'ippaku', 'meanings' => [
+                'en' => ['1 night', '1 overnight stay'],
+                'nl' => ['1 nacht', '1 overnachting'],
+            ]],
+            ['kana' => 'にはく', 'romaji' => 'nihaku', 'meanings' => [
+                'en' => ['2 nights'],
+                'nl' => ['2 nachten'],
+            ]],
+            ['kana' => 'さんぱく', 'romaji' => 'sanpaku', 'meanings' => [
+                'en' => ['3 nights'],
+                'nl' => ['3 nachten'],
+            ]],
+            ['kana' => 'よんはく', 'romaji' => 'yonhaku', 'meanings' => [
+                'en' => ['4 nights'],
+                'nl' => ['4 nachten'],
+            ]],
+            ['kana' => 'ごはく', 'romaji' => 'gohaku', 'meanings' => [
+                'en' => ['5 nights'],
+                'nl' => ['5 nachten'],
+            ]],
+            ['kana' => 'ろっぱく', 'romaji' => 'roppaku', 'meanings' => [
+                'en' => ['6 nights'],
+                'nl' => ['6 nachten'],
+            ]],
+            ['kana' => 'ななはく', 'romaji' => 'nanahaku', 'meanings' => [
+                'en' => ['7 nights'],
+                'nl' => ['7 nachten'],
+            ]],
+            ['kana' => 'はっぱく', 'romaji' => 'happaku', 'meanings' => [
+                'en' => ['8 nights'],
+                'nl' => ['8 nachten'],
+            ]],
+            ['kana' => 'きゅうはく', 'romaji' => 'kyuuhaku', 'meanings' => [
+                'en' => ['9 nights'],
+                'nl' => ['9 nachten'],
+            ]],
+            ['kana' => 'じゅっぱく', 'romaji' => 'juppaku', 'meanings' => [
+                'en' => ['10 nights'],
+                'nl' => ['10 nachten'],
+            ]],
+            ['kana' => 'じゅうよんはく', 'romaji' => 'juuyonhaku', 'meanings' => [
+                'en' => ['14 nights'],
+                'nl' => ['14 nachten'],
+            ]],
+            ['kana' => 'さんじゅっぱく', 'romaji' => 'sanjuppaku', 'meanings' => [
+                'en' => ['30 nights'],
+                'nl' => ['30 nachten'],
+            ]],
         ]);
 
         // VTuber
         // Basic Stream Vocabulary
         $this->seedCategory('basic-stream-vocabulary', 'Basic Stream Vocabulary', [
-            ['kana' => 'こんにちは', 'romaji' => 'konnichiwa', 'meanings' => ['Hello']],
-            ['kana' => 'こんばんは', 'romaji' => 'konbanwa', 'meanings' => ['Good evening']],
-            ['kana' => 'おはようございます', 'romaji' => 'ohayou gozaimasu', 'meanings' => ['Good morning']],
-            ['kana' => 'ようこそ', 'romaji' => 'youkoso', 'meanings' => ['Welcome']],
-            ['kana' => 'みてくれてありがとう', 'romaji' => 'mite kurete arigatou', 'meanings' => ['Thanks for watching']],
-            ['kana' => 'きいてくれてありがとう', 'romaji' => 'kiite kurete arigatou', 'meanings' => ['Thanks for listening']],
-            ['kana' => 'コメントありがとう', 'romaji' => 'komento arigatou', 'meanings' => ['Thanks for the comment']],
-            ['kana' => 'ナイス', 'romaji' => 'naisu', 'meanings' => ['Nice!']],
-            ['kana' => 'ナイスパ', 'romaji' => 'naisu pa', 'meanings' => ['Nice superchat!']],
-            ['kana' => 'ありがとうスパチャ', 'romaji' => 'arigatou supacha', 'meanings' => ['Thanks for the superchat']],
-            ['kana' => 'チャンネルとうろくしてね', 'romaji' => 'chaneru touroku shite ne', 'meanings' => ['Please subscribe to the channel']],
-            ['kana' => 'フォローしてね', 'romaji' => 'foroo shite ne', 'meanings' => ['Please follow me']],
-            ['kana' => 'いいねしてね', 'romaji' => 'ii ne shite ne', 'meanings' => ['Please like (the video/stream)']],
-            ['kana' => 'シェアしてね', 'romaji' => 'shea shite ne', 'meanings' => ['Please share']],
-            ['kana' => 'もうすぐはじまるよ', 'romaji' => 'mou sugu hajimaru yo', 'meanings' => ['It’s starting soon']],
-            ['kana' => 'じゅんびできた？', 'romaji' => 'junbi dekita?', 'meanings' => ['Are you ready?']],
-            ['kana' => 'いくよ！', 'romaji' => 'iku yo!', 'meanings' => ['Let’s go!']],
-            ['kana' => 'さいこう！', 'romaji' => 'saikou!', 'meanings' => ['Awesome!', 'The best!']],
-            ['kana' => 'つぎいこう！', 'romaji' => 'tsugi ikou!', 'meanings' => ['Let’s move on to the next!']],
-            ['kana' => 'またあとで！', 'romaji' => 'mata ato de!', 'meanings' => ['See you later!']],
+            ['kana' => 'こんにちは', 'romaji' => 'konnichiwa', 'meanings' => [
+                'en' => ['Hello'],
+                'nl' => ['Hallo'],
+            ]],
+            ['kana' => 'こんばんは', 'romaji' => 'konbanwa', 'meanings' => [
+                'en' => ['Good evening'],
+                'nl' => ['Goedenavond'],
+            ]],
+            ['kana' => 'おはようございます', 'romaji' => 'ohayou gozaimasu', 'meanings' => [
+                'en' => ['Good morning'],
+                'nl' => ['Goedemorgen'],
+            ]],
+            ['kana' => 'ようこそ', 'romaji' => 'youkoso', 'meanings' => [
+                'en' => ['Welcome'],
+                'nl' => ['Welkom'],
+            ]],
+            ['kana' => 'みてくれてありがとう', 'romaji' => 'mite kurete arigatou', 'meanings' => [
+                'en' => ['Thanks for watching'],
+                'nl' => ['Bedankt voor het kijken'],
+            ]],
+            ['kana' => 'きいてくれてありがとう', 'romaji' => 'kiite kurete arigatou', 'meanings' => [
+                'en' => ['Thanks for listening'],
+                'nl' => ['Bedankt voor het luisteren'],
+            ]],
+            ['kana' => 'コメントありがとう', 'romaji' => 'komento arigatou', 'meanings' => [
+                'en' => ['Thanks for the comment'],
+                'nl' => ['Bedankt voor je reactie'],
+            ]],
+            ['kana' => 'ナイス', 'romaji' => 'naisu', 'meanings' => [
+                'en' => ['Nice!'],
+                'nl' => ['Nice!', 'Lekker bezig!'],
+            ]],
+            ['kana' => 'ナイスパ', 'romaji' => 'naisu pa', 'meanings' => [
+                'en' => ['Nice superchat!'],
+                'nl' => ['Lekker bezig met die superchat!'],
+            ]],
+            ['kana' => 'ありがとうスパチャ', 'romaji' => 'arigatou supacha', 'meanings' => [
+                'en' => ['Thanks for the superchat'],
+                'nl' => ['Bedankt voor de superchat'],
+            ]],
+            ['kana' => 'チャンネルとうろくしてね', 'romaji' => 'chaneru touroku shite ne', 'meanings' => [
+                'en' => ['Please subscribe to the channel'],
+                'nl' => ['Abonneer je op mijn kanaal'],
+            ]],
+            ['kana' => 'フォローしてね', 'romaji' => 'foroo shite ne', 'meanings' => [
+                'en' => ['Please follow me'],
+                'nl' => ['Volg me alsjeblieft'],
+            ]],
+            ['kana' => 'いいねしてね', 'romaji' => 'ii ne shite ne', 'meanings' => [
+                'en' => ['Please like (the video/stream)'],
+                'nl' => ['Like de video/stream alsjeblieft'],
+            ]],
+            ['kana' => 'シェアしてね', 'romaji' => 'shea shite ne', 'meanings' => [
+                'en' => ['Please share'],
+                'nl' => ['Deel dit alsjeblieft'],
+            ]],
+            ['kana' => 'もうすぐはじまるよ', 'romaji' => 'mou sugu hajimaru yo', 'meanings' => [
+                'en' => ['It’s starting soon'],
+                'nl' => ['Het begint bijna'],
+            ]],
+            ['kana' => 'じゅんびできた？', 'romaji' => 'junbi dekita?', 'meanings' => [
+                'en' => ['Are you ready?'],
+                'nl' => ['Ben je er klaar voor?'],
+            ]],
+            ['kana' => 'いくよ！', 'romaji' => 'iku yo!', 'meanings' => [
+                'en' => ['Let’s go!'],
+                'nl' => ['Gaan we!'],
+            ]],
+            ['kana' => 'さいこう！', 'romaji' => 'saikou!', 'meanings' => [
+                'en' => ['Awesome!', 'The best!'],
+                'nl' => ['Geweldig!', 'Top!'],
+            ]],
+            ['kana' => 'つぎいこう！', 'romaji' => 'tsugi ikou!', 'meanings' => [
+                'en' => ['Let’s move on to the next!'],
+                'nl' => ['Laten we doorgaan naar de volgende!'],
+            ]],
+            ['kana' => 'またあとで！', 'romaji' => 'mata ato de!', 'meanings' => [
+                'en' => ['See you later!'],
+                'nl' => ['Tot later!'],
+            ]],
         ]);
 
         // Useful Expressions
         $this->seedCategory('useful-expressions', 'Useful Expressions', [
-            ['kana' => 'ちょっとまって', 'romaji' => 'chotto matte', 'meanings' => ['Wait a moment']],
-            ['kana' => 'ごめんね', 'romaji' => 'gomen ne', 'meanings' => ['Sorry']],
-            ['kana' => 'だいじょうぶ？', 'romaji' => 'daijoubu?', 'meanings' => ['Are you okay?']],
-            ['kana' => 'だいじょうぶです', 'romaji' => 'daijoubu desu', 'meanings' => ['It’s okay']],
-            ['kana' => 'どうしたの？', 'romaji' => 'doushita no?', 'meanings' => ['What’s wrong?']],
-            ['kana' => 'まかせて！', 'romaji' => 'makasete!', 'meanings' => ['Leave it to me!']],
-            ['kana' => 'まちがえた', 'romaji' => 'machigaeta', 'meanings' => ['I messed up']],
-            ['kana' => 'まってました！', 'romaji' => 'matte mashita!', 'meanings' => ['I’ve been waiting!']],
-            ['kana' => 'いってきます', 'romaji' => 'ittekimasu', 'meanings' => ['I’ll be back (leaving temporarily)']],
-            ['kana' => 'ただいま', 'romaji' => 'tadaima', 'meanings' => ['I’m back']],
+            ['kana' => 'ちょっとまって', 'romaji' => 'chotto matte', 'meanings' => [
+                'en' => ['Wait a moment'],
+                'nl' => ['Wacht even'],
+            ]],
+            ['kana' => 'ごめんね', 'romaji' => 'gomen ne', 'meanings' => [
+                'en' => ['Sorry'],
+                'nl' => ['Sorry'],
+            ]],
+            ['kana' => 'だいじょうぶ？', 'romaji' => 'daijoubu?', 'meanings' => [
+                'en' => ['Are you okay?'],
+                'nl' => ['Gaat het?'],
+            ]],
+            ['kana' => 'だいじょうぶです', 'romaji' => 'daijoubu desu', 'meanings' => [
+                'en' => ['It’s okay'],
+                'nl' => ['Het is oké'],
+            ]],
+            ['kana' => 'どうしたの？', 'romaji' => 'doushita no?', 'meanings' => [
+                'en' => ['What’s wrong?'],
+                'nl' => ['Wat is er aan de hand?'],
+            ]],
+            ['kana' => 'まかせて！', 'romaji' => 'makasete!', 'meanings' => [
+                'en' => ['Leave it to me!'],
+                'nl' => ['Laat het aan mij over!'],
+            ]],
+            ['kana' => 'まちがえた', 'romaji' => 'machigaeta', 'meanings' => [
+                'en' => ['I messed up'],
+                'nl' => ['Ik heb een fout gemaakt'],
+            ]],
+            ['kana' => 'まってました！', 'romaji' => 'matte mashita!', 'meanings' => [
+                'en' => ['I’ve been waiting!'],
+                'nl' => ['Ik heb erop gewacht!'],
+            ]],
+            ['kana' => 'いってきます', 'romaji' => 'ittekimasu', 'meanings' => [
+                'en' => ['I’ll be back (leaving temporarily)'],
+                'nl' => ['Ik ben zo terug (tijdelijk weggaan)'],
+            ]],
+            ['kana' => 'ただいま', 'romaji' => 'tadaima', 'meanings' => [
+                'en' => ['I’m back'],
+                'nl' => ['Ik ben terug'],
+            ]],
         ]);
 
         // Chat Lingo & Slang
         $this->seedCategory('chat-lingo-and-slang', 'Chat Lingo & Slang', [
-            ['kana' => 'わこつ', 'romaji' => 'wakotsu', 'meanings' => ['Thanks for starting the stream']],
-            ['kana' => 'おつ', 'romaji' => 'otsu', 'meanings' => ['Good job!', 'Bye (casual)']],
-            ['kana' => 'おつかれ', 'romaji' => 'otsukare', 'meanings' => ['Thanks for the hard work']],
-            ['kana' => 'は？', 'romaji' => 'ha?', 'meanings' => ['Huh?', 'What?']],
-            ['kana' => '888', 'romaji' => 'pachi pachi pachi', 'meanings' => ['Clap clap clap']],
-            ['kana' => 'わら', 'romaji' => 'wara', 'meanings' => ['lol']],
-            ['kana' => 'くさ', 'romaji' => 'kusa', 'meanings' => ['lol (literally "grass", slang for laughing)']],
-            ['kana' => 'りょ', 'romaji' => 'ryo', 'meanings' => ['Got it (short for ryoukai)']],
-            ['kana' => 'おこ', 'romaji' => 'oko', 'meanings' => ['Angry (slang)']],
-            ['kana' => 'ガチ', 'romaji' => 'gachi', 'meanings' => ['Seriously', 'For real']],
+            ['kana' => 'わこつ', 'romaji' => 'wakotsu', 'meanings' => [
+                'en' => ['Thanks for starting the stream'],
+                'nl' => ['Bedankt voor het starten van de stream'],
+            ]],
+            ['kana' => 'おつ', 'romaji' => 'otsu', 'meanings' => [
+                'en' => ['Good job!', 'Bye (casual)'],
+                'nl' => ['Goed gedaan!', 'Doei'],
+            ]],
+            ['kana' => 'おつかれ', 'romaji' => 'otsukare', 'meanings' => [
+                'en' => ['Thanks for the hard work'],
+                'nl' => ['Bedankt voor je inzet'],
+            ]],
+            ['kana' => 'は？', 'romaji' => 'ha?', 'meanings' => [
+                'en' => ['Huh?', 'What?'],
+                'nl' => ['Huh?', 'Wat?'],
+            ]],
+            ['kana' => '888', 'romaji' => 'pachi pachi pachi', 'meanings' => [
+                'en' => ['Clap clap clap'],
+                'nl' => ['Applaus applaus applaus'],
+            ]],
+            ['kana' => 'わら', 'romaji' => 'wara', 'meanings' => [
+                'en' => ['lol'],
+                'nl' => ['hahaha'],
+            ]],
+            ['kana' => 'くさ', 'romaji' => 'kusa', 'meanings' => [
+                'en' => ['lol (literally "grass", slang for laughing)'],
+                'nl' => ['lol (letterlijk "gras", Japanse internettaal)'],
+            ]],
+            ['kana' => 'りょ', 'romaji' => 'ryo', 'meanings' => [
+                'en' => ['Got it (short for ryoukai)'],
+                'nl' => ['Begrepen (kort voor ryoukai)'],
+            ]],
+            ['kana' => 'おこ', 'romaji' => 'oko', 'meanings' => [
+                'en' => ['Angry (slang)'],
+                'nl' => ['Boos (slang)'],
+            ]],
+            ['kana' => 'ガチ', 'romaji' => 'gachi', 'meanings' => [
+                'en' => ['Seriously', 'For real'],
+                'nl' => ['Serieus', 'Echt waar'],
+            ]],
         ]);
 
         // Reactions & Emotions
         $this->seedCategory('reactions-and-emotions', 'Reactions & Emotions', [
-            ['kana' => 'すごい！', 'romaji' => 'sugoi!', 'meanings' => ['Amazing!', 'Wow!']],
-            ['kana' => 'やったー！', 'romaji' => 'yattaa!', 'meanings' => ['I did it!', 'Yay!']],
-            ['kana' => 'うれしい', 'romaji' => 'ureshii', 'meanings' => ['I’m happy']],
-            ['kana' => 'たのしい', 'romaji' => 'tanoshii', 'meanings' => ['Fun']],
-            ['kana' => 'かなしい', 'romaji' => 'kanashii', 'meanings' => ['Sad']],
-            ['kana' => 'こわい', 'romaji' => 'kowai', 'meanings' => ['Scary']],
-            ['kana' => 'びっくりした！', 'romaji' => 'bikkuri shita!', 'meanings' => ['That surprised me!']],
-            ['kana' => 'むずかしい', 'romaji' => 'muzukashii', 'meanings' => ['Difficult']],
-            ['kana' => 'ねむい', 'romaji' => 'nemui', 'meanings' => ['Sleepy']],
-            ['kana' => 'つかれた', 'romaji' => 'tsukareta', 'meanings' => ['Tired']],
+            ['kana' => 'すごい！', 'romaji' => 'sugoi!', 'meanings' => [
+                'en' => ['Amazing!', 'Wow!'],
+                'nl' => ['Ongelooflijk!', 'Wow!'],
+            ]],
+            ['kana' => 'やったー！', 'romaji' => 'yattaa!', 'meanings' => [
+                'en' => ['I did it!', 'Yay!'],
+                'nl' => ['Gelukt!', 'Yes!'],
+            ]],
+            ['kana' => 'うれしい', 'romaji' => 'ureshii', 'meanings' => [
+                'en' => ['I’m happy'],
+                'nl' => ['Ik ben blij'],
+            ]],
+            ['kana' => 'たのしい', 'romaji' => 'tanoshii', 'meanings' => [
+                'en' => ['Fun'],
+                'nl' => ['Leuk'],
+            ]],
+            ['kana' => 'かなしい', 'romaji' => 'kanashii', 'meanings' => [
+                'en' => ['Sad'],
+                'nl' => ['Verdrietig'],
+            ]],
+            ['kana' => 'こわい', 'romaji' => 'kowai', 'meanings' => [
+                'en' => ['Scary'],
+                'nl' => ['Eng'],
+            ]],
+            ['kana' => 'びっくりした！', 'romaji' => 'bikkuri shita!', 'meanings' => [
+                'en' => ['That surprised me!'],
+                'nl' => ['Dat schrok me!'],
+            ]],
+            ['kana' => 'むずかしい', 'romaji' => 'muzukashii', 'meanings' => [
+                'en' => ['Difficult'],
+                'nl' => ['Moeilijk'],
+            ]],
+            ['kana' => 'ねむい', 'romaji' => 'nemui', 'meanings' => [
+                'en' => ['Sleepy'],
+                'nl' => ['Slaperig'],
+            ]],
+            ['kana' => 'つかれた', 'romaji' => 'tsukareta', 'meanings' => [
+                'en' => ['Tired'],
+                'nl' => ['Moe'],
+            ]],
         ]);
 
         // Game-related Phrases
         $this->seedCategory('game-related-phrases', 'Game-related Phrases', [
-            ['kana' => 'ゲームをはじめよう', 'romaji' => 'geemu o hajimeyou', 'meanings' => ['Let’s start the game']],
-            ['kana' => 'スタート！', 'romaji' => 'sutaato!', 'meanings' => ['Start!']],
-            ['kana' => 'クリアした！', 'romaji' => 'kuria shita!', 'meanings' => ['Cleared it!']],
-            ['kana' => 'まけた～', 'romaji' => 'maketa~', 'meanings' => ['I lost~']],
-            ['kana' => 'かんたん！', 'romaji' => 'kantan!', 'meanings' => ['Easy!']],
-            ['kana' => 'むずかしすぎる！', 'romaji' => 'muzukashi sugiru!', 'meanings' => ['Too hard!']],
-            ['kana' => 'バグった', 'romaji' => 'bagutta', 'meanings' => ['It bugged out']],
-            ['kana' => 'ちょっとラグい', 'romaji' => 'chotto ragui', 'meanings' => ['It’s a bit laggy']],
-            ['kana' => 'つよい！', 'romaji' => 'tsuyoi!', 'meanings' => ['Strong!']],
-            ['kana' => 'ナイス！', 'romaji' => 'naisu!', 'meanings' => ['Nice!']],
+            ['kana' => 'ゲームをはじめよう', 'romaji' => 'geemu o hajimeyou', 'meanings' => [
+                'en' => ['Let’s start the game'],
+                'nl' => ['Laten we beginnen met het spel'],
+            ]],
+            ['kana' => 'スタート！', 'romaji' => 'sutaato!', 'meanings' => [
+                'en' => ['Start!'],
+                'nl' => ['Start!'],
+            ]],
+            ['kana' => 'クリアした！', 'romaji' => 'kuria shita!', 'meanings' => [
+                'en' => ['Cleared it!'],
+                'nl' => ['Voltooid!'],
+            ]],
+            ['kana' => 'まけた～', 'romaji' => 'maketa~', 'meanings' => [
+                'en' => ['I lost~'],
+                'nl' => ['Ik heb verloren~'],
+            ]],
+            ['kana' => 'かんたん！', 'romaji' => 'kantan!', 'meanings' => [
+                'en' => ['Easy!'],
+                'nl' => ['Makkelijk!'],
+            ]],
+            ['kana' => 'むずかしすぎる！', 'romaji' => 'muzukashi sugiru!', 'meanings' => [
+                'en' => ['Too hard!'],
+                'nl' => ['Veel te moeilijk!'],
+            ]],
+            ['kana' => 'バグった', 'romaji' => 'bagutta', 'meanings' => [
+                'en' => ['It bugged out'],
+                'nl' => ['Er zit een bug in'],
+            ]],
+            ['kana' => 'ちょっとラグい', 'romaji' => 'chotto ragui', 'meanings' => [
+                'en' => ['It’s a bit laggy'],
+                'nl' => ['Het laggt een beetje'],
+            ]],
+            ['kana' => 'つよい！', 'romaji' => 'tsuyoi!', 'meanings' => [
+                'en' => ['Strong!'],
+                'nl' => ['Sterk!'],
+            ]],
+            ['kana' => 'ナイス！', 'romaji' => 'naisu!', 'meanings' => [
+                'en' => ['Nice!'],
+                'nl' => ['Nice!', 'Lekker bezig!'],
+            ]],
         ]);
 
         // Technical Issues & Stream Setup
         $this->seedCategory('technical-issues-and-stream-setup', 'Technical Issues & Stream Setup', [
-            ['kana' => 'マイクテスト', 'romaji' => 'maiku tesuto', 'meanings' => ['Mic test']],
-            ['kana' => 'きこえますか？', 'romaji' => 'kikoemasu ka?', 'meanings' => ['Can you hear me?']],
-            ['kana' => 'おとがきれい', 'romaji' => 'oto ga kirei', 'meanings' => ['The sound is clear']],
-            ['kana' => 'ラグがあります', 'romaji' => 'ragu ga arimasu', 'meanings' => ['There’s lag']],
-            ['kana' => 'こしょうしたみたい', 'romaji' => 'koshou shita mitai', 'meanings' => ['Seems broken']],
-            ['kana' => 'パソコンがおかしい', 'romaji' => 'pasokon ga okashii', 'meanings' => ['My computer is acting weird']],
-            ['kana' => 'もういちどためします', 'romaji' => 'mou ichido tameshimasu', 'meanings' => ['I’ll try again']],
-            ['kana' => 'さいせっていちゅう', 'romaji' => 'saise tteichuu', 'meanings' => ['Reconfiguring']],
-            ['kana' => 'こえがきれちゃった', 'romaji' => 'koe ga kirechatta', 'meanings' => ['The audio cut out']],
-            ['kana' => 'すこしおまちください', 'romaji' => 'sukoshi omachi kudasai', 'meanings' => ['Please wait a moment']],
+            ['kana' => 'マイクテスト', 'romaji' => 'maiku tesuto', 'meanings' => [
+                'en' => ['Mic test'],
+                'nl' => ['Microfoon test'],
+            ]],
+            ['kana' => 'きこえますか？', 'romaji' => 'kikoemasu ka?', 'meanings' => [
+                'en' => ['Can you hear me?'],
+                'nl' => ['Kun je me horen?'],
+            ]],
+            ['kana' => 'おとがきれい', 'romaji' => 'oto ga kirei', 'meanings' => [
+                'en' => ['The sound is clear'],
+                'nl' => ['Het geluid is helder'],
+            ]],
+            ['kana' => 'ラグがあります', 'romaji' => 'ragu ga arimasu', 'meanings' => [
+                'en' => ['There’s lag'],
+                'nl' => ['Er is lag'],
+            ]],
+            ['kana' => 'こしょうしたみたい', 'romaji' => 'koshou shita mitai', 'meanings' => [
+                'en' => ['Seems broken'],
+                'nl' => ['Lijkt kapot te zijn'],
+            ]],
+            ['kana' => 'パソコンがおかしい', 'romaji' => 'pasokon ga okashii', 'meanings' => [
+                'en' => ['My computer is acting weird'],
+                'nl' => ['Mijn computer doet raar'],
+            ]],
+            ['kana' => 'もういちどためします', 'romaji' => 'mou ichido tameshimasu', 'meanings' => [
+                'en' => ['I’ll try again'],
+                'nl' => ['Ik probeer het opnieuw'],
+            ]],
+            ['kana' => 'さいせっていちゅう', 'romaji' => 'saise tteichuu', 'meanings' => [
+                'en' => ['Reconfiguring'],
+                'nl' => ['Opnieuw aan het instellen'],
+            ]],
+            ['kana' => 'こえがきれちゃった', 'romaji' => 'koe ga kirechatta', 'meanings' => [
+                'en' => ['The audio cut out'],
+                'nl' => ['Het geluid viel weg'],
+            ]],
+            ['kana' => 'すこしおまちください', 'romaji' => 'sukoshi omachi kudasai', 'meanings' => [
+                'en' => ['Please wait a moment'],
+                'nl' => ['Een momentje geduld alstublieft'],
+            ]],
         ]);
 
         // Fan Engagement
         $this->seedCategory('fan-engagement', 'Fan Engagement', [
-            ['kana' => 'コメントありがとう！', 'romaji' => 'komento arigatou!', 'meanings' => ['Thanks for the comment!']],
-            ['kana' => 'スパチャありがとう！', 'romaji' => 'supacha arigatou!', 'meanings' => ['Thanks for the super chat!']],
-            ['kana' => 'しつもんがあればきいてね', 'romaji' => 'shitsumon ga areba kiite ne', 'meanings' => ['Ask if you have any questions']],
-            ['kana' => 'たのしんでる？', 'romaji' => 'tanoshinderu?', 'meanings' => ['Are you having fun?']],
-            ['kana' => 'いつもおうえんありがとう', 'romaji' => 'itsumo ouen arigatou', 'meanings' => ['Thanks for always supporting me']],
-            ['kana' => 'はじめてのひともいらっしゃい！', 'romaji' => 'hajimete no hito mo irasshai!', 'meanings' => ['Welcome, first-timers!']],
-            ['kana' => 'フォローしてね', 'romaji' => 'foroo shite ne', 'meanings' => ['Please follow me']],
-            ['kana' => 'チャンネルとうろくしてね', 'romaji' => 'channeru touroku shite ne', 'meanings' => ['Please subscribe to the channel']],
-            ['kana' => 'きょうもきてくれてありがとう', 'romaji' => 'kyou mo kite kurete arigatou', 'meanings' => ['Thanks for coming today too']],
-            ['kana' => 'またあそびにきてね！', 'romaji' => 'mata asobi ni kite ne!', 'meanings' => ['Come hang out again!']],
+            ['kana' => 'コメントありがとう！', 'romaji' => 'komento arigatou!', 'meanings' => [
+                'en' => ['Thanks for the comment!'],
+                'nl' => ['Bedankt voor je reactie!'],
+            ]],
+            ['kana' => 'スパチャありがとう！', 'romaji' => 'supacha arigatou!', 'meanings' => [
+                'en' => ['Thanks for the super chat!'],
+                'nl' => ['Bedankt voor de superchat!'],
+            ]],
+            ['kana' => 'しつもんがあればきいてね', 'romaji' => 'shitsumon ga areba kiite ne', 'meanings' => [
+                'en' => ['Ask if you have any questions'],
+                'nl' => ['Stel gerust je vragen'],
+            ]],
+            ['kana' => 'たのしんでる？', 'romaji' => 'tanoshinderu?', 'meanings' => [
+                'en' => ['Are you having fun?'],
+                'nl' => ['Heb je het naar je zin?'],
+            ]],
+            ['kana' => 'いつもおうえんありがとう', 'romaji' => 'itsumo ouen arigatou', 'meanings' => [
+                'en' => ['Thanks for always supporting me'],
+                'nl' => ['Bedankt voor je steun!'],
+            ]],
+            ['kana' => 'はじめてのひともいらっしゃい！', 'romaji' => 'hajimete no hito mo irasshai!', 'meanings' => [
+                'en' => ['Welcome, first-timers!'],
+                'nl' => ['Welkom, nieuwe kijkers!'],
+            ]],
+            ['kana' => 'フォローしてね', 'romaji' => 'foroo shite ne', 'meanings' => [
+                'en' => ['Please follow me'],
+                'nl' => ['Volg me alsjeblieft'],
+            ]],
+            ['kana' => 'チャンネルとうろくしてね', 'romaji' => 'channeru touroku shite ne', 'meanings' => [
+                'en' => ['Please subscribe to the channel'],
+                'nl' => ['Abonneer je op het kanaal'],
+            ]],
+            ['kana' => 'きょうもきてくれてありがとう', 'romaji' => 'kyou mo kite kurete arigatou', 'meanings' => [
+                'en' => ['Thanks for coming today too'],
+                'nl' => ['Bedankt dat je er weer was vandaag'],
+            ]],
+            ['kana' => 'またあそびにきてね！', 'romaji' => 'mata asobi ni kite ne!', 'meanings' => [
+                'en' => ['Come hang out again!'],
+                'nl' => ['Kom snel weer langs!'],
+            ]],
         ]);
 
         // End-of-Stream Phrases
         $this->seedCategory('end-of-stream-phrases', 'End-of-Stream Phrases', [
-            ['kana' => 'きょうはここまで！', 'romaji' => 'kyou wa koko made!', 'meanings' => ['That’s all for today!']],
-            ['kana' => 'おつかれさまでした！', 'romaji' => 'otsukaresama deshita!', 'meanings' => ['Great work everyone!']],
-            ['kana' => 'またね！', 'romaji' => 'mata ne!', 'meanings' => ['See you!']],
-            ['kana' => 'じゃあね～', 'romaji' => 'jaa ne~', 'meanings' => ['Bye~']],
-            ['kana' => 'ばいばい～', 'romaji' => 'baibai~', 'meanings' => ['Bye bye~']],
-            ['kana' => 'つぎのはいしんもたのしみにしてね！', 'romaji' => 'tsugi no haishin mo tanoshimi ni shite ne!', 'meanings' => ['Look forward to the next stream!']],
-            ['kana' => 'よるおそいのでゆっくりやすんでね', 'romaji' => 'yoru osoi node yukkuri yasunde ne', 'meanings' => ['It’s late, so rest well']],
-            ['kana' => 'きょうもありがとう！', 'romaji' => 'kyou mo arigatou!', 'meanings' => ['Thanks again for today!']],
-            ['kana' => 'おつVTuber！', 'romaji' => 'otsu VTuber!', 'meanings' => ['VTuber-style sign-off']],
-            ['kana' => 'さいごまでみてくれてありがとう！', 'romaji' => 'saigo made mite kurete arigatou!', 'meanings' => ['Thanks for watching till the end!']],
+            ['kana' => 'きょうはここまで！', 'romaji' => 'kyou wa koko made!', 'meanings' => [
+                'en' => ['That’s all for today!'],
+                'nl' => ['Dat was het voor vandaag!'],
+            ]],
+            ['kana' => 'おつかれさまでした！', 'romaji' => 'otsukaresama deshita!', 'meanings' => [
+                'en' => ['Great work everyone!'],
+                'nl' => ['Goed gedaan allemaal!'],
+            ]],
+            ['kana' => 'またね！', 'romaji' => 'mata ne!', 'meanings' => [
+                'en' => ['See you!'],
+                'nl' => ['Tot ziens!'],
+            ]],
+            ['kana' => 'じゃあね～', 'romaji' => 'jaa ne~', 'meanings' => [
+                'en' => ['Bye~'],
+                'nl' => ['Doei~'],
+            ]],
+            ['kana' => 'ばいばい～', 'romaji' => 'baibai~', 'meanings' => [
+                'en' => ['Bye bye~'],
+                'nl' => ['Bye bye~'],
+            ]],
+            ['kana' => 'つぎのはいしんもたのしみにしてね！', 'romaji' => 'tsugi no haishin mo tanoshimi ni shite ne!', 'meanings' => [
+                'en' => ['Look forward to the next stream!'],
+                'nl' => ['Kijk uit naar de volgende stream!'],
+            ]],
+            ['kana' => 'よるおそいのでゆっくりやすんでね', 'romaji' => 'yoru osoi node yukkuri yasunde ne', 'meanings' => [
+                'en' => ['It’s late, so rest well'],
+                'nl' => ['Het is laat, rust lekker uit'],
+            ]],
+            ['kana' => 'きょうもありがとう！', 'romaji' => 'kyou mo arigatou!', 'meanings' => [
+                'en' => ['Thanks again for today!'],
+                'nl' => ['Nogmaals bedankt voor vandaag!'],
+            ]],
+            ['kana' => 'おつVTuber！', 'romaji' => 'otsu VTuber!', 'meanings' => [
+                'en' => ['VTuber-style sign-off'],
+                'nl' => ['VTuber-afsluiting'],
+            ]],
+            ['kana' => 'さいごまでみてくれてありがとう！', 'romaji' => 'saigo made mite kurete arigatou!', 'meanings' => [
+                'en' => ['Thanks for watching till the end!'],
+                'nl' => ['Bedankt dat je tot het einde hebt gekeken!'],
+            ]],
         ]);
 
     }
