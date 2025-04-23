@@ -13,6 +13,7 @@ class TimedAttempt extends Model
         'correct',
         'missed',
         'time_ms',
+        'attempt_number',
         'finished_at',
     ];
 }
