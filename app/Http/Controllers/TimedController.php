@@ -197,6 +197,13 @@ class TimedController extends Controller
         $previousTimeMs = null;
         $previousFormattedTime = null;
 
+        // Calculate current attempt number
+        $attemptCount = TimedAttempt::where('user_id', $user->id)
+            ->where('category_id', $categoryId)
+            ->where('direction', $direction)
+            ->count();
+        $attemptNumber = $attemptCount + 1;
+
         TimedAttempt::create([
             'user_id' => $user->id,
             'category_id' => $categoryId,
@@ -204,6 +211,7 @@ class TimedController extends Controller
             'correct' => $correct,
             'missed' => $missed,
             'time_ms' => $timeMs,
+            'attempt' => $attemptNumber,
             'finished_at' => $endTime,
         ]);
 
@@ -293,5 +301,4 @@ class TimedController extends Controller
             'processedSkipped'
         ));
     }
-
 }
