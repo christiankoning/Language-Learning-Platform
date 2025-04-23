@@ -211,7 +211,7 @@ class TimedController extends Controller
             'correct' => $correct,
             'missed' => $missed,
             'time_ms' => $timeMs,
-            'attempt' => $attemptNumber,
+            'attempt_number' => $attemptNumber,
             'finished_at' => $endTime,
         ]);
 
