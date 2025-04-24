@@ -38,6 +38,17 @@
                     ⏱️ New Fastest Time!
                 </div>
             @endif
+            @if ($newBestAccuracy || $newBestTime)
+                <a href="{{ route('leaderboard.personal', [$language->slug, $category->slug, $direction]) }}"
+                   class="mt-6 inline-block px-6 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-medium rounded-md shadow hover:brightness-110 transition animate-pulse">
+                    🌟 You ranked higher! Check Leaderboard
+                </a>
+            @else
+                <a href="{{ route('leaderboard.personal', [$language->slug, $category->slug, $direction]) }}"
+                   class="mt-6 inline-block px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-medium rounded-md shadow hover:brightness-110 transition">
+                    🏆 View Leaderboard for This Category
+                </a>
+            @endif
         </div>
 
         <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center">

@@ -17,6 +17,11 @@ class CategoryUserProgress extends Model
         'last_practiced_at',
     ];
 
+    protected $casts = [
+        'best_accuracy' => 'integer',
+        'best_time_ms' => 'integer',
+    ];
+
     public function category()
     {
         return $this->belongsTo(Category::class);

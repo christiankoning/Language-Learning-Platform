@@ -4,6 +4,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\LanguagePreferenceController;
+use App\Http\Controllers\LeaderboardController;
 use App\Http\Controllers\PracticeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TimedController;
@@ -85,5 +86,13 @@ Route::post('/timed/skip', [TimedController::class, 'skip'])
 Route::get('/timed/results', [TimedController::class, 'results'])
     ->middleware(['auth', 'verified'])
     ->name('timed.results');
+
+Route::get('/leaderboards/personal', [LeaderboardController::class, 'index'])
+    ->middleware(['auth', 'verified'])
+    ->name('leaderboard.personal_index');
+
+Route::get('/leaderboards/personal/{language:slug}/{category:slug}/{direction}', [LeaderboardController::class, 'personal'])
+    ->middleware(['auth', 'verified'])
+    ->name('leaderboard.personal');
 
 require __DIR__.'/auth.php';
