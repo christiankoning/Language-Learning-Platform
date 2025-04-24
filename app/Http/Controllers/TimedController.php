@@ -148,14 +148,16 @@ class TimedController extends Controller
         $correct = session('timed.correct', 0);
         $total = session('timed.original_count', 1);
         $missed = $total - $correct;
-        $accuracy = $total > 0 ? round(($correct / $total) * 100) : 0;
+        $accuracy = $total > 0 ? (int) round(($correct / $total) * 100) : 0;
 
         $startTime = Carbon::parse(session('timed.start_time'));
         $endTime = now();
 
-        $timeMs = $startTime->lessThanOrEqualTo($endTime)
-            ? $startTime->diffInMilliseconds($endTime)
-            : 0;
+        $timeMs = (int) round(
+            $startTime->lessThanOrEqualTo($endTime)
+                ? $startTime->diffInMilliseconds($endTime)
+                : 0
+        );
 
         $languageId = session('timed.language_id');
         $categoryId = session('timed.category_id');
@@ -164,7 +166,7 @@ class TimedController extends Controller
         $language = Language::find($languageId);
         $category = Category::find($categoryId);
 
-        // Show skipped item translations
+        // Process skipped items
         $skippedItems = session('timed.skipped', []);
         $processedSkipped = [];
 
@@ -172,12 +174,11 @@ class TimedController extends Controller
             $item = (object) $item;
             $extra = !empty($item->extra_data) ? json_decode($item->extra_data, true) : [];
 
+            $answers = [$item->answer];
             if (!empty($extra['translations'][$preferredLang])) {
                 $answers = $extra['translations'][$preferredLang];
             } elseif (!empty($extra['translations']) && array_values($extra['translations']) === $extra['translations']) {
                 $answers = $extra['translations'];
-            } else {
-                $answers = [$item->answer];
             }
 
             $item->translated_prompt = $direction === 'recall'
@@ -197,11 +198,12 @@ class TimedController extends Controller
         $previousTimeMs = null;
         $previousFormattedTime = null;
 
-        // Calculate current attempt number
+        // Store the attempt
         $attemptCount = TimedAttempt::where('user_id', $user->id)
             ->where('category_id', $categoryId)
             ->where('direction', $direction)
             ->count();
+
         $attemptNumber = $attemptCount + 1;
 
         TimedAttempt::create([
@@ -215,6 +217,7 @@ class TimedController extends Controller
             'finished_at' => $endTime,
         ]);
 
+        // Update or create user progress
         $existing = CategoryUserProgress::where([
             'user_id' => $user->id,
             'category_id' => $categoryId,
@@ -234,7 +237,7 @@ class TimedController extends Controller
             $shouldUpdate = true;
         } else {
             $previousAccuracy = $existing->best_accuracy;
-            $previousTimeMs = $existing->best_time_ms;
+            $previousTimeMs = (int) $existing->best_time_ms;
 
             if ($accuracy > $existing->best_accuracy) {
                 $newBestAccuracy = true;
