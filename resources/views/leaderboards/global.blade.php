@@ -10,11 +10,11 @@
 
         <div class="flex justify-between items-center mb-6 flex-wrap gap-4">
             <div class="flex gap-2">
-                <a href="{{ route('leaderboard.personal', [$language->slug, $category->slug, 'recognition']) }}"
+                <a href="{{ route('leaderboard.global', [$language->slug, $category->slug, 'recognition']) }}"
                    class="px-4 py-2 rounded-md {{ $direction === 'recognition' ? 'bg-white text-[#111827]' : 'bg-white/10 text-white hover:bg-white/20' }}">
                     Recognition
                 </a>
-                <a href="{{ route('leaderboard.personal', [$language->slug, $category->slug, 'recall']) }}"
+                <a href="{{ route('leaderboard.global', [$language->slug, $category->slug, 'recall']) }}"
                    class="px-4 py-2 rounded-md {{ $direction === 'recall' ? 'bg-white text-[#111827]' : 'bg-white/10 text-white hover:bg-white/20' }}">
                     Recall
                 </a>
