@@ -95,4 +95,8 @@ Route::get('/leaderboards/personal/{language:slug}/{category:slug}/{direction}',
     ->middleware(['auth', 'verified'])
     ->name('leaderboard.personal');
 
+Route::get('/leaderboards/global/{language:slug}/{category:slug}/{direction}', [LeaderboardController::class, 'global'])
+    ->middleware(['auth', 'verified'])
+    ->name('leaderboard.global');
+
 require __DIR__.'/auth.php';
