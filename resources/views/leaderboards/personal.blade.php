@@ -22,10 +22,12 @@
             </div>
 
             <div class="flex gap-2">
-                <span class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-semibold shadow">
+                <a href="{{ route('leaderboard.personal', [$language->slug, $category->slug, $direction]) }}"
+                   class="px-4 py-2 rounded-md text-sm font-medium transition {{ request()->routeIs('leaderboard.personal') ? 'bg-blue-600 text-white shadow font-semibold' : 'bg-white/10 text-white hover:bg-white/20' }}">
                     Personal
-                </span>
-                <a href="#" class="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-md text-sm font-medium transition">
+                </a>
+                <a href="{{ route('leaderboard.global', [$language->slug, $category->slug, $direction]) }}"
+                   class="px-4 py-2 rounded-md text-sm font-medium transition {{ request()->routeIs('leaderboard.global') ? 'bg-blue-600 text-white shadow font-semibold' : 'bg-white/10 text-white hover:bg-white/20' }}">
                     Global
                 </a>
             </div>
@@ -34,6 +36,10 @@
         @if ($attempts->isEmpty())
             <p class="text-white/80">You have no personal attempts for this category and direction yet.</p>
         @else
+            <div class="mt-6">
+                {{ $attempts->links('components.pagination_white') }}
+            </div>
+
             <div class="overflow-x-auto">
                 <table class="w-full table-auto border-separate border-spacing-y-2">
                     <thead class="text-left text-sm uppercase tracking-wide text-white/70">
@@ -60,7 +66,7 @@
             </div>
 
             <div class="mt-6">
-                {{ $attempts->links() }}
+                {{ $attempts->links('components.pagination_white') }}
             </div>
         @endif
     </section>
