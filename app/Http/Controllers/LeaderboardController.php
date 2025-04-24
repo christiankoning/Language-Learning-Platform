@@ -16,16 +16,22 @@ class LeaderboardController extends Controller
     {
         $user = Auth::user();
 
-        // Get all categories/subcategories the user has played in
-        $categoryIds = TimedAttempt::where('user_id', $user->id)
+        // Categories the user HAS played
+        $playedCategoryIds = TimedAttempt::where('user_id', $user->id)
             ->pluck('category_id')
             ->unique();
 
         $categories = Category::with('parent', 'language')
-            ->whereIn('id', $categoryIds)
+            ->whereIn('id', $playedCategoryIds)
             ->get();
 
-        return view('leaderboards.index', compact('categories'));
+        // Categories the user HASN'T played
+        $unplayedCategories = Category::with('parent', 'language')
+            ->whereNotIn('id', $playedCategoryIds)
+            ->get()
+            ->groupBy(fn ($cat) => $cat->language->name);
+
+        return view('leaderboards.index', compact('categories', 'unplayedCategories'));
     }
 
     public function personal(Language $language, Category $category, $direction)
