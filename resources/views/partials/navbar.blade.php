@@ -19,7 +19,7 @@
                    class="px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-md font-medium transition text-base">
                     Languages
                 </a>
-                <a href="{{ route('leaderboard.personal_index') }}"
+                <a href="{{ route('leaderboard.index') }}"
                    class="px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-md font-medium transition text-base">
                     Leaderboards
                 </a>
