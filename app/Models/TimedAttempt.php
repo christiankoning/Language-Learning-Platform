@@ -16,4 +16,8 @@ class TimedAttempt extends Model
         'attempt_number',
         'finished_at',
     ];
+
+    protected $casts = [
+        'time_ms' => 'integer',
+    ];
 }
