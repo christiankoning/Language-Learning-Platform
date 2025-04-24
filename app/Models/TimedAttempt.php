@@ -20,4 +20,9 @@ class TimedAttempt extends Model
     protected $casts = [
         'time_ms' => 'integer',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

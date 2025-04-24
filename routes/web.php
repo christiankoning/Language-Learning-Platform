@@ -87,12 +87,16 @@ Route::get('/timed/results', [TimedController::class, 'results'])
     ->middleware(['auth', 'verified'])
     ->name('timed.results');
 
-Route::get('/leaderboards/personal', [LeaderboardController::class, 'index'])
+Route::get('/leaderboards', [LeaderboardController::class, 'index'])
     ->middleware(['auth', 'verified'])
-    ->name('leaderboard.personal_index');
+    ->name('leaderboard.index');
 
 Route::get('/leaderboards/personal/{language:slug}/{category:slug}/{direction}', [LeaderboardController::class, 'personal'])
     ->middleware(['auth', 'verified'])
     ->name('leaderboard.personal');
+
+Route::get('/leaderboards/global/{language:slug}/{category:slug}/{direction}', [LeaderboardController::class, 'global'])
+    ->middleware(['auth', 'verified'])
+    ->name('leaderboard.global');
 
 require __DIR__.'/auth.php';

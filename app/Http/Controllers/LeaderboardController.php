@@ -8,6 +8,7 @@ use App\Models\TimedAttempt;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class LeaderboardController extends Controller
 {
@@ -15,16 +16,22 @@ class LeaderboardController extends Controller
     {
         $user = Auth::user();
 
-        // Get all categories/subcategories the user has played in
-        $categoryIds = TimedAttempt::where('user_id', $user->id)
+        // Categories the user HAS played
+        $playedCategoryIds = TimedAttempt::where('user_id', $user->id)
             ->pluck('category_id')
             ->unique();
 
         $categories = Category::with('parent', 'language')
-            ->whereIn('id', $categoryIds)
+            ->whereIn('id', $playedCategoryIds)
             ->get();
 
-        return view('leaderboards.personal_index', compact('categories'));
+        // Categories the user HASN'T played
+        $unplayedCategories = Category::with('parent', 'language')
+            ->whereNotIn('id', $playedCategoryIds)
+            ->get()
+            ->groupBy(fn ($cat) => $cat->language->name);
+
+        return view('leaderboards.index', compact('categories', 'unplayedCategories'));
     }
 
     public function personal(Language $language, Category $category, $direction)
@@ -73,5 +80,86 @@ class LeaderboardController extends Controller
         }
 
         return view('leaderboards.personal', compact('attempts', 'language', 'category', 'direction'));
+    }
+
+    public function global(Language $language, Category $category, $direction)
+    {
+        if (!in_array($direction, ['recognition', 'recall'])) {
+            abort(404);
+        }
+
+        $user = auth()->user();
+
+        // Subquery: best attempt per user
+        $bestAttempts = TimedAttempt::selectRaw('
+        user_id,
+        MAX(correct / (correct + missed)) as accuracy_ratio,
+        MIN(time_ms) as best_time
+    ')
+            ->where('category_id', $category->id)
+            ->where('direction', $direction)
+            ->groupBy('user_id');
+
+        // Full attempts + user info
+        $attempts = TimedAttempt::select('timed_attempts.*')
+            ->joinSub($bestAttempts, 'best_attempts', function ($join) {
+                $join->on('timed_attempts.user_id', '=', 'best_attempts.user_id')
+                    ->whereRaw('(timed_attempts.correct / (timed_attempts.correct + timed_attempts.missed)) = best_attempts.accuracy_ratio')
+                    ->whereColumn('timed_attempts.time_ms', '=', 'best_attempts.best_time');
+            })
+            ->where('category_id', $category->id)
+            ->where('direction', $direction)
+            ->with('user')
+            ->orderByRaw('(correct / (correct + missed)) DESC')
+            ->orderBy('time_ms', 'ASC')
+            ->paginate(20);
+
+        // Add rank styling
+        foreach ($attempts as $index => $attempt) {
+            $rank = ($attempts->currentPage() - 1) * $attempts->perPage() + $index + 1;
+
+            $attempt->rank = $rank;
+            $attempt->accuracy_percent = $attempt->correct + $attempt->missed > 0
+                ? round(($attempt->correct / ($attempt->correct + $attempt->missed)) * 100)
+                : 0;
+
+            $attempt->formatted_time = sprintf('%02d:%02d:%02d.%02d',
+                floor($attempt->time_ms / 3600000),
+                floor(($attempt->time_ms % 3600000) / 60000),
+                floor(($attempt->time_ms % 60000) / 1000),
+                floor(($attempt->time_ms % 1000) / 10)
+            );
+
+            $attempt->row_class = match ($rank) {
+                1 => 'bg-yellow-400 text-black font-bold',
+                2 => 'bg-gray-300 text-black font-semibold',
+                3 => 'bg-orange-400 text-black font-semibold',
+                default => ($attempt->user_id === $user->id)
+                    ? 'bg-white/10 text-white font-semibold'
+                    : 'text-white/90'
+            };
+        }
+
+        // Determine user's global rank (if not in top 20)
+        $userRank = null;
+        $userEntry = null;
+
+        $allUserAttempts = TimedAttempt::select('user_id', DB::raw('MAX(correct / (correct + missed)) as accuracy_ratio'), DB::raw('MIN(time_ms) as best_time'))
+            ->where('category_id', $category->id)
+            ->where('direction', $direction)
+            ->groupBy('user_id')
+            ->get()
+            ->sortByDesc(fn ($item) => [$item->accuracy_ratio, -$item->best_time])
+            ->values();
+
+        foreach ($allUserAttempts as $index => $entry) {
+            if ($entry->user_id === $user->id) {
+                $userRank = $index + 1;
+                $userEntry = $entry;
+                break;
+            }
+        }
+
+        return view('leaderboards.global', compact('attempts', 'language', 'category', 'direction', 'userRank', 'userEntry'));
     }
 }
