@@ -24,7 +24,7 @@ class LeaderboardController extends Controller
             ->whereIn('id', $categoryIds)
             ->get();
 
-        return view('leaderboards.personal_index', compact('categories'));
+        return view('leaderboards.index', compact('categories'));
     }
 
     public function personal(Language $language, Category $category, $direction)
