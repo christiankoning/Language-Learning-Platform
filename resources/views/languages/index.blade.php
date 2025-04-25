@@ -26,7 +26,7 @@
                         </div>
 
                         <a href="{{ route('languages.categories', $language->slug) }}"
-                           class="inline-block px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-md text-sm font-medium shadow hover:brightness-110 transition">
+                           class="inline-block px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-md text-sm font-medium shadow hover:brightness-110 transition text-center">
                             Start Learning
                         </a>
                     </div>
