@@ -12,4 +12,9 @@ class LearningController extends Controller
         $languages = Language::all();
         return view('learn.index', compact('languages'));
     }
+
+    public function show(Language $language)
+    {
+        return view('learn.language', compact('language'));
+    }
 }
