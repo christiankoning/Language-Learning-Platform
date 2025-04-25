@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\LanguagePreferenceController;
 use App\Http\Controllers\LeaderboardController;
+use App\Http\Controllers\LearningController;
 use App\Http\Controllers\PracticeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TimedController;
@@ -98,5 +99,9 @@ Route::get('/leaderboards/personal/{language:slug}/{category:slug}/{direction}',
 Route::get('/leaderboards/global/{language:slug}/{category:slug}/{direction}', [LeaderboardController::class, 'global'])
     ->middleware(['auth', 'verified'])
     ->name('leaderboard.global');
+
+Route::get('/learn', [LearningController::class, 'index'])
+    ->middleware(['auth', 'verified'])
+    ->name('learn.index');
 
 require __DIR__.'/auth.php';
