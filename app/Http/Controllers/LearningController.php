@@ -13,8 +13,22 @@ class LearningController extends Controller
         return view('learn.index', compact('languages'));
     }
 
-    public function show(Language $language)
+    public function show(Language $language, $topic = 'getting-started', $subtopic = null)
     {
-        return view('learn.language', compact('language'));
+        $topics = config("learn.{$language->slug}.topics");
+
+        $view = "learn.content.{$language->slug}.{$topic}" . ($subtopic ? ".{$subtopic}" : '.intro');
+
+        if (!view()->exists($view)) {
+            abort(404);
+        }
+
+        return view('learn.topic', [
+            'language' => $language,
+            'topics' => $topics,
+            'topic' => $topic,
+            'subtopic' => $subtopic ?? 'intro',
+            'contentView' => $view,
+        ]);
     }
 }
