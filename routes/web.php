@@ -104,8 +104,8 @@ Route::get('/learn', [LearningController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('learn.index');
 
-Route::get('/learn/{language:slug}', [LearningController::class, 'show'])
+Route::get('/learn/{language:slug}/{topic?}/{subtopic?}', [LearningController::class, 'show'])
     ->middleware(['auth', 'verified'])
-    ->name('learn.language');
+    ->name('learn.show');
 
 require __DIR__.'/auth.php';
