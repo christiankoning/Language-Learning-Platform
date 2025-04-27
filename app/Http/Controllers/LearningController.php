@@ -15,7 +15,19 @@ class LearningController extends Controller
 
     public function show(Language $language, $topic = 'getting-started', $subtopic = null)
     {
-        $topics = config("learn.{$language->slug}.topics");
+        $languageConfigPath = config_path("learn/{$language->slug}.php");
+
+        if (!file_exists($languageConfigPath)) {
+            abort(404);
+        }
+
+        $topicsData = require $languageConfigPath;
+
+        if (!isset($topicsData['topics']) || !is_array($topicsData['topics'])) {
+            abort(404);
+        }
+
+        $topics = $topicsData['topics'];
 
         $view = "learn.content.{$language->slug}.{$topic}" . ($subtopic ? ".{$subtopic}" : '.intro');
 
