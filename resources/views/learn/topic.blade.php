@@ -6,8 +6,8 @@
         <aside class="w-full md:w-64 bg-white/5 p-4 rounded-lg">
             <h2 class="text-xl font-semibold mb-4">Topics</h2>
 
-            @foreach ($topics as $mainTopic)
-                <div x-data="{ open: '{{ $topic }}' === '{{ $mainTopic['slug'] }}' }" class="mb-4">
+            @foreach ($topics as $mainTopicSlug => $mainTopic)
+                <div x-data="{ open: '{{ $topic }}' === '{{ $mainTopicSlug }}' }" class="mb-4">
                     {{-- Main Topic Button --}}
                     <button @click="open = !open" class="w-full flex items-center justify-between px-2 py-2 bg-white/10 text-left text-white hover:bg-white/20 rounded">
                         <span>{{ $mainTopic['name'] }}</span>
@@ -19,9 +19,9 @@
                     {{-- Subtopics --}}
                     <div x-show="open" class="mt-2 ml-2 space-y-2 text-sm">
                         @foreach ($mainTopic['subtopics'] as $sub)
-                            <a href="{{ route('learn.subtopic', [$language->slug, $mainTopic['slug'], $sub['slug']]) }}"
-                               class="block px-2 py-1 rounded hover:bg-white/10 transition {{ ($topic === $mainTopic['slug'] && $subtopic === $sub['slug']) ? 'bg-white/10 font-semibold' : '' }}">
-                                {{ $sub['name'] }}
+                            <a href="{{ route('learn.show', [$language->slug, $mainTopicSlug, $sub]) }}"
+                               class="block px-2 py-1 rounded hover:bg-white/10 transition {{ ($topic === $mainTopicSlug && $subtopic === $sub) ? 'bg-white/10 font-semibold' : '' }}">
+                                {{ ucwords(str_replace('-', ' ', $sub)) }}
                             </a>
                         @endforeach
                     </div>
