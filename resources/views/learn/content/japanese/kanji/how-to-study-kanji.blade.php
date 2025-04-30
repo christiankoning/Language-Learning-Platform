@@ -14,8 +14,8 @@
         </p>
 
         <ul class="list-disc list-inside mb-6">
-            <li><strong>N5:</strong> ~100 basic Kanji (used in simple words and sentences)</li>
-            <li><strong>N4:</strong> ~300 Kanji total (adds basic verbs, days, common signs)</li>
+            <li><strong>N5:</strong> ~80 basic Kanji (used in simple words and sentences)</li>
+            <li><strong>N4:</strong> ~250 Kanji total (adds basic verbs, days, common signs)</li>
             <li><strong>N3:</strong> ~650 Kanji total (starts real fluency)</li>
         </ul>
 

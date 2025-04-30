@@ -94,7 +94,7 @@
             <li>Difference between On'yomi and Kun'yomi readings</li>
             <li>Basic stroke order rules</li>
             <li>How to study Kanji effectively</li>
-            <li>Official JLPT Kanji lists (N5, N4, N3)</li>
+            <li>Kanji lists (N5, N4, N3)</li>
         </ul>
 
         <p class="mb-4">
