@@ -643,8 +643,8 @@ class ItemsTableSeeder extends Seeder
                 'nl' => ['tienduizend']
             ]],
             ['kana' => '時', 'romaji' => 'ji', 'meanings' => [
-                'en' => ["o'clock", 'time'],
-                'nl' => ['uur', 'tijd']
+                'en' => ["o'clock", 'time', 'hour'],
+                'nl' => ['uur', 'tijd', 'uur']
             ]],
             ['kana' => '分', 'romaji' => 'fun / pun', 'meanings' => [
                 'en' => ['minute', 'part'],
@@ -777,10 +777,6 @@ class ItemsTableSeeder extends Seeder
             ['kana' => '校', 'romaji' => 'kou', 'meanings' => [
                 'en' => ['school'],
                 'nl' => ['school']
-            ]],
-            ['kana' => '時', 'romaji' => 'ji', 'meanings' => [
-                'en' => ['time', 'hour'],
-                'nl' => ['tijd', 'uur']
             ]],
             ['kana' => '間', 'romaji' => 'aida / kan', 'meanings' => [
                 'en' => ['interval', 'space'],
