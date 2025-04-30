@@ -5,7 +5,7 @@
 
     <div class="prose prose-invert max-w-none">
         <p class="mb-4">
-            This list contains <strong>62 essential Kanji</strong> used in our N5-level learning activities and game modes.
+            This list contains <strong>61 essential Kanji</strong> used in our N5-level learning activities and game modes.
             While it is not the full official JLPT N5 list, it covers the most important and commonly encountered characters for beginners.
         </p>
 
@@ -153,6 +153,13 @@
                 <tr><td class="border border-white/20 px-2 py-1">小</td><td class="border border-white/20 px-2 py-1">chiisai / shou</td><td class="border border-white/20 px-2 py-1">small</td><td class="border border-white/20 px-2 py-1">ショウ</td><td class="border border-white/20 px-2 py-1">ちい / こ / お</td></tr>
                 </tbody>
             </table>
+        </div>
+
+        <div class="mt-12 text-sm text-white/80 text-center">
+            Looking for the full list? Check out the
+            <a href="https://jlptsensei.com/jlpt-n5-kanji-list/" target="_blank" class="underline hover:text-white transition">
+                official JLPT N5 Kanji list on JLPT Sensei
+            </a>.
         </div>
     </div>
 </section>
