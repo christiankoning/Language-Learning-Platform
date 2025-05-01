@@ -85,6 +85,34 @@
             <li><strong>いつ行きますか？</strong> – <em>itsu ikimasu ka?</em> – When will (you) go?</li>
         </ul>
 
+        <h2 class="text-2xl font-semibold mt-8 mb-4">Common Japanese Question Words</h2>
+        <p class="mb-4">Here are the most frequently used question words in Japanese, along with their meanings and examples.</p>
+        <div class="overflow-x-auto mb-6">
+            <table class="table-auto border border-white/20 text-left w-full">
+                <thead>
+                <tr>
+                    <th class="border border-white/20 px-3 py-2">Word</th>
+                    <th class="border border-white/20 px-3 py-2">Romaji</th>
+                    <th class="border border-white/20 px-3 py-2">Meaning</th>
+                    <th class="border border-white/20 px-3 py-2">Example</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr><td class="border border-white/20 px-3 py-2">何 / なん / なに</td><td class="border border-white/20 px-3 py-2">nani / nan</td><td class="border border-white/20 px-3 py-2">what</td><td class="border border-white/20 px-3 py-2">何ですか？(nani desu ka?) – What is it?</td></tr>
+                <tr><td class="border border-white/20 px-3 py-2">どこ</td><td class="border border-white/20 px-3 py-2">doko</td><td class="border border-white/20 px-3 py-2">where</td><td class="border border-white/20 px-3 py-2">どこですか？(doko desu ka?) – Where is it?</td></tr>
+                <tr><td class="border border-white/20 px-3 py-2">いつ</td><td class="border border-white/20 px-3 py-2">itsu</td><td class="border border-white/20 px-3 py-2">when</td><td class="border border-white/20 px-3 py-2">いつ行きますか？(itsu ikimasu ka?) – When will you go?</td></tr>
+                <tr><td class="border border-white/20 px-3 py-2">いくら</td><td class="border border-white/20 px-3 py-2">ikura</td><td class="border border-white/20 px-3 py-2">how much</td><td class="border border-white/20 px-3 py-2">これはいくらですか？(kore wa ikura desu ka?) – How much is this?</td></tr>
+                <tr><td class="border border-white/20 px-3 py-2">どう</td><td class="border border-white/20 px-3 py-2">dou</td><td class="border border-white/20 px-3 py-2">how</td><td class="border border-white/20 px-3 py-2">どうですか？(dou desu ka?) – How is it?</td></tr>
+                <tr><td class="border border-white/20 px-3 py-2">どうして / なぜ</td><td class="border border-white/20 px-3 py-2">doushite / naze</td><td class="border border-white/20 px-3 py-2">why</td><td class="border border-white/20 px-3 py-2">どうして来なかった？(doushite konakatta?) – Why didn’t you come?</td></tr>
+                <tr><td class="border border-white/20 px-3 py-2">誰 / どなた</td><td class="border border-white/20 px-3 py-2">dare / donata</td><td class="border border-white/20 px-3 py-2">who</td><td class="border border-white/20 px-3 py-2">誰ですか？(dare desu ka?) – Who is it?</td></tr>
+                <tr><td class="border border-white/20 px-3 py-2">どれ</td><td class="border border-white/20 px-3 py-2">dore</td><td class="border border-white/20 px-3 py-2">which (standalone)</td><td class="border border-white/20 px-3 py-2">どれが好きですか？(dore ga suki desu ka?) – Which one do you like?</td></tr>
+                <tr><td class="border border-white/20 px-3 py-2">どの</td><td class="border border-white/20 px-3 py-2">dono</td><td class="border border-white/20 px-3 py-2">which (with noun)</td><td class="border border-white/20 px-3 py-2">どの本ですか？(dono hon desu ka?) – Which book is it?</td></tr>
+                <tr><td class="border border-white/20 px-3 py-2">どんな</td><td class="border border-white/20 px-3 py-2">donna</td><td class="border border-white/20 px-3 py-2">what kind of</td><td class="border border-white/20 px-3 py-2">どんな映画が好きですか？(donna eiga ga suki desu ka?) – What kind of movies do you like?</td></tr>
+                <tr><td class="border border-white/20 px-3 py-2">どのくらい / どれくらい</td><td class="border border-white/20 px-3 py-2">dono kurai / dore kurai</td><td class="border border-white/20 px-3 py-2">how much / how long</td><td class="border border-white/20 px-3 py-2">どのくらいかかりますか？(dono kurai kakarimasu ka?) – How long does it take?</td></tr>
+                </tbody>
+            </table>
+        </div>
+
         <h2 class="text-2xl font-semibold mt-8 mb-4">Common Sentence Patterns</h2>
         <p class="mb-4">
             These examples show how to structure different types of questions using the grammar you’ve already learned.
