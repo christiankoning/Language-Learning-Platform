@@ -643,8 +643,8 @@ class ItemsTableSeeder extends Seeder
                 'nl' => ['tienduizend']
             ]],
             ['kana' => '時', 'romaji' => 'ji', 'meanings' => [
-                'en' => ["o'clock", 'time'],
-                'nl' => ['uur', 'tijd']
+                'en' => ["o'clock", 'time', 'hour'],
+                'nl' => ['uur', 'tijd', 'uur']
             ]],
             ['kana' => '分', 'romaji' => 'fun / pun', 'meanings' => [
                 'en' => ['minute', 'part'],
@@ -777,10 +777,6 @@ class ItemsTableSeeder extends Seeder
             ['kana' => '校', 'romaji' => 'kou', 'meanings' => [
                 'en' => ['school'],
                 'nl' => ['school']
-            ]],
-            ['kana' => '時', 'romaji' => 'ji', 'meanings' => [
-                'en' => ['time', 'hour'],
-                'nl' => ['tijd', 'uur']
             ]],
             ['kana' => '間', 'romaji' => 'aida / kan', 'meanings' => [
                 'en' => ['interval', 'space'],
@@ -1492,7 +1488,7 @@ class ItemsTableSeeder extends Seeder
             ]],
         ]);
 
-// Food & Cooking
+        // Food & Cooking
         $this->seedCategory('kanji-n3-food-and-cooking', 'Food & Cooking', [
             ['kana' => '油', 'romaji' => 'abura', 'meanings' => [
                 'en' => ['oil'],
@@ -1536,7 +1532,7 @@ class ItemsTableSeeder extends Seeder
             ]],
         ]);
 
-// Abstract Concepts
+        // Abstract Concepts
         $this->seedCategory('kanji-n3-abstract-concepts', 'Abstract Concepts', [
             ['kana' => '愛', 'romaji' => 'ai', 'meanings' => [
                 'en' => ['love'],
@@ -1580,7 +1576,7 @@ class ItemsTableSeeder extends Seeder
             ]],
         ]);
 
-// Verbs (Group 1)
+        // Verbs (Group 1)
         $this->seedCategory('kanji-n3-verbs-group-1', 'Verbs (Group 1)', [
             ['kana' => '打', 'romaji' => 'da', 'meanings' => [
                 'en' => ['hit'],
@@ -1624,7 +1620,7 @@ class ItemsTableSeeder extends Seeder
             ]],
         ]);
 
-// Verbs (Group 2)
+        // Verbs (Group 2)
         $this->seedCategory('kanji-n3-verbs-group-2', 'Verbs (Group 2)', [
             ['kana' => '食', 'romaji' => 'shoku', 'meanings' => [
                 'en' => ['eat'],
@@ -1668,7 +1664,7 @@ class ItemsTableSeeder extends Seeder
             ]],
         ]);
 
-// Adjectives & Descriptions
+        // Adjectives & Descriptions
         $this->seedCategory('kanji-n3-adjectives-and-descriptions', 'Adjectives & Descriptions', [
             ['kana' => '重', 'romaji' => 'omo(i)', 'meanings' => [
                 'en' => ['heavy'],

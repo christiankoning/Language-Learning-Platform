@@ -15,6 +15,10 @@
                    class="px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-md font-medium transition text-base">
                     Dashboard
                 </a>
+                <a href="{{ route('learn.index') }}"
+                   class="px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-md font-medium transition text-base">
+                    Learn
+                </a>
                 <a href="{{ route('languages.index') }}"
                    class="px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-md font-medium transition text-base">
                     Languages
